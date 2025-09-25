@@ -26,20 +26,9 @@
           </outline>
           <outline text="2.2.2. Upgrade from Prisma Cloud to Cortex Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Upgrade-from-Prisma-Cloud-to-Cortex-Cloud">
             <outline text="2.2.2.1. Overview" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Overview" />
-            <outline text="2.2.2.2. Link to a Prisma Cloud tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Link-to-a-Prisma-Cloud-tenant">
-              <outline text="2.2.2.2.1. Obtain the Prisma Cloud tenant access key" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Obtain-the-Prisma-Cloud-tenant-access-key">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="the Settings → Enterprise Settings page." type="note" />
-                </outline>
-              </outline>
-              <outline text="2.2.2.2.2. Link to the Prisma Cloud tenant from Cortex" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Link-to-the-Prisma-Cloud-tenant-from-Cortex" />
-            </outline>
+            <outline text="2.2.2.2. Link Cortex Cloud to Prisma Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Link-Cortex-Cloud-to-Prisma-Cloud" />
             <outline text="2.2.2.3. Copy content" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Copy-content">
-              <outline text="2.2.2.3.1. Copy Global configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Copy-Global-configurations">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="After you follow the steps listed in Copy configurations, navigate to Settings → Configurations → Access Management to view the copied items." type="note" />
-                </outline>
-              </outline>
+              <outline text="2.2.2.3.1. Copy Global configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Copy-Global-configurations" />
               <outline text="2.2.2.3.2. Copy CSPM configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Copy-CSPM-configurations" />
               <outline text="2.2.2.3.3. Copy CWP configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Copy-CWP-configurations" />
             </outline>
@@ -75,11 +64,7 @@
               <outline text="2.2.6.4.1. Manually upload template to OCI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manually-upload-template-to-OCI" />
             </outline>
             <outline text="2.2.6.5. Manually connect a cloud instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manually-connect-a-cloud-instance" />
-            <outline text="2.2.6.6. Outposts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Outposts">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Data Collection → Outposts. In the Outposts page, you can edit and delete outposts. You can also view the outpost instance." type="note" />
-              </outline>
-            </outline>
+            <outline text="2.2.6.6. Outposts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Outposts" />
             <outline text="2.2.6.7. Onboard the Kubernetes Connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-the-Kubernetes-Connector">
               <outline text="2.2.6.7.1. What's new in Kubernetes Connector?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-s-new-in-Kubernetes-Connector" />
             </outline>
@@ -89,11 +74,7 @@
                 <outline text="2.2.6.8.1.2. How Container Registry Scanning Works" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-Container-Registry-Scanning-Works" />
               </outline>
               <outline text="2.2.6.8.2. Configure registry scanning" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-registry-scanning" />
-              <outline text="2.2.6.8.3. Modify the container registry scanning scope" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Modify-the-container-registry-scanning-scope">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Data Sources." type="note" />
-                </outline>
-              </outline>
+              <outline text="2.2.6.8.3. Modify the container registry scanning scope" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Modify-the-container-registry-scanning-scope" />
               <outline text="2.2.6.8.4. Scan re-evaluation process" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Scan-re-evaluation-process" />
               <outline text="2.2.6.8.5. Connect Docker V2 compliant container registry" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Connect-Docker-V2-compliant-container-registry">
                 <outline text="2.2.6.8.5.1. Manage a Docker V2 connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-a-Docker-V2-connector" />
@@ -112,11 +93,7 @@
         </outline>
         <outline text="2.3. Post-deployment steps" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Post-deployment-steps">
           <outline text="2.3.1. Set up your environment" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-your-environment">
-            <outline text="2.3.1.1. Configure server settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-server-settings">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="You can configure server settings such as keyboard shortcuts, timezone, and timestamp format, to create a more personalized user experience in Cortex Cloud. Go to Settings → Configurations → General → Server Settings." type="note" />
-              </outline>
-            </outline>
+            <outline text="2.3.1.1. Configure server settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-server-settings" />
             <outline text="2.3.1.2. Configure security settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-security-settings" />
             <outline text="2.3.1.3. Log forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Log-forwarding">
               <outline text="2.3.1.3.1. Forward logs from Cortex Cloud to external services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Forward-logs-from-Cortex-Cloud-to-external-services">
@@ -138,16 +115,9 @@
           </outline>
           <outline text="2.3.2. Manage user roles and access management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-user-roles-and-access-management">
             <outline text="2.3.2.1. Manage user access" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-user-access">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Configurations → Access Management → Users." type="note" />
-              </outline>
               <outline text="2.3.2.1.1. User access reference information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/User-access-reference-information" />
             </outline>
-            <outline text="2.3.2.2. Manage user roles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-user-roles">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Configurations → Access Management → Roles." type="note" />
-              </outline>
-            </outline>
+            <outline text="2.3.2.2. Manage user roles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-user-roles" />
             <outline text="2.3.2.3. Manage user scope" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-user-scope" />
           </outline>
           <outline text="2.3.3. Dashboards and reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Dashboards-and-reports" />
@@ -158,11 +128,7 @@
           <outline text="3.1.1. Asset management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Asset-management">
             <outline text="3.1.1.1. All Assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/All-Assets">
               <outline text="3.1.1.1.1. Container Images" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Container-Images" />
-              <outline text="3.1.1.1.2. Kubernetes Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Kubernetes-Cluster">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Inventory → All Assets → Compute → Kubernetes Cluster for a Kubernetes clusters assets overview." type="note" />
-                </outline>
-              </outline>
+              <outline text="3.1.1.1.2. Kubernetes Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Kubernetes-Cluster" />
               <outline text="3.1.1.1.3. External Surface assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/External-Surface-assets" />
               <outline text="3.1.1.1.4. API specification inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/API-specification-inventory">
                 <outline text="3.1.1.1.4.1. Import API specification" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Import-API-specification" />
@@ -176,11 +142,7 @@
             <outline text="3.1.1.3. Network configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Network-configuration">
               <outline text="3.1.1.3.1. Configure your network parameters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-your-network-parameters" />
             </outline>
-            <outline text="3.1.1.4. Asset Groups" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Asset-Groups">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Inventory → Assets → Groups → Add Group." type="note" />
-              </outline>
-            </outline>
+            <outline text="3.1.1.4. Asset Groups" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Asset-Groups" />
             <outline text="3.1.1.5. Vulnerability Assessment" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Vulnerability-Assessment" />
           </outline>
         </outline>
@@ -188,17 +150,11 @@
       <outline text="4. Review and prioritize posture issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-and-prioritize-posture-issues">
         <outline text="4.1. Cases and issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cases-and-issues">
           <outline text="4.1.1. What are cases?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-are-cases">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Cases &amp; Issues → Cases." type="note" />
-            </outline>
             <outline text="4.1.1.1. Issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Issues" />
             <outline text="4.1.1.2. Findings and events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Findings-and-events" />
           </outline>
           <outline text="4.1.2. Case and issue domains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Case-and-issue-domains" />
           <outline text="4.1.3. Manage your cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-your-cases">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Cases page you can track, investigate, and take remedial action on your cases. Go to Case and Issues → Cases and locate the case you want to investigate." type="note" />
-            </outline>
             <outline text="4.1.3.1. Assign a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Assign-a-case" />
             <outline text="4.1.3.2. Case thresholds" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Case-thresholds" />
             <outline text="4.1.3.3. Link or unlink issues from a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Link-or-unlink-issues-from-a-case" />
@@ -207,12 +163,6 @@
             </outline>
             <outline text="4.1.3.5. Create a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-case" />
             <outline text="4.1.3.6. Issue syncing" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Issue-syncing">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Connect an instance integration: Go to Settings → Configurations → Data Sources and click Add Data Source. Search for the relevant data source, for example Atlassian Jira. Complete the required fields and click Connect." type="note" />
-                <outline text="Settings → Configurations → Data Sources and click Add Data Source." type="note" />
-                <outline text="Configure the content pack to connect to the instance integration: Go to Settings → Configurations → Data Collection → Automation &amp; Feed Integrations. Search for the relevant content pack and click Add instance. Enter details of the data source instance that you connected in step 1." type="note" />
-                <outline text="Settings → Configurations → Data Collection → Automation &amp; Feed Integrations." type="note" />
-              </outline>
               <outline text="4.1.3.6.1. Create a sync profile" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-sync-profile" />
             </outline>
           </outline>
@@ -228,24 +178,12 @@
             <outline text="4.2.1.1. Overview of the Cases page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Overview-of-the-Cases-page">
               <outline text="4.2.1.1.1. Saved table views" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Saved-table-views" />
             </outline>
-            <outline text="4.2.1.2. Review and investigate a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-and-investigate-a-case">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Cases page you can track cases, investigate case details, see the issues linked to a case, and take remedial action. Navigate to Cases &amp; Issues → Cases and click on the case that you want to investigate." type="note" />
-              </outline>
-            </outline>
+            <outline text="4.2.1.2. Review and investigate a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-and-investigate-a-case" />
           </outline>
           <outline text="4.2.2. Investigate issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Investigate-issues">
-            <outline text="4.2.2.1. Overview of the Issues page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Overview-of-the-Issues-page">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="The Issues page consolidates all non-informational issues from your detection sources. By default, the Issues page displays the security issues received over the last seven days. To access the Issues page, go to Cases &amp; Issues → Issues." type="note" />
-              </outline>
-            </outline>
+            <outline text="4.2.2.1. Overview of the Issues page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Overview-of-the-Issues-page" />
             <outline text="4.2.2.2. Issue card" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Issue-card">
-              <outline text="4.2.2.2.1. Use the War Room in an investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-the-War-Room-in-an-investigation">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Investigation &amp; Response → Automation → Playground" type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.2.2.1. Use the War Room in an investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-the-War-Room-in-an-investigation" />
               <outline text="4.2.2.2.2. Use the Work Plan in an investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-the-Work-Plan-in-an-investigation" />
             </outline>
             <outline text="4.2.2.3. Triage and investigate issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Triage-and-investigate-issues">
@@ -253,11 +191,7 @@
               <outline text="4.2.2.3.2. Run an automation on an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Run-an-automation-on-an-issue" />
               <outline text="4.2.2.3.3. Export issue details to a file" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Export-issue-details-to-a-file" />
               <outline text="4.2.2.3.4. Exclude an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Exclude-an-issue" />
-              <outline text="4.2.2.3.5. Query case and issue data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Query-case-and-issue-data">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Investigation &amp; Response → Search → Query Builder → XQL → Query Library. For more information about using XQL, see Cortex Cloud XQL.Cortex Cloud XQL" type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.2.3.5. Query case and issue data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Query-case-and-issue-data" />
               <outline text="4.2.2.3.6. Update issue fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Update-issue-fields" />
             </outline>
           </outline>
@@ -280,11 +214,7 @@
               <outline text="4.2.5.4.3. Plan your playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Plan-your-playbook" />
               <outline text="4.2.5.4.4. Manage playbooks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-playbooks" />
               <outline text="4.2.5.4.5. Build your playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Build-your-playbook">
-                <outline text="4.2.5.4.5.1. Task 1. Choose from existing playbooks or create your own" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Task-1-Choose-from-existing-playbooks-or-create-your-own">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="the Investigation &amp; Response → Automation → Playbooks page to customize or create a playbook." type="note" />
-                  </outline>
-                </outline>
+                <outline text="4.2.5.4.5.1. Task 1. Choose from existing playbooks or create your own" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Task-1-Choose-from-existing-playbooks-or-create-your-own" />
                 <outline text="4.2.5.4.5.2. Task 2. Configure playbook settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Task-2-Configure-playbook-settings" />
                 <outline text="4.2.5.4.5.3. Task 3. Add objects from the Task Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Task-3-Add-objects-from-the-Task-Library" />
                 <outline text="4.2.5.4.5.4. Task 4. Add custom playbook features" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Task-4-Add-custom-playbook-features" />
@@ -299,17 +229,8 @@
             </outline>
             <outline text="4.2.5.5. Create an automation rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-an-automation-rule" />
             <outline text="4.2.5.6. Scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Scripts">
-              <outline text="4.2.5.6.1. Use existing scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-existing-scripts">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Investigation &amp; Response → Automation → Scripts and in the Scripts Library search for the script you want to use. Use free text in the search box to find an existing script. From the search drop-down, you can: Perform a Basic search for a script name or tags. Perform an advanced search for specific words In Script or Everywhere (including the script name and tags). You can search for an exact match of the script name by putting quotation marks around the search text. For example, searching for &quot;AddKeyToList&quot; returns the script with that name. You can search for more than one exact match by including the logical operator &quot;or&quot; in between your search texts in quotation marks. For example, searching for &quot;AnalyzeTimestampIntervals&quot; or &quot;AddKeyToList&quot; returns the two scripts with those names. Wildcards are not supported in free text search. You can sort the scripts in the library alphabetically, by modified date, by system, or custom, and you can filter for disabled or deprecated scripts. The Script Helper also provides a list of available alphabetically ordered commands and scripts." type="note" />
-                  <outline text="Investigation &amp; Response → Automation → Scripts and in the Scripts Library search for the script you want to use." type="note" />
-                </outline>
-              </outline>
-              <outline text="4.2.5.6.2. Create a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-script">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Investigation &amp; Response → Automation → Scripts and click New Script." type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.5.6.1. Use existing scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-existing-scripts" />
+              <outline text="4.2.5.6.2. Create a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-script" />
               <outline text="4.2.5.6.3. Change the Docker image in a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Change-the-Docker-image-in-a-script">
                 <outline text="4.2.5.6.3.1. Connect an engine to an image registry" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Connect-an-engine-to-an-image-registry" />
               </outline>
@@ -324,43 +245,17 @@
               <outline text="4.2.5.7.7. Use context data in a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-context-data-in-a-playbook" />
             </outline>
             <outline text="4.2.5.8. Lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Lists">
-              <outline text="4.2.5.8.1. Create a list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-list">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Configurations → Object Setup → Lists → Add a List." type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.5.8.1. Create a list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-list" />
               <outline text="4.2.5.8.2. List commands" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/List-commands" />
-              <outline text="4.2.5.8.3. Use cases: JSON lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-cases-JSON-lists">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Create a List: In the Name field, type Test1. Select Settings → Configurations → Object Setup → Lists → Add a List. In the Content Type field, select JSON and add the following content: { &quot;domain&quot;: { &quot;name&quot;: &quot;mwidomain&quot;, &quot;prod_mode&quot;: &quot;prod&quot;, &quot;user&quot;: &quot;weblogic&quot;, &quot;admin&quot;: { &quot;servername&quot;: &quot;AdminServer&quot;, &quot;listenport&quot;: &quot;8001&quot; }, &quot;machines&quot;: [ { &quot;refname&quot;: &quot;Machine1&quot;, &quot;name&quot;: &quot;MWINODE01&quot; }, { &quot;refname&quot;: &quot;Machine2&quot;, &quot;name&quot;: &quot;MWINODE02&quot; } ], &quot;clusters&quot;: [ { &quot;refname&quot;: &quot;Cluster1&quot;, &quot;name&quot;: &quot;App1Cluster&quot;, &quot;machine&quot;: &quot;Box1&quot; }, { &quot;refname&quot;: &quot;Cluster1&quot;, &quot;name&quot;: &quot;App2Cluster&quot;, &quot;machine&quot;: &quot;Box2&quot; } ], &quot;servers&quot;: [ { &quot;name&quot;: &quot;ms1&quot;, &quot;port&quot;: 9001, &quot;machine&quot;: &quot;Box1&quot;, &quot;clusterrefname&quot;: &quot;Cluster1&quot; }, { &quot;name&quot;: &quot;ms2&quot;, &quot;port&quot;: 9002, &quot;machine&quot;: &quot;Box2&quot;, &quot;clusterrefname&quot;: &quot;Cluster2&quot; } ] } } Save the list." type="note" />
-                  <outline text="Settings → Configurations → Object Setup → Lists → Add a List." type="note" />
-                  <outline text="Create a playbook task with the Set automation: Select Investigation &amp; Response → Automation → Playbooks → New Playbook. Name the playbook, and click Save. Click Create Task and provide a task name. In the Choose Script field, select Set . The Set script sets a value in context under the key entered. In the key field, define a context key name for the data. For example, JSONData. In the value field, set the list you want to extract by clicking the curly brackets. Click Filters And Transformers. In the Get field, click the curly brackets, and in the Select source for value section, select the list you created in step 1: Test1. In the Fetch data field, select an issue to test the data. Click Test. In this example, the test results have found the list data. When the test completes, click Save. Save the task and playbook." type="note" />
-                  <outline text="Investigation &amp; Response → Automation → Playbooks → New Playbook." type="note" />
-                </outline>
-              </outline>
-              <outline text="4.2.5.8.4. Transform a list into an array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Transform-a-list-into-an-array">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Investigation &amp; Response → Automation → Playbooks and create or edit a playbook." type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.5.8.3. Use cases: JSON lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-cases-JSON-lists" />
+              <outline text="4.2.5.8.4. Transform a list into an array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Transform-a-list-into-an-array" />
             </outline>
             <outline text="4.2.5.9. Integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Integrations">
               <outline text="4.2.5.9.1. Integrations in Cortex Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Integrations-in-Cortex-Cloud" />
-              <outline text="4.2.5.9.2. Add an integration instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-an-integration-instance">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Configurations → Data Collection → Automation &amp; Feed Integrations and search for the integration." type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.5.9.2. Add an integration instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-an-integration-instance" />
               <outline text="4.2.5.9.3. Use integration commands in the CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-integration-commands-in-the-CLI" />
               <outline text="4.2.5.9.4. Troubleshoot Integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Troubleshoot-Integrations" />
-              <outline text="4.2.5.9.5. Manage credentials" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-credentials">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Create the credential. Select Settings → Configurations → Integrations → Credentials → New Credential. Add the following parameters: Parameters Description Credential Name The name of the credential. You select this name when adding the credential to the integration instance. Username The username for the credential. Workgroup The workgroup to associate this credential with. Relevant for third-party services, such as Active Directory, CyberArk, and HashiCorps. Password The password for the credential. For example, add the API Key when defining the API credential. Certificate Certificate or SSH to use for the credential. Save the credential." type="note" />
-                  <outline text="Settings → Configurations → Integrations → Credentials → New Credential." type="note" />
-                  <outline text="Add the credential to the integration instance. Go to Settings → Configurations → Data Collection → Automation &amp; Feed Integrations and select the integration instance. Click Add instance. Locate the relevant section and click Switch to credentials. If there is more than one credential, select the relevant credential. Test and Save &amp; Exit the integration." type="note" />
-                  <outline text="Settings → Configurations → Data Collection → Automation &amp; Feed Integrations and select the integration instance." type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.5.9.5. Manage credentials" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-credentials" />
             </outline>
             <outline text="4.2.5.10. Engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Engines">
               <outline text="4.2.5.10.1. What is an engine?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-is-an-engine" />
@@ -378,11 +273,7 @@
                 <outline text="4.2.5.10.7.3. Configure an engine to use custom certificates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-an-engine-to-use-custom-certificates" />
               </outline>
               <outline text="4.2.5.10.8. Use an engine in an integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-an-engine-in-an-integration" />
-              <outline text="4.2.5.10.9. Run a script using an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Run-a-script-using-an-engine">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Investigation &amp; Response → Automation → Scripts." type="note" />
-                </outline>
-              </outline>
+              <outline text="4.2.5.10.9. Run a script using an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Run-a-script-using-an-engine" />
               <outline text="4.2.5.10.10. Troubleshoot engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Troubleshoot-engines" />
               <outline text="4.2.5.10.11. Troubleshoot integrations running on engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Troubleshoot-integrations-running-on-engines" />
             </outline>
@@ -416,19 +307,9 @@
             <outline text="4.2.6.5. Manage scheduled queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-scheduled-queries">
               <outline text="4.2.6.5.1. Scheduled Queries reference information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Scheduled-Queries-reference-information" />
             </outline>
-            <outline text="4.2.6.6. Manage your personal query library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-your-personal-query-library">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Save a query to your personal query library. You can do this in two ways: From the Query Builder Select Investigation &amp; Response → Search → Query Builder → XQL. In the XQL query field, define the parameters of your query. Select Save as → Query to Library. From the Query Center Select Investigation &amp; Response → Search → Query Center. Locate the query that you want to save to your personal query library. Right-click anywhere in the query row, and select Save query to library." type="note" />
-                <outline text="From the Query Builder Select Investigation &amp; Response → Search → Query Builder → XQL. In the XQL query field, define the parameters of your query. Select Save as → Query to Library." type="note" />
-                <outline text="Investigation &amp; Response → Search → Query Builder → XQL." type="note" />
-              </outline>
-            </outline>
+            <outline text="4.2.6.6. Manage your personal query library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-your-personal-query-library" />
           </outline>
-          <outline text="4.2.7. Quick Launcher" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Quick-Launcher">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="You can open the Quick Launcher by clicking the Quick Launcher icon located in the top navigation bar, or from the application menus, or by using the default keyboard shortcut: Ctrl-Shift+X on Windows or CMD+Shift+X on macOS. To change the default keyboard shortcut, select Settings → Configurations → General → Server Settings → Keyboard Shortcuts. The shortcut value must be a keyboard letter, A through Z, and cannot be the same as the Artifact and Asset Views defined shortcut." type="note" />
-            </outline>
-          </outline>
+          <outline text="4.2.7. Quick Launcher" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Quick-Launcher" />
         </outline>
       </outline>
       <outline text="5. Review and report your security posture and progress" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-and-report-your-security-posture-and-progress">
@@ -442,22 +323,14 @@
                 <outline text="5.1.1.1.2.1. Cloud Security Operations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cloud-Security-Operations" />
               </outline>
             </outline>
-            <outline text="5.1.1.2. Predefined dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Predefined-dashboards">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Dashboards &amp; Reports → Dashboard Manager. In the Dashboard Manager, you can also create custom dashboards based on existing dashboards and save dashboards as report templates." type="note" />
-              </outline>
-            </outline>
+            <outline text="5.1.1.2. Predefined dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Predefined-dashboards" />
             <outline text="5.1.1.3. Reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reports">
               <outline text="5.1.1.3.1. Report templates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Report-templates" />
             </outline>
           </outline>
           <outline text="5.1.2. Build custom dashboards and reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Build-custom-dashboards-and-reports">
             <outline text="5.1.2.1. Build a custom dashboard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Build-a-custom-dashboard" />
-            <outline text="5.1.2.2. Manage your Widget Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-your-Widget-Library">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="You can include these widgets in your custom dashboards and reports. To access the Widget Library, navigate to Dashboards &amp; Reports → Widget Library." type="note" />
-              </outline>
-            </outline>
+            <outline text="5.1.2.2. Manage your Widget Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-your-Widget-Library" />
           </outline>
           <outline text="5.1.3. Fine-tune dashboards and reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Fine-tune-dashboards-and-reports">
             <outline text="5.1.3.1. Create a custom widget using a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-custom-widget-using-a-script">
@@ -470,12 +343,7 @@
               </outline>
             </outline>
           </outline>
-          <outline text="5.1.4. Run or schedule reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Run-or-schedule-reports">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Dashboards &amp; Reports → Customize → Report Templates. On this page you can also import and export report templates in a JSON format, which enables you to transfer your configurations between environments for onboarding, migration, backup, and sharing. You can bulk export and import multiple report templates at a time." type="note" />
-              <outline text="Under Settings → Configurations → General → Notifications, click + Add Forwarding Configuration." type="note" />
-            </outline>
-          </outline>
+          <outline text="5.1.4. Run or schedule reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Run-or-schedule-reports" />
         </outline>
       </outline>
       <outline text="6. Monitor and track compliance adherence" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Monitor-and-track-compliance-adherence">
@@ -486,11 +354,7 @@
           </outline>
           <outline text="6.2.2. Controls catalog" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Controls-catalog">
             <outline text="6.2.2.1. Use a built-in or custom control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-a-built-in-or-custom-control">
-              <outline text="6.2.2.1.1. Add a custom detection rule to a custom control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-a-custom-detection-rule-to-a-custom-control">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Posture Management → Rules &amp; Policies → Rules → Cloud Workload." type="note" />
-                </outline>
-              </outline>
+              <outline text="6.2.2.1.1. Add a custom detection rule to a custom control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-a-custom-detection-rule-to-a-custom-control" />
               <outline text="6.2.2.1.2. Create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-new-Custom-Detection-Rule" />
             </outline>
           </outline>
@@ -498,11 +362,7 @@
         <outline text="6.3. Use assessment profiles to run compliance checks on your assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-assessment-profiles-to-run-compliance-checks-on-your-assets" />
         <outline text="6.4. View and manage compliance assessments and reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-and-manage-compliance-assessments-and-reports">
           <outline text="6.4.1. Assessments" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Assessments" />
-          <outline text="6.4.2. Reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reports">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="The Posture Management → Compliance → Results → Reports page shows a table listing compliance assessment report files." type="note" />
-            </outline>
-          </outline>
+          <outline text="6.4.2. Reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reports" />
         </outline>
       </outline>
       <outline text="7. Discovery Engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Discovery-Engine">
@@ -519,20 +379,12 @@
         <outline text="9.1. Application Security Posture Management (ASPM)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Application-Security-Posture-Management-ASPM">
           <outline text="9.1.1. ASPM use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/ASPM-use-cases" />
           <outline text="9.1.2. ASPM key features" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/ASPM-key-features" />
-          <outline text="9.1.3. ASPM user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/ASPM-user-roles-and-permissions">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="You can view AppSec Admin permissions in the tenant by navigating to Settings → Configurations → Roles → AppSec Admin." type="note" />
-            </outline>
-          </outline>
+          <outline text="9.1.3. ASPM user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/ASPM-user-roles-and-permissions" />
           <outline text="9.1.4. ASPM Command Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/ASPM-Command-Center">
             <outline text="9.1.4.1. ASPM Command Center workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/ASPM-Command-Center-workflow" />
           </outline>
           <outline text="9.1.5. Coverage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Coverage">
-            <outline text="9.1.5.1. Coverage in the user interface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Coverage-in-the-user-interface">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Modules, → Application Security → AppSec Coverage." type="note" />
-              </outline>
-            </outline>
+            <outline text="9.1.5.1. Coverage in the user interface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Coverage-in-the-user-interface" />
           </outline>
           <outline text="9.1.6. Backlog baseline" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Backlog-baseline">
             <outline text="9.1.6.1. Backlog use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Backlog-use-cases" />
@@ -569,11 +421,6 @@
               <outline text="9.1.9.2.2. Onboard Jenkins for CI/CD pipeline scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-Jenkins-for-CI/CD-pipeline-scans" />
             </outline>
             <outline text="9.1.9.3. Integrate CI tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Integrate-CI-tools">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="You can perform the following actions on CI tools. To access CI tool management, navigate to Settings → Data Sources → hover over a CI tool and click View Details." type="note" />
-                <outline text="the repository branches to be scanned: Select an instance of the CI → right-click on a repository → Set Scanned Branches → select a branch/multiple branches → Save" type="note" />
-                <outline text="Perform a manual scan of the repository: Select an instance of the CI → right-click on a repository → Scan Repository → select a branch/multiple branches" type="note" />
-              </outline>
               <outline text="9.1.9.3.1. AWS CodeBuild" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/AWS-CodeBuild" />
               <outline text="9.1.9.3.2. Onboard CircleCI for code scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-CircleCI-for-code-scans" />
               <outline text="9.1.9.3.3. Connect Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Connect-Cortex-CLI" />
@@ -588,19 +435,14 @@
               <outline text="9.1.9.5.2. Ingest SonarQube SAST data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Ingest-SonarQube-SAST-data" />
               <outline text="9.1.9.5.3. Ingest Semgrep data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Ingest-Semgrep-data" />
               <outline text="9.1.9.5.4. Generic 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Generic-3rd-Party-AppSec-Collector">
-                <outline text="9.1.9.5.4.1. Onboard the generic 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-the-generic-3rd-Party-AppSec-Collector" />
+                <outline text="9.1.9.5.4.1. Onboard the 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-the-3rd-Party-AppSec-Collector" />
               </outline>
-              <outline text="9.1.9.5.5. SARIF" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/SARIF" />
             </outline>
             <outline text="9.1.9.6. Manage data source integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-data-source-integrations" />
           </outline>
           <outline text="9.1.10. Transporter over Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Transporter-over-Broker-VM">
             <outline text="9.1.10.1. Setup a Transporter applet on Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Setup-a-Transporter-applet-on-Broker-VM" />
-            <outline text="9.1.10.2. Setup a Transporter on your VCS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Setup-a-Transporter-on-your-VCS">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Onboard your VCS on-premises data source: Navigate to Settings → Data Sources → + Add Data Source → select your VCS on-premises data source." type="note" />
-              </outline>
-            </outline>
+            <outline text="9.1.10.2. Setup a Transporter on your VCS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Setup-a-Transporter-on-your-VCS" />
           </outline>
           <outline text="9.1.11. Manage 3rd party findings and generated issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-3rd-party-findings-and-generated-issues" />
           <outline text="9.1.12. Manage code weaknesses" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-code-weaknesses">
@@ -610,18 +452,10 @@
           </outline>
         </outline>
         <outline text="9.2. CI/CD Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CI/CD-Security">
-          <outline text="9.2.1. CI/CD Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CI/CD-Security-user-roles-and-permissions">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Dedicated CI/CD Security roles include permissions that extend beyond CI/CD Security itself. In addition to these dedicated users, other roles within your tenant are also granted specific permissions to CI/CD Security. You can view all permissions granted to user roles in your tenant by navigating to Settings → Configurations → Roles → select a role." type="note" />
-            </outline>
-          </outline>
+          <outline text="9.2.1. CI/CD Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CI/CD-Security-user-roles-and-permissions" />
           <outline text="9.2.2. CI/CD Assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CI/CD-Assets">
             <outline text="9.2.2.1. CI/CD Instances as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CI/CD-Instances-as-assets">
-              <outline text="9.2.2.1.1. Explore CI/CD Instance assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Explore-CI/CD-Instance-assets">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="All Assets → Code → Category → CI/CD Instances." type="note" />
-                </outline>
-              </outline>
+              <outline text="9.2.2.1.1. Explore CI/CD Instance assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Explore-CI/CD-Instance-assets" />
               <outline text="9.2.2.1.2. In-depth CI/CD pipeline instance asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/In-depth-CI/CD-pipeline-instance-asset-information" />
               <outline text="9.2.2.1.3. Manage CI/CD pipeline instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-CI/CD-pipeline-instances" />
             </outline>
@@ -663,19 +497,11 @@
             <outline text="9.2.6.4. Manage CI/CD policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-CI/CD-policies" />
           </outline>
           <outline text="9.2.7. CI/CD Compliance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CI/CD-Compliance">
-            <outline text="9.2.7.1. Create CI/CD compliance reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-CI/CD-compliance-reports">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Posture Management → Compliance → Assessment or Reports." type="note" />
-              </outline>
-            </outline>
+            <outline text="9.2.7.1. Create CI/CD compliance reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-CI/CD-compliance-reports" />
           </outline>
         </outline>
         <outline text="9.3. Code Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Code-Security">
-          <outline text="9.3.1. Code Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Code-Security-user-roles-and-permissions">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Dedicated Code Security roles include permissions that extend beyond Code Security itself. In addition to these dedicated users, other roles within your tenant are also granted specific permissions to Code Security. You can view all permissions granted to user roles in your tenant by navigating to Settings → Configurations → Roles → select a role." type="note" />
-            </outline>
-          </outline>
+          <outline text="9.3.1. Code Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Code-Security-user-roles-and-permissions" />
           <outline text="9.3.2. Code Security assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Code-Security-assets" />
           <outline text="9.3.3. Software packages as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Software-packages-as-assets">
             <outline text="9.3.3.1. In-depth software package asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/In-depth-software-package-asset-information" />
@@ -690,21 +516,13 @@
             <outline text="9.3.6.2. Software Composition Analysis (SCA) CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Software-Composition-Analysis-SCA-CVE-vulnerability-issues">
               <outline text="9.3.6.2.1. SCA CVE vulnerabilities inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/SCA-CVE-vulnerabilities-inventory" />
               <outline text="9.3.6.2.2. Expanded CVE vulnerabilities issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Expanded-CVE-vulnerabilities-issue-information" />
-              <outline text="9.3.6.2.3. CVE vulnerabilities findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CVE-vulnerabilities-findings">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Application Security → Issues → Vulnerabilities → click the Findings tab." type="note" />
-                </outline>
-              </outline>
+              <outline text="9.3.6.2.3. CVE vulnerabilities findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CVE-vulnerabilities-findings" />
               <outline text="9.3.6.2.4. Manage SCA CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-SCA-CVE-vulnerability-issues" />
             </outline>
             <outline text="9.3.6.3. License miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/License-miscompliance-issues">
               <outline text="9.3.6.3.1. License miscompliance issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/License-miscompliance-issues-inventory" />
               <outline text="9.3.6.3.2. Expanded License miscompliance issues information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Expanded-License-miscompliance-issues-information" />
-              <outline text="9.3.6.3.3. License miscompliance findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/License-miscompliance-findings">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Application Security → Issues → Licenses → click the Findings tab." type="note" />
-                </outline>
-              </outline>
+              <outline text="9.3.6.3.3. License miscompliance findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/License-miscompliance-findings" />
               <outline text="9.3.6.3.4. Open-source software license categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Open-source-software-license-categories" />
               <outline text="9.3.6.3.5. Manage license miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-license-miscompliance-issues" />
             </outline>
@@ -719,11 +537,7 @@
             <outline text="9.3.7.1. Secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Secrets-issues" />
             <outline text="9.3.7.2. Secrets issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Secrets-issues-inventory" />
             <outline text="9.3.7.3. Expanded Secrets issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Expanded-Secrets-issue-information" />
-            <outline text="9.3.7.4. Secrets findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Secrets-findings">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Application Security → Issues → Secrets → click the Findings tab." type="note" />
-              </outline>
-            </outline>
+            <outline text="9.3.7.4. Secrets findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Secrets-findings" />
             <outline text="9.3.7.5. Manage Secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-Secrets-issues" />
           </outline>
           <outline text="9.3.8. Infrastructure as Code (IaC) scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Infrastructure-as-Code-IaC-scanners">
@@ -731,11 +545,7 @@
             <outline text="9.3.8.2. IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/IaC-misconfiguration-issues" />
             <outline text="9.3.8.3. IaC misconfiguration issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/IaC-misconfiguration-issues-inventory" />
             <outline text="9.3.8.4. Expanded IaC misconfiguration issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Expanded-IaC-misconfiguration-issue-information" />
-            <outline text="9.3.8.5. IaC misconfiguration findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/IaC-misconfiguration-findings">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Application Security → Issues → IaC Misconfigurations → click the Findings tab." type="note" />
-              </outline>
-            </outline>
+            <outline text="9.3.8.5. IaC misconfiguration findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/IaC-misconfiguration-findings" />
             <outline text="9.3.8.6. Manage IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-IaC-misconfiguration-issues" />
           </outline>
           <outline text="9.3.9. Application Security scans management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Application-Security-scans-management">
@@ -743,16 +553,8 @@
             <outline text="9.3.9.2. Branch periodic scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Branch-periodic-scans" />
             <outline text="9.3.9.3. Pull Request scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Pull-Request-scans" />
             <outline text="9.3.9.4. CI scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CI-scans" />
-            <outline text="9.3.9.5. Manage repository scan configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-repository-scan-configurations">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Data Sources → hover over a connected data source from the catalog → click View Details." type="note" />
-              </outline>
-            </outline>
-            <outline text="9.3.9.6. Monitor data source instances health" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Monitor-data-source-instances-health">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Data Sources (under Data Collection)." type="note" />
-              </outline>
-            </outline>
+            <outline text="9.3.9.5. Manage repository scan configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-repository-scan-configurations" />
+            <outline text="9.3.9.6. Monitor data source instances health" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Monitor-data-source-instances-health" />
           </outline>
           <outline text="9.3.10. Application Security Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Application-Security-Policies">
             <outline text="9.3.10.1. User roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/User-roles-and-permissions" />
@@ -778,15 +580,9 @@
           <outline text="9.3.13. IDE" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/IDE">
             <outline text="9.3.13.1. System requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/System-requirements" />
             <outline text="9.3.13.2. Visual Studio (VS) Code" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Visual-Studio-VS-Code">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Install through VS Code IDE: Access the Activity bar → select Extensions → Prisma Cloud → Install" type="note" />
-              </outline>
               <outline text="9.3.13.2.1. How to use the VS Code Cortex Cloud extension" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-use-the-VS-Code-Cortex-Cloud-extension" />
             </outline>
             <outline text="9.3.13.3. JetBrains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/JetBrains">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Install through JetBrains IDE: Navigate to Settings → Plugins → select the Marketplace tab → search for Prisma Cloud → Install → OK" type="note" />
-              </outline>
               <outline text="9.3.13.3.1. How to use the JetBrains Cortex Cloud extension" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-use-the-JetBrains-Cortex-Cloud-extension" />
             </outline>
           </outline>
@@ -796,28 +592,16 @@
       <outline text="10. Cortex Cloud Data Classification" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Cloud-Data-Classification">
         <outline text="10.1. What is Cortex Cloud Data Classification?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-is-Cortex-Cloud-Data-Classification" />
         <outline text="10.2. How to create and validate a custom data pattern" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-create-and-validate-a-custom-data-pattern" />
-        <outline text="10.3. How to disable and enable data patterns in Data Classification" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-disable-and-enable-data-patterns-in-Data-Classification">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="In Cortex Command Center, click Settings → Configurations → Data Classification → Data Patterns." type="note" />
-          </outline>
-        </outline>
+        <outline text="10.3. How to disable and enable data patterns in Data Classification" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-disable-and-enable-data-patterns-in-Data-Classification" />
         <outline text="10.4. How to create and validate a custom data profile" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-create-and-validate-a-custom-data-profile" />
-        <outline text="10.5. How to disable and enable data profiles in Cortex Cloud Data Classification" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-disable-and-enable-data-profiles-in-Cortex-Cloud-Data-Classification">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="In Cortex Cloud Security Command Center, click Settings → Configurations → Data Classification → Data Profiles." type="note" />
-          </outline>
-        </outline>
+        <outline text="10.5. How to disable and enable data profiles in Cortex Cloud Data Classification" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-disable-and-enable-data-profiles-in-Cortex-Cloud-Data-Classification" />
       </outline>
       <outline text="11. Cortex Cloud Data Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Cloud-Data-Security">
         <outline text="11.1. What is Cortex Cloud Data Security?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-is-Cortex-Cloud-Data-Security" />
         <outline text="11.2. Supported assets in Cortex Cloud Data Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Supported-assets-in-Cortex-Cloud-Data-Security" />
         <outline text="11.3. Cortex Cloud Data Security concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Cloud-Data-Security-concepts" />
         <outline text="11.4. Cortex Cloud Data Security use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Cloud-Data-Security-use-cases" />
-        <outline text="11.5. Data Inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Data-Inventory">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="When you select Inventory → All Assets → Data → All Data, a list of all data assets appears. The following table describes the tabs shown under Data Inventory when you click on any asset in the list." type="note" />
-          </outline>
-        </outline>
+        <outline text="11.5. Data Inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Data-Inventory" />
         <outline text="11.6. How to review errors in Cortex Cloud Data Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-review-errors-in-Cortex-Cloud-Data-Security" />
         <outline text="11.7. How to configure the scanning settings for supported services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-configure-the-scanning-settings-for-supported-services" />
         <outline text="11.8. How to perform advanced Data Security investigations using XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-perform-advanced-Data-Security-investigations-using-XQL" />
@@ -830,9 +614,10 @@
         <outline text="12.2. Cortex Cloud Identity Security concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Cloud-Identity-Security-concepts" />
         <outline text="12.3. Cortex Cloud Identity Security principles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Cloud-Identity-Security-principles" />
         <outline text="12.4. Cortex Cloud Identity Security use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Cloud-Identity-Security-use-cases" />
-        <outline text="12.5. How to achieve the principle of least privilege access" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-achieve-the-principle-of-least-privilege-access" />
-        <outline text="12.6. How to enable inactive human identity logs on Azure in Cortex Cloud Identity Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-enable-inactive-human-identity-logs-on-Azure-in-Cortex-Cloud-Identity-Security" />
-        <outline text="12.7. How to perform advanced Identity Security investigations using XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-perform-advanced-Identity-Security-investigations-using-XQL" />
+        <outline text="12.5. How to manage RBAC and SBAC in Cortex Cloud Identity Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-manage-RBAC-and-SBAC-in-Cortex-Cloud-Identity-Security" />
+        <outline text="12.6. How to achieve the principle of least privilege access" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-achieve-the-principle-of-least-privilege-access" />
+        <outline text="12.7. How to enable inactive human identity logs on Azure in Cortex Cloud Identity Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-enable-inactive-human-identity-logs-on-Azure-in-Cortex-Cloud-Identity-Security" />
+        <outline text="12.8. How to perform advanced Identity Security investigations using XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-perform-advanced-Identity-Security-investigations-using-XQL" />
       </outline>
       <outline text="13. Cloud ASM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cloud-ASM">
         <outline text="13.1. What is Cloud ASM?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-is-Cloud-ASM" />
@@ -843,34 +628,14 @@
           </outline>
           <outline text="13.2.2. Network mapping" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Network-mapping" />
         </outline>
-        <outline text="13.3. Enable Cloud ASM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Enable-Cloud-ASM">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="Settings → Configurations → Attack Surface → Data Management." type="note" />
-          </outline>
-        </outline>
+        <outline text="13.3. Enable Cloud ASM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Enable-Cloud-ASM" />
         <outline text="13.4. Attack Surface Management detections" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Attack-Surface-Management-detections">
-          <outline text="13.4.1. Attack surface rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Attack-surface-rules">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Modules → Attack Surface → Policies → Attack Surface Rules." type="note" />
-            </outline>
-          </outline>
+          <outline text="13.4.1. Attack surface rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Attack-surface-rules" />
           <outline text="13.4.2. Externally inferred CVEs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Externally-inferred-CVEs" />
         </outline>
-        <outline text="13.5. Attack surface assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Attack-surface-assets">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="The internet-facing assets that were discovered in a attack surface management (ASM) scan and attributed to your organization are available in the inventory on the Inventory → Assets → All Assets → External Surface pages. For information about External Surface assets, including domains, certificates, services, see External Surface assets.External Surface assets" type="note" />
-          </outline>
-        </outline>
-        <outline text="13.6. Review your unmanaged cloud services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-your-unmanaged-cloud-services">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="Inventory → Assets → All Assets → External Surface → Services." type="note" />
-          </outline>
-        </outline>
-        <outline text="13.7. Review unmanaged cloud issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-unmanaged-cloud-issues">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="Cases &amp; Issues → Issues." type="note" />
-          </outline>
-        </outline>
+        <outline text="13.5. Attack surface assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Attack-surface-assets" />
+        <outline text="13.6. Review your unmanaged cloud services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-your-unmanaged-cloud-services" />
+        <outline text="13.7. Review unmanaged cloud issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Review-unmanaged-cloud-issues" />
       </outline>
       <outline text="14. Vulnerability management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Vulnerability-management">
         <outline text="14.1. Vulnerability management in Cortex Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Vulnerability-management-in-Cortex-Cloud">
@@ -878,64 +643,32 @@
           <outline text="14.1.2. Vulnerability Management dashboard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Vulnerability-Management-dashboard" />
         </outline>
         <outline text="14.2. Vulnerability policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Vulnerability-policies">
-          <outline text="14.2.1. Create a vulnerability policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-vulnerability-policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Policies → Vulnerability Management." type="note" />
-            </outline>
-          </outline>
-          <outline text="14.2.2. Update the Ignored CVEs, Asset Groups, and Assets policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Update-the-Ignored-CVEs-Asset-Groups-and-Assets-policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Policies → Vulnerability Management." type="note" />
-            </outline>
-          </outline>
-          <outline text="14.2.3. Modify a vulnerability policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Modify-a-vulnerability-policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Vulnerability Management." type="note" />
-            </outline>
-          </outline>
-          <outline text="14.2.4. Enable or disable a vulnerability policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Enable-or-disable-a-vulnerability-policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Vulnerability Management." type="note" />
-            </outline>
-          </outline>
+          <outline text="14.2.1. Create a vulnerability policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-vulnerability-policy" />
+          <outline text="14.2.2. Update the Ignored CVEs, Asset Groups, and Assets policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Update-the-Ignored-CVEs-Asset-Groups-and-Assets-policy" />
+          <outline text="14.2.3. Modify a vulnerability policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Modify-a-vulnerability-policy" />
+          <outline text="14.2.4. Enable or disable a vulnerability policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Enable-or-disable-a-vulnerability-policy" />
         </outline>
         <outline text="14.3. Investigate and remediate vulnerabilities" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Investigate-and-remediate-vulnerabilities">
-          <outline text="14.3.1. View all Vulnerabilities" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-all-Vulnerabilities">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Vulnerability Management → Vulnerabilities." type="note" />
-            </outline>
-          </outline>
-          <outline text="14.3.2. View vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-vulnerability-issues">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Vulnerability Management → Vulnerability Issues." type="note" />
-            </outline>
-          </outline>
-          <outline text="14.3.3. View All Vulnerability Findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-All-Vulnerability-Findings">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Vulnerability Management → Vulnerability Issues and click the All Vulnerability Findings button." type="note" />
-            </outline>
-          </outline>
-          <outline text="14.3.4. View vulnerable assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-vulnerable-assets">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Vulnerability Management → Vulnerable Assets." type="note" />
-            </outline>
-          </outline>
+          <outline text="14.3.1. View all Vulnerabilities" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-all-Vulnerabilities" />
+          <outline text="14.3.2. View vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-vulnerability-issues" />
+          <outline text="14.3.3. View All Vulnerability Findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-All-Vulnerability-Findings" />
+          <outline text="14.3.4. View vulnerable assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-vulnerable-assets" />
         </outline>
-        <outline text="14.4. Vulnerability Intelligence" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Vulnerability-Intelligence">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="Posture Management → Vulnerability Management → Vulnerability Intelligence." type="note" />
-          </outline>
-        </outline>
-        <outline text="14.5. Recast CVSS scores and CVSS severities" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Recast-CVSS-scores-and-CVSS-severities">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="Posture Management → Vulnerability Management → Vulnerability Intelligence." type="note" />
-          </outline>
-        </outline>
+        <outline text="14.4. Vulnerability Intelligence" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Vulnerability-Intelligence" />
+        <outline text="14.5. Recast CVSS scores and CVSS severities" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Recast-CVSS-scores-and-CVSS-severities" />
       </outline>
       <outline text="15. Cloud Security Rules and Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cloud-Security-Rules-and-Policies">
         <outline text="15.1. Overview" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Overview" />
         <outline text="15.2. Cloud Security Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cloud-Security-Rules" />
         <outline text="15.3. Cloud Security Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cloud-Security-Policies">
+          <outline text="15.3.1. Issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Issues" />
+        </outline>
+        <outline text="15.4. Create Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-Rules">
+          <outline text="15.4.1. Create a Data Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-Data-Rule" />
+          <outline text="15.4.2. Create a Network Exposure Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-Network-Exposure-Rule" />
+          <outline text="15.4.3. Edit a Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-a-Rule" />
+        </outline>
+        <outline text="15.5. Create Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-Policies">
           <outline text="15.5.1. Edit a Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-a-Policy" />
           <outline text="15.5.2. Use an Existing Policy to Create a New One" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-an-Existing-Policy-to-Create-a-New-One" />
         </outline>
@@ -947,49 +680,17 @@
           <outline text="16.2.1. Types of Cloud Workload Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Types-of-Cloud-Workload-Policies" />
           <outline text="16.2.2. Cloud Workload Policies page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cloud-Workload-Policies-page">
             <outline text="16.2.2.1. Widgets panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Widgets-panel">
-              <outline text="16.2.2.1.1. Show or hide the widget panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Show-or-hide-the-widget-panel">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload." type="note" />
-                </outline>
-              </outline>
+              <outline text="16.2.2.1.1. Show or hide the widget panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Show-or-hide-the-widget-panel" />
             </outline>
             <outline text="16.2.2.2. Filter page results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Filter-page-results" />
-            <outline text="16.2.2.3. Change the layout of the policies table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Change-the-layout-of-the-policies-table">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload." type="note" />
-              </outline>
-            </outline>
-            <outline text="16.2.2.4. Policy Details Panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Policy-Details-Panel">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload." type="note" />
-              </outline>
-            </outline>
+            <outline text="16.2.2.3. Change the layout of the policies table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Change-the-layout-of-the-policies-table" />
+            <outline text="16.2.2.4. Policy Details Panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Policy-Details-Panel" />
           </outline>
-          <outline text="16.2.3. Enable or disable a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Enable-or-disable-a-Cloud-Workload-Policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload." type="note" />
-            </outline>
-          </outline>
-          <outline text="16.2.4. Create a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-Cloud-Workload-Policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload" type="note" />
-            </outline>
-          </outline>
-          <outline text="16.2.5. Use an existing policy to create a new Cloud Workload policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-an-existing-policy-to-create-a-new-Cloud-Workload-policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload." type="note" />
-            </outline>
-          </outline>
-          <outline text="16.2.6. Edit a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-a-Cloud-Workload-Policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload." type="note" />
-            </outline>
-          </outline>
-          <outline text="16.2.7. Delete a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Delete-a-Cloud-Workload-Policy">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload." type="note" />
-            </outline>
-          </outline>
+          <outline text="16.2.3. Enable or disable a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Enable-or-disable-a-Cloud-Workload-Policy" />
+          <outline text="16.2.4. Create a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-Cloud-Workload-Policy" />
+          <outline text="16.2.5. Use an existing policy to create a new Cloud Workload policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-an-existing-policy-to-create-a-new-Cloud-Workload-policy" />
+          <outline text="16.2.6. Edit a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-a-Cloud-Workload-Policy" />
+          <outline text="16.2.7. Delete a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Delete-a-Cloud-Workload-Policy" />
         </outline>
         <outline text="16.3. Cloud Workload Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cloud-Workload-Rules">
           <outline text="16.3.1. Default (pre-defined) Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Default-pre-defined-Rules" />
@@ -1000,21 +701,9 @@
             <outline text="16.3.3.3. Rule details panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Rule-details-panel" />
           </outline>
           <outline text="16.3.4. Create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-new-Custom-Detection-Rule" />
-          <outline text="16.3.5. Use an existing rule to create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-an-existing-rule-to-create-a-new-Custom-Detection-Rule">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Rules → Cloud Workload." type="note" />
-            </outline>
-          </outline>
-          <outline text="16.3.6. Edit a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-a-Custom-Detection-Rule">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Rules → Cloud Workload." type="note" />
-            </outline>
-          </outline>
-          <outline text="16.3.7. Delete a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Delete-a-Custom-Detection-Rule">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Posture Management → Rules &amp; Policies → Rules → Cloud Workload." type="note" />
-            </outline>
-          </outline>
+          <outline text="16.3.5. Use an existing rule to create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Use-an-existing-rule-to-create-a-new-Custom-Detection-Rule" />
+          <outline text="16.3.6. Edit a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-a-Custom-Detection-Rule" />
+          <outline text="16.3.7. Delete a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Delete-a-Custom-Detection-Rule" />
         </outline>
       </outline>
       <outline text="17. Serverless function posture security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Serverless-function-posture-security">
@@ -1030,67 +719,28 @@
           <outline text="17.3.4. Create a configuration rule for serverless functions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-configuration-rule-for-serverless-functions" />
           <outline text="17.3.5. Create a network exposure rule for serverless functions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-a-network-exposure-rule-for-serverless-functions" />
         </outline>
-        <outline text="17.4. Serverless function usage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Serverless-function-usage">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="To manage serverless function vulnerability issues through Vulnerability Management: Navigate to Posture Management → Vulnerability Management) → Vulnerability Issues. Select Add Filters → Asset Category → Serverless Function." type="note" />
-            <outline text="Posture Management → Vulnerability Management) → Vulnerability Issues." type="note" />
-            <outline text="To manage serverless function vulnerability issues through Vulnerability Assets: Navigate to Posture Management → Vulnerability Management) → Vulnerable Assets. Select Add Filters → Asset Category → Serverless Functions. Select an asset in the inventory table. The Overview tab is displayed. Click on Issues. You are redirected to the Issues page, displaying a list of serverless function vulnerabilities." type="note" />
-            <outline text="Posture Management → Vulnerability Management) → Vulnerable Assets." type="note" />
-          </outline>
-        </outline>
+        <outline text="17.4. Serverless function usage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Serverless-function-usage" />
       </outline>
       <outline text="18. Data management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Data-management">
         <outline text="18.1. Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Broker-VM">
           <outline text="18.1.1. What is the Broker VM?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-is-the-Broker-VM" />
           <outline text="18.1.2. Set up and configure Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-and-configure-Broker-VM">
             <outline text="18.1.2.1. Broker VM image installations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Broker-VM-image-installations">
-              <outline text="18.1.2.1.1. Set up Broker VM on Alibaba Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Alibaba-Cloud">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Hamburger menu → Elastic Compute Service → Instances &amp; Images → Instances." type="note" />
-                </outline>
-              </outline>
-              <outline text="18.1.2.1.2. Set up Broker VM on Amazon Web Services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Amazon-Web-Services">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Obtain a registration token from the Cortex Cloud Web Console by selecting Settings → Configurations → Data Broker → Broker VMs → Add Broker → Generate Token." type="note" />
-                </outline>
-              </outline>
+              <outline text="18.1.2.1.1. Set up Broker VM on Alibaba Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Alibaba-Cloud" />
+              <outline text="18.1.2.1.2. Set up Broker VM on Amazon Web Services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Amazon-Web-Services" />
               <outline text="18.1.2.1.3. Set up Broker VM on Google Cloud Platform (GCP)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Google-Cloud-Platform-GCP" />
               <outline text="18.1.2.1.4. Set up Broker VM on KVM using Ubuntu" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-KVM-using-Ubuntu" />
-              <outline text="18.1.2.1.5. Set up Broker VM on Microsoft Azure" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Microsoft-Azure">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Azure services → Disks and Add a new disk." type="note" />
-                  <outline text="the Create a managed disk → Basics page, and define the following information: Read more... Heading Parameter Project details Resource group: Select your resource group. Disk details Disk name: Enter a name for the disk object. Region: Select your preferred region. Source type: Select Storage Blob. Additional fields are displayed, which you can define as follows: Source blob: Read more... Select Browse. You are directed to the Storage accounts page. From the navigation panel, select the bucket and then container to which you uploaded the Cortex Cloud VHD image. In the Container page, Select your VHD image. OS type: Select Linux VM generation: Select Gen 1" type="note" />
-                  <outline text="the Create a managed disk → Basics page, and define the following information:" type="note" />
-                </outline>
-              </outline>
+              <outline text="18.1.2.1.5. Set up Broker VM on Microsoft Azure" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Microsoft-Azure" />
               <outline text="18.1.2.1.6. Set up Broker VM on Microsoft Hyper-V" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Microsoft-Hyper-V" />
               <outline text="18.1.2.1.7. Set up Broker VM on Nutanix Hypervisor" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-Nutanix-Hypervisor" />
-              <outline text="18.1.2.1.8. Set up Broker VM on VMware ESXi using vSphere Client" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-VMware-ESXi-using-vSphere-Client">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="the resource where the new virual machine is created, right-click the resource, and select Power → Power On." type="note" />
-                </outline>
-              </outline>
+              <outline text="18.1.2.1.8. Set up Broker VM on VMware ESXi using vSphere Client" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-up-Broker-VM-on-VMware-ESXi-using-vSphere-Client" />
             </outline>
             <outline text="18.1.2.2. Broker VM data collector applets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Broker-VM-data-collector-applets">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="The Broker VM has a number of data collector applets that you can configure to ingest different types of data. These data collector applets are in addition to the others that are available in the Settings → Configurations → Data Collection → Collection Integrations page with a Data Collection add-on." type="note" />
-              </outline>
-              <outline text="18.1.2.2.1. Activate Registry Scanner" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Activate-Registry-Scanner">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Configurations → Data Broker → Broker VMs." type="note" />
-                </outline>
-              </outline>
-              <outline text="18.1.2.2.2. Activate Transporter" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Activate-Transporter">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="the Brokers tab → locate your Broker VM → hover and click + Add under the Apps column → AppSec Transporter." type="note" />
-                </outline>
-              </outline>
+              <outline text="18.1.2.2.1. Activate Registry Scanner" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Activate-Registry-Scanner" />
+              <outline text="18.1.2.2.2. Activate Transporter" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Activate-Transporter" />
             </outline>
           </outline>
           <outline text="18.1.3. Manage Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-Broker-VM">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Settings → Configurations → Data Broker → Broker VMs to view detailed information regarding your registered Broker VMs in the Brokers tab." type="note" />
-            </outline>
             <outline text="18.1.3.1. Edit Broker VM Configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-Broker-VM-Configuration" />
             <outline text="18.1.3.2. Increase Broker VM storage allocated for data caching" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Increase-Broker-VM-storage-allocated-for-data-caching" />
             <outline text="18.1.3.3. Monitor Broker VM using Prometheus" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Monitor-Broker-VM-using-Prometheus" />
@@ -1098,49 +748,18 @@
             <outline text="18.1.3.5. Upgrade Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Upgrade-Broker-VM" />
             <outline text="18.1.3.6. Import Broker VM Configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Import-Broker-VM-Configuration" />
             <outline text="18.1.3.7. Open Live Terminal" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Open-Live-Terminal" />
-            <outline text="18.1.3.8. Add Broker VM to cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-Broker-VM-to-cluster">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Configurations → Data Broker → Broker VMs." type="note" />
-              </outline>
-            </outline>
-            <outline text="18.1.3.9. Switchover Primary Node in Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Switchover-Primary-Node-in-Cluster">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Configurations → Data Broker → Broker VMs." type="note" />
-              </outline>
-            </outline>
+            <outline text="18.1.3.8. Add Broker VM to cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-Broker-VM-to-cluster" />
+            <outline text="18.1.3.9. Switchover Primary Node in Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Switchover-Primary-Node-in-Cluster" />
             <outline text="18.1.3.10. Remove from Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Remove-from-Cluster" />
           </outline>
           <outline text="18.1.4. Broker VM High Availability Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Broker-VM-High-Availability-Cluster">
-            <outline text="18.1.4.1. Configure High Availability Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-High-Availability-Cluster">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="Settings → Configurations → Data Broker → Broker VMs." type="note" />
-              </outline>
-            </outline>
+            <outline text="18.1.4.1. Configure High Availability Cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-High-Availability-Cluster" />
             <outline text="18.1.4.2. Manage Broker VM clusters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-Broker-VM-clusters">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="After you've configured a cluster, you can manage all your Broker VM clusters from the Clusters tab on the Broker VMs page (Settings → Configurations → Data Broker → Broker VMs → Clusters)." type="note" />
-              </outline>
-              <outline text="18.1.4.2.1. View cluster details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-cluster-details">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="The Clusters tab of the Broker VMs page (Settings → Configurations → Data Broker → Broker VMs) enables you to view detailed information regarding your High Availability (HA) cluster." type="note" />
-                </outline>
-              </outline>
-              <outline text="18.1.4.2.2. Edit cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-cluster">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Configurations → Data Broker → Broker VMs, and select the Clusters tab." type="note" />
-                </outline>
-              </outline>
+              <outline text="18.1.4.2.1. View cluster details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/View-cluster-details" />
+              <outline text="18.1.4.2.2. Edit cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-cluster" />
               <outline text="18.1.4.2.3. Add applet to cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-applet-to-cluster" />
-              <outline text="18.1.4.2.4. Add Broker VM to cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-Broker-VM-to-cluster">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Configurations → Data Broker → Broker VMs." type="note" />
-                </outline>
-              </outline>
-              <outline text="18.1.4.2.5. Remove cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Remove-cluster">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Configurations → Data Broker → Broker VMs." type="note" />
-                </outline>
-              </outline>
+              <outline text="18.1.4.2.4. Add Broker VM to cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-Broker-VM-to-cluster" />
+              <outline text="18.1.4.2.5. Remove cluster" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Remove-cluster" />
             </outline>
           </outline>
           <outline text="18.1.5. Broker VM notifications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Broker-VM-notifications" />
@@ -1150,25 +769,13 @@
           <outline text="18.2.1. What are datasets?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-are-datasets" />
           <outline text="18.2.2. Lookup datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Lookup-datasets">
             <outline text="18.2.2.1. Import a lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Import-a-lookup-dataset" />
-            <outline text="18.2.2.2. Download JSON file of lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Download-JSON-file-of-lookup-dataset">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="the Settings → Configurations → Data Management → Dataset Management page." type="note" />
-              </outline>
-            </outline>
-            <outline text="18.2.2.3. Set time to live for lookup datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-time-to-live-for-lookup-datasets">
-              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="the Settings → Configurations → Data Management → Dataset Management page." type="note" />
-              </outline>
-            </outline>
+            <outline text="18.2.2.2. Download JSON file of lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Download-JSON-file-of-lookup-dataset" />
+            <outline text="18.2.2.3. Set time to live for lookup datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Set-time-to-live-for-lookup-datasets" />
           </outline>
           <outline text="18.2.3. Monitor datasets and dataset views activity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Monitor-datasets-and-dataset-views-activity" />
         </outline>
         <outline text="18.3. Manage compute units" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-compute-units">
-          <outline text="18.3.1. Compute units usage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Compute-units-usage">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Settings → Configurations → Data Management → Compute Unit Usage." type="note" />
-            </outline>
-          </outline>
+          <outline text="18.3.1. Compute units usage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Compute-units-usage" />
         </outline>
         <outline text="18.4. Manage instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-instances">
           <outline text="18.4.1. Add a new data source or instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Add-a-new-data-source-or-instance" />
@@ -1176,23 +783,11 @@
           <outline text="18.4.3. Manage cloud instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-cloud-instances" />
           <outline text="18.4.4. Update cloud permissions after Cortex release updates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Update-cloud-permissions-after-Cortex-release-updates" />
           <outline text="18.4.5. Pending cloud instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Pending-cloud-instances" />
-          <outline text="18.4.6. Manage Kubernetes Connector instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-Kubernetes-Connector-instances">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Settings → Data Sources and find the Kubernetes instances by clicking on the Kubernetes name or using the Search field. In the Kubernetes Connectors page, click Kubernetes Connectivity Management to view all detected Kubernetes clusters. Here, you can check if a cluster is connected, view the status, and see the connector version. When a new version of the Kubernetes Connector is available, you can update it here." type="note" />
-            </outline>
-          </outline>
+          <outline text="18.4.6. Manage Kubernetes Connector instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-Kubernetes-Connector-instances" />
           <outline text="18.4.7. Troubleshoot errors on cloud instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Troubleshoot-errors-on-cloud-instances" />
-          <outline text="18.4.8. Monitor serverless function scan health and status" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Monitor-serverless-function-scan-health-and-status">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Settings → Data Sources (under Data Collection)." type="note" />
-            </outline>
-          </outline>
+          <outline text="18.4.8. Monitor serverless function scan health and status" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Monitor-serverless-function-scan-health-and-status" />
         </outline>
-        <outline text="18.5. About health issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/About-health-issues">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="Settings → Health Issues, or on the Issues page select the Health Domain table view. Click an issue to see more details in the issue card, or right-click to take actions and investigate an issue." type="note" />
-          </outline>
-        </outline>
+        <outline text="18.5. About health issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/About-health-issues" />
       </outline>
       <outline text="19. Marketplace" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Marketplace">
         <outline text="19.1. Cortex Marketplace" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-Marketplace" />
@@ -1224,11 +819,7 @@
           </outline>
           <outline text="21.1.3. Supported operators" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Supported-operators" />
           <outline text="21.1.4. Datasets and presets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Datasets-and-presets" />
-          <outline text="21.1.5. About examples" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/About-examples">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Investigation &amp; Response → Search → Query Builder → XQL → Query Library" type="note" />
-            </outline>
-          </outline>
+          <outline text="21.1.5. About examples" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/About-examples" />
           <outline text="21.1.6. JSON functions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/JSON-functions" />
           <outline text="21.1.7. How to filter for empty values in the results table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-filter-for-empty-values-in-the-results-table" />
           <outline text="21.1.8. Understanding string manipulation in XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Understanding-string-manipulation-in-XQL" />
@@ -1262,36 +853,142 @@
           <outline text="21.2.5. Manage scheduled queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-scheduled-queries">
             <outline text="21.2.5.1. Scheduled Queries reference information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Scheduled-Queries-reference-information" />
           </outline>
-          <outline text="21.2.6. Manage your personal query library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-your-personal-query-library">
-            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-              <outline text="Save a query to your personal query library. You can do this in two ways: From the Query Builder Select Investigation &amp; Response → Search → Query Builder → XQL. In the XQL query field, define the parameters of your query. Select Save as → Query to Library. From the Query Center Select Investigation &amp; Response → Search → Query Center. Locate the query that you want to save to your personal query library. Right-click anywhere in the query row, and select Save query to library." type="note" />
-              <outline text="From the Query Builder Select Investigation &amp; Response → Search → Query Builder → XQL. In the XQL query field, define the parameters of your query. Select Save as → Query to Library." type="note" />
-              <outline text="Investigation &amp; Response → Search → Query Builder → XQL." type="note" />
-            </outline>
-          </outline>
+          <outline text="21.2.6. Manage your personal query library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-your-personal-query-library" />
         </outline>
-        <outline text="21.3. Stages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Stages" />
-        <outline text="21.4. Functions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Functions" />
+        <outline text="21.3. Stages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Stages">
+          <outline text="21.3.1. alter" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/alter" />
+          <outline text="21.3.2. arrayexpand" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayexpand" />
+          <outline text="21.3.3. bin" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/bin" />
+          <outline text="21.3.4. call" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/call" />
+          <outline text="21.3.5. comp" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/comp" />
+          <outline text="21.3.6. config" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/config">
+            <outline text="21.3.6.1. case_sensitive" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/casesensitive" />
+            <outline text="21.3.6.2. timeframe" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/timeframe" />
+          </outline>
+          <outline text="21.3.7. dedup" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/dedup" />
+          <outline text="21.3.8. fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/fields" />
+          <outline text="21.3.9. filter" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/filter" />
+          <outline text="21.3.10. getrole" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/getrole" />
+          <outline text="21.3.11. iploc" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/iploc" />
+          <outline text="21.3.12. join" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/join" />
+          <outline text="21.3.13. limit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/limit" />
+          <outline text="21.3.14. replacenull" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/replacenull" />
+          <outline text="21.3.15. sort" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/sort" />
+          <outline text="21.3.16. Tag" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Tag" />
+          <outline text="21.3.17. target" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/target" />
+          <outline text="21.3.18. top" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/top" />
+          <outline text="21.3.19. transaction" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/transaction" />
+          <outline text="21.3.20. union" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/union" />
+          <outline text="21.3.21. view" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/view" />
+          <outline text="21.3.22. windowcomp" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/windowcomp" />
+        </outline>
+        <outline text="21.4. Functions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Functions">
+          <outline text="21.4.1. add" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/add" />
+          <outline text="21.4.2. approx_count" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/approxcount" />
+          <outline text="21.4.3. approx_quantiles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/approxquantiles" />
+          <outline text="21.4.4. approx_top" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/approxtop" />
+          <outline text="21.4.5. array_all" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayall" />
+          <outline text="21.4.6. array_any" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayany" />
+          <outline text="21.4.7. arrayconcat" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayconcat" />
+          <outline text="21.4.8. arraycreate" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arraycreate" />
+          <outline text="21.4.9. arraydistinct" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arraydistinct" />
+          <outline text="21.4.10. arrayfilter" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayfilter" />
+          <outline text="21.4.11. arrayindex" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayindex" />
+          <outline text="21.4.12. arrayindexof" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayindexof" />
+          <outline text="21.4.13. array_length" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arraylength" />
+          <outline text="21.4.14. arraymap" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arraymap" />
+          <outline text="21.4.15. arraymerge" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arraymerge" />
+          <outline text="21.4.16. arrayrange" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arrayrange" />
+          <outline text="21.4.17. arraystring" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/arraystring" />
+          <outline text="21.4.18. avg" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/avg" />
+          <outline text="21.4.19. coalesce" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/coalesce" />
+          <outline text="21.4.20. concat" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/concat" />
+          <outline text="21.4.21. convert_from_base_64" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/convertfrombase64" />
+          <outline text="21.4.22. count" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/count" />
+          <outline text="21.4.23. count_distinct" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/countdistinct" />
+          <outline text="21.4.24. current_time" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/currenttime" />
+          <outline text="21.4.25. date_floor" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/datefloor" />
+          <outline text="21.4.26. divide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/divide" />
+          <outline text="21.4.27. earliest" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/earliest" />
+          <outline text="21.4.28. extract_time" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/extracttime" />
+          <outline text="21.4.29. extract_url_host" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/extracturlhost" />
+          <outline text="21.4.30. extract_url_pub_suffix" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/extracturlpubsuffix" />
+          <outline text="21.4.31. extract_url_registered_domain" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/extracturlregistereddomain" />
+          <outline text="21.4.32. first" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/first" />
+          <outline text="21.4.33. first_value" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/firstvalue" />
+          <outline text="21.4.34. floor" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/floor" />
+          <outline text="21.4.35. format_string" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/formatstring" />
+          <outline text="21.4.36. format_timestamp" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/formattimestamp" />
+          <outline text="21.4.37. if" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/if" />
+          <outline text="21.4.38. incidr" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/incidr" />
+          <outline text="21.4.39. incidr6" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/incidr6" />
+          <outline text="21.4.40. incidrlist" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/incidrlist" />
+          <outline text="21.4.41. int_to_ip" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/inttoip" />
+          <outline text="21.4.42. ip_to_int" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/iptoint" />
+          <outline text="21.4.43. is_ipv4" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/isipv4" />
+          <outline text="21.4.44. is_known_private_ipv4" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/isknownprivateipv4" />
+          <outline text="21.4.45. is_ipv6" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/isipv6" />
+          <outline text="21.4.46. is_known_private_ipv6" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/isknownprivateipv6" />
+          <outline text="21.4.47. json_extract" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/jsonextract" />
+          <outline text="21.4.48. json_extract_array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/jsonextractarray" />
+          <outline text="21.4.49. json_extract_scalar" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/jsonextractscalar" />
+          <outline text="21.4.50. json_extract_scalar_array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/jsonextractscalararray" />
+          <outline text="21.4.51. json_path_extract" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/jsonpathextract" />
+          <outline text="21.4.52. lag" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/lag" />
+          <outline text="21.4.53. last" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/last" />
+          <outline text="21.4.54. last_value" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/lastvalue" />
+          <outline text="21.4.55. latest" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/latest" />
+          <outline text="21.4.56. len" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/len" />
+          <outline text="21.4.57. list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/list" />
+          <outline text="21.4.58. lowercase" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/lowercase" />
+          <outline text="21.4.59. ltrim, rtrim, trim" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/ltrim-rtrim-trim" />
+          <outline text="21.4.60. max" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/max" />
+          <outline text="21.4.61. median" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/median" />
+          <outline text="21.4.62. min" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/min" />
+          <outline text="21.4.63. multiply" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/multiply" />
+          <outline text="21.4.64. object_create" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/objectcreate" />
+          <outline text="21.4.65. object_merge" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/objectmerge" />
+          <outline text="21.4.66. parse_epoch" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/parseepoch" />
+          <outline text="21.4.67. parse_timestamp" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/parsetimestamp" />
+          <outline text="21.4.68. pow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/pow" />
+          <outline text="21.4.69. rank" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/rank" />
+          <outline text="21.4.70. regexcapture" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/regexcapture" />
+          <outline text="21.4.71. regextract" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/regextract" />
+          <outline text="21.4.72. replace" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/replace" />
+          <outline text="21.4.73. replex" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/replex" />
+          <outline text="21.4.74. round" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/round" />
+          <outline text="21.4.75. row_number" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/rownumber" />
+          <outline text="21.4.76. split" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/split" />
+          <outline text="21.4.77. stddev_population" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/stddevpopulation" />
+          <outline text="21.4.78. stddev_sample" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/stddevsample" />
+          <outline text="21.4.79. string_count" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/stringcount" />
+          <outline text="21.4.80. subtract" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/subtract" />
+          <outline text="21.4.81. sum" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/sum" />
+          <outline text="21.4.82. time_frame_end" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/timeframeend" />
+          <outline text="21.4.83. timestamp_diff" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/timestampdiff" />
+          <outline text="21.4.84. timestamp_seconds" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/timestampseconds" />
+          <outline text="21.4.85. to_boolean" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/toboolean" />
+          <outline text="21.4.86. to_epoch" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/toepoch" />
+          <outline text="21.4.87. to_float" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/tofloat" />
+          <outline text="21.4.88. to_integer" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/tointeger" />
+          <outline text="21.4.89. to_json_string" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/tojsonstring" />
+          <outline text="21.4.90. to_number" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/tonumber" />
+          <outline text="21.4.91. to_string" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/tostring" />
+          <outline text="21.4.92. to_timestamp" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/totimestamp" />
+          <outline text="21.4.93. uppercase" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/uppercase" />
+          <outline text="21.4.94. values" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/values" />
+          <outline text="21.4.95. var" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/var" />
+          <outline text="21.4.96. wildcard_match" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/wildcardmatch" />
+        </outline>
       </outline>
       <outline text="22. Graph Search" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Graph-Search">
         <outline text="22.1. What is Graph Search?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/What-is-Graph-Search" />
         <outline text="22.2. Get started with Graph Search queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Get-started-with-Graph-Search-queries" />
-        <outline text="22.3. How to build Graph Search queries?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-build-Graph-Search-queries">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="You submit Graph Search queries using the Investigation &amp; Response → Search → Query Builder → Graph Search built-in query interface." type="note" />
-          </outline>
-        </outline>
+        <outline text="22.3. How to build Graph Search queries?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-build-Graph-Search-queries" />
         <outline text="22.4. Understand Graph Search query results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Understand-Graph-Search-query-results" />
         <outline text="22.5. Create Graph Search query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Create-Graph-Search-query" />
         <outline text="22.6. Graph Search examples" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Graph-Search-examples" />
-        <outline text="22.7. Manage Graph Search Query Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-Graph-Search-Query-Library">
-          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-            <outline text="Save a query to your personal query library. You can do this in following ways: From Graph Search in the Query Builder Select Investigation &amp; Response → Search → Query Builder → Graph Search. From inside the Graph Search query interface at the top of the Graph Search page, click Select to open the entity picker dialog box, and define the parameters of your query. Click Search to run your query and view the query results. Click Save Query. From Graph Search in the My Recents table of the Query Library Select Investigation &amp; Response → Search → Query Builder → Graph Search. Click Query Library. Toggle to My Recents to open your recent queries. Right-click anywhere in the Graph Search query row, and select Save query to library. From the Query Center Select Investigation &amp; Response → Search → Query Center. Locate the Graph Search query that you want to save to the Query Library. Right-click anywhere in the Graph Search query row, and select Save query to library." type="note" />
-            <outline text="Select to open the entity picker dialog box, and define the parameters of your query. Click Search to run your query and view the query results. Click Save Query." type="note" />
-            <outline text="Investigation &amp; Response → Search → Query Builder → Graph Search." type="note" />
-            <outline text="From Graph Search in the My Recents table of the Query Library Select Investigation &amp; Response → Search → Query Builder → Graph Search. Click Query Library. Toggle to My Recents to open your recent queries. Right-click anywhere in the Graph Search query row, and select Save query to library." type="note" />
-          </outline>
-        </outline>
+        <outline text="22.7. Manage Graph Search Query Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-Graph-Search-Query-Library" />
         <outline text="22.8. Edit and run queries in Query Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Edit-and-run-queries-in-Query-Center">
           <outline text="22.8.1. Query Center reference information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Query-Center-reference-information" />
         </outline>
