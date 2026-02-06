@@ -394,25 +394,11 @@
             <outline text="5.1.4.7. Run indicator extraction in the CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Run-indicator-extraction-in-the-CLI" />
           </outline>
           <outline text="5.1.5. Cortex Copilot" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Copilot">
-            <outline text="5.1.5.1. Cortex Copilot" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Copilot">
-              <outline text="5.1.5.1.1. Key components and concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Key-components-and-concepts" />
-              <outline text="5.1.5.1.2. The Cortex Copilot use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/The-Cortex-Copilot-use-cases" />
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To increase usability, you can create a personalized keyboard shortcut: Settings → Configurations → Server Settings → Keyboard Shortcuts and choose the shortcut you want to use" type="note" />
             </outline>
-            <outline text="5.1.5.2. Manage agents in the Agents Hub" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-agents-in-the-Agents-Hub">
-              <outline text="5.1.5.2.1. Manage actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-actions">
-                <outline text="5.1.5.2.1.1. Content packs with actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Content-packs-with-actions" />
-              </outline>
-              <outline text="5.1.5.2.2. Register actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Register-actions" />
-              <outline text="5.1.5.2.3. Manage agents" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-agents" />
-              <outline text="5.1.5.2.4. Build agents" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Build-agents" />
-            </outline>
-            <outline text="5.1.5.3. Use the Copilot chat in an investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-the-Copilot-chat-in-an-investigation" />
-            <outline text="5.1.5.4. Use AI to develop scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-AI-to-develop-scripts" />
-            <outline text="5.1.5.5. Monitor and manage AI usage and access" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Monitor-and-manage-AI-usage-and-access">
-              <outline text="5.1.5.5.1. Cortex Copilot view" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Copilot-view" />
-              <outline text="5.1.5.5.2. Role-based Access Control (RBAC)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Role-based-Access-Control-RBAC" />
-              <outline text="5.1.5.5.3. Responsible AI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Responsible-AI" />
-            </outline>
+            <outline text="5.1.5.1. Cortex Copilot layout" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Copilot-layout" />
+            <outline text="5.1.5.2. Cortex Copilot capabilities" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Copilot-capabilities" />
           </outline>
         </outline>
         <outline text="5.2. Investigate cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Investigate-cases">
@@ -541,90 +527,106 @@
             <outline text="5.8.4.9. Best practices" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Best-practices" />
           </outline>
           <outline text="5.8.5. Create an automation rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-an-automation-rule" />
-          <outline text="5.8.6. Context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Context-data">
-            <outline text="5.8.6.1. Issue context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Issue-context-data" />
-            <outline text="5.8.6.2. Case context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Case-context-data" />
-            <outline text="5.8.6.3. Search context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Search-context-data" />
-            <outline text="5.8.6.4. Add context data to an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Add-context-data-to-an-issue" />
-            <outline text="5.8.6.5. Add context data to a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Add-context-data-to-a-case" />
-            <outline text="5.8.6.6. Delete context data from a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Delete-context-data-from-a-case" />
-            <outline text="5.8.6.7. Use context data in a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-context-data-in-a-playbook" />
+          <outline text="5.8.6. Scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Scripts">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="On the Scripts page (Investigation → Response → Automation → Scripts), you can view, edit, and manually create scripts in JavaScript, Python, or PowerShell" type="note" />
+            </outline>
+            <outline text="5.8.6.1. Use existing scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-existing-scripts">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automation → Scripts and in the Scripts Library search for the script you want to use" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.8.6.2. Create a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-a-script">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automation → Scripts and click New Script" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.8.6.3. Change the Docker image in an integration or script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Change-the-Docker-image-in-an-integration-or-script" />
           </outline>
-          <outline text="5.8.7. Lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Lists">
-            <outline text="5.8.7.1. Create a list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-a-list">
+          <outline text="5.8.7. Context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Context-data">
+            <outline text="5.8.7.1. Issue context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Issue-context-data" />
+            <outline text="5.8.7.2. Case context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Case-context-data" />
+            <outline text="5.8.7.3. Search context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Search-context-data" />
+            <outline text="5.8.7.4. Add context data to an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Add-context-data-to-an-issue" />
+            <outline text="5.8.7.5. Add context data to a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Add-context-data-to-a-case" />
+            <outline text="5.8.7.6. Delete context data from a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Delete-context-data-from-a-case" />
+            <outline text="5.8.7.7. Use context data in a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-context-data-in-a-playbook" />
+          </outline>
+          <outline text="5.8.8. Lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Lists">
+            <outline text="5.8.8.1. Create a list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-a-list">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Settings → Configurations → Object Setup → Lists → Add a List" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.7.2. List commands" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/List-commands" />
-            <outline text="5.8.7.3. Use cases: JSON lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-cases-JSON-lists">
+            <outline text="5.8.8.2. List commands" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/List-commands" />
+            <outline text="5.8.8.3. Use cases: JSON lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-cases-JSON-lists">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Playbooks → New Playbook" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.7.4. Transform a list into an array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Transform-a-list-into-an-array">
+            <outline text="5.8.8.4. Transform a list into an array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Transform-a-list-into-an-array">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Playbooks and create or edit a playbook" type="note" />
               </outline>
             </outline>
           </outline>
-          <outline text="5.8.8. Jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Jobs">
-            <outline text="5.8.8.1. Manage jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-jobs" />
-            <outline text="5.8.8.2. Create a time triggered job" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-a-time-triggered-job" />
-            <outline text="5.8.8.3. Create a job triggered by a delta in a feed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-a-job-triggered-by-a-delta-in-a-feed">
+          <outline text="5.8.9. Jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Jobs">
+            <outline text="5.8.9.1. Manage jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-jobs" />
+            <outline text="5.8.9.2. Create a time triggered job" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-a-time-triggered-job" />
+            <outline text="5.8.9.3. Create a job triggered by a delta in a feed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-a-job-triggered-by-a-delta-in-a-feed">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Jobs → New Job" type="note" />
               </outline>
             </outline>
           </outline>
-          <outline text="5.8.9. Engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Engines">
-            <outline text="5.8.9.1. What is an engine?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/What-is-an-engine" />
-            <outline text="5.8.9.2. Engine requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Engine-requirements" />
-            <outline text="5.8.9.3. Install an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-an-engine">
-              <outline text="5.8.9.3.1. Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker">
-                <outline text="5.8.9.3.1.1. Install Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-Docker">
-                  <outline text="5.8.9.3.1.1.1. Install Docker distribution for Red Hat on an engine server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-Docker-distribution-for-Red-Hat-on-an-engine-server" />
-                  <outline text="5.8.9.3.1.1.2. Docker image security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker-image-security" />
-                  <outline text="5.8.9.3.1.1.3. Docker FAQs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker-FAQs" />
-                  <outline text="5.8.9.3.1.1.4. Troubleshoot Docker issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-Docker-issues" />
-                  <outline text="5.8.9.3.1.1.5. Configure Docker pull rate limit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-Docker-pull-rate-limit" />
-                  <outline text="5.8.9.3.1.1.6. Change the Docker installation folder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Change-the-Docker-installation-folder" />
+          <outline text="5.8.10. Engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Engines">
+            <outline text="5.8.10.1. What is an engine?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/What-is-an-engine" />
+            <outline text="5.8.10.2. Engine requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Engine-requirements" />
+            <outline text="5.8.10.3. Install an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-an-engine">
+              <outline text="5.8.10.3.1. Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker">
+                <outline text="5.8.10.3.1.1. Install Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-Docker">
+                  <outline text="5.8.10.3.1.1.1. Install Docker distribution for Red Hat on an engine server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-Docker-distribution-for-Red-Hat-on-an-engine-server" />
+                  <outline text="5.8.10.3.1.1.2. Docker image security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker-image-security" />
+                  <outline text="5.8.10.3.1.1.3. Docker FAQs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker-FAQs" />
+                  <outline text="5.8.10.3.1.1.4. Troubleshoot Docker issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-Docker-issues" />
+                  <outline text="5.8.10.3.1.1.5. Configure Docker pull rate limit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-Docker-pull-rate-limit" />
+                  <outline text="5.8.10.3.1.1.6. Change the Docker installation folder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Change-the-Docker-installation-folder" />
                 </outline>
-                <outline text="5.8.9.3.1.2. Docker hardening guide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker-hardening-guide" />
+                <outline text="5.8.10.3.1.2. Docker hardening guide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Docker-hardening-guide" />
               </outline>
-              <outline text="5.8.9.3.2. Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Podman">
-                <outline text="5.8.9.3.2.1. Change the container storage directory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Change-the-container-storage-directory" />
-                <outline text="5.8.9.3.2.2. Install Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-Podman" />
-                <outline text="5.8.9.3.2.3. Migrate From Docker to Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Migrate-From-Docker-to-Podman" />
-                <outline text="5.8.9.3.2.4. Troubleshoot Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-Podman" />
+              <outline text="5.8.10.3.2. Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Podman">
+                <outline text="5.8.10.3.2.1. Change the container storage directory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Change-the-container-storage-directory" />
+                <outline text="5.8.10.3.2.2. Install Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Install-Podman" />
+                <outline text="5.8.10.3.2.3. Migrate From Docker to Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Migrate-From-Docker-to-Podman" />
+                <outline text="5.8.10.3.2.4. Troubleshoot Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-Podman" />
               </outline>
             </outline>
-            <outline text="5.8.9.4. Manage engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-engines">
+            <outline text="5.8.10.4. Manage engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-engines">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="You can manage your engines and load-balancing groups by going to Settings → Configurations → Data Broker → Engines" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.9.5. Upgrade an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Upgrade-an-engine" />
-            <outline text="5.8.9.6. Remove an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Remove-an-engine" />
-            <outline text="5.8.9.7. Configure engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-engines">
-              <outline text="5.8.9.7.1. Configure the engine to use a web proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-the-engine-to-use-a-web-proxy" />
-              <outline text="5.8.9.7.2. Configure the engine to call the server without using a proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-the-engine-to-call-the-server-without-using-a-proxy">
-                <outline text="5.8.9.7.2.1. Use NGINX as a reverse proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-NGINX-as-a-reverse-proxy" />
+            <outline text="5.8.10.5. Upgrade an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Upgrade-an-engine" />
+            <outline text="5.8.10.6. Remove an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Remove-an-engine" />
+            <outline text="5.8.10.7. Configure engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-engines">
+              <outline text="5.8.10.7.1. Configure the engine to use a web proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-the-engine-to-use-a-web-proxy" />
+              <outline text="5.8.10.7.2. Configure the engine to call the server without using a proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-the-engine-to-call-the-server-without-using-a-proxy">
+                <outline text="5.8.10.7.2.1. Use NGINX as a reverse proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-NGINX-as-a-reverse-proxy" />
               </outline>
-              <outline text="5.8.9.7.3. Configure an engine to use custom certificates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-an-engine-to-use-custom-certificates" />
+              <outline text="5.8.10.7.3. Configure an engine to use custom certificates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-an-engine-to-use-custom-certificates" />
             </outline>
-            <outline text="5.8.9.8. Use an engine in an integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-an-engine-in-an-integration" />
-            <outline text="5.8.9.9. Run a script using an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Run-a-script-using-an-engine">
+            <outline text="5.8.10.8. Use an engine in an integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Use-an-engine-in-an-integration" />
+            <outline text="5.8.10.9. Run a script using an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Run-a-script-using-an-engine">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Scripts" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.9.10. Troubleshoot engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-engines">
+            <outline text="5.8.10.10. Troubleshoot engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-engines">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="When troubleshooting engines, access the logs from Settings → Configurations → Engines and select the engine from which you want to download the logs" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.9.11. Troubleshoot integrations running on engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-integrations-running-on-engines" />
+            <outline text="5.8.10.11. Troubleshoot integrations running on engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Troubleshoot-integrations-running-on-engines" />
           </outline>
         </outline>
         <outline text="5.9. Response actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Response-actions">
@@ -923,373 +925,374 @@
           <outline text="8.2.5. How to perform advanced AI Security investigations using XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-perform-advanced-AI-Security-investigations-using-XQL" />
         </outline>
         <outline text="8.3. Cortex Cloud Application Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Cloud-Application-Security">
-          <outline text="8.3.1. Application Security Posture Management (ASPM)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-Posture-Management-ASPM">
-            <outline text="8.3.1.1. ASPM use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-use-cases" />
-            <outline text="8.3.1.2. ASPM key features" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-key-features" />
-            <outline text="8.3.1.3. ASPM user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-user-roles-and-permissions">
+          <outline text="8.3.1. Onboard data sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-data-sources">
+            <outline text="8.3.1.1. Onboard version control systems" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-version-control-systems">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                <outline text="You can view AppSec Admin permissions in the tenant by navigating to Settings → Configurations → Roles → AppSec Admin" type="note" />
+                <outline text="Settings → Data Sources (under Data Collections) → + Data Source → enter your VCS data source in the search bar" type="note" />
               </outline>
+              <outline text="8.3.1.1.1. AWS CodeCommit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/AWS-CodeCommit" />
+              <outline text="8.3.1.1.2. Azure Repos" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Azure-Repos" />
+              <outline text="8.3.1.1.3. Bitbucket Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Bitbucket-Cloud" />
+              <outline text="8.3.1.1.4. Bitbucket Data Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Bitbucket-Data-Center" />
+              <outline text="8.3.1.1.5. GitHub Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitHub-Cloud" />
+              <outline text="8.3.1.1.6. GitHub Server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitHub-Server" />
+              <outline text="8.3.1.1.7. GitLab SaaS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitLab-SaaS" />
+              <outline text="8.3.1.1.8. GitLab self-managed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitLab-self-managed" />
             </outline>
-            <outline text="8.3.1.4. ASPM Command Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-Command-Center">
-              <outline text="8.3.1.4.1. ASPM Command Center workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-Command-Center-workflow" />
-            </outline>
-            <outline text="8.3.1.5. Coverage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Coverage">
-              <outline text="8.3.1.5.1. Coverage in the user interface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Coverage-in-the-user-interface">
+            <outline text="8.3.1.2. Onboard CI/CD systems" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-CI/CD-systems">
+              <outline text="8.3.1.2.1. Onboard CircleCI for CI/CD pipeline scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-CircleCI-for-CI/CD-pipeline-scans">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Modules, → Application Security → AppSec Coverage" type="note" />
+                  <outline text="Settings → Data Sources → select the menu for your connected CircleCI instance → + New Instance, and repeat the onboarding steps above" type="note" />
                 </outline>
               </outline>
-            </outline>
-            <outline text="8.3.1.6. Backlog baseline" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Backlog-baseline">
-              <outline text="8.3.1.6.1. Backlog use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Backlog-use-cases" />
-              <outline text="8.3.1.6.2. Issue/Finding classification by scanner" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Issue/Finding-classification-by-scanner" />
-              <outline text="8.3.1.6.3. Using Backlog" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Using-Backlog" />
-            </outline>
-            <outline text="8.3.1.7. Applications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Applications">
-              <outline text="8.3.1.7.1. How to build an application" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-build-an-application" />
-              <outline text="8.3.1.7.2. Application management and visibility" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-management-and-visibility" />
-              <outline text="8.3.1.7.3. Business application assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Business-application-assets">
-                <outline text="8.3.1.7.3.1. Business application expanded asset details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Business-application-expanded-asset-details" />
-              </outline>
-            </outline>
-            <outline text="8.3.1.8. Repositories as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Repositories-as-assets">
-              <outline text="8.3.1.8.1. Explore repository assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-repository-assets" />
-              <outline text="8.3.1.8.2. In-depth repository asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-repository-asset-information" />
-              <outline text="8.3.1.8.3. Manage Repository assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Repository-assets" />
-              <outline text="8.3.1.8.4. Export Software Bill of Materials (SBOM)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Export-Software-Bill-of-Materials-SBOM" />
-              <outline text="8.3.1.8.5. Manage issues detected in repositories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-issues-detected-in-repositories" />
-            </outline>
-            <outline text="8.3.1.9. Onboard data sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-data-sources">
-              <outline text="8.3.1.9.1. Onboard version control systems" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-version-control-systems">
+              <outline text="8.3.1.2.2. Onboard Jenkins for CI/CD pipeline scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Jenkins-for-CI/CD-pipeline-scans">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Data Sources (under Data Collections) → + Data Source → enter your VCS data source in the search bar" type="note" />
-                </outline>
-                <outline text="8.3.1.9.1.1. AWS CodeCommit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/AWS-CodeCommit" />
-                <outline text="8.3.1.9.1.2. Azure Repos" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Azure-Repos" />
-                <outline text="8.3.1.9.1.3. Bitbucket Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Bitbucket-Cloud" />
-                <outline text="8.3.1.9.1.4. Bitbucket Data Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Bitbucket-Data-Center" />
-                <outline text="8.3.1.9.1.5. GitHub Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitHub-Cloud" />
-                <outline text="8.3.1.9.1.6. GitHub Server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitHub-Server" />
-                <outline text="8.3.1.9.1.7. GitLab SaaS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitLab-SaaS" />
-                <outline text="8.3.1.9.1.8. GitLab self-managed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitLab-self-managed" />
-              </outline>
-              <outline text="8.3.1.9.2. Onboard CI/CD systems" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-CI/CD-systems">
-                <outline text="8.3.1.9.2.1. Onboard CircleCI for CI/CD pipeline scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-CircleCI-for-CI/CD-pipeline-scans">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="Settings → Data Sources → select the menu for your connected CircleCI instance → + New Instance, and repeat the onboarding steps above" type="note" />
-                  </outline>
-                </outline>
-                <outline text="8.3.1.9.2.2. Onboard Jenkins for CI/CD pipeline scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Jenkins-for-CI/CD-pipeline-scans">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="Data Sources → Jenkins → View Details" type="note" />
-                    <outline text="Settings → Data Sources → select the menu for your connected Jenkins instance → + New Instance, and repeat the onboarding steps above" type="note" />
-                  </outline>
-                </outline>
-              </outline>
-              <outline text="8.3.1.9.3. Integrate CI tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Integrate-CI-tools">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Data Sources → hover over a CI tool and click View Details" type="note" />
-                  <outline text="Delete an instance: Right-click on an instance of the CI tool → Delete instance → Delete" type="note" />
-                </outline>
-                <outline text="8.3.1.9.3.1. AWS CodeBuild" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/AWS-CodeBuild">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="Settings → Data Sources → select the menu for your connected AWS CodeBuild instance → + New Instance, and repeat the onboarding steps above" type="note" />
-                  </outline>
-                </outline>
-                <outline text="8.3.1.9.3.2. Onboard CircleCI for code scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-CircleCI-for-code-scans">
-                  </outline>
-                <outline text="8.3.1.9.3.3. Connect Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Connect-Cortex-CLI">
-                  </outline>
-                <outline text="8.3.1.9.3.4. GitHub Actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitHub-Actions">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="Settings → Data Sources → select the menu for your connected GitHub Actions instance → + New Instance, and repeat the onboarding steps above" type="note" />
-                  </outline>
-                </outline>
-                <outline text="8.3.1.9.3.5. Onboard Jenkins for code scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Jenkins-for-code-scans">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="Settings → Data Sources → select the menu for your connected Jenkins instance → + New Instance, and repeat the onboarding steps" type="note" />
-                  </outline>
-                </outline>
-                <outline text="8.3.1.9.3.6. Onboard Terraform Cloud (Run Tasks)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Terraform-Cloud-Run-Tasks">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="Settings → Data Sources → select the menu for your connected your Terraform Cloud (Run Tasks) instance → + New Instance, and repeat the onboarding steps" type="note" />
-                  </outline>
-                </outline>
-                <outline text="8.3.1.9.3.7. Onboard Terraform Enterprise (Run Tasks)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Terraform-Enterprise-Run-Tasks">
-                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                    <outline text="Settings → Data Sources → select the menu for your connected Terraform Enterprise (Run Tasks) instance → + New Instance, and repeat the onboarding steps above" type="note" />
-                  </outline>
-                </outline>
-              </outline>
-              <outline text="8.3.1.9.4. CLI pipeline code snippets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CLI-pipeline-code-snippets" />
-              <outline text="8.3.1.9.5. Ingest third-party data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-third-party-data">
-                <outline text="8.3.1.9.5.1. Ingest Veracode SAST data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-Veracode-SAST-data" />
-                <outline text="8.3.1.9.5.2. Ingest SonarQube SAST data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-SonarQube-SAST-data" />
-                <outline text="8.3.1.9.5.3. Ingest Semgrep data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-Semgrep-data" />
-                <outline text="8.3.1.9.5.4. Generic 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Generic-3rd-Party-AppSec-Collector">
-                  <outline text="8.3.1.9.5.4.1. Onboard the 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-the-3rd-Party-AppSec-Collector" />
-                </outline>
-              </outline>
-              <outline text="8.3.1.9.6. Manage data source integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-data-source-integrations">
-                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Settings → Data Sources → use the search bar to locate the required data source" type="note" />
+                  <outline text="Data Sources → Jenkins → View Details" type="note" />
+                  <outline text="Settings → Data Sources → select the menu for your connected Jenkins instance → + New Instance, and repeat the onboarding steps above" type="note" />
                 </outline>
               </outline>
             </outline>
-            <outline text="8.3.1.10. Transporter over Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Transporter-over-Broker-VM">
-              <outline text="8.3.1.10.1. Setup a Transporter applet on Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Setup-a-Transporter-applet-on-Broker-VM">
+            <outline text="8.3.1.3. Integrate CI tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Integrate-CI-tools">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Data Sources → hover over a CI tool and click View Details" type="note" />
+                <outline text="Delete an instance: Right-click on an instance of the CI tool → Delete instance → Delete" type="note" />
+              </outline>
+              <outline text="8.3.1.3.1. AWS CodeBuild" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/AWS-CodeBuild">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Data Sources → select the menu for your connected AWS CodeBuild instance → + New Instance, and repeat the onboarding steps above" type="note" />
+                </outline>
+              </outline>
+              <outline text="8.3.1.3.2. Onboard CircleCI for code scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-CircleCI-for-code-scans">
+                </outline>
+              <outline text="8.3.1.3.3. Connect Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Connect-Cortex-CLI">
+                </outline>
+              <outline text="8.3.1.3.4. GitHub Actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/GitHub-Actions">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Data Sources → select the menu for your connected GitHub Actions instance → + New Instance, and repeat the onboarding steps above" type="note" />
+                </outline>
+              </outline>
+              <outline text="8.3.1.3.5. Onboard Jenkins for code scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Jenkins-for-code-scans">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Data Sources → select the menu for your connected Jenkins instance → + New Instance, and repeat the onboarding steps" type="note" />
+                </outline>
+              </outline>
+              <outline text="8.3.1.3.6. Onboard Terraform Cloud (Run Tasks)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Terraform-Cloud-Run-Tasks">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Data Sources → select the menu for your connected your Terraform Cloud (Run Tasks) instance → + New Instance, and repeat the onboarding steps" type="note" />
+                </outline>
+              </outline>
+              <outline text="8.3.1.3.7. Onboard Terraform Enterprise (Run Tasks)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-Terraform-Enterprise-Run-Tasks">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Data Sources → select the menu for your connected Terraform Enterprise (Run Tasks) instance → + New Instance, and repeat the onboarding steps above" type="note" />
+                </outline>
+              </outline>
+            </outline>
+            <outline text="8.3.1.4. CLI pipeline code snippets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CLI-pipeline-code-snippets" />
+            <outline text="8.3.1.5. Ingest third-party data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-third-party-data">
+              <outline text="8.3.1.5.1. Ingest Veracode SAST data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-Veracode-SAST-data" />
+              <outline text="8.3.1.5.2. Ingest SonarQube SAST data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-SonarQube-SAST-data" />
+              <outline text="8.3.1.5.3. Ingest Semgrep data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Ingest-Semgrep-data" />
+              <outline text="8.3.1.5.4. Generic 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Generic-3rd-Party-AppSec-Collector">
+                <outline text="8.3.1.5.4.1. Onboard the 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Onboard-the-3rd-Party-AppSec-Collector" />
+              </outline>
+            </outline>
+            <outline text="8.3.1.6. Manage data source integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-data-source-integrations">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Data Sources → use the search bar to locate the required data source" type="note" />
+              </outline>
+            </outline>
+            <outline text="8.3.1.7. Transporter over Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Transporter-over-Broker-VM">
+              <outline text="8.3.1.7.1. Setup a Transporter applet on Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Setup-a-Transporter-applet-on-Broker-VM">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="your AppSec Transporter under the App column → Configure → Add Connection (on the redirected AppSec Transporter setup page" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.1.10.2. Setup a Transporter on your VCS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Setup-a-Transporter-on-your-VCS">
+              <outline text="8.3.1.7.2. Setup a Transporter on your VCS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Setup-a-Transporter-on-your-VCS">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="Settings → Data Sources → + Add Data Source → select your VCS on-premises data source" type="note" />
                 </outline>
               </outline>
             </outline>
-            <outline text="8.3.1.11. Manage 3rd party findings and generated issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-3rd-party-findings-and-generated-issues" />
-            <outline text="8.3.1.12. Manage code weaknesses" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-code-weaknesses">
+          </outline>
+          <outline text="8.3.2. Application Security Posture Management (ASPM)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-Posture-Management-ASPM">
+            <outline text="8.3.2.1. ASPM use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-use-cases" />
+            <outline text="8.3.2.2. ASPM key features" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-key-features" />
+            <outline text="8.3.2.3. ASPM user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-user-roles-and-permissions">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="You can view AppSec Admin permissions in the tenant by navigating to Settings → Configurations → Roles → AppSec Admin" type="note" />
+              </outline>
+            </outline>
+            <outline text="8.3.2.4. ASPM Command Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-Command-Center">
+              <outline text="8.3.2.4.1. ASPM Command Center workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/ASPM-Command-Center-workflow" />
+            </outline>
+            <outline text="8.3.2.5. Coverage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Coverage">
+              <outline text="8.3.2.5.1. Coverage in the user interface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Coverage-in-the-user-interface">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Modules, → Application Security → AppSec Coverage" type="note" />
+                </outline>
+              </outline>
+            </outline>
+            <outline text="8.3.2.6. Backlog baseline" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Backlog-baseline">
+              <outline text="8.3.2.6.1. Backlog use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Backlog-use-cases" />
+              <outline text="8.3.2.6.2. Issue/Finding classification by scanner" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Issue/Finding-classification-by-scanner" />
+              <outline text="8.3.2.6.3. Using Backlog" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Using-Backlog" />
+            </outline>
+            <outline text="8.3.2.7. Applications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Applications">
+              <outline text="8.3.2.7.1. Building business applications with the manual Application Builder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Building-business-applications-with-the-manual-Application-Builder" />
+              <outline text="8.3.2.7.2. Application management and visibility" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-management-and-visibility" />
+              <outline text="8.3.2.7.3. Business application assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Business-application-assets">
+                <outline text="8.3.2.7.3.1. Business application expanded asset details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Business-application-expanded-asset-details" />
+              </outline>
+            </outline>
+            <outline text="8.3.2.8. Repositories as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Repositories-as-assets">
+              <outline text="8.3.2.8.1. Explore repository assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-repository-assets" />
+              <outline text="8.3.2.8.2. In-depth repository asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-repository-asset-information" />
+              <outline text="8.3.2.8.3. Manage Repository assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Repository-assets" />
+              <outline text="8.3.2.8.4. Export Software Bill of Materials (SBOM)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Export-Software-Bill-of-Materials-SBOM" />
+              <outline text="8.3.2.8.5. Manage issues detected in repositories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-issues-detected-in-repositories" />
+            </outline>
+            <outline text="8.3.2.9. Manage 3rd party findings and generated issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-3rd-party-findings-and-generated-issues" />
+            <outline text="8.3.2.10. Manage code weaknesses" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-code-weaknesses">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Inventory → All Assets → Code" type="note" />
                 <outline text="To access SAST code violation issues, under Modules, select Application Security → Issues → Code Weaknesses" type="note" />
               </outline>
-              <outline text="8.3.1.12.1. Code weaknesses issue inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-weaknesses-issue-inventory" />
-              <outline text="8.3.1.12.2. Expanded code weaknesses issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-code-weaknesses-issue-information" />
-              <outline text="8.3.1.12.3. SAST code weakness findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/SAST-code-weakness-findings" />
+              <outline text="8.3.2.10.1. Code weaknesses issue inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-weaknesses-issue-inventory" />
+              <outline text="8.3.2.10.2. Expanded code weaknesses issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-code-weaknesses-issue-information" />
+              <outline text="8.3.2.10.3. SAST code weakness findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/SAST-code-weakness-findings" />
             </outline>
           </outline>
-          <outline text="8.3.2. CI/CD Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Security">
-            <outline text="8.3.2.1. CI/CD Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Security-user-roles-and-permissions" />
-            <outline text="8.3.2.2. CI/CD Assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Assets">
-              <outline text="8.3.2.2.1. CI/CD Instances as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Instances-as-assets">
-                <outline text="8.3.2.2.1.1. Explore CI/CD Instance assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-CI/CD-Instance-assets">
+          <outline text="8.3.3. CI/CD Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Security">
+            <outline text="8.3.3.1. CI/CD Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Security-user-roles-and-permissions" />
+            <outline text="8.3.3.2. CI/CD Assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Assets">
+              <outline text="8.3.3.2.1. CI/CD Instances as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Instances-as-assets">
+                <outline text="8.3.3.2.1.1. Explore CI/CD Instance assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-CI/CD-Instance-assets">
                   <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                     <outline text="To access CI/CD pipeline instances, under Inventory, select All Assets → Code → Category → CI/CD Instances" type="note" />
                   </outline>
                 </outline>
-                <outline text="8.3.2.2.1.2. In-depth CI/CD pipeline instance asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-CI/CD-pipeline-instance-asset-information" />
-                <outline text="8.3.2.2.1.3. Manage CI/CD pipeline instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-pipeline-instances" />
+                <outline text="8.3.3.2.1.2. In-depth CI/CD pipeline instance asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-CI/CD-pipeline-instance-asset-information" />
+                <outline text="8.3.3.2.1.3. Manage CI/CD pipeline instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-pipeline-instances" />
               </outline>
-              <outline text="8.3.2.2.2. CI/CD Pipelines as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Pipelines-as-assets">
-                <outline text="8.3.2.2.2.1. Explore CI/CD Pipeline assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-CI/CD-Pipeline-assets">
+              <outline text="8.3.3.2.2. CI/CD Pipelines as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Pipelines-as-assets">
+                <outline text="8.3.3.2.2.1. Explore CI/CD Pipeline assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-CI/CD-Pipeline-assets">
                   <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                     <outline text="To access CI/CD pipelines assets, under Inventory, select All Assets → Code → CI/CD Pipelines" type="note" />
                   </outline>
                 </outline>
-                <outline text="8.3.2.2.2.2. In-depth CI/CD pipeline asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-CI/CD-pipeline-asset-information" />
-                <outline text="8.3.2.2.2.3. Manage CI/CD pipeline assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-pipeline-assets" />
+                <outline text="8.3.3.2.2.2. In-depth CI/CD pipeline asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-CI/CD-pipeline-asset-information" />
+                <outline text="8.3.3.2.2.3. Manage CI/CD pipeline assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-pipeline-assets" />
               </outline>
-              <outline text="8.3.2.2.3. Version Control System (VCS) Organizations as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Version-Control-System-VCS-Organizations-as-assets">
-                <outline text="8.3.2.2.3.1. Explore VCS Organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-VCS-Organization-assets">
+              <outline text="8.3.3.2.3. Version Control System (VCS) Organizations as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Version-Control-System-VCS-Organizations-as-assets">
+                <outline text="8.3.3.2.3.1. Explore VCS Organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-VCS-Organization-assets">
                   <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                     <outline text="To access VCS Organization assets, under Inventory, select All Assets → Code → VCS Organizations" type="note" />
                   </outline>
                 </outline>
-                <outline text="8.3.2.2.3.2. In-depth VCS Organization asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-VCS-Organization-asset-information" />
-                <outline text="8.3.2.2.3.3. Manage VCS organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-VCS-organization-assets" />
+                <outline text="8.3.3.2.3.2. In-depth VCS Organization asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-VCS-Organization-asset-information" />
+                <outline text="8.3.3.2.3.3. Manage VCS organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-VCS-organization-assets" />
               </outline>
-              <outline text="8.3.2.2.4. VCS Collaborators-as-assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/VCS-Collaborators-as-assets">
-                <outline text="8.3.2.2.4.1. In-depth Collaborator asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-Collaborator-asset-information" />
-                <outline text="8.3.2.2.4.2. Manage Collaborator assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Collaborator-assets" />
+              <outline text="8.3.3.2.4. VCS Collaborators-as-assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/VCS-Collaborators-as-assets">
+                <outline text="8.3.3.2.4.1. In-depth Collaborator asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-Collaborator-asset-information" />
+                <outline text="8.3.3.2.4.2. Manage Collaborator assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Collaborator-assets" />
               </outline>
             </outline>
-            <outline text="8.3.2.3. Supply Chain tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supply-Chain-tools">
-              <outline text="8.3.2.3.1. Supply Chain use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supply-Chain-use-cases">
+            <outline text="8.3.3.3. Supply Chain tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supply-Chain-tools">
+              <outline text="8.3.3.3.1. Supply Chain use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supply-Chain-use-cases">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To access Supply Chain Tools, select Modules → Application Security → Supply Chain Tools (under 3rd Party Tools" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.2.3.2. Explore Supply Chain tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-Supply-Chain-tools" />
-              <outline text="8.3.2.3.3. Expanded Supply Chain tool information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-Supply-Chain-tool-information" />
+              <outline text="8.3.3.3.2. Explore Supply Chain tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-Supply-Chain-tools" />
+              <outline text="8.3.3.3.3. Expanded Supply Chain Tool information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-Supply-Chain-Tool-information" />
             </outline>
-            <outline text="8.3.2.4. CI/CD Risks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Risks">
-              <outline text="8.3.2.4.1. CI/CD pipeline issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-pipeline-issues">
+            <outline text="8.3.3.4. CI/CD Risks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Risks">
+              <outline text="8.3.3.4.1. CI/CD pipeline issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-pipeline-issues">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To access CI/CD pipeline risks issues, under Modules, select Application Security → Issues → CI/CD Risks" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.2.4.2. Expanded CI/CD risks issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-CI/CD-risks-issue-information" />
-              <outline text="8.3.2.4.3. VCS and CI/CD pipeline risk findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/VCS-and-CI/CD-pipeline-risk-findings" />
+              <outline text="8.3.3.4.2. Expanded CI/CD risks issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-CI/CD-risks-issue-information" />
+              <outline text="8.3.3.4.3. VCS and CI/CD pipeline risk findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/VCS-and-CI/CD-pipeline-risk-findings" />
             </outline>
-            <outline text="8.3.2.5. CI/CD Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Rules">
-              <outline text="8.3.2.5.1. CI/CD rules roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-rules-roles-and-permissions" />
-              <outline text="8.3.2.5.2. CI/CD rules inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-rules-inventory">
+            <outline text="8.3.3.5. CI/CD Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Rules">
+              <outline text="8.3.3.5.1. CI/CD rules roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-rules-roles-and-permissions" />
+              <outline text="8.3.3.5.2. CI/CD rules inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-rules-inventory">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="In the Filter panel, select Category → Scanner → CI/CD Security" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.2.5.3. Create custom CI/CD rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-custom-CI/CD-rules" />
-              <outline text="8.3.2.5.4. Manage CI/CD rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-rules" />
+              <outline text="8.3.3.5.3. Create custom CI/CD rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-custom-CI/CD-rules" />
+              <outline text="8.3.3.5.4. Manage CI/CD rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-rules" />
             </outline>
-            <outline text="8.3.2.6. CI/CD Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Policies">
-              <outline text="8.3.2.6.1. CI/CD policies user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-policies-user-roles-and-permissions" />
-              <outline text="8.3.2.6.2. CI/CD policies inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-policies-inventory" />
-              <outline text="8.3.2.6.3. Create custom CI/CD policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-custom-CI/CD-policies">
+            <outline text="8.3.3.6. CI/CD Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Policies">
+              <outline text="8.3.3.6.1. CI/CD policies user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-policies-user-roles-and-permissions" />
+              <outline text="8.3.3.6.2. CI/CD policies inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-policies-inventory" />
+              <outline text="8.3.3.6.3. Create custom CI/CD policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-custom-CI/CD-policies">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="Add Filter → Finding Type → CI/CD Risks → AND → Provider → [VCS/CI/CD system] → AND → Severity: → High" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.2.6.4. Manage CI/CD policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-policies" />
+              <outline text="8.3.3.6.4. Manage CI/CD policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-CI/CD-policies" />
             </outline>
-            <outline text="8.3.2.7. CI/CD Compliance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Compliance">
+            <outline text="8.3.3.7. CI/CD Compliance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI/CD-Compliance">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="To access Compliance, select Posture Management → Compliance → Reports or Assessment" type="note" />
               </outline>
-              <outline text="8.3.2.7.1. Create CI/CD compliance reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-CI/CD-compliance-reports">
+              <outline text="8.3.3.7.1. Create CI/CD compliance reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-CI/CD-compliance-reports">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="Posture Management → Compliance → Assessment or Reports" type="note" />
                 </outline>
               </outline>
             </outline>
           </outline>
-          <outline text="8.3.3. Code Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security">
-            <outline text="8.3.3.1. Code Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security-user-roles-and-permissions" />
-            <outline text="8.3.3.2. Code Security assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security-assets" />
-            <outline text="8.3.3.3. Software packages as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Software-packages-as-assets">
-              <outline text="8.3.3.3.1. In-depth software package asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-software-package-asset-information" />
+          <outline text="8.3.4. Code Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security">
+            <outline text="8.3.4.1. Code Security user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security-user-roles-and-permissions" />
+            <outline text="8.3.4.2. Code Security assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security-assets" />
+            <outline text="8.3.4.3. Software packages as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Software-packages-as-assets">
+              <outline text="8.3.4.3.1. In-depth software package asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-software-package-asset-information" />
             </outline>
-            <outline text="8.3.3.4. Infrastructure-as-Code (IaC) resources as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Infrastructure-as-Code-IaC-resources-as-assets">
-              <outline text="8.3.3.4.1. Explore IaC assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-IaC-assets">
+            <outline text="8.3.4.4. Infrastructure-as-Code (IaC) resources as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Infrastructure-as-Code-IaC-resources-as-assets">
+              <outline text="8.3.4.4.1. Explore IaC assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Explore-IaC-assets">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To access IaC assets, under Inventory, select All Assets → Code → IaC Resources" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.3.4.2. In-depth IaC resource asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-IaC-resource-asset-information" />
+              <outline text="8.3.4.4.2. In-depth IaC resource asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/In-depth-IaC-resource-asset-information" />
             </outline>
-            <outline text="8.3.3.5. Code Security scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security-scanners" />
-            <outline text="8.3.3.6. Software Composition Analysis (SCA ) scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Software-Composition-Analysis-SCA--scanners">
-              <outline text="8.3.3.6.1. Supported Software Composition Analysis (SCA) frameworks and languages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supported-Software-Composition-Analysis-SCA-frameworks-and-languages" />
-              <outline text="8.3.3.6.2. Software Composition Analysis (SCA) CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Software-Composition-Analysis-SCA-CVE-vulnerability-issues">
+            <outline text="8.3.4.5. Code Security scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Code-Security-scanners" />
+            <outline text="8.3.4.6. Software Composition Analysis (SCA ) scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Software-Composition-Analysis-SCA--scanners">
+              <outline text="8.3.4.6.1. Supported Software Composition Analysis (SCA) frameworks and languages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supported-Software-Composition-Analysis-SCA-frameworks-and-languages" />
+              <outline text="8.3.4.6.2. Software Composition Analysis (SCA) CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Software-Composition-Analysis-SCA-CVE-vulnerability-issues">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To access CVE vulnerability issues, under Modules, select Application Security → Issues → Vulnerabilities" type="note" />
                 </outline>
-                <outline text="8.3.3.6.2.1. SCA CVE vulnerabilities inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/SCA-CVE-vulnerabilities-inventory" />
-                <outline text="8.3.3.6.2.2. Expanded CVE vulnerabilities issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-CVE-vulnerabilities-issue-information" />
-                <outline text="8.3.3.6.2.3. CVE vulnerabilities findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CVE-vulnerabilities-findings">
+                <outline text="8.3.4.6.2.1. SCA CVE vulnerabilities inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/SCA-CVE-vulnerabilities-inventory" />
+                <outline text="8.3.4.6.2.2. Expanded CVE vulnerabilities issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-CVE-vulnerabilities-issue-information" />
+                <outline text="8.3.4.6.2.3. CVE vulnerabilities findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CVE-vulnerabilities-findings">
                   <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                     <outline text="To access CVE findings, under Modules, select Application Security → Issues → Vulnerabilities → click the Findings tab" type="note" />
                   </outline>
                 </outline>
-                <outline text="8.3.3.6.2.4. Manage SCA CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-SCA-CVE-vulnerability-issues" />
+                <outline text="8.3.4.6.2.4. Manage SCA CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-SCA-CVE-vulnerability-issues" />
               </outline>
-              <outline text="8.3.3.6.3. License miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/License-miscompliance-issues">
+              <outline text="8.3.4.6.3. License miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/License-miscompliance-issues">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="Inventory → All Assets → Application → select an option from the Application menu → select an item from the inventory → Package Integrity" type="note" />
                   <outline text="To access license miscompliance issues, under Modules, select Application Security → Issues → Licenses" type="note" />
                 </outline>
-                <outline text="8.3.3.6.3.1. License miscompliance issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/License-miscompliance-issues-inventory" />
-                <outline text="8.3.3.6.3.2. Expanded License miscompliance issues information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-License-miscompliance-issues-information" />
-                <outline text="8.3.3.6.3.3. License miscompliance findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/License-miscompliance-findings">
+                <outline text="8.3.4.6.3.1. License miscompliance issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/License-miscompliance-issues-inventory" />
+                <outline text="8.3.4.6.3.2. Expanded License miscompliance issues information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-License-miscompliance-issues-information" />
+                <outline text="8.3.4.6.3.3. License miscompliance findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/License-miscompliance-findings">
                   <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                     <outline text="To access license miscompliance findings, under Modules, select Application Security → Issues → Licenses → click the Findings tab" type="note" />
                   </outline>
                 </outline>
-                <outline text="8.3.3.6.3.4. Open-source software license categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Open-source-software-license-categories" />
-                <outline text="8.3.3.6.3.5. Manage license miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-license-miscompliance-issues" />
+                <outline text="8.3.4.6.3.4. Open-source software license categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Open-source-software-license-categories" />
+                <outline text="8.3.4.6.3.5. Manage license miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-license-miscompliance-issues" />
               </outline>
-              <outline text="8.3.3.6.4. Package Integrity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Package-Integrity">
-                <outline text="8.3.3.6.4.1. Package Integrity issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Package-Integrity-issues-inventory">
+              <outline text="8.3.4.6.4. Package Integrity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Package-Integrity">
+                <outline text="8.3.4.6.4.1. Package Integrity issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Package-Integrity-issues-inventory">
                   <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                     <outline text="Modules → Application Security → Package Integrity (under Issues" type="note" />
                   </outline>
                 </outline>
-                <outline text="8.3.3.6.4.2. Expanded Package Integrity issues inventory information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-Package-Integrity-issues-inventory-information" />
-                <outline text="8.3.3.6.4.3. Package Integrity findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Package-Integrity-findings">
+                <outline text="8.3.4.6.4.2. Expanded Package Integrity issues inventory information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-Package-Integrity-issues-inventory-information" />
+                <outline text="8.3.4.6.4.3. Package Integrity findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Package-Integrity-findings">
                   <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                     <outline text="navigate to Modules → Application Security → Package Integrity (under Issues) → click the Findings tab" type="note" />
                   </outline>
                 </outline>
-                <outline text="8.3.3.6.4.4. Manage Package Integrity issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Package-Integrity-issues" />
+                <outline text="8.3.4.6.4.4. Manage Package Integrity issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Package-Integrity-issues" />
               </outline>
             </outline>
-            <outline text="8.3.3.7. Secrets scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-scanners">
-              <outline text="8.3.3.7.1. Secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-issues">
+            <outline text="8.3.4.7. Secrets scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-scanners">
+              <outline text="8.3.4.7.1. Secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-issues">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="Under Modules, select Application Security → Issues → Secrets" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.3.7.2. Secrets issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-issues-inventory" />
-              <outline text="8.3.3.7.3. Expanded Secrets issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-Secrets-issue-information" />
-              <outline text="8.3.3.7.4. Secrets findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-findings">
+              <outline text="8.3.4.7.2. Secrets issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-issues-inventory" />
+              <outline text="8.3.4.7.3. Expanded Secrets issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-Secrets-issue-information" />
+              <outline text="8.3.4.7.4. Secrets findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Secrets-findings">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To access Secrets findings, select Application Security → Issues → Secrets → click the Findings tab" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.3.7.5. Manage Secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Secrets-issues" />
+              <outline text="8.3.4.7.5. Manage Secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Secrets-issues" />
             </outline>
-            <outline text="8.3.3.8. Infrastructure as Code (IaC) scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Infrastructure-as-Code-IaC-scanners">
-              <outline text="8.3.3.8.1. Supported frameworks and languages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supported-frameworks-and-languages" />
-              <outline text="8.3.3.8.2. IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IaC-misconfiguration-issues">
+            <outline text="8.3.4.8. Infrastructure as Code (IaC) scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Infrastructure-as-Code-IaC-scanners">
+              <outline text="8.3.4.8.1. Supported frameworks and languages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Supported-frameworks-and-languages" />
+              <outline text="8.3.4.8.2. IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IaC-misconfiguration-issues">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To access IaC misconfiguration issues, under Modules, select Application Security → Issues → IaC misconfiguration" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.3.8.3. IaC misconfiguration issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IaC-misconfiguration-issues-inventory" />
-              <outline text="8.3.3.8.4. Expanded IaC misconfiguration issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-IaC-misconfiguration-issue-information" />
-              <outline text="8.3.3.8.5. IaC misconfiguration findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IaC-misconfiguration-findings">
+              <outline text="8.3.4.8.3. IaC misconfiguration issues inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IaC-misconfiguration-issues-inventory" />
+              <outline text="8.3.4.8.4. Expanded IaC misconfiguration issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Expanded-IaC-misconfiguration-issue-information" />
+              <outline text="8.3.4.8.5. IaC misconfiguration findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IaC-misconfiguration-findings">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To access IaC misconfiguration findings, under Modules, select Application Security → Issues → IaC Misconfigurations → click the Findings tab" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.3.8.6. Manage IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-IaC-misconfiguration-issues" />
+              <outline text="8.3.4.8.6. Manage IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-IaC-misconfiguration-issues" />
             </outline>
-            <outline text="8.3.3.9. Application Security scans management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-scans-management">
-              <outline text="8.3.3.9.1. How to access Application Security scan management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-access-Application-Security-scan-management" />
-              <outline text="8.3.3.9.2. Branch periodic scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Branch-periodic-scans" />
-              <outline text="8.3.3.9.3. Pull Request scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Pull-Request-scans" />
-              <outline text="8.3.3.9.4. CI scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI-scans" />
-              <outline text="8.3.3.9.5. Manage repository scan configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-repository-scan-configurations">
+            <outline text="8.3.4.9. Application Security scans management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-scans-management">
+              <outline text="8.3.4.9.1. How to access Application Security scan management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-access-Application-Security-scan-management" />
+              <outline text="8.3.4.9.2. Branch periodic scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Branch-periodic-scans" />
+              <outline text="8.3.4.9.3. Pull Request scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Pull-Request-scans" />
+              <outline text="8.3.4.9.4. CI scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/CI-scans" />
+              <outline text="8.3.4.9.5. Manage repository scan configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-repository-scan-configurations">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="Settings → Data Sources → hover over a connected data source from the catalog → click View Details" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.3.9.6. Monitor data source instances health" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Monitor-data-source-instances-health" />
+              <outline text="8.3.4.9.6. Monitor data source instances health" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Monitor-data-source-instances-health" />
             </outline>
-            <outline text="8.3.3.10. Application Security Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-Policies">
-              <outline text="8.3.3.10.1. User roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/User-roles-and-permissions" />
-              <outline text="8.3.3.10.2. Create Application Security policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-Application-Security-policies">
-                <outline text="8.3.3.10.2.1. Application Security policy condition attributes" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-policy-condition-attributes" />
+            <outline text="8.3.4.10. Application Security Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-Policies">
+              <outline text="8.3.4.10.1. User roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/User-roles-and-permissions" />
+              <outline text="8.3.4.10.2. Create Application Security policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-Application-Security-policies">
+                <outline text="8.3.4.10.2.1. Application Security policy condition attributes" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-policy-condition-attributes" />
               </outline>
-              <outline text="8.3.3.10.3. Manage Application Security policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Application-Security-policies" />
+              <outline text="8.3.4.10.3. Manage Application Security policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Application-Security-policies" />
             </outline>
-            <outline text="8.3.3.11. Application Security Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-Rules">
-              <outline text="8.3.3.11.1. Roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Roles-and-permissions" />
-              <outline text="8.3.3.11.2. Rules inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Rules-inventory">
+            <outline text="8.3.4.11. Application Security Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-Rules">
+              <outline text="8.3.4.11.1. Roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Roles-and-permissions" />
+              <outline text="8.3.4.11.2. Rules inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Rules-inventory">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="To filter rules relating to Secrets, select filter icon → Scanner (from the Select field) → Secrets (from the Value field" type="note" />
                 </outline>
               </outline>
-              <outline text="8.3.3.11.3. Create custom Application Security rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-custom-Application-Security-rules" />
-              <outline text="8.3.3.11.4. Manage Application Security custom rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Application-Security-custom-rules" />
-              <outline text="8.3.3.11.5. Configure YAML file properties" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-YAML-file-properties" />
+              <outline text="8.3.4.11.3. Create custom Application Security rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Create-custom-Application-Security-rules" />
+              <outline text="8.3.4.11.4. Manage Application Security custom rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Manage-Application-Security-custom-rules" />
+              <outline text="8.3.4.11.5. Configure YAML file properties" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Configure-YAML-file-properties" />
             </outline>
-            <outline text="8.3.3.12. Application Security CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-CLI">
-              <outline text="8.3.3.12.1. Connect Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Connect-Cortex-CLI">
+            <outline text="8.3.4.12. Application Security CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Application-Security-CLI">
+              <outline text="8.3.4.12.1. Connect Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Connect-Cortex-CLI">
                 </outline>
-              <outline text="8.3.3.12.2. Cortex CLI usage for Application Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-CLI-usage-for-Application-Security" />
-              <outline text="8.3.3.12.3. Cortex CLI Application Security command line reference" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-CLI-Application-Security-command-line-reference" />
-              <outline text="8.3.3.12.4. Cortex CLI common command line reference guide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-CLI-common-command-line-reference-guide" />
+              <outline text="8.3.4.12.2. Cortex CLI usage for Application Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-CLI-usage-for-Application-Security" />
+              <outline text="8.3.4.12.3. Cortex CLI Application Security command line reference" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-CLI-Application-Security-command-line-reference" />
+              <outline text="8.3.4.12.4. Cortex CLI common command line reference guide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-CLI-common-command-line-reference-guide" />
             </outline>
-            <outline text="8.3.3.13. IDE" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IDE">
-              <outline text="8.3.3.13.1. System requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/System-requirements" />
-              <outline text="8.3.3.13.2. Visual Studio (VS) Code" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Visual-Studio-VS-Code">
+            <outline text="8.3.4.13. IDE" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/IDE">
+              <outline text="8.3.4.13.1. System requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/System-requirements" />
+              <outline text="8.3.4.13.2. Visual Studio (VS) Code and VS Code compatible IDEs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Visual-Studio-VS-Code-and-VS-Code-compatible-IDEs">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
-                  <outline text="Install through VS Code IDE: Access the Activity bar → select Extensions → Cortex Cloud → Install" type="note" />
+                  <outline text="Install through VS Code IDE Access the Activity bar → Extensions → Cortex Cloud → Install" type="note" />
+                  <outline text="Access the Activity bar → Extensions → Cortex Cloud → Install" type="note" />
                 </outline>
-                <outline text="8.3.3.13.2.1. How to use the Cortex Cloud extension in VS Code" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-use-the-Cortex-Cloud-extension-in-VS-Code" />
+                <outline text="8.3.4.13.2.1. How to use the Cortex Cloud extension in VS Code" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-use-the-Cortex-Cloud-extension-in-VS-Code" />
               </outline>
-              <outline text="8.3.3.13.3. JetBrains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/JetBrains">
+              <outline text="8.3.4.13.3. JetBrains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/JetBrains">
                 <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                   <outline text="Settings → Plugins → select the Marketplace tab → search for Prisma Cloud → Install → OK" type="note" />
                   <outline text="Settings → Tools → Cortex Cloud" type="note" />
                 </outline>
-                <outline text="8.3.3.13.3.1. How to use the JetBrains Cortex XSIAM extension" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-use-the-JetBrains-Cortex-XSIAM-extension" />
+                <outline text="8.3.4.13.3.1. How to use the JetBrains Cortex XSIAM extension" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-use-the-JetBrains-Cortex-XSIAM-extension" />
               </outline>
             </outline>
           </outline>
-          <outline text="8.3.4. API documentation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/API-documentation" />
+          <outline text="8.3.5. API documentation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/API-documentation" />
         </outline>
         <outline text="8.4. Attack Surface Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Attack-Surface-Management">
           <outline text="8.4.1. Get started with Attack Surface Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Get-started-with-Attack-Surface-Management">
@@ -1437,8 +1440,8 @@
           <outline text="8.7.6. How to review errors in Cortex Cloud Data Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-review-errors-in-Cortex-Cloud-Data-Security" />
           <outline text="8.7.7. How to configure the scanning settings for supported services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-configure-the-scanning-settings-for-supported-services" />
           <outline text="8.7.8. How to perform advanced Data Security investigations using XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-perform-advanced-Data-Security-investigations-using-XQL" />
-          <outline text="8.7.9. How to onboard Snowflake (Posture)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-onboard-Snowflake-Posture" />
-          <outline text="8.7.10. How to onboard Microsoft 365 (Posture)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-onboard-Microsoft-365-Posture" />
+          <outline text="8.7.9. How to onboard Snowflake" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-onboard-Snowflake" />
+          <outline text="8.7.10. How to onboard Microsoft 365" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-onboard-Microsoft-365" />
           <outline text="8.7.11. How to use information protection labels in Cortex Cloud Data Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/How-to-use-information-protection-labels-in-Cortex-Cloud-Data-Security" />
         </outline>
         <outline text="8.8. Cortex Cloud Identity Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Cloud-Identity-Security">
@@ -1481,6 +1484,7 @@
           </outline>
           <outline text="8.9.7. Automate remediation for the Cortex Advanced Email Security module" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Automate-remediation-for-the-Cortex-Advanced-Email-Security-module" />
           <outline text="8.9.8. Email Command Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Email-Command-Center" />
+          <outline text="8.9.9. Advanced Email Security module security and compliance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Advanced-Email-Security-module-security-and-compliance" />
         </outline>
         <outline text="8.10. Exposure management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Exposure-management">
           <outline text="8.10.1. Exposure Management in Cortex XSIAM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Exposure-Management-in-Cortex-XSIAM" />
@@ -2243,6 +2247,7 @@
           </outline>
         </outline>
         <outline text="16.3. XDM fields for mapping authentication events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/XDM-fields-for-mapping-authentication-events" />
+        <outline text="16.4. Cortex Network Scanner OSS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-NG-SIEM-Documentation/Cortex-Network-Scanner-OSS" />
       </outline>
     </outline>
   </body>

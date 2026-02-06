@@ -697,90 +697,106 @@
             <outline text="5.8.4.9. Best practices" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Best-practices" />
           </outline>
           <outline text="5.8.5. Create an automation rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-an-automation-rule" />
-          <outline text="5.8.6. Context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Context-data">
-            <outline text="5.8.6.1. Issue context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Issue-context-data" />
-            <outline text="5.8.6.2. Case context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Case-context-data" />
-            <outline text="5.8.6.3. Search context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Search-context-data" />
-            <outline text="5.8.6.4. Add context data to an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Add-context-data-to-an-issue" />
-            <outline text="5.8.6.5. Add context data to a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Add-context-data-to-a-case" />
-            <outline text="5.8.6.6. Delete context data from a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Delete-context-data-from-a-case" />
-            <outline text="5.8.6.7. Use context data in a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-context-data-in-a-playbook" />
+          <outline text="5.8.6. Scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Scripts">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="On the Scripts page (Investigation → Response → Automation → Scripts), you can view, edit, and manually create scripts in JavaScript, Python, or PowerShell" type="note" />
+            </outline>
+            <outline text="5.8.6.1. Use existing scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-existing-scripts">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automation → Scripts and in the Scripts Library search for the script you want to use" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.8.6.2. Create a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-a-script">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automation → Scripts and click New Script" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.8.6.3. Change the Docker image in an integration or script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Change-the-Docker-image-in-an-integration-or-script" />
           </outline>
-          <outline text="5.8.7. Lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Lists">
-            <outline text="5.8.7.1. Create a list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-a-list">
+          <outline text="5.8.7. Context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Context-data">
+            <outline text="5.8.7.1. Issue context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Issue-context-data" />
+            <outline text="5.8.7.2. Case context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Case-context-data" />
+            <outline text="5.8.7.3. Search context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Search-context-data" />
+            <outline text="5.8.7.4. Add context data to an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Add-context-data-to-an-issue" />
+            <outline text="5.8.7.5. Add context data to a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Add-context-data-to-a-case" />
+            <outline text="5.8.7.6. Delete context data from a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Delete-context-data-from-a-case" />
+            <outline text="5.8.7.7. Use context data in a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-context-data-in-a-playbook" />
+          </outline>
+          <outline text="5.8.8. Lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Lists">
+            <outline text="5.8.8.1. Create a list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-a-list">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Settings → Configurations → Object Setup → Lists → Add a List" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.7.2. List commands" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/List-commands" />
-            <outline text="5.8.7.3. Use cases: JSON lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-cases-JSON-lists">
+            <outline text="5.8.8.2. List commands" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/List-commands" />
+            <outline text="5.8.8.3. Use cases: JSON lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-cases-JSON-lists">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Playbooks → New Playbook" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.7.4. Transform a list into an array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Transform-a-list-into-an-array">
+            <outline text="5.8.8.4. Transform a list into an array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Transform-a-list-into-an-array">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Playbooks and create or edit a playbook" type="note" />
               </outline>
             </outline>
           </outline>
-          <outline text="5.8.8. Jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Jobs">
-            <outline text="5.8.8.1. Manage jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Manage-jobs" />
-            <outline text="5.8.8.2. Create a time triggered job" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-a-time-triggered-job" />
-            <outline text="5.8.8.3. Create a job triggered by a delta in a feed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-a-job-triggered-by-a-delta-in-a-feed">
+          <outline text="5.8.9. Jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Jobs">
+            <outline text="5.8.9.1. Manage jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Manage-jobs" />
+            <outline text="5.8.9.2. Create a time triggered job" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-a-time-triggered-job" />
+            <outline text="5.8.9.3. Create a job triggered by a delta in a feed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Create-a-job-triggered-by-a-delta-in-a-feed">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Jobs → New Job" type="note" />
               </outline>
             </outline>
           </outline>
-          <outline text="5.8.9. Engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Engines">
-            <outline text="5.8.9.1. What is an engine?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/What-is-an-engine" />
-            <outline text="5.8.9.2. Engine requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Engine-requirements" />
-            <outline text="5.8.9.3. Install an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-an-engine">
-              <outline text="5.8.9.3.1. Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker">
-                <outline text="5.8.9.3.1.1. Install Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-Docker">
-                  <outline text="5.8.9.3.1.1.1. Install Docker distribution for Red Hat on an engine server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-Docker-distribution-for-Red-Hat-on-an-engine-server" />
-                  <outline text="5.8.9.3.1.1.2. Docker image security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker-image-security" />
-                  <outline text="5.8.9.3.1.1.3. Docker FAQs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker-FAQs" />
-                  <outline text="5.8.9.3.1.1.4. Troubleshoot Docker issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-Docker-issues" />
-                  <outline text="5.8.9.3.1.1.5. Configure Docker pull rate limit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-Docker-pull-rate-limit" />
-                  <outline text="5.8.9.3.1.1.6. Change the Docker installation folder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Change-the-Docker-installation-folder" />
+          <outline text="5.8.10. Engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Engines">
+            <outline text="5.8.10.1. What is an engine?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/What-is-an-engine" />
+            <outline text="5.8.10.2. Engine requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Engine-requirements" />
+            <outline text="5.8.10.3. Install an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-an-engine">
+              <outline text="5.8.10.3.1. Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker">
+                <outline text="5.8.10.3.1.1. Install Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-Docker">
+                  <outline text="5.8.10.3.1.1.1. Install Docker distribution for Red Hat on an engine server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-Docker-distribution-for-Red-Hat-on-an-engine-server" />
+                  <outline text="5.8.10.3.1.1.2. Docker image security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker-image-security" />
+                  <outline text="5.8.10.3.1.1.3. Docker FAQs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker-FAQs" />
+                  <outline text="5.8.10.3.1.1.4. Troubleshoot Docker issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-Docker-issues" />
+                  <outline text="5.8.10.3.1.1.5. Configure Docker pull rate limit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-Docker-pull-rate-limit" />
+                  <outline text="5.8.10.3.1.1.6. Change the Docker installation folder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Change-the-Docker-installation-folder" />
                 </outline>
-                <outline text="5.8.9.3.1.2. Docker hardening guide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker-hardening-guide" />
+                <outline text="5.8.10.3.1.2. Docker hardening guide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Docker-hardening-guide" />
               </outline>
-              <outline text="5.8.9.3.2. Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Podman">
-                <outline text="5.8.9.3.2.1. Change the container storage directory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Change-the-container-storage-directory" />
-                <outline text="5.8.9.3.2.2. Install Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-Podman" />
-                <outline text="5.8.9.3.2.3. Migrate From Docker to Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Migrate-From-Docker-to-Podman" />
-                <outline text="5.8.9.3.2.4. Troubleshoot Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-Podman" />
+              <outline text="5.8.10.3.2. Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Podman">
+                <outline text="5.8.10.3.2.1. Change the container storage directory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Change-the-container-storage-directory" />
+                <outline text="5.8.10.3.2.2. Install Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Install-Podman" />
+                <outline text="5.8.10.3.2.3. Migrate From Docker to Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Migrate-From-Docker-to-Podman" />
+                <outline text="5.8.10.3.2.4. Troubleshoot Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-Podman" />
               </outline>
             </outline>
-            <outline text="5.8.9.4. Manage engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Manage-engines">
+            <outline text="5.8.10.4. Manage engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Manage-engines">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="You can manage your engines and load-balancing groups by going to Settings → Configurations → Data Broker → Engines" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.9.5. Upgrade an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Upgrade-an-engine" />
-            <outline text="5.8.9.6. Remove an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Remove-an-engine" />
-            <outline text="5.8.9.7. Configure engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-engines">
-              <outline text="5.8.9.7.1. Configure the engine to use a web proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-the-engine-to-use-a-web-proxy" />
-              <outline text="5.8.9.7.2. Configure the engine to call the server without using a proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-the-engine-to-call-the-server-without-using-a-proxy">
-                <outline text="5.8.9.7.2.1. Use NGINX as a reverse proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-NGINX-as-a-reverse-proxy" />
+            <outline text="5.8.10.5. Upgrade an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Upgrade-an-engine" />
+            <outline text="5.8.10.6. Remove an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Remove-an-engine" />
+            <outline text="5.8.10.7. Configure engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-engines">
+              <outline text="5.8.10.7.1. Configure the engine to use a web proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-the-engine-to-use-a-web-proxy" />
+              <outline text="5.8.10.7.2. Configure the engine to call the server without using a proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-the-engine-to-call-the-server-without-using-a-proxy">
+                <outline text="5.8.10.7.2.1. Use NGINX as a reverse proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-NGINX-as-a-reverse-proxy" />
               </outline>
-              <outline text="5.8.9.7.3. Configure an engine to use custom certificates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-an-engine-to-use-custom-certificates" />
+              <outline text="5.8.10.7.3. Configure an engine to use custom certificates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Configure-an-engine-to-use-custom-certificates" />
             </outline>
-            <outline text="5.8.9.8. Use an engine in an integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-an-engine-in-an-integration" />
-            <outline text="5.8.9.9. Run a script using an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Run-a-script-using-an-engine">
+            <outline text="5.8.10.8. Use an engine in an integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Use-an-engine-in-an-integration" />
+            <outline text="5.8.10.9. Run a script using an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Run-a-script-using-an-engine">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="Investigation &amp; Response → Automation → Scripts" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.9.10. Troubleshoot engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-engines">
+            <outline text="5.8.10.10. Troubleshoot engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-engines">
               <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
                 <outline text="When troubleshooting engines, access the logs from Settings → Configurations → Engines and select the engine from which you want to download the logs" type="note" />
               </outline>
             </outline>
-            <outline text="5.8.9.11. Troubleshoot integrations running on engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-integrations-running-on-engines" />
+            <outline text="5.8.10.11. Troubleshoot integrations running on engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Troubleshoot-integrations-running-on-engines" />
           </outline>
         </outline>
         <outline text="5.9. Response actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Response-actions">
@@ -1719,6 +1735,7 @@
           </outline>
         </outline>
         <outline text="13.3. XDM fields for mapping authentication events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/XDM-fields-for-mapping-authentication-events" />
+        <outline text="13.4. Cortex Network Scanner OSS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Enterprise-Plus-Documentation/Cortex-Network-Scanner-OSS" />
       </outline>
     </outline>
   </body>
