@@ -1,0 +1,803 @@
+<opml version="2.0">
+  <head>
+    <title>Cortex AgentiX Documentation</title>
+  </head>
+  <body>
+    <outline text="Cortex AgentiX Documentation">
+      <outline text="1. Learn about Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Learn-about-Cortex-AgentiX">
+        <outline text="1.1. Get Started with Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Get-Started-with-Cortex-AgentiX" />
+        <outline text="1.2. Understand Cortex AgentiX licenses" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Understand-Cortex-AgentiX-licenses" />
+        <outline text="1.3. Agentic AI in Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agentic-AI-in-Cortex-AgentiX">
+          <outline text="1.3.1. Manage Cortex AgentiX agents" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-Cortex-AgentiX-agents" />
+          <outline text="1.3.2. Cortex AgentiX use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-use-cases" />
+          <outline text="1.3.3. Agentic Assistant security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agentic-Assistant-security" />
+        </outline>
+        <outline text="1.4. Key components and concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Key-components-and-concepts" />
+        <outline text="1.5. Data retention policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Data-retention-policy" />
+        <outline text="1.6. Supported ciphers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Supported-ciphers" />
+        <outline text="1.7. Supported web browsers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Supported-web-browsers" />
+      </outline>
+      <outline text="2. Onboard Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Onboard-Cortex-AgentiX">
+        <outline text="2.1. Plan and prepare your deployment" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Plan-and-prepare-your-deployment" />
+        <outline text="2.2. Onboarding checklist" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Onboarding-checklist" />
+        <outline text="2.3. Activate Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Activate-Cortex-AgentiX">
+          <outline text="2.3.1. Cortex AgentiX supported regions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-supported-regions" />
+          <outline text="2.3.2. Enable access to Palo Alto Networks resources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Enable-access-to-Palo-Alto-Networks-resources" />
+        </outline>
+        <outline text="2.4. Install and configure content" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Install-and-configure-content" />
+        <outline text="2.5. Post-deployment steps" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Post-deployment-steps">
+          <outline text="2.5.1. Post-deployment checklist" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Post-deployment-checklist" />
+          <outline text="2.5.2. Set up users and roles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-up-users-and-roles" />
+          <outline text="2.5.3. Configure server settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-server-settings">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="If the Password Protection (for downloaded files) setting under Settings → Configuration → General → Server Settings is enabled, enter the password 'suspicious' to download the file" type="note" />
+              <outline text="Settings → Configurations → General → Server Settings" type="note" />
+            </outline>
+          </outline>
+          <outline text="2.5.4. Configure security settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-security-settings" />
+          <outline text="2.5.5. Set up an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-up-an-engine">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → Data Broker → Engines → Create New Engine" type="note" />
+            </outline>
+          </outline>
+          <outline text="2.5.6. Log forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Log-forwarding">
+            <outline text="2.5.6.1. Forward logs and data from Cortex AgentiX to external services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Forward-logs-and-data-from-Cortex-AgentiX-to-external-services">
+              <outline text="2.5.6.1.1. Configure external applications for forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-external-applications-for-forwarding">
+                <outline text="2.5.6.1.1.1. Integrate a syslog receiver" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Integrate-a-syslog-receiver" />
+                <outline text="2.5.6.1.1.2. Integrate Slack for outbound notifications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Integrate-Slack-for-outbound-notifications" />
+              </outline>
+              <outline text="2.5.6.1.2. Configure notification forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-notification-forwarding" />
+              <outline text="2.5.6.1.3. Monitor administrative activity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Monitor-administrative-activity" />
+            </outline>
+            <outline text="2.5.6.2. Data and log notification formats" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Data-and-log-notification-formats">
+              <outline text="2.5.6.2.1. Issue notification format" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-notification-format" />
+              <outline text="2.5.6.2.2. Management Audit log notification format" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Management-Audit-log-notification-format" />
+            </outline>
+          </outline>
+        </outline>
+      </outline>
+      <outline text="3. Cortex AgentiX Configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-Configuration">
+        <outline text="3.1. Configure Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-Cortex-AgentiX" />
+        <outline text="3.2. Content configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Content-configuration">
+          <outline text="3.2.1. Configure content using Data Sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-content-using-Data-Sources">
+            <outline text="3.2.1.1. Manage instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-instances" />
+            <outline text="3.2.1.2. Add a new data source or instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-a-new-data-source-or-instance" />
+            <outline text="3.2.1.3. Configure integration permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-integration-permissions">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Configurations → Data Collection → Integration Permissions" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="3.2.2. Marketplace" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Marketplace">
+            <outline text="3.2.2.1. Cortex Marketplace" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-Marketplace">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Configurations → Marketplace) or at Cortex Developer Docs Marketplace" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.2.2.2. Content packs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Content-packs">
+              </outline>
+            <outline text="3.2.2.3. Content Pack Support Types" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Content-Pack-Support-Types" />
+            <outline text="3.2.2.4. Cortex AgentiX content" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-content" />
+            <outline text="3.2.2.5. Manage content packs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-content-packs" />
+            <outline text="3.2.2.6. Marketplace FAQs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Marketplace-FAQs" />
+            <outline text="3.2.2.7. Content changes when upgrading Cortex AgentiX versions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Content-changes-when-upgrading-Cortex-AgentiX-versions" />
+            <outline text="3.2.2.8. Content pack contributions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Content-pack-contributions" />
+          </outline>
+          <outline text="3.2.3. Integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Integrations">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → Marketplace" type="note" />
+            </outline>
+            <outline text="3.2.3.1. Manage API keys" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-API-keys">
+              </outline>
+            <outline text="3.2.3.2. Integration use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Integration-use-cases" />
+            <outline text="3.2.3.3. Add an integration instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-an-integration-instance" />
+            <outline text="3.2.3.4. Fetch issues from an integration instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Fetch-issues-from-an-integration-instance">
+              <outline text="3.2.3.4.1. Map fields to issue types" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Map-fields-to-issue-types">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Configurations → Object Setup → Issues → Classification &amp; Mapping" type="note" />
+                </outline>
+              </outline>
+              <outline text="3.2.3.4.2. Classify events using a classifier for issue types" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Classify-events-using-a-classifier-for-issue-types">
+                </outline>
+            </outline>
+            <outline text="3.2.3.5. Forward Requests to Long-Running Integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Forward-Requests-to-Long-Running-Integrations" />
+            <outline text="3.2.3.6. Manage credentials" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-credentials">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Configurations → Integrations → Credentials → New Credential" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="3.2.4. Troubleshoot Integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshoot-Integrations" />
+          <outline text="3.2.5. Measuring data freshness" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Measuring-data-freshness" />
+          <outline text="3.2.6. Overview of data ingestion metrics" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Overview-of-data-ingestion-metrics" />
+          <outline text="3.2.7. Verify collector connectivity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Verify-collector-connectivity" />
+          <outline text="3.2.8. Creating correlation rules to monitor data ingestion health" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Creating-correlation-rules-to-monitor-data-ingestion-health" />
+        </outline>
+        <outline text="3.3. Configure the Cortex Agentic Assistant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-the-Cortex-Agentic-Assistant">
+          <outline text="3.3.1. Agentic Assistant components and concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agentic-Assistant-components-and-concepts" />
+          <outline text="3.3.2. Agents Hub" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agents-Hub">
+            <outline text="3.3.2.1. Manage actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-actions" />
+            <outline text="3.3.2.2. Register actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Register-actions" />
+            <outline text="3.3.2.3. Manage agents" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-agents" />
+            <outline text="3.3.2.4. Build agents" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Build-agents" />
+            <outline text="3.3.2.5. Expand agent capabilities with MCP integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Expand-agent-capabilities-with-MCP-integrations">
+              </outline>
+          </outline>
+          <outline text="3.3.3. Agentic Assistant role-based access control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agentic-Assistant-role-based-access-control" />
+        </outline>
+        <outline text="3.4. Cortex MCP server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-MCP-server">
+          <outline text="3.4.1. Cortex MCP server overview" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-MCP-server-overview">
+            <outline text="3.4.1.1. Install the Cortex MCP server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Install-the-Cortex-MCP-server" />
+            <outline text="3.4.1.2. Configure the MCP client" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-the-MCP-client">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Developer → Edit Config" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.4.1.3. Use the Cortex MCP server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-the-Cortex-MCP-server" />
+            <outline text="3.4.1.4. Create custom Cortex MCP server tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-custom-Cortex-MCP-server-tools" />
+          </outline>
+        </outline>
+        <outline text="3.5. Users and Roles Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Users-and-Roles-Management">
+          <outline text="3.5.1. Users and roles in Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Users-and-roles-in-Cortex-AgentiX" />
+          <outline text="3.5.2. Roles management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Roles-management">
+            <outline text="3.5.2.1. Role-based permissions in Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Role-based-permissions-in-Cortex-AgentiX">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="In the Cortex AgentiX tenant, you can set permission levels for each role by going to Settings → Configurations → Access Management → Roles and then editing or creating a new role" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.5.2.2. Manage roles in the Cortex AgentiX tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-roles-in-the-Cortex-AgentiX-tenant" />
+          </outline>
+          <outline text="3.5.3. User group management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/User-group-management">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced" type="note" />
+            </outline>
+          </outline>
+          <outline text="3.5.4. User management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/User-management">
+            <outline text="3.5.4.1. Manage users in the Cortex AgentiX tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-users-in-the-Cortex-AgentiX-tenant" />
+            <outline text="3.5.4.2. Manage user scope" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-user-scope" />
+          </outline>
+          <outline text="3.5.5. Manage access to objects" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-access-to-objects">
+            <outline text="3.5.5.1. Manage access to custom dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-access-to-custom-dashboards">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Configure tenant-level settings: An administrator must first establish the sharing framework under Settings → Configurations → Access Management → Objects" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.5.5.2. Manage access to saved queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-access-to-saved-queries">
+              </outline>
+          </outline>
+          <outline text="3.5.6. Set up authentication" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-up-authentication">
+            <outline text="3.5.6.1. Authenticate users through the Customer Support Portal" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Authenticate-users-through-the-Customer-Support-Portal" />
+            <outline text="3.5.6.2. Authenticate users using SSO" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Authenticate-users-using-SSO" />
+            <outline text="3.5.6.3. Set up Okta as the Identity Provider Using SAML 2.0" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-up-Okta-as-the-Identity-Provider-Using-SAML-20" />
+            <outline text="3.5.6.4. Set up Azure AD as the Identity Provider Using SAML 2.0" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-up-Azure-AD-as-the-Identity-Provider-Using-SAML-20" />
+          </outline>
+        </outline>
+        <outline text="3.6. Engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Engines">
+          <outline text="3.6.1. What is an engine?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/What-is-an-engine" />
+          <outline text="3.6.2. Engine requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Engine-requirements" />
+          <outline text="3.6.3. Install an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Install-an-engine">
+            <outline text="3.6.3.1. Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Docker">
+              <outline text="3.6.3.1.1. Install Docker" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Install-Docker">
+                <outline text="3.6.3.1.1.1. Install Docker distribution for Red Hat on an engine server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Install-Docker-distribution-for-Red-Hat-on-an-engine-server" />
+                <outline text="3.6.3.1.1.2. Docker image security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Docker-image-security" />
+                <outline text="3.6.3.1.1.3. Docker FAQs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Docker-FAQs" />
+                <outline text="3.6.3.1.1.4. Troubleshoot Docker issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshoot-Docker-issues" />
+                <outline text="3.6.3.1.1.5. Configure Docker pull rate limit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-Docker-pull-rate-limit" />
+                <outline text="3.6.3.1.1.6. Change the Docker installation folder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Change-the-Docker-installation-folder" />
+              </outline>
+              <outline text="3.6.3.1.2. Docker hardening guide" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Docker-hardening-guide" />
+            </outline>
+            <outline text="3.6.3.2. Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Podman">
+              <outline text="3.6.3.2.1. Change the container storage directory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Change-the-container-storage-directory" />
+              <outline text="3.6.3.2.2. Install Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Install-Podman" />
+              <outline text="3.6.3.2.3. Migrate From Docker to Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Migrate-From-Docker-to-Podman" />
+              <outline text="3.6.3.2.4. Troubleshoot Podman" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshoot-Podman" />
+            </outline>
+          </outline>
+          <outline text="3.6.4. Manage engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-engines">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="You can manage your engines and load-balancing groups by going to Settings → Configurations → Engines" type="note" />
+            </outline>
+          </outline>
+          <outline text="3.6.5. Upgrade an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Upgrade-an-engine" />
+          <outline text="3.6.6. Remove an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Remove-an-engine" />
+          <outline text="3.6.7. Configure engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-engines">
+            <outline text="3.6.7.1. Configure the engine to use a web proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-the-engine-to-use-a-web-proxy" />
+            <outline text="3.6.7.2. Configure the engine to call the server without using a proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-the-engine-to-call-the-server-without-using-a-proxy">
+              <outline text="3.6.7.2.1. Use NGINX as a reverse proxy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-NGINX-as-a-reverse-proxy" />
+            </outline>
+            <outline text="3.6.7.3. Configure an engine to use custom certificates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-an-engine-to-use-custom-certificates" />
+          </outline>
+          <outline text="3.6.8. Use an engine in an integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-an-engine-in-an-integration" />
+          <outline text="3.6.9. Run a script using an engine" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Run-a-script-using-an-engine">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Investigation &amp; Response → Automation → Scripts" type="note" />
+            </outline>
+          </outline>
+          <outline text="3.6.10. Troubleshoot engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshoot-engines">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="When troubleshooting engines, access the logs from Settings → Configurations → Engines and select the engine from which you want to download the logs" type="note" />
+            </outline>
+          </outline>
+          <outline text="3.6.11. Troubleshoot integrations running on engines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshoot-integrations-running-on-engines" />
+        </outline>
+        <outline text="3.7. Cases and issues configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cases-and-issues-configuration">
+          <outline text="3.7.1. Case and issue lifecycle" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-and-issue-lifecycle" />
+          <outline text="3.7.2. Customize your cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Customize-your-cases">
+            <outline text="3.7.2.1. External integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/External-integrations" />
+            <outline text="3.7.2.2. Create a case domain" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-case-domain">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="You can see all domains under Configurations → Object Setup → Cases → Domains" type="note" />
+                <outline text="Settings → Configurations → Object Setup → Cases → Domains" type="note" />
+                <outline text="Settings → Configurations → Access Management → User Groups" type="note" />
+                <outline text="Settings → Configurations → Access Management → Users" type="note" />
+                <outline text="To enable access to the domain for an API key, got to Settings → Configurations → Integrations → API Keys" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.7.2.3. Create a starring configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-starring-configuration" />
+            <outline text="3.7.2.4. Create custom case statuses and resolution reasons" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-custom-case-statuses-and-resolution-reasons">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Configurations → Object Setup → Cases → Properties" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="3.7.3. Customize issue fields and layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Customize-issue-fields-and-layouts">
+            <outline text="3.7.3.1. Issue fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-fields">
+              <outline text="3.7.3.1.1. Issue field types" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-field-types" />
+              <outline text="3.7.3.1.2. Create custom issue fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-custom-issue-fields">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Configurations → Object Setup → Issues → Fields → New Field" type="note" />
+                </outline>
+                <outline text="3.7.3.1.2.1. Create a grid field for an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-grid-field-for-an-issue">
+                  </outline>
+                <outline text="3.7.3.1.2.2. Issue field triggered scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-field-triggered-scripts" />
+                <outline text="3.7.3.1.2.3. Issue timer fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-timer-fields">
+                  <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                    <outline text="Settings → Configurations → General → Server Settings → Issues and Enable Timer Field" type="note" />
+                  </outline>
+                  <outline text="3.7.3.1.2.3.1. Configure issue timer fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-issue-timer-fields" />
+                  <outline text="3.7.3.1.2.3.2. Configure a playbook to run timers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-a-playbook-to-run-timers" />
+                  <outline text="3.7.3.1.2.3.3. Automate changes to issue fields using timer scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Automate-changes-to-issue-fields-using-timer-scripts" />
+                  <outline text="3.7.3.1.2.3.4. Use issue timer field commands manually in the CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-issue-timer-field-commands-manually-in-the-CLI" />
+                </outline>
+              </outline>
+            </outline>
+            <outline text="3.7.3.2. Issue layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-layouts">
+              <outline text="3.7.3.2.1. Create custom issue layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-custom-issue-layouts" />
+              <outline text="3.7.3.2.2. Add a custom widget to an issue layout" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-a-custom-widget-to-an-issue-layout">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Investigation &amp; Response → Automation → Scripts and upload the following script: Expand script commonfields: id: ee3b9604-324b-4ab5-8164-15ddf6e428ab version: 49 name: IndicatorWidgetBar script: |- # Constants HIGH = 3 SUSPICIOUS = 2 LOW = 1 NONE = 0 indicators = [] scores = {HIGH: 0, SUSPICIOUS: 0, LOW: 0, NONE: 0} incident_id = demisto" type="note" />
+                  <outline text="Investigation &amp; Response → Automation → Scripts and upload the following script" type="note" />
+                  <outline text="Settings → Configurations → Object Setup → Issues → Layouts" type="note" />
+                </outline>
+              </outline>
+              <outline text="3.7.3.2.3. Create rules for issue layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-rules-for-issue-layouts">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Configurations → Object Setup → Issues → Layout Rules → New Rule" type="note" />
+                </outline>
+              </outline>
+            </outline>
+          </outline>
+          <outline text="3.7.4. Customize case fields and layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Customize-case-fields-and-layouts">
+            <outline text="3.7.4.1. Case fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-fields">
+              <outline text="3.7.4.1.1. Case field types" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-field-types" />
+              <outline text="3.7.4.1.2. Create custom case fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-custom-case-fields">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Configurations → Object Setup → Cases → Fields → New Field" type="note" />
+                </outline>
+                <outline text="3.7.4.1.2.1. Create a grid field for a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-grid-field-for-a-case">
+                  </outline>
+                <outline text="3.7.4.1.2.2. Update case fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Update-case-fields" />
+              </outline>
+              <outline text="3.7.4.1.3. Create case timers and SLAs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-case-timers-and-SLAs">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Configurations → Object Setup → Cases and open the Fields tab" type="note" />
+                </outline>
+              </outline>
+              <outline text="3.7.4.1.4. Update case timer and SLA fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Update-case-timer-and-SLA-fields" />
+            </outline>
+            <outline text="3.7.4.2. Case layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-layouts">
+              <outline text="3.7.4.2.1. Create custom case layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-custom-case-layouts" />
+              <outline text="3.7.4.2.2. Create rules for case layouts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-rules-for-case-layouts">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Settings → Configurations → Object Setup → Cases → Layout Rules → New Rule" type="note" />
+                </outline>
+              </outline>
+            </outline>
+          </outline>
+          <outline text="3.7.5. Issue syncing" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-syncing">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="You can find a sync profile ID under Settings → Configurations → Object Setup → Issues → Sync Profiles" type="note" />
+            </outline>
+            <outline text="3.7.5.1. Create a sync profile" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-sync-profile" />
+          </outline>
+          <outline text="3.7.6. What's a correlation rule?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/What-s-a-correlation-rule">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="After you configure your correlation rules, you can manage them in Threat Management → Detection Rules → Correlations, and view and analyze the generated issues in Cases and the Issues Table" type="note" />
+            </outline>
+            <outline text="3.7.6.1. Correlation rule details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Correlation-rule-details">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="If you are assigned a role that enables Investigation → Rules privileges, you can manage all user-defined Correlation Rules from Threat Management → Detection Rules → Correlations" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.7.6.2. Create a correlation rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-correlation-rule">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="You can create a new correlation rule from either the Threat Management → Detection Rules → Correlation Rules page or when building a query in XQL Search" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.7.6.3. Manage correlation rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-correlation-rules" />
+          </outline>
+          <outline text="3.7.7. Manage external dynamic lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-external-dynamic-lists" />
+        </outline>
+        <outline text="3.8. Automations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Automations">
+          <outline text="3.8.1. Automation in Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Automation-in-Cortex-AgentiX" />
+          <outline text="3.8.2. Quick Actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Quick-Actions" />
+          <outline text="3.8.3. Automation Exclusion Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Automation-Exclusion-Center">
+            <outline text="3.8.3.1. Manage automation exclusion policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-automation-exclusion-policies" />
+          </outline>
+          <outline text="3.8.4. Playbooks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Playbooks">
+            <outline text="3.8.4.1. Playbooks overview" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Playbooks-overview" />
+            <outline text="3.8.4.2. Playbook development checklist" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Playbook-development-checklist" />
+            <outline text="3.8.4.3. Plan your playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Plan-your-playbook" />
+            <outline text="3.8.4.4. Manage playbooks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-playbooks" />
+            <outline text="3.8.4.5. Build your playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Build-your-playbook">
+              <outline text="3.8.4.5.1. Task 1. Choose from existing playbooks or create your own" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Task-1-Choose-from-existing-playbooks-or-create-your-own">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="the Investigation &amp; Response → Automation → Playbooks page to find an existing playbook, customize it, or create a playbook" type="note" />
+                </outline>
+              </outline>
+              <outline text="3.8.4.5.2. Task 2. Configure playbook settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Task-2-Configure-playbook-settings" />
+              <outline text="3.8.4.5.3. Task 3. Add objects from the Task Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Task-3-Add-objects-from-the-Task-Library">
+                <outline text="3.8.4.5.3.1. Add Quick Actions, commands, and scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-Quick-Actions-commands-and-scripts" />
+                <outline text="3.8.4.5.3.2. Add sub-playbooks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-sub-playbooks" />
+                <outline text="3.8.4.5.3.3. Add AI prompt tasks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-AI-prompt-tasks" />
+                <outline text="3.8.4.5.3.4. Add manual tasks and blank tasks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-manual-tasks-and-blank-tasks">
+                  <outline text="3.8.4.5.3.4.1. Create a standard task" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-standard-task" />
+                  <outline text="3.8.4.5.3.4.2. Create a conditional task" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-conditional-task" />
+                  <outline text="3.8.4.5.3.4.3. Create a communication task" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-communication-task" />
+                </outline>
+                <outline text="3.8.4.5.3.5. Create a section header" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-section-header" />
+                <outline text="3.8.4.5.3.6. Configure script error handling in a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-script-error-handling-in-a-playbook" />
+              </outline>
+              <outline text="3.8.4.5.4. Task 4. Add custom playbook features" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Task-4-Add-custom-playbook-features" />
+              <outline text="3.8.4.5.5. Task 5. Test and debug the playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Task-5-Test-and-debug-the-playbook" />
+              <outline text="3.8.4.5.6. Task 6. Manage playbook content" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Task-6-Manage-playbook-content" />
+            </outline>
+            <outline text="3.8.4.6. Customize your playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Customize-your-playbook">
+              <outline text="3.8.4.6.1. Configure a sub-playbook loop" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-a-sub-playbook-loop" />
+              <outline text="3.8.4.6.2. Filter and transform data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Filter-and-transform-data">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Investigation &amp; Response → Automation → Scripts → New Script" type="note" />
+                </outline>
+                <outline text="3.8.4.6.2.1. Filter considerations, categories, and built-in filters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Filter-considerations-categories-and-built-in-filters" />
+                <outline text="3.8.4.6.2.2. Transformer considerations, categories, and built-in transformers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Transformer-considerations-categories-and-built-in-transformers" />
+              </outline>
+              <outline text="3.8.4.6.3. Extract indicators" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Extract-indicators" />
+              <outline text="3.8.4.6.4. Extend context" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Extend-context" />
+              <outline text="3.8.4.6.5. Update issue fields with playbook tasks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Update-issue-fields-with-playbook-tasks" />
+              <outline text="3.8.4.6.6. Playbook polling" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Playbook-polling" />
+            </outline>
+            <outline text="3.8.4.7. Test your playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Test-your-playbook">
+              <outline text="3.8.4.7.1. Troubleshoot playbook performance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshoot-playbook-performance" />
+            </outline>
+            <outline text="3.8.4.8. Manage playbook content" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-playbook-content">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automations → Playbooks" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.8.4.9. Best practices" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Best-practices" />
+          </outline>
+          <outline text="3.8.5. Create an automation rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-an-automation-rule" />
+          <outline text="3.8.6. AI Prompts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/AI-Prompts">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="On the AI Prompts page (Investigation → Response → Automation → AI Prompts), you can view, edit, and manually create prompts" type="note" />
+            </outline>
+            <outline text="3.8.6.1. AI prompts role-based access control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/AI-prompts-role-based-access-control" />
+            <outline text="3.8.6.2. Use existing prompts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-existing-prompts">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automation → AI Prompts and in the Prompts Library search for the prompt you want to use" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.8.6.3. Create a prompt" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-prompt">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automation → AI Prompts and click + New Prompt" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="3.8.7. Scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Scripts">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="On the Scripts page (Investigation → Response → Automation → Scripts), you can view, edit, and create scripts in JavaScript, Python, or PowerShell" type="note" />
+            </outline>
+            <outline text="3.8.7.1. Use existing scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-existing-scripts">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Automation → Scripts and in the Scripts Library search for the script you want to use" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.8.7.2. Create a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-script" />
+            <outline text="3.8.7.3. Use the Automation Engineer agent to accelerate script development and deployment" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-the-Automation-Engineer-agent-to-accelerate-script-development-and-deployment" />
+            <outline text="3.8.7.4. Change the Docker image in an integration or script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Change-the-Docker-image-in-an-integration-or-script" />
+          </outline>
+          <outline text="3.8.8. Context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Context-data">
+            <outline text="3.8.8.1. Issue context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-context-data" />
+            <outline text="3.8.8.2. Case context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-context-data" />
+            <outline text="3.8.8.3. Search context data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Search-context-data" />
+            <outline text="3.8.8.4. Add context data to an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-context-data-to-an-issue" />
+            <outline text="3.8.8.5. Add context data to a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-context-data-to-a-case" />
+            <outline text="3.8.8.6. Delete context data from a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Delete-context-data-from-a-case" />
+            <outline text="3.8.8.7. Use context data in a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-context-data-in-a-playbook" />
+          </outline>
+        </outline>
+        <outline text="3.9. Jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Jobs">
+          <outline text="3.9.1. Manage jobs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-jobs" />
+          <outline text="3.9.2. Create a time triggered job" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-time-triggered-job" />
+          <outline text="3.9.3. Create a job triggered by a delta in a feed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-job-triggered-by-a-delta-in-a-feed">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Investigation &amp; Response → Automation → Jobs → New Job" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="3.10. Lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Lists">
+          <outline text="3.10.1. Create a list" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-list" />
+          <outline text="3.10.2. List commands" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/List-commands" />
+          <outline text="3.10.3. Use cases: JSON lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-cases-JSON-lists">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → Object Setup → Lists → Add a List" type="note" />
+              <outline text="Investigation &amp; Response → Automation → Playbooks → New Playbook" type="note" />
+            </outline>
+          </outline>
+          <outline text="3.10.4. Transform a list into an array" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Transform-a-list-into-an-array">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Investigation &amp; Response → Automation → Playbooks and create or edit a playbook" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="3.11. Data management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Data-management">
+          <outline text="3.11.1. Dataset management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Dataset-management">
+            <outline text="3.11.1.1. What are datasets?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/What-are-datasets" />
+            <outline text="3.11.1.2. Lookup datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Lookup-datasets">
+              <outline text="3.11.1.2.1. Import a lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Import-a-lookup-dataset" />
+              <outline text="3.11.1.2.2. Download JSON file of lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Download-JSON-file-of-lookup-dataset">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="Open the Settings → Configurations → Data Management → Dataset Management page" type="note" />
+                </outline>
+              </outline>
+              <outline text="3.11.1.2.3. Set time to live for lookup datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-time-to-live-for-lookup-datasets">
+                </outline>
+            </outline>
+            <outline text="3.11.1.3. Monitor datasets and dataset views activity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Monitor-datasets-and-dataset-views-activity" />
+          </outline>
+          <outline text="3.11.2. What are Data Model Rules?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/What-are-Data-Model-Rules">
+            <outline text="3.11.2.1. Data Model Rules editor views" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Data-Model-Rules-editor-views" />
+            <outline text="3.11.2.2. Data Model Rules file structure and syntax" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Data-Model-Rules-file-structure-and-syntax" />
+            <outline text="3.11.2.3. MODEL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/MODEL">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="The Settings → Configurations → XQL Configuration → Case Sensitivity (case_sensitive) setting can overwrite this case_sensitive configuration for all fields in the application except for BIOCs, which will remain case insensitive no matter what this setting is set to" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.11.2.4. RULE" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/RULE" />
+            <outline text="3.11.2.5. Field structure" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Field-structure" />
+            <outline text="3.11.2.6. How to map authentication story events?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/How-to-map-authentication-story-events" />
+            <outline text="3.11.2.7. Create Data Model Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-Data-Model-Rules">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="In Cortex AgentiX, select Settings → Configurations → Data Management → Data Model Rules" type="note" />
+              </outline>
+            </outline>
+            <outline text="3.11.2.8. Troubleshooting Data Model Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshooting-Data-Model-Rules" />
+            <outline text="3.11.2.9. Using data enrichment" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Using-data-enrichment" />
+            <outline text="3.11.2.10. Data Model Rules notifications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Data-Model-Rules-notifications" />
+            <outline text="3.11.2.11. Monitor Data Model Rules activity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Monitor-Data-Model-Rules-activity" />
+          </outline>
+          <outline text="3.11.3. Manage Event Forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-Event-Forwarding">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Under Settings → Configurations → Data Management → Event Forwarding, activate one or more of the following: Enable GB Event Forwarding" type="note" />
+              <outline text="Under Settings → Configurations → Data Management → Event Forwarding, activate one or more of the following" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="3.12. Dashboards and Reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Dashboards-and-Reports">
+          <outline text="3.12.1. About dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/About-dashboards">
+            <outline text="3.12.1.1. Command Center dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Command-Center-dashboards">
+              <outline text="3.12.1.1.1. AgentiX Command Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/AgentiX-Command-Center" />
+            </outline>
+            <outline text="3.12.1.2. Predefined dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Predefined-dashboards" />
+          </outline>
+          <outline text="3.12.2. Reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Reports">
+            <outline text="3.12.2.1. Report templates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Report-templates" />
+            <outline text="3.12.2.2. Run or schedule reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Run-or-schedule-reports">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Under Settings → Configurations → General → Notifications, click + Add Forwarding Configuration" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="3.12.3. Build custom dashboards and reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Build-custom-dashboards-and-reports">
+            <outline text="3.12.3.1. Build a custom dashboard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Build-a-custom-dashboard" />
+            <outline text="3.12.3.2. Manage your Widget Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-your-Widget-Library" />
+          </outline>
+          <outline text="3.12.4. Fine-tune dashboards and reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Fine-tune-dashboards-and-reports">
+            <outline text="3.12.4.1. Create a custom widget using a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-custom-widget-using-a-script">
+              <outline text="3.12.4.1.1. Script-based widget examples" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Script-based-widget-examples" />
+            </outline>
+            <outline text="3.12.4.2. Create a text widget" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-text-widget" />
+            <outline text="3.12.4.3. Create custom XQL widgets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-custom-XQL-widgets">
+              <outline text="3.12.4.3.1. Configure filters and inputs for custom XQL widgets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-filters-and-inputs-for-custom-XQL-widgets" />
+            </outline>
+            <outline text="3.12.4.4. Configure dashboard drilldowns" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-dashboard-drilldowns">
+              <outline text="3.12.4.4.1. Variables in drilldowns" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Variables-in-drilldowns" />
+            </outline>
+          </outline>
+        </outline>
+      </outline>
+      <outline text="4. Investigation and Response" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigation-and-Response">
+        <outline text="4.1. Overview of cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Overview-of-cases">
+          <outline text="4.1.1. What are cases?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/What-are-cases" />
+          <outline text="4.1.2. Resolving cases with AI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Resolving-cases-with-AI" />
+          <outline text="4.1.3. Case lifecycle" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-lifecycle" />
+          <outline text="4.1.4. Case thresholds" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-thresholds" />
+          <outline text="4.1.5. Case scope and impact" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-scope-and-impact" />
+          <outline text="4.1.6. Case and issue domains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-and-issue-domains" />
+        </outline>
+        <outline text="4.2. Case concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-concepts">
+          <outline text="4.2.1. Issues, findings, and events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issues-findings-and-events">
+            <outline text="4.2.1.1. Issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issues" />
+            <outline text="4.2.1.2. Findings and events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Findings-and-events" />
+          </outline>
+          <outline text="4.2.2. Case grouping" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-grouping" />
+          <outline text="4.2.3. Case scoring" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-scoring" />
+          <outline text="4.2.4. Case starring" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-starring">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="You can manage all starring configurations under Case &amp; Issues → Case Configuration → Starred Issues" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.2.5. SLAs and tracking" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/SLAs-and-tracking" />
+        </outline>
+        <outline text="4.3. Analyze and resolve cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Analyze-and-resolve-cases">
+          <outline text="4.3.1. Review all cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Review-all-cases" />
+          <outline text="4.3.2. Start case analysis" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Start-case-analysis">
+            <outline text="4.3.2.1. Agentic Assistant- Case Investigation agent" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agentic-Assistant--Case-Investigation-agent" />
+          </outline>
+          <outline text="4.3.3. Establish case context" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Establish-case-context">
+            <outline text="4.3.3.1. AI-generated case summaries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/AI-generated-case-summaries">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Configurations → General → Server Settings → AI Configuration and enable the following settings" type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.3.2. Assess case severity and score" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Assess-case-severity-and-score" />
+            <outline text="4.3.3.3. Update case attributes" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Update-case-attributes" />
+          </outline>
+          <outline text="4.3.4. Analyze case details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Analyze-case-details">
+            <outline text="4.3.4.1. Grouping graph" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Grouping-graph" />
+            <outline text="4.3.4.2. Evidence" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Evidence" />
+            <outline text="4.3.4.3. Issue feed" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-feed" />
+            <outline text="4.3.4.4. Associated assets and artifacts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Associated-assets-and-artifacts" />
+            <outline text="4.3.4.5. MITRE ATT&amp;CK tactics and techniques" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/MITRE-ATTCK-tactics-and-techniques" />
+            <outline text="4.3.4.6. Detailed View" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Detailed-View" />
+          </outline>
+          <outline text="4.3.5. Resolve the case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Resolve-the-case">
+            <outline text="4.3.5.1. Resolution Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Resolution-Center" />
+            <outline text="4.3.5.2. Collaborative notes and comments" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Collaborative-notes-and-comments" />
+            <outline text="4.3.5.3. Resolve a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Resolve-a-case" />
+            <outline text="4.3.5.4. Resolution reasons for cases and issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Resolution-reasons-for-cases-and-issues" />
+          </outline>
+          <outline text="4.3.6. Use Cortex Agentic Assistant chat in an investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-Cortex-Agentic-Assistant-chat-in-an-investigation">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → General → Server" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.3.7. Create a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-case">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To create a case manually, you must have View/Edit permission for Cases and Issues selected under Settings → Configurations → Access Management → Roles → Components → Cases &amp; Issues" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.4. Investigate issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigate-issues">
+          <outline text="4.4.1. Overview of the Issues page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Overview-of-the-Issues-page" />
+          <outline text="4.4.2. Issue card" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-card" />
+          <outline text="4.4.3. Link or unlink issues from a case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Link-or-unlink-issues-from-a-case" />
+          <outline text="4.4.4. Run an automation on an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Run-an-automation-on-an-issue" />
+          <outline text="4.4.5. Use the War Room in an investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-the-War-Room-in-an-investigation">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Investigation &amp; Response → Automation → Playground" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.4.6. Use the Work Plan in an investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-the-Work-Plan-in-an-investigation" />
+          <outline text="4.4.7. Manage synced tickets in issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-synced-tickets-in-issues">
+            </outline>
+          <outline text="4.4.8. Issue investigation actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-investigation-actions">
+            <outline text="4.4.8.1. Copy issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Copy-issues" />
+            <outline text="4.4.8.2. Investigate contributing events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigate-contributing-events" />
+            <outline text="4.4.8.3. Export issue details to a file" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Export-issue-details-to-a-file" />
+            <outline text="4.4.8.4. Exclude an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Exclude-an-issue" />
+            <outline text="4.4.8.5. Query case and issue data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Query-case-and-issue-data">
+              </outline>
+            <outline text="4.4.8.6. Run indicator extraction in the CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Run-indicator-extraction-in-the-CLI" />
+            <outline text="4.4.8.7. Update issue fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Update-issue-fields" />
+            <outline text="4.4.8.8. Use issue timer field commands manually in the CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Use-issue-timer-field-commands-manually-in-the-CLI" />
+            <outline text="4.4.8.9. Close an issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Close-an-issue" />
+          </outline>
+        </outline>
+        <outline text="4.5. Investigate artifacts and assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigate-artifacts-and-assets">
+          <outline text="4.5.1. Investigate an IP address" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigate-an-IP-address" />
+          <outline text="4.5.2. Investigate a file and process hash" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigate-a-file-and-process-hash">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → Integrations → Threat Intelligence" type="note" />
+            </outline>
+          </outline>
+        </outline>
+      </outline>
+      <outline text="5. Threat Intel Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Threat-Intel-Management">
+        <outline text="5.1. Get started with Threat Intel Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Get-started-with-Threat-Intel-Management">
+          <outline text="5.1.1. What is Threat Intel Management?" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/What-is-Threat-Intel-Management" />
+          <outline text="5.1.2. Threat Intel Management use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Threat-Intel-Management-use-cases" />
+          <outline text="5.1.3. Roles and responsibilities in Threat Intel Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Roles-and-responsibilities-in-Threat-Intel-Management" />
+          <outline text="5.1.4. Indicator concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-concepts" />
+          <outline text="5.1.5. Indicator lifecycle" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-lifecycle" />
+        </outline>
+        <outline text="5.2. Indicator configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-configuration">
+          <outline text="5.2.1. Customize indicator fields and types" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Customize-indicator-fields-and-types">
+            <outline text="5.2.1.1. Create an indicator type" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-an-indicator-type">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Configurations → Object Setup → Indicators → Types" type="note" />
+              </outline>
+              <outline text="5.2.1.1.1. Indicator type profile" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-type-profile" />
+              <outline text="5.2.1.1.2. File indicators" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/File-indicators">
+                </outline>
+              <outline text="5.2.1.1.3. Formatting scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Formatting-scripts" />
+              <outline text="5.2.1.1.4. Enhancement scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Enhancement-scripts" />
+              <outline text="5.2.1.1.5. Reputation scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Reputation-scripts" />
+              <outline text="5.2.1.1.6. Reputation commands" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Reputation-commands" />
+              <outline text="5.2.1.1.7. Map custom indicator fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Map-custom-indicator-fields">
+                </outline>
+            </outline>
+            <outline text="5.2.1.2. Create an indicator field" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-an-indicator-field">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Configurations → Object Setup → Indicators → Fields → New Field" type="note" />
+              </outline>
+              <outline text="5.2.1.2.1. Indicator field structure" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-field-structure" />
+              <outline text="5.2.1.2.2. Indicator field trigger scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-field-trigger-scripts" />
+            </outline>
+          </outline>
+          <outline text="5.2.2. Indicator classification and mapping" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-classification-and-mapping" />
+          <outline text="5.2.3. Indicator extraction" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-extraction">
+            <outline text="5.2.3.1. Set the indicator extraction mode for a playbook task" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-the-indicator-extraction-mode-for-a-playbook-task" />
+            <outline text="5.2.3.2. Disable indicator extraction for scripts or integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Disable-indicator-extraction-for-scripts-or-integrations" />
+          </outline>
+          <outline text="5.2.4. Configure indicator expiration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-indicator-expiration" />
+          <outline text="5.2.5. Configure Threat Intelligence feed integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-Threat-Intelligence-feed-integrations" />
+          <outline text="5.2.6. Exclude indicators from enrichment" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Exclude-indicators-from-enrichment" />
+          <outline text="5.2.7. Generate issues from indicator rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Generate-issues-from-indicator-rules">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Indicators should be present in the Threat Intelligence database (Threat Management → Threat Intelligence → Indicators) before creating detection rules" type="note" />
+            </outline>
+          </outline>
+          <outline text="5.2.8. Export indicators" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Export-indicators" />
+        </outline>
+        <outline text="5.3. Indicator management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-management" />
+        <outline text="5.4. Indicator investigation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-investigation">
+          <outline text="5.4.1. Indicator verdict" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Indicator-verdict" />
+          <outline text="5.4.2. Extract and enrich an indicator" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Extract-and-enrich-an-indicator" />
+          <outline text="5.4.3. Expire an indicator" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Expire-an-indicator" />
+          <outline text="5.4.4. Manage indicator relationships" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-indicator-relationships" />
+          <outline text="5.4.5. Delete and exclude indicators" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Delete-and-exclude-indicators" />
+        </outline>
+      </outline>
+      <outline text="6. Cortex AgentiX XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-XQL">
+        <outline text="6.1. Get started with XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Get-started-with-XQL">
+          <outline text="6.1.1. XQL language features" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/XQL-language-features">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="You submit XQL queries to Cortex AgentiX using the Investigation &amp; Response → Search → Query Builder user interface" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.1.2. XQL Language Structure" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/XQL-Language-Structure">
+            <outline text="6.1.2.1. Adding comments in queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Adding-comments-in-queries" />
+          </outline>
+          <outline text="6.1.3. Supported operators" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Supported-operators" />
+          <outline text="6.1.4. Datasets and presets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Datasets-and-presets" />
+          <outline text="6.1.5. About examples" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/About-examples">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Investigation &amp; Response → Search → Query Builder → XQL → Query Library" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.1.6. JSON functions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/JSON-functions" />
+          <outline text="6.1.7. How to filter for empty values in the results table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/How-to-filter-for-empty-values-in-the-results-table" />
+          <outline text="6.1.8. Understanding string manipulation in XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Understanding-string-manipulation-in-XQL" />
+        </outline>
+        <outline text="6.2. Build XQL queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Build-XQL-queries">
+          <outline text="6.2.1. About the Query Builder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/About-the-Query-Builder" />
+          <outline text="6.2.2. How to build XQL queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/How-to-build-XQL-queries">
+            <outline text="6.2.2.1. Get started with XQL queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Get-started-with-XQL-queries" />
+            <outline text="6.2.2.2. Useful XQL user interface features" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Useful-XQL-user-interface-features" />
+            <outline text="6.2.2.3. XQL Query best practices" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/XQL-Query-best-practices" />
+            <outline text="6.2.2.4. Expected results when querying fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Expected-results-when-querying-fields" />
+            <outline text="6.2.2.5. Create XQL query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-XQL-query" />
+            <outline text="6.2.2.6. Review XQL query results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Review-XQL-query-results" />
+            <outline text="6.2.2.7. Translate to XQL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Translate-to-XQL" />
+            <outline text="6.2.2.8. Graph query results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Graph-query-results" />
+          </outline>
+          <outline text="6.2.3. Query Builder templates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Query-Builder-templates">
+            <outline text="6.2.3.1. Get started with Query Builder templates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Get-started-with-Query-Builder-templates" />
+            <outline text="6.2.3.2. Considerations for using Query Builder templates" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Considerations-for-using-Query-Builder-templates" />
+            <outline text="6.2.3.3. Create a query from a template" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-a-query-from-a-template" />
+            <outline text="6.2.3.4. Run a free text query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Run-a-free-text-query" />
+            <outline text="6.2.3.5. Query Builder template examples" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Query-Builder-template-examples">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Search → Query Builder" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="6.2.4. Overview of the Query Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Overview-of-the-Query-Center">
+            <outline text="6.2.4.1. Edit and run queries in Query Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Edit-and-run-queries-in-Query-Center">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Investigation &amp; Response → Search → Query Center → Query History" type="note" />
+              </outline>
+              <outline text="6.2.4.1.1. Query Center reference information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Query-Center-reference-information" />
+            </outline>
+          </outline>
+          <outline text="6.2.5. Manage scheduled queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-scheduled-queries">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Investigation &amp; Response → Search → Scheduled Queries" type="note" />
+            </outline>
+            <outline text="6.2.5.1. Scheduled Queries reference information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Scheduled-Queries-reference-information" />
+          </outline>
+          <outline text="6.2.6. Manage your personal query library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-your-personal-query-library">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="From the Query Builder Select Investigation &amp; Response → Search → Query Builder → XQL" type="note" />
+              <outline text="Investigation &amp; Response → Search → Query Builder → XQL" type="note" />
+              <outline text="Investigation &amp; Response → Search → Query Center" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.2.7. Legacy Query Builder" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Legacy-Query-Builder">
+            <outline text="6.2.7.1. Create authentication query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-authentication-query">
+              </outline>
+            <outline text="6.2.7.2. Create event log query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-event-log-query">
+              </outline>
+            <outline text="6.2.7.3. Create file query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-file-query">
+              </outline>
+            <outline text="6.2.7.4. Create image load query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-image-load-query">
+              </outline>
+            <outline text="6.2.7.5. Create network connections query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-network-connections-query">
+              </outline>
+            <outline text="6.2.7.6. Create network query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-network-query" />
+            <outline text="6.2.7.7. Create process query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-process-query">
+              </outline>
+            <outline text="6.2.7.8. Create registry query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Create-registry-query" />
+            <outline text="6.2.7.9. Query across all entities" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Query-across-all-entities">
+              </outline>
+          </outline>
+        </outline>
+        <outline text="6.3. Stages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Stages" />
+        <outline text="6.4. Functions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Functions" />
+      </outline>
+      <outline text="7. Troubleshoot" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Troubleshoot">
+        <outline text="7.1. About health issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/About-health-issues">
+          <outline text="7.1.1. Monitor data ingestion health" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Monitor-data-ingestion-health" />
+          <outline text="7.1.2. Monitor correlation rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Monitor-correlation-rules" />
+          <outline text="7.1.3. Investigate and resolve health issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigate-and-resolve-health-issues" />
+        </outline>
+        <outline text="7.2. Log forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Log-forwarding">
+          <outline text="7.2.1. Forward logs from Cortex AgentiX to external services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Forward-logs-from-Cortex-AgentiX-to-external-services">
+            <outline text="7.2.1.1. Configure external applications for forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-external-applications-for-forwarding">
+              <outline text="7.2.1.1.1. Integrate a syslog receiver" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Integrate-a-syslog-receiver" />
+              <outline text="7.2.1.1.2. Integrate Slack for outbound notifications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Integrate-Slack-for-outbound-notifications" />
+            </outline>
+            <outline text="7.2.1.2. Configure notification forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-notification-forwarding" />
+            <outline text="7.2.1.3. Monitor administrative activity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Monitor-administrative-activity" />
+          </outline>
+          <outline text="7.2.2. Data and log notification formats" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Data-and-log-notification-formats">
+            <outline text="7.2.2.1. Issue notification format" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issue-notification-format" />
+            <outline text="7.2.2.2. Management Audit log notification format" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Management-Audit-log-notification-format" />
+          </outline>
+        </outline>
+        <outline text="7.3. In-product support case creation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/In-product-support-case-creation" />
+      </outline>
+      <outline text="8. Reference" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Reference">
+        <outline text="8.1. Cortex AgentiX API" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-API">
+          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+            <outline text="Settings → Configurations → Integrations → API Keys" type="note" />
+          </outline>
+        </outline>
+        <outline text="8.2. XDM fields for mapping authentication events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/XDM-fields-for-mapping-authentication-events" />
+        <outline text="8.3. Fair Usage policy for Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Fair-Usage-policy-for-Cortex-AgentiX" />
+      </outline>
+    </outline>
+  </body>
+</opml>

@@ -2077,6 +2077,9 @@
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="To create an additional AWS CodeCommit instance: Hover over the AWS CodeCommit card in the catalog and click Connect Another." type="note" />
               </outline>
+              <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+                <outline text="The instance ID is identical to the stack ID on the AWS platform." type="note" />
+              </outline>
             </outline>
             <outline text="10.1.1.2. Azure DevOps" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Azure-DevOps">
               <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
@@ -2201,7 +2204,7 @@
                 <outline text="This integration utilizes a Personal Access Token (PAT) for authentication&#10;CircleCI onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your CircleCi environment, you must create two separate integrations, selecting the appropriate..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="To add an additional CircleCI instance, navigate to Settings → Data Sources &amp; Integrations → , select the connected CircleCI integration, click  → Add Instance, and repeat the onboarding steps above." type="note" />
@@ -2215,7 +2218,7 @@
                 <outline text="Jenkins onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your Jenkins servers, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard Jenkins for code scans, refer to Onboard..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="The integration is added on the console but integration is pending, and will only be completed after completing step 5 below. You can view the pending integration on the Jenkins Instances page: Select Data Sources →  Jenkins → View Details. The type of integration is Pipeline Risks" type="note" />
@@ -2238,7 +2241,7 @@
                 <outline text="Before you begin:" type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality." type="note" />
@@ -2258,7 +2261,7 @@
                 <outline text="CircleCI onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your CircleCi environment, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard CircleCI for CI/CD scans, refer to..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality." type="note" />
@@ -2289,7 +2292,7 @@
                 <outline text="Before you begin:" type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality." type="note" />
@@ -2312,7 +2315,7 @@
                 <outline text="Jenkins onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your Jenkins servers, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard Jenkins for CI/CD scans, refer to Onboard..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="This step is only required for new pipelines&#10;For private repositories, ensure the necessary credentials are configured in Jenkins Credentials" type="note" />
@@ -2332,7 +2335,7 @@
                 <outline text="Skip this step if you plan on using an existing token." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Cortex Cloud Application Security performs a scan of Terraform templates on selected workspaces based on the Run Stage." type="note" />
@@ -2352,7 +2355,7 @@
                 <outline text="Skip this step if you plan on using an existing token." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Cortex Cloud Application Security performs a scan of Terraform templates on selected workspaces based on the Run Stage." type="note" />
@@ -2390,7 +2393,7 @@
                 <outline text="Cortex Cloud permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Ensure that you have a connected version control system (VCS) and repositories&#10;Create a Semgrep API token&#10;Note&#10;To create a Semgrep API token, in Semgrep, navigate to Settings → Tokens → API..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Mapping establishes relationships between Semgrep projects and Cortex Cloud code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant&#10;Only mapped projects are ingested" type="note" />
@@ -2401,7 +2404,7 @@
                 <outline text="Permissions: The following user permissions are required:&#10;Cortex Cloud permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Ensure that you have a connected version control system (VCS) and repositories&#10;Snyk API token:&#10;Recommended. Generate an API token from a..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Select Connect Another Instance if the data source instance has already been configured." type="note" />
+                <outline text="Select Add Another Instance if the data source instance has already been configured." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Mapping establishes relationships between Snyk applications and Cortex Cloud code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant&#10;Only mapped applications are ingested" type="note" />
