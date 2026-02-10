@@ -36905,3 +36905,5485 @@
 #### Note
 
 * To execute a XQL API, you need to run a series of APIs. Each API requires a response value from the previous API to continue. This allows you to track the number of XQL queries you want to run, which in turn helps you manage your daily quota. Queries called without enough quota will fail. To ensure you don't surpass your quota, Cortex Cloud allows you to run up to four API queries in parallel. Run the following APIs to call an XQL query: Start an XQL Query—Run an XQL query. Response returns a unique execution ID used to retrieve the results by the Get XQL Query Results API. Get XQL Query Results—Retrieve XQL query results. API displays up to 1,000 results. If query generated more than 1,000 results, the response returns a unique stream ID used to retrieve additional results by the Get XQL Query Results Stream API. Get XQL Query Results Stream—Retrieve XQL query with more than 1,000 results. 1.8 |Whats-new-in-this-release Cortex Cloud version 1.3 includes the following new APIs. What's changed with version 1.3 Cortex Cloud version 1.3 includes the following updates. 2 |APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Using the Cortex Platform APIs, you can configure and manage authentication settings, datasets, cases, issues, and script executions. Additionally, the APIs allow you to run XQL queries and perform various other operations across the platform. The license requirements for each API are listed individually. 2.1 |Cortex Cloud Platform APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Using the Cortex Platform APIs, you can configure and manage authentication settings, datasets, cases, issues, and script executions. Additionally, the APIs allow you to run XQL queries and perform various other operations across the platform. The license requirements for each API are listed individually. 2.1.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. Using the Cortex Platform APIs, you can configure and manage authentication settings, datasets, cases, issues, and script executions. Additionally, the APIs allow you to run XQL queries and perform various other operations across the platform. The license requirements for each API are listed individually. 2.1.1.1 |Servers 2.1.2 |Cortex CLI APIs for managing the Cortex CLI 2.1.2.1 |Get the latest version of the Cortex CLI Get the latest version of Cortex CLI Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Cortex CLI version Service had unexpected internal error 2.1.3 |XQL query Run XQL queries on your data sources using a series of APIs. 2.1.3.1 |Start an XQL query Execute an XQL query. For more information on how to run XQL queries, see Running XQL query APIs. To ensure you don't surpass your quota, Cortex Cloud allows you to run up to four API queries in parallel. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management String of the XQL query. Note: This is only used when querying tenants managed by Managed Security Services Providers (MSSP). List of strings used for running APIs on local and Managed Security tenants. Valid values: For single tenant (local tenant) query, enter a single-item list with your tenant_id. Additional valid values are, empty list ([]) or null (default). For multi-tenant investigations (Managed Security parent who investigate children and/or local), enter multi-item list with the required tenant_id. List of IDs can contain the parent, children, or both parent and children. Integer in timestamp epoch milliseconds. Valid values include: Absolute Unix timestamp representing a date period: {"from" : 1598907600000, "to" : 1599080399000} = date period: 31/08/20 09:00:00 PM UTC - 02/09/20 8:59:59 PM UTC Relative Unix timestamp representing the last 24 hours: {"relativeTime": 86400000} = (24 * 60 * 60 * 1000 = 86400000). Use for an absolute timeframe in Unix timestamp. Use for a relative Unix timestamp. Successful response Bad Request. Invalid JSON. The number of daily active queries. The number of daily queries rejected due to too many concurrent XQL queries being run through the API. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.3.2 |Get XQL query results Retrieve results of an executed XQL query API. Note: This endpoint only works on XQL queries initiated by /public_api/v1/xql/start_xql_query/. Maximum result set size is 1000. The API does not support pagination, therefore, you can set values to determine the result size limitation and how to wait for the results. To view response with greater than 1000 results you must call Get XQL query results Stream. For more information on how to run XQL queries, see Running XQL query APIs. To ensure you don't surpass your quota, Cortex Cloud allows you to run up to four API queries in parallel. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management String representing the unique execution ID generated by the response to Start an XQL query API. You can also enter the execution ID of a query generated in Cortex XDR and listed in the Query Center table. Boolean flag indicating whether the API call should operate in synchronous/blocking mode, or in asynchronous/non-blocking mode. Valid Values: True (default): The call returns immediately with one of the following options: PENDING status indicating query hasn't yet completed or results are not yet ready to be returned. Need to execute the API call again. SUCCESS/FAIL status False: The API will block until query completes and results are ready to be returned. Integer representing the maximum number of results to return. If the 'limit' is not specified or if 'limit' is greater than 1000 and the query yields more than 1000 valid results, a stream id will be generated for use in the Get XQL query results Stream* API. In the context of multi-tenant investigations, when you specify the parameter value (x), it will return x results across all tenants combined, rather than x results for each individual tenant. For example, if there are y tenants participating in the investigation, the maximum number of results returned can be x*y (up to the limit of 1,000,000). The type of response output. Successful response Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.3.3 |Get XQL query Quota Retrieve the amount of query quota available and used. Note: This endpoint only works on XQL queries initiated by /public_api/v1/xql/start_xql_query/. For more information on how to run XQL queries, see Running XQL query APIs. To ensure you don't surpass your quota, Cortex Cloud allows you to run up to four API queries in parallel. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Successful response The number of daily active queries. This value is reset nightly. The number of daily queries rejected due to too many concurrent XQL queries being run through the API. This value is reset nightly. Currently running XQL queries with their current duration. The number of active queries currently running. The maximum number of queries that ran concurrently today on this tenant. This value is reset nightly. Bad Request. Got an invalid JSON. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.3.4 |Get XQL query results Stream Retrieve XQL query results with more than 1000 results. Note: This endpoint only works on XQL queries initiated by /public_api/v1/xql/start_xql_query/. Response is returned as chunked (Transfer-Encoding: chunked). To retrieve a compressed gzipped response (Content-Encoding: gzip), in your header add Accept-Encoding: gzip. For more information on how to run XQL queries, see Running XQL query APIs. To ensure you don't surpass your quota, Cortex Cloud allows you to run up to four API queries in parallel. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management For retrieving a compressed gzipped response String representing the unique ID generate by the response to Get XQL query results API. Successful response Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4 |Endpoint Management APIs for managing endpoints 2.1.4.1 |Get Distribution version Get a list of all the agent versions to use for creating a distribution list. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Successful response List of Windows agent versions. List of Linux agent versions. List of Mac agent versions. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.2 |Get all Endpoints Gets a list of all of your endpoints. The response is concatenated using AND condition (OR is not supported). Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. Successful response Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.3 |Get Policy Get the policy name for a specific endpoint. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. Successful response Name of the policy allocated with the endpoint. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.4 |Delete Endpoints Delete selected endpoints in Cortex Cloud. You can delete up to 1000 endpoints. Note: Endpoints are deleted from Cortex Cloud UI, however they still exist in the database. When filtering by multiple fields: Response is concatenated using AND condition (OR is not supported). Maximum result set size is 1000. Offset is the zero-based number of cases from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. Array of filter fields. String that identifies a list the filters match. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list: List of strings Value that this filter must match. Valid keywords: Successful response Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.5 |Create distributions Create an installation package. This is an async call that returns the distribution ID; it does not mean that the creation succeeded. To confirm the package has been created, check the status of the distribution by running the Get Distribution Status API. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. The name of the installation package. The installation platform. A string representing the type of package to create. Each JSON object must contain one of the following keywords: standalone: Installation for a new agent. When using this, you must include the platform field with one of the following values: windows, linux, macos, android, kubernetes, helm. upgrade: Upgrade of an agent from ESM. When using this, you must include the agent_version field with one of the following values: windows_version, linux_version, or macos_version. Use agent_version when creating a standalone installer. The value should be the agent version number. Use windows_version when creating an upgrade package. The value is the relevant version number. Use linux_version when creating an upgrade package. The value is the relevant version number. Use macos_version when creating an upgrade package. The value is the relevant version number. When the package_type is kubernetes or helm, use the deployment_platform to indicate the type of platform. Valid values include: The default namespace The node selector in the following format: `"node_selector": {"key": "val"}' Whether or not to run on the master node. Whether or not to run on all nodes. Successful response Installation package ID. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.6 |Get Violations Gets a list of device control violations filtered by selected fields. You can retrieve up to 100 violations. When filtering by multiple fields: Response is concatenated using AND condition (OR is not supported). Maximum result set size is 100. Offset is the zero-based number of cases from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. An empty object returns all results. Provides an array of filter fields. String that identifies the violation field the filter is matching. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. type: Type of violation. timestamp: Timestamp of the violation. ip_list: List of IP addresses. vendor: Name of vendor. vendor_id: Vendor ID. product: Name of product. product_id: Product ID. serial: Serial number. hostname: Hostname. violation_id_list: List of violation IDs. username: Username. String that identifies the comparison operator you want to use for this filter. Valid keywords are: in — Permitted for all fields except timestamp. gte / lte — Permitted only for timestamp. Value that this filter must match. The contents of this field will differ depending on the violation field that you specified for this filter: timestamp: Integer, in UTC timezone epoch milliseconds violation_id_list: List of integers ip_list: Must contain an IP string type: Must be either cd-rom, disk drive, floppy disk, portable device All other fields need to be list of strings. Integer representing the starting offset within the query result set from which you want violations returned. Violations are returned as a zero-based list. Any violation indexed less than this value is not returned in the final result set and defaults to zero. An integer representing the end of offset within the result set after which you do not want violations returned. Violations in the violation list that are indexed higher than this value are not returned in the final results set. Defaults to zero, which returns all alerts to the end of the list. Identifies the sort order for the result set. The field you want to sort by. Can be either asc (ascending) or desc (descending). Successful response Number of total results of this filter without paging. Number of alerts actually returned as a result. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.7 |Get Distribution status Check the status of the installation package. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. The installation package ID. Successful response The status of the installation package. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.8 |Get Distribution URL Get the distribution URL for downloading the installation package. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. Installation package ID. A string representing the type of installation package. Select one of the following valid keywords and values: upgrade Package type should match the distribution type or platform: sh: x86_64 Linux SH installer rpm: x86_64 Linux RPM installer deb: x86_64 Linux DEB installer aarch64_sh: aarch64 Linux SH installer aarch64_rpm: aarch64 Linux RPM installer aarch64_deb: aarch64 Linux DEB installer Successful response URL for downloading the installation package. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.9 |Set an Endpoint Alias Set or modify an Alias field for your endpoints. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. An array of filter fields. String that identifies the field the filter is matching. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. endpoint_status: Status of the endpoint ID. dist_name: Distribution / Installation Package name. ip_list: List of IP addresses. group_name: Group name the agent belongs to. platform: Platform name. alias: Alias name. isolate: If the endpoint was isolated. hostname: Hostname. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list, dist_name, group_name, alias, hostname, username: List of strings. endpoint_status: Permitted values are connected or disconnected ip_list: List of strings, for example 192.168.5.12. platform: Permitted values are windows, linux, macos, or android isolate: Permitted values are isolated or unisolated. scan_status: Permitted values are none, pending, in_progress, canceled, aborted, pending_cancellation, success, or error. gte / lte first_seen and last_seen: Integer in timestamp epoch milliseconds. Value that this filter must match. The contents of this field will differ depending on the endpoint field that you specified for this filter: endpoint_id_list, dist_name, hostname, alias, group_name: List of strings. endpoint_status: Must contain only the following valid values: connected or disconnected ip_list: String list of IP addresses. platform: Must contain only the following valid values: windows, linux, macos, or android. isolate: Must contain only the following valid values: isolated or unisolated. The alias name you want to set or modify. Note: If you send an empty field, the current alias name is deleted. Successful response true=The alias name was set or modified successfully. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.10 |Assign Tags Assign one or more tags to one or more endpoints. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. An array of filter fields. String that identifies the field the filter is matching. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. last_seen: When an endpoint was last seen. first_seen: When an endpoint was first seen. dist_name: Distribution / Installation Package name. ip_list: List of IP addresses. platform: Platform name. alias: Alias name. hostname: Hostname. isolate: If the endpoint was isolated. username: Name of user. scan_status: Status of the scan. group_name: Group name the agent belongs to. endpoint_status: Status of the endpoint ID. operational_status: Operational status. public_ip_list: List of public IP addresses. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list, dist_name, group_name, alias, hostname, username, operational_status: List of strings. endpoint_status: Permitted values are connected, lost, disconnected, uninstalled. ip_list, public_ip_list: List of strings, for example "192.168.5.12". platform: Permitted values are windows, linux, macos, android, ios. isolate: Permitted values are isolated or unisolated. scan_status: Permitted values are none, pending, in_progress, canceled, aborted, pending_cancellation, success, or error. operational_status: Permitted values are protected, partially_protected, unprotected. gte / lte first_seen and last_seen: Integer in timestamp epoch milliseconds. Value that this filter must match. The contents of this field will differ depending on the endpoint field that you specified for this filter: endpoint_status: Must contain only the following valid values: connected, disconnected, lost, or uninstalled. operational_status: Must contain only the following valid values: protected, partially_protected, unprotected. ip_list, public_ip_list: String list of IP addresses. platform: Must contain only the following valid values: windows, linux, macos, android, or ios. isolate: Must contain only the following valid values: isolated or unisolated. scan_status: Must contain only the following valid values: none, pending, in_progress, canceled, aborted, pending_cancellation, success, or error. The tag you want to assign. Successful response true=The tag name was assigned successfully. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. x Internal server error. A unified status for API communication type errors. 2.1.4.11 |Remove Tags Remove one or more tags from one or more endpoints. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the following API request fields. Array of filter fields. String that identifies the field the filter is matching. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. endpoint_status: Status of the endpoint ID. dist_name: Distribution / Installation Package name. ip_list: List of IP addresses. group_name: Group name the agent belongs to. platform: Platform name. alias: Alias name. isolate: If the endpoint was isolated. hostname: Hostname. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list, dist_name, group_name, alias, hostname, username: List of strings. endpoint_status: Permitted values are connected or disconnected. ip_list: List of strings, for example 192.168.5.12. platform: Permitted values are windows, linux, macos, or android. isolate: Permitted values are isolated or unisolated. scan_status: Permitted values are none, pending, in_progress, canceled, aborted, pending_cancellation, success, or error. gte / lte first_seen and last_seen: Integer in timestamp epoch milliseconds. Value that this filter must match. The contents of this field will differ depending on the endpoint field that you specified for this filter: endpoint_id_list, distribution_name, hostname, alias, group_name: List of strings. endpoint_status: Must contain only the following valid values: connected or disconnected ip_list: String list of IP addresses. platform: Must contain only the following valid values: windows, linux, macos, or android. isolate: Must contain only the following valid values: isolated or unisolated. The tag you want to remove. Successful response true=tag name removed successfully. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.12 |Get Endpoint Gets a list of filtered endpoints. The response is concatenated using AND condition (OR is not supported). The maximum result set size is 100. Offset is the zero-based number of endpoints from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. An empty dictionary returns all results. Array of filter fields. Identifies the field the filter is matching. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. endpoint_status: Status of the endpoint ID. dist_name: Distribution / Installation Package name. first_seen: When the agent was first seen. last_seen: When the agent was last seen. ip_list: List of IP addresses. group_name: Group name the agent belongs to. platform: Platform name. alias: Alias name. isolate: If the endpoint was isolated. hostname: Host name. public_ip_list: Public IP addresses that correlate to the last IPv4 address from which the XDR agent connected (know as Last Origin IP). Identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list, dist_name, group_name, alias, hostname, username, public_ip_list: List of strings. endpoint_status: Permitted values are: connected, disconnected, lost, or uninstalled ip_list: List of strings. For example: "192.168.5.12". platform: Permitted values are: windows, linux, macos, android. isolate: Permitted values are: isolated or unisolated. scan_status: Permitted values are: none, pending, in_progress, canceled, aborted, pending_cancellation, success, or error. gte / lte first_seen and last_seen: Timestamp epoch milliseconds. Value that this filter must match. Valid keywords: endpoint_status: String. Permitted values are: connected, disconnected, lost, or uninstalled ip_list: List of strings. platform: String. Permitted values are: windows, linux, macos, android. isolate: String. Permitted values are: isolated or unisolated. scan_status: String. Permitted values are: none, pending, in_progress, canceled, aborted, pending_cancellation, success, or error. first_seen and last_seen: Integer. Timestamp epoch milliseconds. Represents the start offset within the query result set from which you want endpoints returned. Endpoints are returned as a zero-based list. Any endpoint indexed less than this value is not returned in the final result set and defaults to zero. Represents the end offset within the result set after which you do not want endpoints returned. Endpoint in the endpoint list that is indexed higher than this value is not returned in the final results set. Defaults to 100, which returns all endpoints to the end of the list. Identifies the sort order for the result set. Identifies the field you want to sort by. Case-sensitive. Whether you want to sort in ascending (ASC) or descending (DESC) order. Case-sensitive. JSON object containing the query result. Number of total results of this filter without paging. Number of endpoints actually returned as result. A list of endpoints. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.4.13 |Initiate Forensics Triage Initiate forensics triage for the specified agents. Maximum of 10 concurrent triage actions at a time. Specified agents must have Forensics License enabled. Specified agents must be the same OS, Windows or macOS, but not a mixture of both. Specified configuration must have type "Online = True". Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. List of agents to run forensics triage on. UUID of the triage configuration. If none is specified, the default configuration is used for this action. Unique ID for triage action. List of agent IDs that successfully received the triage action. List of agent IDs that did not successfully receive the triage action. Payment Required Internal Server Error 2.1.5 |Response Action APIs for response actions 2.1.5.1 |Restore File Restore a quarantined file on a requested endpoints. When filtering by multiple fields: Response is concatenated using AND condition (OR is not supported). Maximum result set size is 100. Offset is the zero-based number of cases from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. String that represents the file in hash. Hash must be a valid SHA256. String that represents the endpoint ID. Note: if it is not specified, the request will run restore on all endpoints which relate to the quarantined file you defined. String representing the case ID. When included in the request, the Restore File action will appear in the Cortex Cloud Case View Timeline tab. Successful response Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.2 |File Retrieval Details View the API required to call in order to download the file retrieved by the Retrieve File API request according to the action ID. The response contains a file hash you need to download and then unzip to view: Download the file. Unzip the file: unzip /tmp/file.zip Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. The action ID of the Retrieve File API response. Successful response API required to call in order to download the retrieved result. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.3 |Allow List Files Add files which do not exist in the allow or block lists to an allow list. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. A list of hashed files you want to add to the allow list. Hash must be a valid SH256. Additional information regarding the action. The case ID related to the hash. When included in the request, the Allow List action will appear in the Cortex Cloud Case View Timeline tab. Successful response true=File successfully added to the allow list. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.4 |Get Quarantine Status Retrieve the quarantine status for specified files. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. Array of endpoint IDs, filepaths, and file hash. File hash. Must be a valid SHA256. Successful response The file's status. True: The file is quarantined. False: The file is not quarantined. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.5 |Quarantine Files Quarantine file on selected endpoints. You can select up to 1000 endpoints. Note: A success response means that the request reached the defined endpoints, however if the file was not found there, no quarantine action will take place. To ensure if the file has been quarantined, check the Cortex XDR Action Center. When filtering by multiple fields: Response is concatenated using AND condition (OR is not supported). Maximum result set size is 1000. Offset is the zero-based number of cases from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. An array of filter fields. String that identifies a list the filters match. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list: List of strings Value that this filter must match. Valid keywords: endpoint_id_list: Array of strings The path of the file you want to quarantine. You must enter a proper path and not symbolic links. Case ID. When included in the request, the Quarantine File action will appear in the Cortex Cloud Case View Timeline tab. Successful response JSON object containing the query result. ID of action to quarantine selected endpoints. Response only indicates the request was successfully sent to the endpoint. To track if the file quarantine succeeded either: In Cortex XDR console, navigate to Response > Action Center and search for the action ID. Make sure the Action ID field is selected in the table Layout settings. Send a Get Action Status API request. Integer representing whether the action: Number of endpoints included in the request. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.6 |Block List Files Add files which do not exist in the allow or block lists to a block list. You can view the block list in the UI at Investigation & Response > Response > Action Center > Block List. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. A list of hashed files you want add to a block list. Hash must be a valid SH256. Additional information regarding the action. The case ID related to the hash. When included in the request, the Block List action appears in the Cortex Cloud Case View Timeline tab. Successful response true=File successfully added to block list. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.7 |Unisolate Endpoints Reverse the isolation of one or more endpoints in single request. Note: You can only send a request with either endpoint_id to unisolate one endpoint or with filters to unisolate more than one endpoint. An error is raised if you try to use both endpoint_id and the filters. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. An array of filter fields for unisolating a number of endpoints at once. Note: This field is only required if unisolating more than one endpoint. String that identifies a list the filters match. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list: List of strings Value that this filter must match. Valid keywords: The ID of the endpoint to unisolate. Note: this field is only required if unisolating one endpoint. Case ID. When included in the request, the Unisolate Endpoints action will appear in the Cortex Cloud Case View Timeline tab. Successful response JSON object containing the query result. ID of the action to unisolate selected endpoints. Response only indicates the request was successfully sent to the endpoint. To track if the endpoint was restored either: In the Cortex XDR console, navigate to Response > Action Center > Isolation and search for the action ID. Make sure the Action ID field is selected in the table Layout settings. Send a Get Action Status API request. Number of endpoints included in the request. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.8 |Cancel Scan Endpoints Cancel the scan of selected endpoints. A scan can only be aborted if the selected endpoints are in Pending or in Progress status. When filtering by multiple fields: Response is concatenated using AND condition (OR is not supported). Offset is the zero-based number of endpoints from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. An array of filter fields to filter which endpoints to cancel scanning. To cancel scan of all endpoints, use the value "all". String that identifies a list the filters match. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. dist_name: Name of the distribution list. first_seen: When an endpoint was first seen. last_seen: When an endpoint was last seen. ip_list: List of IP addresses. group_name: Name of endpoint group. platform: Type of operating system. alias: Endpoint alias name. isolate: If an endpoint has been isolated. hostname: Name of host. username: Name of user. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list, dist_name, group_name, alias, hostname, username: List of strings ip_list: List of strings, for example 192.168.5.12 platform: Permitted values are windows, linux, macos, android isolate: Permitted values are isolated or unisolated scan_status: Permitted values are none, pending, in_progress, canceled, aborted, pending_cancellation, success, or error gte / lte first_seen and last_seen: Integer in timestamp epoch milliseconds. Value that this filter must match. Valid keywords: first_seen, last_seen: Integer in timestamp epoch milliseconds, UTC timezone endpoint_id_list, dist_name, hostname, alias, group_name: List of strings isolate: Permitted values are isolated or unisolated. platform: Permitted values are windows, linux, macos, or android. Case ID. When included in the request, the Cancel Scan Endpoints action will appear in the Cortex Cloud Case View Timeline tab. Successful response JSON object containing the query result. ID of action to cancel scan selected endpoints. Response only indicates the request was successfully sent to the endpoint. To track if the scan succeeded either: In Cortex XDR console, navigate to Response > Action Center and search for the action ID. Make sure the Action ID field is selected in the table Layout settings. Send a Get Action Status API request. Number of endpoints included in the request. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.9 |Scan Endpoints Run a scan on selected endpoints. Response is concatenated using AND condition (OR is not supported). Offset is the zero-based number of cases from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. An array of filter fields. To scan all endpoints, use the value all. Case ID. When included in the request, the Scan Endpoints action will appear in the Cortex Cloud Case View Timeline tab. Successful response JSON object containing the query result. ID of action to scan selected endpoints. Response only indicates the request was successfully sent to the endpoint. To track if the scan was successful either: In Cortex XDR console, navigate to Response > Action Center > All Actions and search for the action ID. Make sure the Action ID field is selected in the table Layout settings. Send a Get Action Status API request. Number of endpoints included in the request. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.10 |Get Action Status Retrieve the status of the requested actions according to the action ID. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. Action ID of the selected request. Successful response JSON object containing the query result. Bad Request. Got an invalid JSON. Returns all error messages the agent returns to allow for easier analysis. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.11 |Retrieve File Retrieve files from selected endpoints. You can retrieve up to 20 files, from no more than 10 endpoints. Response is concatenated using AND condition (OR is not supported). Offset is the zero-based number of cases from the start of the result set. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. An array of filter fields. Identifies the field the filter must match: endpoint_id_list Identifies the comparison operator you want to use for this filter. Valid keywords and values are: in 'endpoint_id_list' Value that this filter must match. Valid keywords: 'endpoint_id_list': List of strings. One of the operating system types must be included. Case ID. When included in the request, the Retrieve File action will appear in the Cortex Cloud Case View Timeline tab. JSON object containing the query result. ID of action to retrieve files from selected endpoints. Response only indicates the request was successfully sent to the endpoint. To track if the file was retrieved successfully either: in the Cortex XDR console, navigate to Response > Action Center > Isolation and search for the action ID. Make sure the Action ID field is selected in the table Layout settings by selecting the three vertical dots. To view the file, send a File Retrieval Details request. Number of endpoints included in the request. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.12 |Isolate Endpoints Isolate one or more endpoints in a single request. Request is limited to 1000 endpoints. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Security, you need the Cortex Cloud Runtime Security add-on. A dictionary containing the API request fields. Array of filtered fields for isolating a number of endpoints at once. Note: Only required if isolating more than one endpoint. Identifies a list the filters match. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. Identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list —List of strings Value that this filter must match. Valid keywords: endpoint_id_list: List of strings Identifies the endpoint to isolate. Note: Only required if isolating one endpoint. The case ID. When included in the request, the Isolate Endpoints action will appear in the Cortex Cloud Case View Timeline tab. JSON object containing the query result. Action ID to scan selected endpoints. The response only indicates the request was successfully sent to the endpoint. To track if the isolation succeeded either: In the Cortex XDR console, navigate to Response > Action Center > Isolation and search for the action ID. Make sure the Action ID field is selected in the table Layout settings by selecting the vertical ellipses. Send a Get Action Status request. Number of endpoints included in the request. Bad Request. Got an invalid JSON. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, ID, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.5.13 |Get triage presets Get all triage preset information including triage name, platform, description, created by, and triage type. Required license: In Cortex Cloud Runtime Security, requires the Forensics add-on. Not supported in Cortex Cloud Posture Management. Preset/configuration UUID Triage operating system/platform: Windows or macOS Triage was created by Triage type: Online, Offline, Online/Offline 2.1.6 |Script execution APIs executing script 2.1.6.1 |Run Snippet Code Script Initiate a new endpoint script execution action using provided snippet code. Cortex XDR supports sending your request in Base64. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. An array of filter fields for running the script on a number of endpoints at once. String that identifies a list the filters match. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list: List of strings Value that this filter must match. The timeout in seconds for this execution. Default value is 600. Section of a script you want to initiate on an endpoint. Case ID. When included in the request, the Run Snippet Code Script action will appear in the Cortex Cloud Case View Timeline tab. Successful response JSON object containing the query result. ID of the action initiated. ID will be used as a reference to track in the action center. Number of endpoints the action was initiated on. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.6.2 |Run Script Initiate a new endpoint script execution action using a script from the script library. The script can be run on up to 1000 endpoints. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. Array of filter fields for running the script on a number of endpoints at once. String that identifies a list the filters match. Filters are based on the following keywords: endpoint_id_list: List of endpoint IDs. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id_list: List of strings Value that this filter must match. GUID, unique identifier of the script, returned by the Get Scripts API per script. Dictionary containing the parameter name, key, and its value for this execution, value. You can obtain these values by running Get Script Metadata API. Timeout in seconds for this execution. Default value is 600. Case ID. When included in the request, the Run Script action will appear in the Cortex Cloud Case View Timeline tab. Successful response JSON object containing the query result. ID of the action initiated. ID will be used as a reference to track in the action center. Number of endpoints the action was initiated on. Integer representing whether the action: Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.6.3 |Get Script Metadata Get the full definitions of a specific script in the scripts library. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. Unique identifier of the script, returned by the Get Scripts API per script. Successful response JSON object containing the query result. Description of script. Timestamp of when the script was last modified. Name of the user who created the script. Whether the script has a high-risk outcome. Whether the script can be executed on Windows OS. Whether the script can be executed on Linux OS. Whether the script can be executed on macOS. GUID, global ID of the script, used toidentify the script when executing. name of the entry point selected for the script defined as run. When the script_output_type is a dictionary an array with friendly_name, name, and type for each output is returned. The field is empty in all other cases. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.6.4 |Get Script Execution Status Retrieve the status of a script execution action. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. Identifier of the action, can be found in Cortex XDR console Response > Action Center > Action ID field. Successful response JSON object containing the query result. General status of the action, considering the status of all the endpoints. Number of endpoints in pending status. Number of endpoints in 'canceled' status. Number of endpoints in 'in progress' status. Number of endpoints in 'timeout' status. Number of endpoints in 'failed' status. Number of endpoints in 'completed successfully' status. Number of endpoints in 'pending abort' status. Number of endpoints in 'aborted' status. Number of endpoints in 'expired' status. Error message regarding permissions for running APIs or stating that the action doesn't exist. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.6.5 |Get Scripts Get a list of scripts available in the scripts library. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. An empty dictionary returns all results. An array of filter fields. Identifies a list the filters match. Filters are based on the following keywords: name: String of the script name. description: String of the script description. created_by: String of the user name of who created the script. script_uid: GUID, global ID of the script, used to identify the script when executing. modification_date: Timestamp of when the script was last modified. windows_supported: Whether the script can be executed on Windows operating system. linux_supported: Whether the script can be executed on Linux operating system. macos_supported: Whether the script can be executed on Mac operating system. is_high_risk: Whether the script has a high-risk outcome. String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: in name, description, created_by, script_uid, windows_supported, linux_supported, macos_supported, is_high_risk: List of strings. gte / lte modification_date: Integer in timestamp epoch milliseconds. Value that this filter must match. Successful response JSON object containing the query result. Number of total results of this filter without paging. Number of scripts returned as result. An array of scripts. Description of script. Timestamp of when the script was last modified. Name of the user who created the script. Whether the script has a high-risk outcome. Whether the script can be executed on Windows OS. Whether the script can be executed on Linux OS. Whether the script can be executed on macOS. GUID, global ID of the script, used to identify the script when executing. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.6.6 |Get Script Execution Results Retrieve the results of a script execution action. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. Action ID. This can be found in the Cortex XDR console Response > Action Center > Action ID field. Successful response JSON object containing the query result. Name of the script executed. Description of the script executed. For each input parameter used in this execution, an array of name and value. Timestamp in which the action was initiated. Number of endpoints included in this action according to the filter used to select them. Error message regarding permissions for running APIs. For each endpoint Cortex XDR displays any returned value by the script. The number of the results and their name are dynamic per script. Endpoint IP address. Endpoint status. Domain to which the endpoint belongs. Execution status of this endpoint. The STDOUT + STDERR logged by the script during this execution. Number of successfully retrieved files. Number of files failed to retrieve. Timestamp of when the retrieved files will be deleted from the server. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.6.7 |Get Script Execution Result Files Get the files retrieved from a specific endpoint during a script execution. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. Identifier of the action, can be found in Cortex XDR console Response > Action Center > Action ID field. Successful response JSON object containing the query result. A signed public link to a zip file containing the retrieved files. Link expires after 10 minutes. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.6.8 |Get Script Code Get the code of a specific script in the script library. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. Unique identifier of the script, returned by the Get Scripts API per script. Successful response JSON object containing the query result. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.7 |Audit log APIs for audit logs 2.1.7.1 |Get Audit Management Log Get audit management logs. Response is concatenated using AND condition (OR is not supported). Maximum result set size is 100. Offset is the zero-based number of cases from the start of the result set. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. An empty dictionary returns all results. Array of filter fields. Filter is based on the following keywords: email: User's email address. type: Type of audit log. sub_type: Subtype of audit log. result: Result type. timestamp: Log timestamp. Identifies the comparison operator you want to use for this filter. Valid keywords and values are: in email, type, sub_type, result: List of strings gte / lte timestamp: Integer in timestamp epoch milliseconds Value that this filter must match. timestamp: Integer representing the number of milliseconds after the Unix epoch, UTC timezone. All other fields require a string value. In the case of in operator, the value is an array. An integer representing the starting offset within the query result set from which you want management logs returned. Management logs are returned as a zero-based list. Any log indexed less than this value is not returned in the final result set and defaults to zero. An integer representing the end offset within the result set after which you do not want management logs returned. Logs in the management log list that are indexed higher than this value are not returned in the final results set. Defaults to 100, which returns all logs to the end of the list. Identifies the sort order for the result set. By default the sort is defined as creation-time and desc. The field you want to sort by. Whether to sort in ascending or descending order. Successful response JSON object containing the query result. Number of total results of this filter without paging. Number of returned items. List of audit items. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.7.2 |Get Audit Agent Report Get agent event reports. Response is concatenated using AND condition (OR is not supported). Maximum result set size is 100. Offset is the zero-based number of cases from the start of the result set. A dictionary containing the API request fields. An empty dictionary returns all results. An array of filter fields. Identifies a list. Filters are based on the following keywords: endpoint_id: The endpoint ID. endpoint_name: The endpoint name. type: Type of report. sub_type: Subtype of report. result: Result type. timestamp: Report timestamp. domain: Domain of the agent. xdr_version: XDR version. category: Type of event category. timestamp: Integer in timestamp epoch milliseconds identifies the comparison operator you want to use for this filter. Valid keywords and values are: in endpoint_id, endpoint_name, type, sub_type, result, domain, xdr_version, category: List of strings gte / lte Value that this filter must match: timestamp: Integer representing the number of milliseconds after the Unix epoch, UTC timezone. All other fields require a string value. In the case of in operator, the value is a list of possible values enclosed in square brackets. category: Permitted values are: status, monitoring, or audit. An integer representing the starting offset within the query result set from which you want agent reports returned. Reports are returned as a zero-based list. Any report indexed less than this value is not returned in the final result set and defaults to zero. An integer representing the end offset within the result set after which you do not want agent reports returned. Reports in the agent report list that are indexed higher than this value are not returned in the final results set. Defaults to 100, which returns all reports to the end of the list. Identifies the sort order for the result set. The field you want to sort by. Whether to sort in ascending or descending order. JSON object containing the query result. Number of total results of this filter without paging. Number of returned items. List of audit items. Epoch time in milliseconds, UTC timezone. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, ID, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.8 |System management APIs for system management 2.1.8.1 |System Health Check Perform a health check of your Cortex Cloud environment. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The condition of your Cortex environment. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.8.2 |Get Tenant Info Get your tenant license information. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management List of available licenses, number of devices, and purchased add-ons on your tenant. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal Server Error 2.1.8.3 |Get Users Retrieve a list of the current users in your environment. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management JSON object containing the query result. Email address of the user. First name of the user. Last name of the user. Role name associated with the user. Timestamp of when the user last logged in. Name of user groups associated with the user, if applicable. Name of scope associated with the user, if applicable. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.8.4 |Get Roles Retrieve information about one or more roles created in your environment. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. List of one or more role names in your environment for which you want detailed information. JSON object containing the query result. Name of the role as it appears in the Management Console. List of permissions associated with this role. Timestamp of when the Role was created. Timestamp of when the Role was last updated. Email of the user who created the Role. Description of the Role, if available. Group names associated with the Role. Email addresses of users associated with the Role. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.8.5 |Get User Groups Retrieve a list of the current user emails associated with one or more user groups in your environment. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. List of one or more user group names for which you want the associated users. JSON object containing the query result. Name of the User Group. Description of the User Group, if available. Name of the User Group as it appears in the Management Console. Timestamp of when the User Group was created. Timestamp of when the User Group was last updated. List of email addresses belonging to the users associated with the User Group. Type of User Group. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.8.6 |Set a User Role Add or remove one or more users from a role. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. List of one or more user emails of users you want to add to or remove from a role. Name of the role you want to add a user to. Send an empty field to remove the user. JSON object containing the query result. Number of updated users. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal Server Error 2.1.8.7 |Get Risk Score Retrieve the risk score of a specific user or endpoint in your environment, along with the reason for the score. A dictionary containing the API request fields. Unique ID of a specific user or endpoint. User ID should be in the following format: netBIOS/samAccount Endpoint ID is the Cortex Agent ID. You can only request one ID at a time. JSON object containing the query result. Form of identification element. Identification value of the type field. The score assigned to the type. Normalization of the risk score. Details describing when and which case name affected the score. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.8.8 |Get Risky Users Retrieve a list of users with the highest risk score in your environment along with the reason affecting each score. JSON object containing the query result. Form of identification element. Identification value of the type field. The score assigned to the user. Normalization of the risk score. Details describing when and which case name affected the user score. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.8.9 |Get Risky Hosts Retrieve a list of endpoints with the highest risk score in your environment along with the reason for each score. JSON object containing the query result. Form of identification element. Identification value of the type field. The score assigned to the endpoint. Normalization of the risk score. Details describing when and which case name affected the endpoint score. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.9 |API keys APIs for managing API keys 2.1.9.1 |Get existing API keys Get a list of API keys filtered by expiration date, role, or ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management timestamp in milliseconds 64 byte random string An array of filter fields. Identifies the API key field the filter is matching. Filters are based on the following keywords: expiration: Time the API key expires in epoch milliseconds. roles: The role assigned to the API key at creation. Identifies the comparison operator you want to use for this filter. Valid keywords are: gte / lte operator is used with expiration field (Integer in timestamp epoch milliseconds). contains operator is used with roles field (Array of strings). in operator is used with id field (Array of integers). Value that this filter must match. The contents of this field will differ depending on the API key field that you specified for this filter: expiration: Integer representing the number of milliseconds after the Unix epoch, UTC timezone. roles: Array of strings representing the roles in the Cortex XSOAR system. id: Array of integers representing the API key IDs. Note: The total_count value contains all API Keys, including ones that have expired. 2.1.9.2 |Generate an API key Generate a new API key and define the roles assigned to it and whether the security level is standard or advanced. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management timestamp in milliseconds 64 byte random string A list of roles to be assigned to the API key. The security level of the API key. API keys with advanced security are hashed with a nonce and timestamp, which is useful for proprietary scripts and are intended to prevent replay attacks. Standard security API keys can be used as-is and are suitable for curl. Integer in timestamp epoch milliseconds. Default value is one week from the time of the API call. Maximum expiration date is six months from the time of the API call. 2.1.9.3 |Delete API keys Delete API keys by ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management timestamp in milliseconds 64 byte random string An array of filter fields. Identifies the API key field the filter is matching. Filters are based on the following keyword: id: The API key ID. Identifies the comparison operator you want to use for this filter. Valid keyword is: in id: Integer representing the API key ID. Array of API key IDs. The number of API keys deleted. 2.1.10 |Attack surface management APIs for attack surface management 2.1.10.1 |Get External Service Get service details according to the service ID. You can send up to 20 IDs. A dictionary containing the API request fields. Represents the service ID you want to get details for. JSON object containing the query result. Service details according to the service ID. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.10.2 |Get All Services Get a complete or filtered list of all your external services. The maximum result limit is 500. An array of filter fields. String that identifies the service field the filter is matching. Filters are based on the following case-sensitive keywords: active_classifications business_units_list externally_detected_providers externally_inferred_cves inactive_classifications service_type_list String that identifies the comparison operator you want to use for this filter. Valid keywords and values are: contains / not_contains— use with externally_detected_providers, domain, externally_inferred_cves, active_classifications, inactive_classifications, service_name, service_type, protocol eq / neq— use with service_name, service_type, protocol, ip_address in — use with is_active, discovery_type, business_units_list, tags Value that this filter must match. The contents of this field will differ depending on the services field that you specified for this filter: active_classifications — String business_units_list — String or list of strings in the format "BU name" or "BU:BU name", for example '''Acme & Co, Inc.'' or '''BU:Acme & Co, Inc.'' discovery_type — String. Values are: colocated_on_ip, directly_discovered, unknown. externally_detected_providers — String externally_inferred_cves — String inactive_classifications — String ip_address — String ipv6_address— String is_active — String. Values are:yes, no protocol — string service_name — String service_type — String service_type_list — String tags — List of strings indicating the tags to filter on in the format "tag-family:tag-name", for example "AR:registered to you". Use this field with the value true to get vulnerability test results for the last 14 days for each service. Using this field will slow down the endpoint. An integer representing the start offset index of results. An integer representing the start offset index of results. Use this field to specify the number of results on a page when using page token pagination. Identifies the sort order for the result set. Can be either ASC (ascending order) or DESC (descending order). Default is ASC. Values are case sensitive. last_observed By default, case-sensitive, sort is defined as service_name. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.10.3 |Get vulnerability tests Get a complete or filtered list of vulnerability tests. Results include details about each test, including the number of services confirmed vulnerable. An array of filter fields. Identifies the field the filter will match on. Identifies the comparison operator to use for this filter. The following list shows which operator can be used for each filter field: name: contains, eq, neq vulnerability_ids: contains, not_contains description: contains affected_software: contains, not_contains cwe_ids: contains, not_contains vendor_names: contains, not_contains severity_score: eq, neq, gte, lte epss_score: eq, neq, gte, lte count_vulnerable_services: eq, neq, gte, lte Value depends on the filter field used. name: string e.g. apache status: Enabled, Disabled vulnerability_ids: strings in the form of CVE IDs, such as CVE-1, CVE-2 description: string e.g. apache affected_software: strings cwe_ids: strings in the form of CWE IDs such as CWE-20 vendor_names: strings such as Cisco, Siemens severity_score: numbers, such as 2, 3.5 epss_score: numbers, such as 2, 3.5 count_vulnerable_services: integers, such as 1,2,5 2.1.10.4 |Bulk Update Vulnerability Tests Enable or disable vulnerability tests. To view vulnerability test results, use the Get All Services or Get Service Details endpoints. Names of tests, for example ["test1", "test2", "test3"] 2.1.11 |XQL user datasets APIs for managing XQL user datasets. 2.1.11.1 |Define an XQL user dataset Define an XQL user dataset based on an existing BigQuery table created by the user. Note: BigQuery table must be an existing table under public_access_user. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management These APIs are only applicable from within the XSIAM Notebook environment. An existing BigQuery table name that was created by the user. 2.1.11.2 |Get created XQL user datasets Retrieve a list of all XQL user datasets created using the Cortex SDK. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management These APIs are only applicable from within the XSIAM Notebook environment. A list of created datasets. 2.1.11.3 |Delete an XQL user dataset Delete an XQL user dataset that was created by the Cortex SDK. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management These APIs are only applicable from within the XSIAM Notebook environment. The dataset name to be deleted. Define whether or not to delete the BigQuery table related to the dataset. 2.1.12 |Dataset Management APIs for managing datasets 2.1.12.1 |Add Dataset Add a dataset of type lookup with the specified name and schema. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The designated name of the dataset. Dataset type. Currently only lookup is supported. The schema of the dataset in a comma-separated list of JSON pairs where the key is the field name and the value is the field type. Name of the dataset added. 2.1.12.2 |Delete a dataset Delete a dataset with the specified name. The following dataset types can be deleted: Lookup, Raw, User, Snapshot, and Correlation. You can only delete a dataset with dependencies by setting force to TRUE. Note: The System dataset and other protected datasets cannot be deleted. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The name of the dataset to be deleted. Warning: Setting this to True forces deletion even when there are dependencies. 2.1.12.3 |Get all datasets Retrieve a list of all the datasets and their properties. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Dataset type. Can be one of the following: System, Lookup, Raw, User, Snapshot, Correlation, System Audit. Log update type. Can be one of the following: Logs (event logs are updated continuously), State (the current state is updated periodically). Integer in timestamp epoch milliseconds. When the data in the dataset was last updated. Number of dats the data is stored in the tenant, which is comprised of hot_range + cold_range. The time period of the hot storage from the start date to the end date. Integer in timestamp epoch milliseconds. The time period of the cold storage from the start date to the end date. Actual size of the data (in bytes) that is stored in the tenant. This number is dependent on the events stored in the hot storage. For the xdr_data dataset, where the first 31 days of storage are included with your license, the first 31 days are not included in the total_size_stored number. Average daily amount stored (in bytes) in the tenant. This number is dependent on the events stored in the hot storage. Number of total events/logs that are stored in the tenant. This number is dependent on the events stored in the hot storage. Average size (in bytes) of a single event in the dataset (total_size_stored divided by the total_events). This number is dependent on the events stored in the hot storage. Time to live. Defines when lookup entries expire and are removed automatically from the lookup dataset. whether the dataset is configured to use as your default query target in XQL Search, so when you write your queries you do not need to define a dataset. Can be one of the following: True, False. 2.1.13 |Lookup Datasets APIs for lookup datasets 2.1.13.1 |Add or update data in a lookup dataset Add or update data in a lookup dataset. When updating data, any field not specified in the data field, but specified on at least one of the rows, will be set to None. The /public_api/xql/lookups/add_data/ endpoint does not support concurrent edits. Sending concurrent calls to this endpoint can cause data to be unintentionally overwritten or deleted. To allow sufficient time for each API call to complete its operation before initiating another one, assume that 1000 entries can be added per API every 10 seconds. The maximum size of a lookup dataset is 50 MB. Attempting to exceed this limit will fail. Requests time out after three minutes. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Unique dataset name The fields used to identify existing records. If there is not an exact match to the key_fields specified, a new row is created. When you specify key_fields, these fields are mandatory in data entries. When key_fields are not specified, existing data entries are not updated, and new entries are added with the specified data. Key-value pairs of data entries. 2.1.13.2 |Remove data from a lookup dataset Remove data from a dataset based on the specified parameters. If any one of the filter sets are not found, the API does not delete any data. The /public_api/xql/lookups/remove_data/ endpoint does not support concurrent edits. Sending concurrent calls to this endpoint can cause data to be unintentionally overwritten or deleted. To allow sufficient time for each API call to complete its operation before initiating another one, assume that 1000 entries can be added per API every 10 seconds. All lookup entries matching any of the filter blocks are deleted. To match a filter block, a lookup entry must match all the specified fields as if there were an AND operator between them. Requests time out after three minutes. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The name of the dataset to delete. Key-value pairs of fields to query in datasets. A lookup entry must match all the specified fields as if there were an AND operator between them. You can use one or more fields, up to the number of fields in the schema. Number of entries deleted successfully. 2.1.13.3 |Get data from a lookup dataset Get data from a lookup dataset according to the specified filter fields. All lookup entries matching any of the filter blocks are returned. To match a filter block, a lookup entry must match all the specified fields as if there were an AND operator between them. If no filters are specified, return all lookup entries. The maximum number of entries returned is 10,000. Requests time out after three minutes. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Name of the dataset to query. Key-value pairs of fields to query in a dataset. A lookup entry must match all the specified fields as if there were an AND operator between them. You can use one or more fields, up to the number of fields in the schema. The maximum number of results to return. If this is not specified, return all lookup entries that match the filter criteria. Number of entries that match the filter. Total number of entries. 2.1.14 |Authentication settings APIs for authentication settings, such as IdP and SSO 2.1.14.1 |Create authentication settings for IdP SSO or metadata URL Create authentication settings for IdP SSO or metadata URL. You must include either the metadata_url field or all of the following fields: idp_sso_url, idp_issuer, and idp_certificate. You must have Instance Administrator permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The name of the SSO integration. The default role automatically assigned to every user who authenticates to Cortex using SAML. This is an inherited role and is not the same as a direct role assigned to the user. If a role with the same name exists on both Cortex Gateway and the tenant, the role will mapped to the role from the tenant. If you want to use specifically the role from Cortex Gateway, use the is_account_role parameter set to true. Whether the role was created in Cortex Gateway or in the tenant. When the value is true, the role was created in Cortex Gateway. When configuring the first SSO, this parameter should be included as empty because it is the default SSO and has a fixed, read-only value. For additional SSOs, specify this IdP with an email domain (user@). When logging in, users are redirected to the IdP associated with their email domain or to the default IdP if no association exists. These IdP attribute mappings are dependent on your organization's IdP. The IdP attribute mapped to the user's email address in the Syslog server. The IdP attribute mapped to the user's first name. The IdP attribute mapped to the user's last name. The IdP attribute mapped to the user's group membership for authorization. Note: Cortex requires the IdP to send the group membership as part of the SAML token. Some IdPs send values in a format that include a comma, which is not compatible with Cortex. In that case, you must configure your IdP to send a single value without a comma for each group membership. For example, if your IdP sends the Group DN (a comma-separated list), by default, you must configure IdP to send the Group CN (Common Name) instead. The advanced settings are optional to configure and some are specific for a particular IdP. The URL for a specific page that you want users to be directed to after they've been authenticated by your organization's IdP and log in to Cortex. The URL of the IdP's Single Logout endpoint. This ensures that when a user initiates a logout from Cortex, the identity provider logs the user out of all applications in the current identity provider login session. The Syslog server's public X.509 certificate in PEM format for IdP validation. The Syslog server's private key in PEM format for signing SAML responses. (This is mostly required for ADFS) Whether to remove the RequestedAuthnContext parameter from SAML requests. If true, allows users to log in by using additional authentication methods. Whether to force users to reauthenticate to access the Cortex tenant if requested by the IdP, even if they already authenticated to access other applications. The login URL of your IdP and should be copied from your SAML integration configuration on the IdP. For example: Okta: https://cortex-test.okta.com/app/cortex-test/eacbt6b2jj08CasdUQ7sdf15d7/sso/SAML Microsoft Azure: https://login.microsoftonline.com/6a5a9780-96a4-41ef-bf45-0535d8a70025/saml2 The Idp's public X.509 digital certificate in PEM format for verification, which is copied from your organization's IdP. The unique identifier of the IdP issuing SAML assertions, which is copied from your organization's IdP. The metadata URL provides information about hte IdP's capabilities, endpoints, keys, and more. For example: Okta: https://cortex-test.okta.com/app/exkbuuzw77Bh04V6M6b8/sso/saml/metadata Microsoft Azure: https://login.microsoftonline.com/6a5a9780-96a4-41ef-bf45-0535d8a70025/saml2/metadata Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.14.2 |Update authentication settings Update existing authentication settings. To update the default domain, include empty value for both current_domain_value and new_domain_value. You must have Instance Administrator permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The name of the SSO integration. The default role automatically assigned to every user who authenticates to Cortex using SAML. This is an inherited role and is not the same as a direct role assigned to the user. If a role with the same name exists on both Cortex Gateway and the tenant, the role will mapped to the role from the tenant. If you want to use specifically the role from Cortex Gateway, use the is_account_role parameter set to true. Whether the role was created in Cortex Gateway or in the tenant. When the value is true, the role was created in Cortex Gateway. The domain whose authentication settings you want to update. If you want to update the domain value, include a new unique domain. These IdP attribute mappings are dependent on your organization's IdP. The IdP attribute mapped to the user's email address in the Syslog server. The IdP attribute mapped to the user's first name. The IdP attribute mapped to the user's last name. The IdP attribute mapped to the user's group membership for authorization. Note: Cortex requires the IdP to send the group membership as part of the SAML token. Some IdPs send values in a format that include a comma, which is not compatible with Cortex. In that case, you must configure your IdP to send a single value without a comma for each group membership. For example, if your IdP sends the Group DN (a comma-separated list), by default, you must configure IdP to send the Group CN (Common Name) instead. The advanced settings are optional to configure and some are specific for a particular IdP. The URL for a specific page that you want users to be directed to after they've been authenticated by your organization's IdP and log in to Cortex. The URL of the IdP's Single Logout endpoint. This ensures that when a user initiates a logout from Cortex, the identity provider logs the user out of all applications in the current identity provider login session. The Syslog server's public X.509 certificate in PEM format for IdP validation. The Syslog server's private key in PEM format for signing SAML responses. (This is mostly required for ADFS) Whether to remove the RequestedAuthnContext parameter from SAML requests. If true, allows users to log in by using additional authentication methods. Whether to force users to reauthenticate to access the Cortex tenant if requested by the IdP, even if they already authenticated to access other applications. The URL of your IdP's SSO, which is a fixed, read-only value based on your tenant's URL. If you are using this parameter, you must also specify: idp_certificate and idp_issuer. The Idp's public X.509 digital certificate in PEM format for verification, which is copied from your organization's IdP. The unique identifier of the IdP issuing SAML assertions, which is copied from your organization's IdP. Specify your IdP SSO URL, which is a fixed, read-only value based on your tenant's URL. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.14.3 |Delete authentication settings by domain Delete all authentication settings for the specified domain. **Note: ** The first configuration on the tenant is the default configuration and cannot be deleted. You must have Instance Administrator permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The domain whose authentication settings you want to delete. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.14.4 |Get authentication settings for all configured domains Get all the authentication settings for every configured domain in the tenant. You must have Instance Administrator permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.14.5 |Get IdP metadata Get the metadata for all IdPs. You must have Instance Administrator permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.15 |Syslog servers APIs for managing syslog servers 2.1.15.1 |Create a syslog integration Create a new syslog integration. You must have View/Edit Alert Notification permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. Unique name for the syslog server integration. IP address or fully qualified domain name (FQDN) of the syslog server. The port number on which the syslog server listens for messages. Select a method of communication: TCP: No validation is made on the connection with the syslog server. However, if an error occurred with the domain used to make the connection, the Test connection will fail. UDP: No error checking, error correction, or acknowledgment. No validation is done for the connection or when sending data. TLS: Cortex validates the syslog server certificate and uses the certificate signature and public key to encrypt the data sent over the connection. Choose one of the syslog standard values. The value maps to how your syslog server uses the facility field to manage messages. For details on the facility field, see RFC 5424. The security_info parameters are necessary only when protocol is TLS. When using TLS for communication between Cortex and the syslog server, Cortex validates that the syslog receiver has a certificate. Specify the certificate name here. Whether to ignore certificate errors. For security reasons, this is not recommended. If you set this to true, logs will be forwarded even if the certificate contains errors. Binary string of the certificate. The query result upon error. HTTP response code. Additional information describing the error. Payment Required Internal Server Error 2.1.15.2 |Get all or filtered syslog servers Get a complete or filtered list of syslog servers. You must have View Alert Notification permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. An empty dictionary returns all results. Array of filter fields. Each JSON object must contain a field, operator, and value. String that identifies the syslog server field the filter is matching. Filters are based on the following case-sensitive keywords: String that identifies the comparison operator you want to use for this filter. Valid operator keywords and corresponding filter fields are: eq - used with name, id, address, and status Value that the filter must match. The contents of this field will differ depending on the website field that you specified for this filter: The number of syslog servers that are returned. The syslog server details. Syslog server integration name. IP address or fully qualified domain name (FQDN) of the syslog server. The port number on which the syslog server listens for messages. The communication protocol: TCP: No validation is made on the connection with the syslog server. However, if an error occurred with the domain used to make the connection, the Test connection will fail. UDP: No error checking, error correction, or acknowledgment. No validation is done for the connection or when sending data. TLS: Cortex validates the syslog server certificate and uses the certificate signature and public key to encrypt the data sent over the connection. The query result upon error. HTTP response code. Additional information describing the error. Payment Required Internal Server Error 2.1.15.3 |Update a syslog integration Update the details of the specified syslog integration. You must have View/Edit Alert Notification permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. ID of the syslog server Unique name for the syslog server integration. IP address or fully qualified domain name (FQDN) of the syslog server. The port number on which the syslog server listens for messages. Select a method of communication: TCP: No validation is made on the connection with the syslog server. However, if an error occurred with the domain used to make the connection, the Test connection will fail. UDP: No error checking, error correction, or acknowledgment. No validation is done for the connection or when sending data. TLS: Cortex validates the syslog server certificate and uses the certificate signature and public key to encrypt the data sent over the connection. Choose one of the syslog standard values. The value maps to how your syslog server uses the facility field to manage messages. For details on the facility field, see RFC 5424. The security_info parameters are relevant only when protocol is TLS. When using TLS for communication between Cortex and the syslog server, Cortex validates that the syslog receiver has a certificate. Specify the certificate name here. Whether to ignore certificate errors. For security reasons, this is not recommended. If you set this to true, logs will be forwarded even if the certificate contains errors. Binary string of the certificate. Whether the update was successful. The query result upon error. HTTP response code. Additional information describing the error. Payment Required Internal Server Error 2.1.15.4 |Delete all or filtered syslog integrations Delete all the syslog integrations or the ones who match the filter criteria. You must have View/Edit Alert Notification permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. An empty dictionary deletes all syslog servers. Array of filter fields. Each JSON object must contain a field, operator, and value. String that identifies the syslog server field the filter is matching. Filters are based on the following case-sensitive keywords: String that identifies the comparison operator you want to use for this filter. Valid operator keywords and corresponding filter fields are: eq - used with name Value that the filter must match. The contents of this field will differ depending on the website field that you specified for this filter: The query result upon error. HTTP response code. Additional information describing the error. Payment Required Internal Server Error 2.1.15.5 |Test syslog integration Tests a syslog integration's validity. You must have View Alert Notification permissions to run this endpoint. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A dictionary containing the API request fields. If you include the syslog_id of an existing syslog integration, it will try to load the certificate data from the database to test the existing syslog integration. Unique name for the syslog server integration. IP address or fully qualified domain name (FQDN) of the syslog server. The port number on which the syslog server listens for messages. Select a method of communication: TCP: No validation is made on the connection with the syslog server. However, if an error occurred with the domain used to make the connection, the Test connection will fail. UDP: No error checking, error correction, or acknowledgment. No validation is done for the connection or when sending data. TLS: Cortex validates the syslog server certificate and uses the certificate signature and public key to encrypt the data sent over the connection. Choose one of the syslog standard values. The value maps to how your syslog server uses the facility field to manage messages. For details on the facility field, see RFC 5424. The security_info parameters are relevant only when protocol is TLS. When using TLS for communication between Cortex and the syslog server, Cortex validates that the syslog receiver has a certificate. Specify the certificate name here. Whether to ignore certificate errors. For security reasons, this is not recommended. If you set this to true, logs will be forwarded even if the certificate contains errors. Binary string of the certificate. The query result upon error. HTTP response code. Additional information describing the error. Payment Required Internal Server Error 2.1.16 |Scheduled Queries APIs for managing scheduled queries 2.1.16.1 |Get scheduled queries Return a list of scheduled queries. You can return all scheduled queries or filter results. You can also return extended results with all details included. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the query field the filter is matching. Filters are based on the following keywords: Display the extended view of the queries, which includes additional fields. If this is false, the response does not include total_count or result_count. Extended fields may change in future versions. List of scheduled query IDs to retrieve. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.16.2 |Insert or update scheduled queries Insert new scheduled queries or update existing scheduled queries. You must have Instance Administrator permissions to run this endpoint. Note: You should use a unique query_definition_name for each scheduled query on each tenant. Upon successful insert or update, the reply returns each individual query_id with the query definitions. If the insert or update failed, the reply will include the scheduled query name and the error message. The query_id of the scheduled query that was inserted or updated. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.16.3 |Delete a scheduled query Delete scheduled queries. You must have Instance Administrator permissions to run this endpoint. Each JSON pair in the response is the scheduled query ID and the results of the deletion request. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.17 |Query Library APIs for managing XQL query libraries 2.1.17.1 |Get XQL Queries Retrieve a detailed list of XQL query libraries. You can filter by list of query names or by list of query tags. You must have Instance Administrator permissions to run this endpoint. Whether to retrieve the detailed information on each XQL query. An array of XQL query names to search for. Note: If searching by xql_query_names, you cannot search by xql_query_tags in the same call. An array of XQL tag names to search for. Note: If searching by xql_query_tags, you cannot search by xql_query_names in the same call. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.17.2 |Insert or update XQL queries Insert new XQL queries or update existing XQL queries. Note: You should use unique xql_query_name for each XQL query on a given tenant. You must have Instance Administrator permissions to run this endpoint. When the xql_query_name already exists on the tenant, this field defines whether or not to overwrite the existing XQL query with the new content. When true, the query will be overwritten. When false, the query will not be updated and an error will be returned. XQL query name should be unique. XQL query tags are optional List of XQL queries that were added. List of XQL queries that were updated. List of errors received from additions/updates. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.17.3 |Delete XQL Queries Delete XQL queries. You can filter by list of query names or by list of query tags. You must have Instance Administrator permissions to run this endpoint. List of XQL query names to delete. Note: If searching by xql_query_names, you cannot search by xql_query_tags in the same call. List of XQL query tags. Note: If searching by xql_query_tags, you cannot search by xql_query_names in the same call. Bad Request. Got an invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.18 |IOCs APIs for managing IOCs 2.1.18.1 |Get Indicators (IOCs) Get a list of IOCs. You can return all IOCs or filter results. You can also return extended results with all details included. The response is concatenated using AND condition (OR is not supported). The maximum result set size is >100. Offset is the zero-based number of incidents from the start of the result set. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the IOC field the filter is matching. Filters are based on the following keywords: indicator: Indicator. type: Indicator type. severity: Indicator severity. expiration_date: Expiration date in epoch milliseconds. default_expiration_enabled: Whether the default expiration is enabled. comment: Comment. reputation: Reputation level. reliability: Reliability level. Identifies the comparison operator you want to use for this filter. Valid keywords are: gte / lte expiration_date: Integer in timestamp epoch milliseconds EQ / NEQ indicator: String severity: String default_expiration_enabled: Boolean reputation: String reliability: String Value that this filter must match. The contents of this field will differ depending on the IOC field that you specified for this filter: indicator, comment: String. type: String, can be one of the following: hash, ip, path, domain_name, filename, mixed. severity: String, can be one of the following: SEV_010_INFO, SEV_020_LOW, SEV_030_MEDIUM, SEV_040_HIGH expiration_date: Integer representing the number of milliseconds after the Unix epoch, UTC timezone. default_expiration_enabled: Boolean value: true or false. comment: String. reputation: String, can be one of the following: good, bad, suspicious, unknown, no_reputation. reliability: String, can be one of the following: A, B, C, D, E, F, G. Integer representing the starting offset within the query result set from which you want indicators returned. Indicators are returned as a zero-based list. Any indicator indexed less than this value is not returned in the final result set and defaults to zero. Integer representing the end offset within the result set after which you do not want indicators returned. Indicators in the indicator list that are indexed higher than this value are not returned in the final results set. Defaults to >100, which returns all indicators to the end of the list. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.18.2 |Insert or update IOCs Insert new IOCs or update existing IOCs. Note: The IOC rule_id is tenant specific and can't be used across tenants. Inserting IOCs with the same rule_id as an existing IOC on that tenant will overwrite the existing IOC. You must have Instance Administrator permissions to run this endpoint. List of IOC objects added. List of IOC objects updated. List of errors, if any. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.18.3 |Delete Indicators (IOCs) Delete IOCs selected by filter. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the IOC field the filter is matching. Filters are based on the following keywords: indicator: Indicator. type: Indicator type. severity: Indicator severity. expiration_date: Expiration date in epoch milliseconds. default_expiration_enabled: Whether the default expiration is enabled. comment: Comment. reputation: Reputation level. reliability: Reliability level. Identifies the comparison operator you want to use for this filter. Valid keywords are: gte / lte expiration_date: Integer in timestamp epoch milliseconds EQ / NEQ indicator: String severity: String default_expiration_enabled: Boolean reputation: String reliability: String Value that this filter must match. The contents of this field will differ depending on the IOC field that you specified for this filter: indicator, comment: String. type: String, can be one of the following: hash, ip, path, domain_name, filename, mixed. severity: String, can be one of the following: SEV_010_INFO, SEV_020_LOW, SEV_030_MEDIUM, SEV_040_HIGH expiration_date: Integer representing the number of milliseconds after the Unix epoch, UTC timezone. default_expiration_enabled: Boolean value: true or false. comment: String. reputation: String, can be one of the following: good, bad, suspicious, unknown, no_reputation. reliability: String, can be one of the following: A, B, C, D, E, F, G. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.19 |BIOCs APIs for managing BIOCs 2.1.19.1 |Get BIOCs Return a list of BIOCs. You can return all BIOCs or filter results. You can also return extended results with all details included.- The response is concatenated using AND condition (OR is not supported). The maximum result set size is >100. Offset is the zero-based number of incidents from the start of the result set. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the BIOC field the filter is matching. Filters are based on the following keywords: name: BIOC name. severity: BIOC severity level. type: BIOC type. is_xql: Whether or not the BIOC is XQL. comment: Comment. status: BIOC status. indicator: Indicator. mitre_technique_id_and_name: MITRE technique ID and name. mitre_tactic_id_and_name: MITRE tactic ID and name. Identifies the comparison operator you want to use for this filter. Valid keywords are: EQ / NEQ severity: String indicator: String IN mitre_technique_id_and_name: List of strings mitre_tactic_id_and_name: List of strings Value that this filter must match. The contents of this field will differ depending on the IOC field that you specified for this filter: name, comment: String. severity: String, can be one of the following: SEV_010_INFO, SEV_020_LOW, SEV_030_MEDIUM, SEV_040_HIGH type: String, can be one of the following: other, persistence, evasion, tampering, file_type_obfuscation, privilege_escalation, credential_access, lateral_movement, execution, collection, exfiltration, infiltration, dropper, file_privilege_manipulation, reconnaissance, discovery. is_xql: Boolean: true or false. status: String, can be one of the following: enabled, disabled. indicator: String or dictionary in the format you wrote it. mitre_technique_id_and_name: List of strings. mitre_tactic_id_and_name: List of strings. Integer representing the starting offset within the query result set from which you want BIOCs returned. BIOCs are returned as a zero-based list. Any BIOC indexed less than this value is not returned in the final result set and defaults to zero. Integer representing the end offset within the result set after which you do not want BIOCs returned. BIOCs in the BIOC list that are indexed higher than this value are not returned in the final results set. Defaults to >100, which returns all BIOCs to the end of the list. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.19.2 |Insert or update BIOCs Insert new BIOCs or update existing BIOCs. Note: The BIOC rule_id is tenant specific and can't be used across tenants. Inserting BIOCs with the same rule_id as an existing BIOC on that tenant will overwrite the existing BIOC. You must have Instance Administrator permissions to run this endpoint. List of BIOC objects added. List of BIOC objects updated. A list of errors. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.19.3 |Delete BIOCs Delete BIOCs selected by filter. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the BIOC field the filter is matching. Filters are based on the following keywords: name: BIOC name. severity: BIOC severity level. type: BIOC type. is_xql: Whether or not the BIOC is XQL. comment: Comment. status: BIOC status. indicator: Indicator. mitre_technique_id_and_name: MITRE technique ID and name. mitre_tactic_id_and_name: MITRE tactic ID and name. Identifies the comparison operator you want to use for this filter. Valid keywords are: EQ / NEQ severity: String indicator: String IN mitre_technique_id_and_name: List of strings mitre_tactic_id_and_name: List of strings Value that this filter must match. The contents of this field will differ depending on the IOC field that you specified for this filter: name, comment: String. severity: String, can be one of the following: SEV_010_INFO, SEV_020_LOW, SEV_030_MEDIUM, SEV_040_HIGH type: String, can be one of the following: other, persistence, evasion, tampering, file_type_obfuscation, privilege_escalation, credential_access, lateral_movement, execution, collection, exfiltration, infiltration, dropper, file_privilege_manipulation, reconnaissance, discovery. is_xql: Boolean: true or false. status: String, can be one of the following: enabled, disabled. indicator: String or dictionary in the format you wrote it. mitre_technique_id_and_name: List of strings. mitre_tactic_id_and_name: List of strings. Number of BIOC objects deleted. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.20 |Correlation Rules APIs for managing Correlation Rules 2.1.20.1 |Get Correlation Rules Return a list of correlation rules. You can return all correlation rules or filter results. You can also return extended results with all details included. The response is concatenated using AND condition (OR is not supported). The maximum result set size is >100. Offset is the zero-based number of incidents from the start of the result set. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the correlation rule field the filter is matching. Filters are based on the following keywords: name: Correlation rule name. severity: Correlation rule severity. xql_query: Correlation rule XQL query. is_enabled: Whether the correlation rule is enabled or disabled. description: Correlation rule description. alert_name: Alert name. alert_category: Alert category. alert_description: Alert description. alert_fields: Alert fields. execution_mode: Whether execution mode is scheduled or real time. search_window: Amount of time for search window. simple_schedule: Correlation rule schedule. timezone: Correlation rule timezone. crontab: Linux scheduling for correlation rule. suppression_enabled: Whether suppression is enabled for correlation rule. suppression_duration: Duration of correlation rule suppression. suppression_fields: Suppression fields. dataset: Correlation rule dataset. user_defined_severity: User-defined severity. user_defined_category: User-defined category. mitre_defs: MITRE definitions. investigation_query_link: Investigation query link. drilldown_query_timeframe: Whether the drilldown query timeframe is query or alert. mapping_strategy: Whether the mapping strategy is auto or custom. alert_domain: Alert domain. Identifies the comparison operator you want to use for this filter. Valid keywords are: EQ / NEQ severity: String xql_query: String is_enabled: Boolean description: String alert_name: String alert_category: String alert_description: String alert_fields: String or dictionary execution_mode: String search_window: String simple_schedule: String timezone: String suppression_enabled: Boolean suppression_duration: String user_defined_severity: String user_defined_category: String investigation_query_link: String drilldown_query_timeframe: String mapping_strategy: String alert_domain: String IN suppression_fields: List of strings mitre_defs: List of strings Value that this filter must match. The contents of this field will differ depending on the correlation rule field that you specified for this filter: name, xql_query, description, alert_name, alert_description, alert_fields, suppression_duration, dataset, user_defined_severity, user_defined_category, investigation_query_link: String. severity: String, can be one of the following: SEV_010_INFO, SEV_020_LOW, SEV_030_MEDIUM, SEV_040_HIGH is_enabled: String, can be one of the following: enabled or disabled. alert_category: String, can be one of the following: other, persistence, evasion, tampering, file_type_obfuscation, privilege_escalation, credential_access, lateral_movement, execution, collection, exfiltration, infiltration, dropper, file_privilege_manipulation, reconnaissance, discovery. alert_fields: Dictionary. execution_mode: String, can be one of the following: scheduled or real_time. search_window: String, for example: "2 hours". simple_schedule: String, for example: "5 minutes". timezone: String, for example: "Asia/Jerusalem". crontab: String, for example: "*/10 * * * *". suppression_enabled: Boolean: true or false. suppression_fields: List of strings. mitre_defs: List of strings or dictionary. drilldown_query_timeframe: String, can be one of the following: query or alert. mapping_strategy: String, can be one of the following: auto or custom. alert_domain: String, can be one of the following: domain_security, domain_it, domain_hunting. Integer representing the starting offset within the query result set from which you want correlation rules returned. Correlation rules are returned as a zero-based list. Any correlation rule indexed less than this value is not returned in the final result set and defaults to zero. Integer representing the end offset within the result set after which you do not want BIOCs returned. BIOCs in the BIOC list that are indexed higher than this value are not returned in the final results set. Defaults to >100, which returns all BIOCs to the end of the list. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.20.2 |Insert or update Correlation Rules Insert new Correlation Rules or update existing Correlation Rules. Note: The Correlation Rule id is tenant specific and can't be used across tenants. Inserting Correlation Rules with the same id as an existing Correlation Rule on that tenant will overwrite the existing Correlation Rule. You must have Instance Administrator permissions to run this endpoint. Correlation rule name. Correlation rule severity. Correlation rule XQL query. Whether the correlation rule is enabled or disabled. Correlation rule description. Alert description. Correlation rule execution mode. Correlation rule simple schedule. Correlation rule timezone. Linux scheduling for correlation rule. List of Correlation Rule objects added. List of Correlation Rule objects updated. List of error messages, if there are any. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.20.3 |Delete Correlation Rules Delete correlation rules selected by filter. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the correlation rule field the filter is matching. Filters are based on the following keywords: name: Correlation rule name. severity: Correlation rule severity. xql_query: Correlation rule XQL query. is_enabled: Whether the correlation rule is enabled or disabled. description: Correlation rule description. alert_name: Alert name. alert_category: Alert category. alert_description: Alert description. alert_fields: Alert fields. execution_mode: Whether execution mode is scheduled or real time. search_window: Amount of time for search window. simple_schedule: Correlation rule schedule. timezone: Correlation rule timezone. crontab: Linux scheduling for correlation rule. suppression_enabled: Whether suppression is enabled for correlation rule. suppression_duration: Duration of correlation rule suppression. suppression_fields: Suppression fields. dataset: Correlation rule dataset. user_defined_severity: User-defined severity. user_defined_category: User-defined category. mitre_defs: MITRE definitions. investigation_query_link: Investigation query link. drilldown_query_timeframe: Whether the drilldown query timeframe is query or alert. mapping_strategy: Whether the mapping strategy is auto or custom. alert_domain: Alert domain. Identifies the comparison operator you want to use for this filter. Valid keywords are: EQ severity: String xql_query: String is_enabled: Boolean description: String alert_name: String alert_category: String alert_description: String alert_fields: String or dictionary execution_mode: String search_window: String simple_schedule: String timezone: String suppression_enabled: Boolean suppression_duration: String user_defined_severity: String user_defined_category: String investigation_query_link: String drilldown_query_timeframe: String mapping_strategy: String alert_domain: String IN suppression_fields: List of strings mitre_defs: List of strings Value that this filter must match. The contents of this field will differ depending on the correlation rule field that you specified for this filter: name, xql_query, description, alert_name, alert_description, alert_fields, suppression_duration, dataset, user_defined_severity, user_defined_category, investigation_query_link: String. severity: String, can be one of the following: SEV_010_INFO, SEV_020_LOW, SEV_030_MEDIUM, SEV_040_HIGH is_enabled: String, can be one of the following: enabled or disabled. alert_category: String, can be one of the following: other, persistence, evasion, tampering, file_type_obfuscation, privilege_escalation, credential_access, lateral_movement, execution, collection, exfiltration, infiltration, dropper, file_privilege_manipulation, reconnaissance, discovery. alert_fields: Dictionary. execution_mode: String, can be one of the following: scheduled or real_time. search_window: String, for example: "2 hours". simple_schedule: String, for example: "5 minutes". timezone: String, for example: "Asia/Jerusalem". crontab: String, for example: "*/10 * * * *". suppression_enabled: Boolean: true or false. suppression_fields: List of strings. mitre_defs: List of strings or dictionary. drilldown_query_timeframe: String, can be one of the following: query or alert. mapping_strategy: String, can be one of the following: auto or custom. alert_domain: String, can be one of the following: domain_security, domain_it, domain_hunting. Bad Request. Got invalid JSON. The query result upon error. HTTP response code. Additional information describing the error. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.1.21 |Playbooks APIs for managing playbooks 2.1.21.1 |Get a playbook Get a playbook by filtering based on its name or ID. The playbook's YAML is returned in a ZIP file. You must have Instance Administrator permissions to run this endpoint. Identifies the playbook field the filter is matching. Filters are based on the following keywords: name: Playbook name Value that this filter must match. 2.1.21.2 |Insert or update playbooks Add or update a playbook by passing the YAML in a ZIP file. You must have Instance Administrator permissions to run this endpoint. The number of playbooks identified and attempted to be added. This field in the response indicates that the playbook IDs listed failed to be added. Playbook ID of the playbook that failed to be added. 2.1.21.3 |Delete a playbook Delete a playbook by filtering based on its name or ID. You must have Instance Administrator permissions to run this endpoint. Identifies the playbook field the filter is matching. Filters are based on the following keywords: name: Playbook name Value that this filter must match. The number of playbooks identified and attempted to be deleted. This field in the response indicates that the playbook IDs listed failed to be deleted. Playbook ID of the playbook that failed to be deleted. This field in the response indicates that the playbook IDs listed were successfully deleted. Playbook ID of the playbook that was successfully deleted. 2.1.22 |Scripts APIs for managing scripts 2.1.22.1 |Get a script Get a script by filtering based on its name or ID. The script's YAML is returned in a ZIP file. You must have Instance Administrator permissions to run this endpoint. Identifies the script field the filter is matching. Filters are based on the following keywords: name: Script name Value that this filter must match. 2.1.22.2 |Insert or update a script Update or add a script by passing the YAML in a ZIP file. You must have Instance Administrator permissions to run this endpoint. The script in YAML in a zipped file. The number of scripts identified and attempted to be added. This field in the response indicates that the script IDs listed failed to be added. Script ID of the script that failed to be added. 2.1.22.3 |Delete a script Delete a script by filtering based on its name or ID. You must have Instance Administrator permissions to run this endpoint. Identifies the playbook field the filter is matching. Filters are based on the following keywords: name: Playbook name Value that this filter must match. The number of scripts identified and attempted to be deleted. This field in the response indicates that the script IDs listed failed to be deleted. Script ID of the script that failed to be deleted. This field in the response indicates that the script IDs listed were successfully deleted. Script ID of the script that was successfully deleted. 2.1.23 |Dashboards APIs for managing Dashboards 2.1.23.1 |Get dashboards Get dashboard details by filtering based on the dashboard name, dashboard ID, time the dashboard was generated, or dashboard source. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the dashboard field the filter is matching. Filters are based on the following keywords: dashboard_id: Dashboard ID. name: Dashboard name. time_generated: Time the dashboard was generated in epoch milliseconds. source: Dashboard source. Identifies the comparison operator you want to use for this filter. Valid keywords are: EQ / NEQ dashboard_id: Integer dashboard_id: List of integers name: List of strings source: List of strings time_generated: Integer representing the time the dashboard was generated in epoch milliseconds. dashboard_id: Integer representing the dashboard ID Value that this filter must match. The contents of this field will differ depending on the dashboard field that you specified for this filter: name, source: String or list of strings. time_generated: Integer. dashboard_id: Integer or list of integers. Invalid field or operator. The query result upon error. HTTP response code. Additional information describing the error. 2.1.23.2 |Insert or update dashboards Add or update the dashboards retrieved by the Get dashboards API. You must have Instance Administrator permissions to run this endpoint. An array of dashboard details as retrieved by the Get dashboards API. Dashboard description. Dashboard status. Note: If no global ID is added in the request data, there might be errors with the global ID listed as "None". An array of relevant XQL widget details as retrieved by the Get dashboards API. Array listing the the global ID and internal ID of the objects added. Array listing the the global ID and internal ID of the objects updated. List of errors including the global ID and the error message. 2.1.23.3 |Delete dashboards Delete the dashboards retrieved by the Get dashboards API. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the dashboard field the filter is matching. Filters are based on the following keywords: dashboard_id: Dashboard ID. name: Dashboard name. time_generated: Time the dashboard was generated in epoch milliseconds. source: Dashboard source. Identifies the comparison operator you want to use for this filter. Valid keywords are: EQ / NEQ dashboard_id: Integer dashboard_id: List of integers name: List of strings source: List of strings time_generated: Integer representing the time the dashboard was generated in epoch milliseconds. dashboard_id': Integer representing the dashboard ID. Value that this filter must match. The contents of this field will differ depending on the dashboard field that you specified for this filter: name, source: String or list of strings. time_generated: Integer. dashboard_id: Integer or list of integers. List of the global ID and internal ID of dashboards successfully deleted. List of global IDs and internal IDs that were not deleted and the error messages explaining why. Invalid field or operator. The query result upon error. HTTP response code. Additional information describing the error. 2.1.24 |Widgets APIs for managing widgets 2.1.24.1 |Get widgets Get widget details by filtering based on the widget title and widget creator. Note: The endpoint only returns XQL widgets and not predefined widgets. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the dashboard field the filter is matching. Filters are based on the following keywords: title: Widget title. created_by: Name of the user who created the widget. Identifies the comparison operator you want to use for this filter. Valid keywords are: eq / neq created_by: String created_by: List of strings title: List of strings Value that this filter must match. The contents of this field will differ depending on the widget field that you specified for this filter: title, created_by: String or list of strings. Number of widgets returned. Invalid field or operator. The query result upon error. HTTP response code. Additional information describing the error. 2.1.24.2 |Insert or update widgets Update or add the widgets retrieved by the Get widgets API. You must have Instance Administrator permissions to run this endpoint. An array of widget details as retrieved by the Get widgets API. List of widget keys and titles for all widgets successfully added. List of widget keys and titles for all widgets successfully updated. List of widget keys and error messages for all widgets that failed to be added or updated. 2.1.24.3 |Delete widgets Delete the widgets retrieved by the Get widgets API. You must have Instance Administrator permissions to run this endpoint. An array of filter fields. Identifies the dashboard field the filter is matching. Filters are based on the following keywords: title: Widget title. created_by: Name of the user who created the widget. Identifies the comparison operator you want to use for this filter. Valid keywords are: EQ / NEQ created_by: String created_by: List of strings title: List of strings Value that this filter must match. The contents of this field will differ depending on the widget field that you specified for this filter: title, created_by: String or list of strings. Number of widgets deleted. List of widget IDs of widgets successfully deleted. Invalid field or operator. The query result upon error. HTTP response code. Additional information describing the error. 2.1.25 |Issues APIs for managing issues 2.1.25.1 |Create a new issue This endpoint allows users to create a new issue by providing the necessary details. Users can only create one issue at a time. The request must include the following required fields: name description observation_time domain category observation_time Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Issue created successfully Unauthorized access Internal server error 2.1.25.2 |Retrieve issues based on filters This endpoint retrieves a list of issues that match the specified filter criteria. It supports filtering by issue_id, external_id, detection_method, domain, source, severity, and _insert_time, along with sorting and pagination. request_data: Object containing filter criteria filters: Array of filter objects field: String (enum: 'issue_id', 'external_id', 'detection_method', 'domain', 'severity', '_insert_time', 'status') operator: String (enum: 'in', 'gte', 'lte') value: Array of integers/strings or single integer filters: Array of filter objects field: String (enum: 'issue_id', 'external_id', 'detection_method', 'domain', 'severity', '_insert_time', 'status') operator: String (enum: 'in', 'gte', 'lte') value: Array of integers/strings or single integer field: String (enum: 'issue_id', 'external_id', 'detection_method', 'domain', 'severity', '_insert_time', 'status') operator: String (enum: 'in', 'gte', 'lte') value: Array of integers/strings or single integer search_from: Integer (default: 0) - Starting index for pagination search_to: Integer (default: 100) - Ending index for pagination sort: Object for sorting results field: String (enum: '_insert_time', 'severity', 'issue_id') keyword: String (enum: 'asc', 'desc') - Sort order field: String (enum: '_insert_time', 'severity', 'issue_id') keyword: String (enum: 'asc', 'desc') - Sort order include_fields: Array of strings (enum: 'normalized_fields', 'custom_fields', default: []) - Fields to include in response Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Specifies the field to filter issues by. Comparison operator to use with the filter. Value(s) for filtering the issues. Starting index for pagination. Ending index for pagination. Sort order (ascending or descending). A list of fields to include in the response. normalized_fields: Includes normalized fields in the response. custom_fields: Includes custom user-defined fields in the response. By default these fields will not be part of response payload. Successful response with issues Unauthorized access Internal server error 2.1.25.3 |Update existing issue Update an existing issue in the system. Users can only update one issue at a time. At least one of the following fields is mandatory: severity status Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Numeric ID of the user to get Issues updated successfully Unauthorized access Internal server error 2.1.26 |Cases APIs for managing cases 2.1.26.1 |Retrieve cases based on filters This endpoint retrieves a list of cases that match the specified filter criteria. It supports filtering by case_id, case_domain, status_progress, severity, and creation_time, along with sorting and pagination. request_data: Object containing filter criteria filters: Array of filter objects field: String (enum: 'case_id', 'case_domain', 'severity', 'creation_time', 'status_progress') operator: String (enum: 'in', 'gte', 'lte') value: Array of integers/strings or single integer filters: Array of filter objects field: String (enum: 'case_id', 'case_domain', 'severity', 'creation_time', 'status_progress') operator: String (enum: 'in', 'gte', 'lte') value: Array of integers/strings or single integer field: String (enum: 'case_id', 'case_domain', 'severity', 'creation_time', 'status_progress') operator: String (enum: 'in', 'gte', 'lte') value: Array of integers/strings or single integer search_from: Integer (default: 0) - Starting index for pagination search_to: Integer (default: 100) - Ending index for pagination sort: Object for sorting results field: String (enum: 'creation_time', 'severity', 'case_id') keyword: String (enum: 'asc', 'desc') - Sort order field: String (enum: 'creation_time', 'severity', 'case_id') keyword: String (enum: 'asc', 'desc') - Sort order Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Specifies the field to filter cases by. Comparison operator to use with the filter. Value(s) for filtering the cases. Starting index for pagination. Ending index for pagination. Sort order (ascending or descending). Successful response with cases Unique identifier for the case Timestamp of case creation Owner of the case Domain associated with the case Indicates if the case is auto-resolved Custom fields for additional metadata Timestamp of last modification Score assigned to the case Detailed description of the case Scoring type applied to the case ID of the assigned user Name of the assigned user Indicates if the case is cloud-based Indicates if the case is automated Unauthorized access Internal server error 2.1.26.2 |Update existing case Update an existing case in the system. Users can only update one case at a time. At least one of the following fields is mandatory: case_id Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Numeric ID of the case to update Case updated successfully Unauthorized access Internal server error 2.1.26.3 |Retrieve Case Artifacts by Case Id This endpoint retrieves the artifacts for a given case_id Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Numeric ID of the case Successful response with cases Case ID for which the artifacts are fetched Unique identifier for the artifact File name for the artifact File sha256 for the artifact File signature for the artifact File wildfire verdict for the artifact Indicates if the artifact is malicious Indicates if the artifact is manual Indicates if the artifact is related_to_process Indicates the artifact confidence Type of the artifact Unauthorized access Internal server error 2.1.26.4 |Get War Room entries Get the War Room entries for a specific case or alert. You can filter by timestamp, ID, and tags. You can also choose which type of entries you want to retrieve (notes, chat, attachments...). The response depends on what type of entry you choose to retrieve. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The ID of the case or alert you want to get the War Room entries of. For a case ID, prepend "CASE-" to the case ID. For example, if the case ID is 3, the value of id should be CASE-3. For alert IDs, just put the ID. For example, if the alert ID is 3, the value of id should be 3. Return results starting from the investigation ID in firstID until the last investigation ID. Return results starting from the first investigation ID until the investigation ID in lastID. Filter the results by the number of entries you want returned. "pagesize": 0 returns all the results. RFC3339 timestamp. Filter results from the time the entry is created until the latest entry. The categories you want to filter and the results you want to receive: tags: Tags added to the investigation. chats: Communication between team members in the form of chat messages. notes: Any entries marked as notes. attachments: Any files uploaded to the War Room in a playbook, script, or by the analyst. incidentInfo: The case history. commandAndResults: Command and return the result of the command. playbookTaskResult: Return the task result. playbookTaskStartAndDone: Task and return the task result. playbookErrors: When there are no playbook errors, the response returned is 0. If using the filter category of tags, include the tags you want to filter by. The query result upon error. HTTP response code. Additional information describing the error. Payment Required Internal Server Error 2.1.26.5 |Add War Room entries Add an entry to the cases or alert War Room, including data. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The ID of the case or issue for which you want to add a War Room entry. For a case ID, prepend "CASE-" to the case ID. For example, if the case ID is 3, the value of id should be CASE-3. For alert IDs, just put the ID. For example, if the alert ID is 3, the value of id should be 3. The data you want to add or the command you want to run in the War Room. The query result upon error. HTTP response code. Additional information describing the error. Payment Required Internal Server Error 2.1.27 |Asset inventory APIs for managing assets in the asset inventory 2.1.27.1 |Get all or filtered assets Retrieve detailed information about all assets within your environment, including enterprise, multi-cloud, code, and external surfaces. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The field you want to filter. The operator to apply to the SEARCH_FIELD. It defines how the SEARCH_VALUE will be used to evaluate the SEARCH_FIELD. The value that the SEARCH_FIELD will be compared to, based on the SEARCH_TYPE operator. Valid values include: EQ, IN, NIN, NEQ, IS, IS_NOT, LIKE_ANY, NOT_LIKE_ANY, WILDCARD, WILDCARD_NOT, REGEX, REGEX_NOT, GT, LT, GTE, LTE, RELATIVE_TIMESTAMP, RANGE, CONTAINS, JSON_SEARCH, JSON_OVERLAPS, JSON_OVERLAPS_NOT, NCONTAINS, CONTAINS_IN_LIST, NOT_CONTAINS_IN_LIST, ARRAY_LEN_EQ, ARRAY_LEN_NEQ, ARRAY_CONTAINS, ARRAY_CONTAINS_NUMBERS, ARRAY_NOT_CONTAINS, JSON_EQ, JSON_NEQ, JSON_WILDCARD_NOT, JSON_WILDCARD, JSON_GTE, JSON_LTE, JSON_GT, JSON_LT, JSON_CONTAINS_NOT, JSON_CONTAINS, JSON_ARRAY_CONTAINED_IN, JSON_ARRAY_NOT_CONTAINED_IN, JSON_ARRAY_CONTAINS, JSON_ARRAY_CONTAINS_NOT, JSON_IS_EMPTY, JSON_IS_NOT_EMPTY` The field according to which you want the results to be sorted. Sort order. Valid values include: ASC (ascending order) DESC (descending order) An integer representing the starting offset within the query result set from which you want assets returned. An integer representing the end offset within the result set after which you do not want assets returned. Assets in the asset inventory that are indexed higher than this value are not returned in the final results set. Number of critical issues Number of high issues Number of low issues Number of medium issues Timestamp of when the asset was first observed Region of the cloud asset Timestamp of when the asset was last observed A more detailed grouping within a class. It categorizes assets based on their normalized function or common type, regardless of the provider or implementation. Represents the provider-specific name for a particular asset within a category. Number of critical cases Number of high cases Number of low cases Number of medium cases The highest-level grouping of assets based on their general purpose or domain. It is a broad classification that defines the overall function of the assets List of asset group IDs Number of assets returned Number of total results of this filter without paging Internal Server Error, Invalid Input 2.1.27.2 |Get asset by ID Retrieve detailed information about the asset specified by asset ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Timestamp of when the asset was last observed Region of the cloud asset Timestamp of when the asset was first observed Represents the provider-specific name for a particular asset within a category The highest-level grouping of assets based on their general purpose or domain. It is a broad classification that defines the overall function of the assets. A more detailed grouping within a class. It categorizes assets based on their normalized function or common type, regardless of the provider or implementation. List of asset group IDs Number of critical cases Number of high cases Number of low cases Number of medium cases Number of critical issues Number of high issues Number of low issues Number of medium issues Internal Server Error 2.1.27.3 |Get raw fields of asset by ID Get the raw fields of the asset specified by asset ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Internal Server Error 2.1.27.4 |Get schema of asset inventory Get the schema of the asset inventory, including the field names, pretty field names, and field type for every entry in the data model. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Data model field name Data model pretty field name Internal Server Error 2.1.27.5 |Get enum values of specified field Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Field name - must be of type Enum Internal Server Error 2.1.28 |Asset groups APIs for managing asset groups 2.1.28.1 |Get all or filtered asset groups By grouping assets based on shared attributes, you can address them collectively. Asset groups enable more efficient bulk actions and simplifies both filtering and scoping within the inventory and across the platform. Get all or filtered asset groups. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Internal Server Error, Invalid Input 2.1.28.2 |Create an Asset Group Create a dynamic Asset Group by specifying the filters, or a static group to manually include individual assets. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Asset Group name The type of Asset Group. Valid values include: Dynamic: Assets grouped using filters. Any asset that meets the defined criteria is included. Static: Manually add individual assets to be included in a group. Add an optional description to clarify the purpose of the Asset Group. Define the filter conditions for selecting which assets to be included in a dynamic Asset Group. The field you want to filter. The operator to apply to the SEARCH_FIELD. It defines how the SEARCH_VALUE will be used to evaluate the SEARCH_FIELD. The value that the SEARCH_FIELD will be compared to, based on the SEARCH_TYPE operator. Valid values include: EQ, IN, NIN, NEQ, IS, IS_NOT, LIKE_ANY, NOT_LIKE_ANY, WILDCARD, WILDCARD_NOT, REGEX, REGEX_NOT, GT, LT, GTE, LTE, RELATIVE_TIMESTAMP, RANGE, CONTAINS, JSON_SEARCH, JSON_OVERLAPS, JSON_OVERLAPS_NOT, NCONTAINS, CONTAINS_IN_LIST, NOT_CONTAINS_IN_LIST, ARRAY_LEN_EQ, ARRAY_LEN_NEQ, ARRAY_CONTAINS, ARRAY_CONTAINS_NUMBERS, ARRAY_NOT_CONTAINS, JSON_EQ, JSON_NEQ, JSON_WILDCARD_NOT, JSON_WILDCARD, JSON_GTE, JSON_LTE, JSON_GT, JSON_LT, JSON_CONTAINS_NOT, JSON_CONTAINS, JSON_ARRAY_CONTAINED_IN, JSON_ARRAY_NOT_CONTAINED_IN, JSON_ARRAY_CONTAINS, JSON_ARRAY_CONTAINS_NOT, JSON_IS_EMPTY, JSON_IS_NOT_EMPTY` Whether the Asset Group creation was successful ID of the new Asset Group Internal Server Error, Invalid Input 2.1.28.3 |Update an Asset Group Update the Asset Group specified by Asset Group ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Asset Group name The type of Asset Group. Valid values include: Dynamic: Assets grouped using filters. Any asset that meets the defined criteria is included. Static: Manually add individual assets to be included in a group. Add an optional description to clarify the purpose of the Asset Group. Define the filter conditions for selecting which assets to be included in a dynamic Asset Group. The field you want to filter. The operator to apply to the SEARCH_FIELD. It defines how the SEARCH_VALUE will be used to evaluate the SEARCH_FIELD. The value that the SEARCH_FIELD will be compared to, based on the SEARCH_TYPE operator. Valid values include: EQ, IN, NIN, NEQ, IS, IS_NOT, LIKE_ANY, NOT_LIKE_ANY, WILDCARD, WILDCARD_NOT, REGEX, REGEX_NOT, GT, LT, GTE, LTE, RELATIVE_TIMESTAMP, RANGE, CONTAINS, JSON_SEARCH, JSON_OVERLAPS, JSON_OVERLAPS_NOT, NCONTAINS, CONTAINS_IN_LIST, NOT_CONTAINS_IN_LIST, ARRAY_LEN_EQ, ARRAY_LEN_NEQ, ARRAY_CONTAINS, ARRAY_CONTAINS_NUMBERS, ARRAY_NOT_CONTAINS, JSON_EQ, JSON_NEQ, JSON_WILDCARD_NOT, JSON_WILDCARD, JSON_GTE, JSON_LTE, JSON_GT, JSON_LT, JSON_CONTAINS_NOT, JSON_CONTAINS, JSON_ARRAY_CONTAINED_IN, JSON_ARRAY_NOT_CONTAINED_IN, JSON_ARRAY_CONTAINS, JSON_ARRAY_CONTAINS_NOT, JSON_IS_EMPTY, JSON_IS_NOT_EMPTY` Internal Server Error, Invalid Input 2.1.28.4 |Delete an Asset Group Delete the Asset Group specified by Asset Group ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Internal Server Error, Invalid Input 2.2 |Cortex Platform IAM APIs Identity and Access Management (IAM) APIs for the Cortex platform. These APIs enable programmatic management of roles, user groups, users, API keys, and scope-based access control (SBAC) configurations. With these endpoints, you can create, read, update, and delete IAM entities, manage permissions and access controls, and configure security scopes for users, groups, and API keys. These APIs are intended to be accessed via API keys. Therefore, the key must have the RBAC permission 'access_management_view' for list & read operations and permission 'access_management_action' for create, edit, & delete operations. 2.2.1 |Preface Identity and Access Management (IAM) APIs for the Cortex platform. These APIs enable programmatic management of roles, user groups, users, API keys, and scope-based access control (SBAC) configurations. With these endpoints, you can create, read, update, and delete IAM entities, manage permissions and access controls, and configure security scopes for users, groups, and API keys. These APIs are intended to be accessed via API keys. Therefore, the key must have the RBAC permission 'access_management_view' for list & read operations and permission 'access_management_action' for create, edit, & delete operations. 2.2.1.1 |Servers 2.2.1.2 |Authentication methods Authorized requests to the API should use: x-api-key inside a header with the access token. Authorized requests to the API should use: x-api-key-id inside a header with the access token. 2.2.2 |Roles Operations for managing roles including creation, editing, deletion, and listing roles. 2.2.2.1 |List all roles This endpoint retrieves a list of roles and returns their attributes. This API does not list permissions for said roles. To receive that information, please leverage the existing Get Roles API (https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Get-Roles). Note: 'role_id' refers to the immutable role ID, while 'pretty_name' refers to the display name. Successfully retrieved roles The unique identifier for the role The display name for the role A description of the role's purpose and permissions Indicates if the role is a custom role (true) or a predefined system role (false) The user or system that created the role The timestamp when the role was created The timestamp when the role was last updated Metadata for the response Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.2.2 |Create a new role To identify all potential permissions that can be entered into the 'component_permissions' field, please utilize the 'GET /platform/iam/v1/role/permission-config' endpoint and utilize the 'view_name' and 'action_name' properties. Note: if you input an 'action' permission, then the relevant 'view' permission will be added for you. There will also be checks done on sub-permissions, ensuring that the main 'action' permissions are present as well. The available datasets can also be found by utilizing the 'GET /platform/iam/v1/role/permission-config' endpoint. Any dataset related permissions are not permissible in the 'component_permissions' field (an error will be thrown). The 'permissions' field in the entry for 'dataset_permissions' refers to dataset names for said dataset category.It is important to note that the 'access_all' field will only grant the role access to all datasets in said category that the API key has access to. Request object for creating a new role The data required to create a new role List of component permissions for the role. Possible values can be found by using the permission configs API and referring to the rbac_permissions field. Optional list of dataset permissions. This must be a list of JSONs. The layout for this JSON can be found under the 'DatasetPermission' schema . Note: possible dataset values can be found by using the permission configs API and referring to the datasetGroups field. Name of the role Optional description of the role Role created successfully Success message indicating the role was created Bad request for role create call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.2.3 |Delete an existing role Delete an existing Role Full role id of the custom role Role deleted successfully Success message indicating the role was deleted Bad request for role delete call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.2.4 |List all permission configs Returns the current list of permissions available for the specified tenant. Each permission includes: name: Display name of the permission as shown in the UI. view_name: Permission key for the "View" option, used in role creation APIs. action_name: Permission key for the "View/Edit" option, used in role creation APIs. Intended use: Use this endpoint to identify the correct permission keys corresponding to the display names visible in the UI. Note - The response mirrors how permissions are organized and displayed in the UI (by category and subcategory). Successfully retrieved permission configs Metadata for the response Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.3 |User Groups Operations for managing user groups including creation, editing, deletion, and listing user groups. 2.2.3.1 |List all user groups This endpoint retrieves a list of user groups and returns their attributes. For possible 'group_type' values, please refer to the enum documentation for 'GroupType'. Also, 'nested_groups' refers to the list of direct child groups of the given user group. Similarly, 'idp_groups' refers to the identifiers of associated identity provider groups to the given user group. Successfully retrieved user groups Metadata for the response Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.3.2 |Create a new user group This endpoint creates a new user group with the specified configuration. You can assign a role, add users, configure nested groups, and link identity provider groups. All fields except 'group_name' are optional. Request object for creating a new user group The data required to create a new user group The unique name for the user group The unique identifier of the role to assign to this group A brief description of the user group's purpose A list of user email addresses to add to the group A list of unique identifiers for groups to be nested within this group A list of identity provider (IdP) group names to associate with this group User Group created successfully Success message indicating the user group was created Bad request for user group create call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.3.3 |Edit an existing user group This endpoint allows modification of an existing user group by providing the group_id in the path and the update details in the request body. Only specified fields will be updated. Please note that to remove attributes, you must provide either an empty string or empty list as the value of the respective field in the request body. Full user group id Request object for editing an existing user group The data fields to update for the user group The new name for the user group The unique identifier of the new role to assign to this group The updated description for the user group The updated list of user email addresses for the group The updated list of nested group identifiers The updated list of associated identity provider (IdP) group names User Group edited successfully Success message indicating the user group was edited Bad request for user group edit call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.3.4 |Delete an existing user group Delete an existing user group. Note: upon deletion of a user group, its nested groups are not deleted; the relationships are simply removed. Full user group id User Group deleted successfully Success message indicating the user group was deleted Bad request for user group delete call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.4 |Scopes Operations for managing Scope-Based Access Control (SBAC) configurations for users, groups, and API keys. 2.2.4.1 |Retrieve an existing scope This API endpoint allows retrieving the scope details for a specific entity type and entity ID. For possible 'mode' and 'entity_type' values, please refer to the enum documentation for 'ModeType' and 'EntityType'. Full name of the entity's type Full id of the entity Successfully retrieved scope Metadata for the response Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.4.2 |Edit an existing scope This API endpoint allows editing the scope details for a specific entity type and entity ID. For possible 'mode' and 'entity_type' values, please refer to the enum documentation for 'ModeType' and 'EntityType'. Please note that the 'datasets_rows' field can only be passed in to the request body if the dataset scope config is enabled. Full name of the entity's type Full id of the entity Scope configuration data to update Asset scope configuration for request payloads Access mode for assets. Use 'scope' to limit access to specific asset groups, 'see_all' for full access, or 'no_scope' for no access List of asset group IDs when configuring scope (used in PUT requests) Dataset rows scope configuration for filtering data access Default behavior for datasets not explicitly listed in filters. 'no_scope' means no access to unlisted datasets, 'see_all' means full access to unlisted datasets List of dataset-specific filters to apply row-level access control Name of the dataset to apply the filter to Filter expression to limit data access (e.g., '_collector_name = collector_1') Endpoint scope configuration for request payloads Endpoint groups scope configuration for requests Access mode for endpoint groups List of endpoint group names when configuring scope Endpoint tags scope configuration for requests Access mode for endpoint tags List of endpoint tag names when configuring scope Cases and issues scope configuration for requests Access mode for cases and issues Whether to include cases and issues that have no associated entities/tags List of tag names when configuring scope Scope edited successfully Success message indicating the scope was edited Bad request for scope edit call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.5 |User Operations for managing users including listing users and editing user configurations. 2.2.5.1 |List all users This endpoint retrieves a list of all users and their respective properties. Note: the 'role_name' field refers to the 'pretty_name' attribute from the Roles APIs and the direct role assigned to the user, not roles inherited through groups. Successfully retrieved users Metadata for the response Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.5.2 |Get user This endpoint retrieves a user and its respective properties. Note: the 'role_name' field refers to the 'pretty_name' attribute from the Roles APIs, not the unique role identifier. Full email of the user Successfully retrieved user Metadata for the response Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.5.3 |Edit an existing user This endpoint allows updating various user details. Please note that you must pass an empty string for the 'role_id' field if you are attempting to remove a role from a user. For the 'user_groups' field, please pass an empty list to remove user group associations for the provided user. Full email of the user Request object for editing an existing user The data fields to update for the user The user's first name The user's last name The unique identifier of the role to assign to the user. Use an empty string to remove the role. The user's contact phone number The user's account status (e.g., 'Active', 'Disabled') Whether the user should be hidden from certain UI views A list of unique identifiers for the groups the user belongs to. Use an empty list to remove all group associations. User edited successfully Success message indicating the user was edited Bad request for user edit call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.6 |API Keys Operations for managing API keys including retrieving and editing API key configurations. 2.2.6.1 |Get API Key This endpoint retrieves an API key and its respective properties. Note: the 'roles' field refers to the 'pretty_name' attributes from the Roles APIs, not the unique role identifiers. For possible 'security_level' values, please refer to the enum documentation for 'SecurityLevel'. Successfully retrieved API key Metadata for the response Bad request for api key get call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.2.6.2 |Edit an API key This endpoint allows for the editing of an existing API key. For possible 'security_level' values, please refer to the enum documentation for 'SecurityLevel'. Request object for editing an existing API key The data fields to update for the API key A list of unique role identifiers to assign to the API key The security level for the API key (e.g., 'standard', 'advanced') An optional comment or description for the API key API key edited successfully Success message indicating the API key was edited Bad request for api key edit call Error message describing the issue Additional error details Unauthorized access Unauthorized access due to lack of sufficient permissions Internal server error. A unified status for API communication type errors. 2.3 |Cortex Cloud Alert Notification Rules REST APIs This OpenAPI Specification provides documentation about new Alert Notification Rules APIs for Cortex Cloud. With these endpoints, you can create, read, update, disable, and delete alert notification rules. These APIs are intended to be accessed via API keys. Therefore, the key must have the RBAC permission alert_notifications for list & read operations and permission alert_notifications_action for create, edit, enable/disable, & delete operations. 2.3.1 |Preface This OpenAPI Specification provides documentation about new Alert Notification Rules APIs for Cortex Cloud. With these endpoints, you can create, read, update, disable, and delete alert notification rules. These APIs are intended to be accessed via API keys. Therefore, the key must have the RBAC permission alert_notifications for list & read operations and permission alert_notifications_action for create, edit, enable/disable, & delete operations. 2.3.1.1 |Servers 2.3.2 |Alert Notification Rules Operations for managing rules including creation, editing, enabling/disabling, deletion, and listing rules. 2.3.2.1 |List all rules This endpoint retrieves a list of alert notification rules and returns their attributes. The meaning behind all attributes in this response could be found in the Rule schema. Please note that the field legacy_mail_format is set to False for all rules that were not created in legacy Xpanse environments. Successfully retrieved rules Name of the rule The unique identifier of the rule Optional description of the rule A required value from the LogForwardType Enum. An object containing the various attributes of the filter that will be applied to the given alert notification rule. Please refer to the BaseFilterExample and ComplexFilterExample schemas to gather further information on this field. A user can also derive a filter by utilizing the JSON export functionality when defining a rule via the UI. This JSON object provides the user with the ability to specify configurations for Email, Slack, and Syslog outputs. An object containing all the information that configures email output for the given notification rule. List of valid email addresses that will receive notifications forwarded by the given rule. An integer that is between 0 and 1440 (in minutes). This string value allows the user to customize the mail subject of the event forwarded by the given rule. This boolean value signifies whether the legacy mail format is being utilized (applicable only for legacy Xpanse tenant) An object containing all the information that configures Slack output for the given notification rule. List of valid Slack channels that will receive notifications forwarded by the given rule. An object containing all the information that configures Syslog output for the given notification rule. This string value that specifies the Syslog integration that will be associated with the given notification rule. List of valid application IDs (AWS SQS, AWS S3, Splunk, and webhook integrations). These can be found by utilizing the List External Applications API. This string indicates which time zone the rule will be associated with. If the field is not passed in, the default value will be UTC. The following are valid time zone options: Africa/Abidjan, Africa/Accra, Africa/Addis_Ababa, Africa/Algiers, Africa/Asmara, Africa/Asmera, Africa/Bamako, Africa/Bangui, Africa/Banjul, Africa/Bissau, Africa/Blantyre, Africa/Brazzaville, Africa/Bujumbura, Africa/Cairo, Africa/Casablanca, Africa/Ceuta, Africa/Conakry, Africa/Dakar, Africa/Dar_es_Salaam, Africa/Djibouti, Africa/Douala, Africa/El_Aaiun, Africa/Freetown, Africa/Gaborone, Africa/Harare, Africa/Johannesburg, Africa/Juba, Africa/Kampala, Africa/Khartoum, Africa/Kigali, Africa/Kinshasa, Africa/Lagos, Africa/Libreville, Africa/Lome, Africa/Luanda, Africa/Lubumbashi, Africa/Lusaka, Africa/Malabo, Africa/Maputo, Africa/Maseru, Africa/Mbabane, Africa/Mogadishu, Africa/Monrovia, Africa/Nairobi, Africa/Ndjamena, Africa/Niamey, Africa/Nouakchott, Africa/Ouagadougou, Africa/Porto-Novo, Africa/Sao_Tome, Africa/Timbuktu, Africa/Tripoli, Africa/Tunis, Africa/Windhoek, America/Adak, America/Anchorage, America/Anguilla, America/Antigua, America/Araguaina, America/Argentina/Buenos_Aires, America/Argentina/Catamarca, America/Argentina/ComodRivadavia, America/Argentina/Cordoba, America/Argentina/Jujuy, America/Argentina/La_Rioja, America/Argentina/Mendoza, America/Argentina/Rio_Gallegos, America/Argentina/Salta, America/Argentina/San_Juan, America/Argentina/San_Luis, America/Argentina/Tucuman, America/Argentina/Ushuaia, America/Aruba, America/Asuncion, America/Atikokan, America/Atka, America/Bahia, America/Bahia_Banderas, America/Barbados, America/Belem, America/Belize, America/Blanc-Sablon, America/Boa_Vista, America/Bogota, America/Boise, America/Buenos_Aires, America/Cambridge_Bay, America/Campo_Grande, America/Cancun, America/Caracas, America/Catamarca, America/Cayenne, America/Cayman, America/Chicago, America/Chihuahua, America/Ciudad_Juarez, America/Coral_Harbour, America/Cordoba, America/Costa_Rica, America/Coyhaique, America/Creston, America/Cuiaba, America/Curacao, America/Danmarkshavn, America/Dawson, America/Dawson_Creek, America/Denver, America/Detroit, America/Dominica, America/Edmonton, America/Eirunepe, America/El_Salvador, America/Ensenada, America/Fort_Nelson, America/Fort_Wayne, America/Fortaleza, America/Glace_Bay, America/Godthab, America/Goose_Bay, America/Grand_Turk, America/Grenada, America/Guadeloupe, America/Guatemala, America/Guayaquil, America/Guyana, America/Halifax, America/Havana, America/Hermosillo, America/Indiana/Indianapolis, America/Indiana/Knox, America/Indiana/Marengo, America/Indiana/Petersburg, America/Indiana/Tell_City, America/Indiana/Vevay, America/Indiana/Vincennes, America/Indiana/Winamac, America/Indianapolis, America/Inuvik, America/Iqaluit, America/Jamaica, America/Jujuy, America/Juneau, America/Kentucky/Louisville, America/Kentucky/Monticello, America/Knox_IN, America/Kralendijk, America/La_Paz, America/Lima, America/Los_Angeles, America/Louisville, America/Lower_Princes, America/Maceio, America/Managua, America/Manaus, America/Marigot, America/Martinique, America/Matamoros, America/Mazatlan, America/Mendoza, America/Menominee, America/Merida, America/Metlakatla, America/Mexico_City, America/Miquelon, America/Moncton, America/Monterrey, America/Montevideo, America/Montreal, America/Montserrat, America/Nassau, America/New_York, America/Nipigon, America/Nome, America/Noronha, America/North_Dakota/Beulah, America/North_Dakota/Center, America/North_Dakota/New_Salem, America/Nuuk, America/Ojinaga, America/Panama, America/Pangnirtung, America/Paramaribo, America/Phoenix, America/Port-au-Prince, America/Port_of_Spain, America/Porto_Acre, America/Porto_Velho, America/Puerto_Rico, America/Punta_Arenas, America/Rainy_River, America/Rankin_Inlet, America/Recife, America/Regina, America/Resolute, America/Rio_Branco, America/Rosario, America/Santa_Isabel, America/Santarem, America/Santiago, America/Santo_Domingo, America/Sao_Paulo, America/Scoresbysund, America/Shiprock, America/Sitka, America/St_Barthelemy, America/St_Johns, America/St_Kitts, America/St_Lucia, America/St_Thomas, America/St_Vincent, America/Swift_Current, America/Tegucigalpa, America/Thule, America/Thunder_Bay, America/Tijuana, America/Toronto, America/Tortola, America/Vancouver, America/Virgin, America/Whitehorse, America/Winnipeg, America/Yakutat, America/Yellowknife, Antarctica/Casey, Antarctica/Davis, Antarctica/DumontDUrville, Antarctica/Macquarie, Antarctica/Mawson, Antarctica/McMurdo, Antarctica/Palmer, Antarctica/Rothera, Antarctica/South_Pole, Antarctica/Syowa, Antarctica/Troll, Antarctica/Vostok, Arctic/Longyearbyen, Asia/Aden, Asia/Almaty, Asia/Amman, Asia/Anadyr, Asia/Aqtau, Asia/Aqtobe, Asia/Ashgabat, Asia/Ashkhabad, Asia/Atyrau, Asia/Baghdad, Asia/Bahrain, Asia/Baku, Asia/Bangkok, Asia/Barnaul, Asia/Beirut, Asia/Bishkek, Asia/Brunei, Asia/Calcutta, Asia/Chita, Asia/Choibalsan, Asia/Chongqing, Asia/Chungking, Asia/Colombo, Asia/Dacca, Asia/Damascus, Asia/Dhaka, Asia/Dili, Asia/Dubai, Asia/Dushanbe, Asia/Famagusta, Asia/Gaza, Asia/Harbin, Asia/Hebron, Asia/Ho_Chi_Minh, Asia/Hong_Kong, Asia/Hovd, Asia/Irkutsk, Asia/Istanbul, Asia/Jakarta, Asia/Jayapura, Asia/Jerusalem, Asia/Kabul, Asia/Kamchatka, Asia/Karachi, Asia/Kashgar, Asia/Kathmandu, Asia/Katmandu, Asia/Khandyga, Asia/Kolkata, Asia/Krasnoyarsk, Asia/Kuala_Lumpur, Asia/Kuching, Asia/Kuwait, Asia/Macao, Asia/Macau, Asia/Magadan, Asia/Makassar, Asia/Manila, Asia/Muscat, Asia/Nicosia, Asia/Novokuznetsk, Asia/Novosibirsk, Asia/Omsk, Asia/Oral, Asia/Phnom_Penh, Asia/Pontianak, Asia/Pyongyang, Asia/Qatar, Asia/Qostanay, Asia/Qyzylorda, Asia/Rangoon, Asia/Riyadh, Asia/Saigon, Asia/Sakhalin, Asia/Samarkand, Asia/Seoul, Asia/Shanghai, Asia/Singapore, Asia/Srednekolymsk, Asia/Taipei, Asia/Tashkent, Asia/Tbilisi, Asia/Tehran, Asia/Tel_Aviv, Asia/Thimbu, Asia/Thimphu, Asia/Tokyo, Asia/Tomsk, Asia/Ujung_Pandang, Asia/Ulaanbaatar, Asia/Ulan_Bator, Asia/Urumqi, Asia/Ust-Nera, Asia/Vientiane, Asia/Vladivostok, Asia/Yakutsk, Asia/Yangon, Asia/Yekaterinburg, Asia/Yerevan, Atlantic/Azores, Atlantic/Bermuda, Atlantic/Canary, Atlantic/Cape_Verde, Atlantic/Faeroe, Atlantic/Faroe, Atlantic/Jan_Mayen, Atlantic/Madeira, Atlantic/Reykjavik, Atlantic/South_Georgia, Atlantic/St_Helena, Atlantic/Stanley, Australia/ACT, Australia/Adelaide, Australia/Brisbane, Australia/Broken_Hill, Australia/Canberra, Australia/Currie, Australia/Darwin, Australia/Eucla, Australia/Hobart, Australia/LHI, Australia/Lindeman, Australia/Lord_Howe, Australia/Melbourne, Australia/NSW, Australia/North, Australia/Perth, Australia/Queensland, Australia/South, Australia/Sydney, Australia/Tasmania, Australia/Victoria, Australia/West, Australia/Yancowinna, Brazil/Acre, Brazil/DeNoronha, Brazil/East, Brazil/West, CET, CST6CDT, Canada/Atlantic, Canada/Central, Canada/Eastern, Canada/Mountain, Canada/Newfoundland, Canada/Pacific, Canada/Saskatchewan, Canada/Yukon, Chile/Continental, Chile/EasterIsland, Cuba, EET, EST, EST5EDT, Egypt, Eire, Etc/GMT, Etc/GMT+0, Etc/GMT+1, Etc/GMT+10, Etc/GMT+11, Etc/GMT+12, Etc/GMT+2, Etc/GMT+3, Etc/GMT+4, Etc/GMT+5, Etc/GMT+6, Etc/GMT+7, Etc/GMT+8, Etc/GMT+9, Etc/GMT-0, Etc/GMT-1, Etc/GMT-10, Etc/GMT-11, Etc/GMT-12, Etc/GMT-13, Etc/GMT-14, Etc/GMT-2, Etc/GMT-3, Etc/GMT-4, Etc/GMT-5, Etc/GMT-6, Etc/GMT-7, Etc/GMT-8, Etc/GMT-9, Etc/GMT0, Etc/Greenwich, Etc/UCT, Etc/UTC, Etc/Universal, Etc/Zulu, Europe/Amsterdam, Europe/Andorra, Europe/Astrakhan, Europe/Athens, Europe/Belfast, Europe/Belgrade, Europe/Berlin, Europe/Bratislava, Europe/Brussels, Europe/Bucharest, Europe/Budapest, Europe/Busingen, Europe/Chisinau, Europe/Copenhagen, Europe/Dublin, Europe/Gibraltar, Europe/Guernsey, Europe/Helsinki, Europe/Isle_of_Man, Europe/Istanbul, Europe/Jersey, Europe/Kaliningrad, Europe/Kiev, Europe/Kirov, Europe/Kyiv, Europe/Lisbon, Europe/Ljubljana, Europe/London, Europe/Luxembourg, Europe/Madrid, Europe/Malta, Europe/Mariehamn, Europe/Minsk, Europe/Monaco, Europe/Moscow, Europe/Nicosia, Europe/Oslo, Europe/Paris, Europe/Podgorica, Europe/Prague, Europe/Riga, Europe/Rome, Europe/Samara, Europe/San_Marino, Europe/Sarajevo, Europe/Saratov, Europe/Simferopol, Europe/Skopje, Europe/Sofia, Europe/Stockholm, Europe/Tallinn, Europe/Tirane, Europe/Tiraspol, Europe/Ulyanovsk, Europe/Uzhgorod, Europe/Vaduz, Europe/Vatican, Europe/Vienna, Europe/Vilnius, Europe/Volgograd, Europe/Warsaw, Europe/Zagreb, Europe/Zaporozhye, Europe/Zurich, GB, GB-Eire, GMT, GMT+0, GMT-0, GMT0, Greenwich, HST, Hongkong, Iceland, Indian/Antananarivo, Indian/Chagos, Indian/Christmas, Indian/Cocos, Indian/Comoro, Indian/Kerguelen, Indian/Mahe, Indian/Maldives, Indian/Mauritius, Indian/Mayotte, Indian/Reunion, Iran, Israel, Jamaica, Japan, Kwajalein, Libya, MET, MST, MST7MDT, Mexico/BajaNorte, Mexico/BajaSur, Mexico/General, NZ, NZ-CHAT, Navajo, PRC, PST8PDT, Pacific/Apia, Pacific/Auckland, Pacific/Bougainville, Pacific/Chatham, Pacific/Chuuk, Pacific/Easter, Pacific/Efate, Pacific/Enderbury, Pacific/Fakaofo, Pacific/Fiji, Pacific/Funafuti, Pacific/Galapagos, Pacific/Gambier, Pacific/Guadalcanal, Pacific/Guam, Pacific/Honolulu, Pacific/Johnston, Pacific/Kanton, Pacific/Kiritimati, Pacific/Kosrae, Pacific/Kwajalein, Pacific/Majuro, Pacific/Marquesas, Pacific/Midway, Pacific/Nauru, Pacific/Niue, Pacific/Norfolk, Pacific/Noumea, Pacific/Pago_Pago, Pacific/Palau, Pacific/Pitcairn, Pacific/Pohnpei, Pacific/Ponape, Pacific/Port_Moresby, Pacific/Rarotonga, Pacific/Saipan, Pacific/Samoa, Pacific/Tahiti, Pacific/Tarawa, Pacific/Tongatapu, Pacific/Truk, Pacific/Wake, Pacific/Wallis, Pacific/Yap, Poland, Portugal, ROC, ROK, Singapore, Turkey, UCT, US/Alaska, US/Aleutian, US/Arizona, US/Central, US/East-Indiana, US/Eastern, US/Hawaii, US/Indiana-Starke, US/Michigan, US/Mountain, US/Pacific, US/Samoa, UTC, Universal, W-SU, WET, Zulu This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for mail integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for Syslog integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue or standard_alert format for Slack integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. Note: the legacy_alert format is not permissible for Slack. This string indicates the user or api-key responsible for creating the notification rule. This value represents the timestamp when the notification rule was created. This value represents the timestamp when the notification rule was last modified. A flag indicating whether the notification rule is currently active and enabled. Metadata for the response 2.3.2.2 |Create a new rule This endpoint allows the user to create a new alert notification rule and specify its attributes. To see the possible forward_type values, please check the relevant enum named LogForwardType for additional information. The forward_source attribute is where a user would define email, Slack, and Syslog configurations; the required formats for these fields are documented in the RuleCreateRequest schema. The applications attribute is a list of external applications application IDs (webhook, AWS S3, AWS SQS, and Splunk). The mail_format, syslog_format, and slack_format attributes represent whether the user would like the notifications for these integrations to be issues or alerts formats; more information is provided in the RuleCreateRequest schema. Enumerates the rule creation request schema for Alert Notifications Name of the rule Optional description of the rule A required value from the LogForwardType Enum. An object containing the various attributes of the filter that will be applied to the given alert notification rule. Please refer to the BaseFilterExample and ComplexFilterExample schemas to gather further information on this field. A user can also derive a filter by utilizing the JSON export functionality when defining a rule via the UI. This JSON object provides the user with the ability to specify configurations for Email, Slack, and Syslog outputs. An object containing all the information that configures email output for the given notification rule. List of valid email addresses that will receive notifications forwarded by the given rule. An integer that is between 0 and 1440 (in minutes). This string value allows the user to customize the mail subject of the event forwarded by the given rule. An object containing all the information that configures Slack output for the given notification rule. List of valid Slack channels that will receive notifications forwarded by the given rule. An object containing all the information that configures Syslog output for the given notification rule. This string value that specifies the Syslog integration that will be associated with the given notification rule. List of valid application IDs (AWS SQS, AWS S3, Splunk, and webhook integrations). These can be found by utilizing the List External Applications API. This string indicates which time zone the rule will be associated with. If the field is not passed in, the default value will be UTC. The following are valid time zone options: Africa/Abidjan, Africa/Accra, Africa/Addis_Ababa, Africa/Algiers, Africa/Asmara, Africa/Asmera, Africa/Bamako, Africa/Bangui, Africa/Banjul, Africa/Bissau, Africa/Blantyre, Africa/Brazzaville, Africa/Bujumbura, Africa/Cairo, Africa/Casablanca, Africa/Ceuta, Africa/Conakry, Africa/Dakar, Africa/Dar_es_Salaam, Africa/Djibouti, Africa/Douala, Africa/El_Aaiun, Africa/Freetown, Africa/Gaborone, Africa/Harare, Africa/Johannesburg, Africa/Juba, Africa/Kampala, Africa/Khartoum, Africa/Kigali, Africa/Kinshasa, Africa/Lagos, Africa/Libreville, Africa/Lome, Africa/Luanda, Africa/Lubumbashi, Africa/Lusaka, Africa/Malabo, Africa/Maputo, Africa/Maseru, Africa/Mbabane, Africa/Mogadishu, Africa/Monrovia, Africa/Nairobi, Africa/Ndjamena, Africa/Niamey, Africa/Nouakchott, Africa/Ouagadougou, Africa/Porto-Novo, Africa/Sao_Tome, Africa/Timbuktu, Africa/Tripoli, Africa/Tunis, Africa/Windhoek, America/Adak, America/Anchorage, America/Anguilla, America/Antigua, America/Araguaina, America/Argentina/Buenos_Aires, America/Argentina/Catamarca, America/Argentina/ComodRivadavia, America/Argentina/Cordoba, America/Argentina/Jujuy, America/Argentina/La_Rioja, America/Argentina/Mendoza, America/Argentina/Rio_Gallegos, America/Argentina/Salta, America/Argentina/San_Juan, America/Argentina/San_Luis, America/Argentina/Tucuman, America/Argentina/Ushuaia, America/Aruba, America/Asuncion, America/Atikokan, America/Atka, America/Bahia, America/Bahia_Banderas, America/Barbados, America/Belem, America/Belize, America/Blanc-Sablon, America/Boa_Vista, America/Bogota, America/Boise, America/Buenos_Aires, America/Cambridge_Bay, America/Campo_Grande, America/Cancun, America/Caracas, America/Catamarca, America/Cayenne, America/Cayman, America/Chicago, America/Chihuahua, America/Ciudad_Juarez, America/Coral_Harbour, America/Cordoba, America/Costa_Rica, America/Coyhaique, America/Creston, America/Cuiaba, America/Curacao, America/Danmarkshavn, America/Dawson, America/Dawson_Creek, America/Denver, America/Detroit, America/Dominica, America/Edmonton, America/Eirunepe, America/El_Salvador, America/Ensenada, America/Fort_Nelson, America/Fort_Wayne, America/Fortaleza, America/Glace_Bay, America/Godthab, America/Goose_Bay, America/Grand_Turk, America/Grenada, America/Guadeloupe, America/Guatemala, America/Guayaquil, America/Guyana, America/Halifax, America/Havana, America/Hermosillo, America/Indiana/Indianapolis, America/Indiana/Knox, America/Indiana/Marengo, America/Indiana/Petersburg, America/Indiana/Tell_City, America/Indiana/Vevay, America/Indiana/Vincennes, America/Indiana/Winamac, America/Indianapolis, America/Inuvik, America/Iqaluit, America/Jamaica, America/Jujuy, America/Juneau, America/Kentucky/Louisville, America/Kentucky/Monticello, America/Knox_IN, America/Kralendijk, America/La_Paz, America/Lima, America/Los_Angeles, America/Louisville, America/Lower_Princes, America/Maceio, America/Managua, America/Manaus, America/Marigot, America/Martinique, America/Matamoros, America/Mazatlan, America/Mendoza, America/Menominee, America/Merida, America/Metlakatla, America/Mexico_City, America/Miquelon, America/Moncton, America/Monterrey, America/Montevideo, America/Montreal, America/Montserrat, America/Nassau, America/New_York, America/Nipigon, America/Nome, America/Noronha, America/North_Dakota/Beulah, America/North_Dakota/Center, America/North_Dakota/New_Salem, America/Nuuk, America/Ojinaga, America/Panama, America/Pangnirtung, America/Paramaribo, America/Phoenix, America/Port-au-Prince, America/Port_of_Spain, America/Porto_Acre, America/Porto_Velho, America/Puerto_Rico, America/Punta_Arenas, America/Rainy_River, America/Rankin_Inlet, America/Recife, America/Regina, America/Resolute, America/Rio_Branco, America/Rosario, America/Santa_Isabel, America/Santarem, America/Santiago, America/Santo_Domingo, America/Sao_Paulo, America/Scoresbysund, America/Shiprock, America/Sitka, America/St_Barthelemy, America/St_Johns, America/St_Kitts, America/St_Lucia, America/St_Thomas, America/St_Vincent, America/Swift_Current, America/Tegucigalpa, America/Thule, America/Thunder_Bay, America/Tijuana, America/Toronto, America/Tortola, America/Vancouver, America/Virgin, America/Whitehorse, America/Winnipeg, America/Yakutat, America/Yellowknife, Antarctica/Casey, Antarctica/Davis, Antarctica/DumontDUrville, Antarctica/Macquarie, Antarctica/Mawson, Antarctica/McMurdo, Antarctica/Palmer, Antarctica/Rothera, Antarctica/South_Pole, Antarctica/Syowa, Antarctica/Troll, Antarctica/Vostok, Arctic/Longyearbyen, Asia/Aden, Asia/Almaty, Asia/Amman, Asia/Anadyr, Asia/Aqtau, Asia/Aqtobe, Asia/Ashgabat, Asia/Ashkhabad, Asia/Atyrau, Asia/Baghdad, Asia/Bahrain, Asia/Baku, Asia/Bangkok, Asia/Barnaul, Asia/Beirut, Asia/Bishkek, Asia/Brunei, Asia/Calcutta, Asia/Chita, Asia/Choibalsan, Asia/Chongqing, Asia/Chungking, Asia/Colombo, Asia/Dacca, Asia/Damascus, Asia/Dhaka, Asia/Dili, Asia/Dubai, Asia/Dushanbe, Asia/Famagusta, Asia/Gaza, Asia/Harbin, Asia/Hebron, Asia/Ho_Chi_Minh, Asia/Hong_Kong, Asia/Hovd, Asia/Irkutsk, Asia/Istanbul, Asia/Jakarta, Asia/Jayapura, Asia/Jerusalem, Asia/Kabul, Asia/Kamchatka, Asia/Karachi, Asia/Kashgar, Asia/Kathmandu, Asia/Katmandu, Asia/Khandyga, Asia/Kolkata, Asia/Krasnoyarsk, Asia/Kuala_Lumpur, Asia/Kuching, Asia/Kuwait, Asia/Macao, Asia/Macau, Asia/Magadan, Asia/Makassar, Asia/Manila, Asia/Muscat, Asia/Nicosia, Asia/Novokuznetsk, Asia/Novosibirsk, Asia/Omsk, Asia/Oral, Asia/Phnom_Penh, Asia/Pontianak, Asia/Pyongyang, Asia/Qatar, Asia/Qostanay, Asia/Qyzylorda, Asia/Rangoon, Asia/Riyadh, Asia/Saigon, Asia/Sakhalin, Asia/Samarkand, Asia/Seoul, Asia/Shanghai, Asia/Singapore, Asia/Srednekolymsk, Asia/Taipei, Asia/Tashkent, Asia/Tbilisi, Asia/Tehran, Asia/Tel_Aviv, Asia/Thimbu, Asia/Thimphu, Asia/Tokyo, Asia/Tomsk, Asia/Ujung_Pandang, Asia/Ulaanbaatar, Asia/Ulan_Bator, Asia/Urumqi, Asia/Ust-Nera, Asia/Vientiane, Asia/Vladivostok, Asia/Yakutsk, Asia/Yangon, Asia/Yekaterinburg, Asia/Yerevan, Atlantic/Azores, Atlantic/Bermuda, Atlantic/Canary, Atlantic/Cape_Verde, Atlantic/Faeroe, Atlantic/Faroe, Atlantic/Jan_Mayen, Atlantic/Madeira, Atlantic/Reykjavik, Atlantic/South_Georgia, Atlantic/St_Helena, Atlantic/Stanley, Australia/ACT, Australia/Adelaide, Australia/Brisbane, Australia/Broken_Hill, Australia/Canberra, Australia/Currie, Australia/Darwin, Australia/Eucla, Australia/Hobart, Australia/LHI, Australia/Lindeman, Australia/Lord_Howe, Australia/Melbourne, Australia/NSW, Australia/North, Australia/Perth, Australia/Queensland, Australia/South, Australia/Sydney, Australia/Tasmania, Australia/Victoria, Australia/West, Australia/Yancowinna, Brazil/Acre, Brazil/DeNoronha, Brazil/East, Brazil/West, CET, CST6CDT, Canada/Atlantic, Canada/Central, Canada/Eastern, Canada/Mountain, Canada/Newfoundland, Canada/Pacific, Canada/Saskatchewan, Canada/Yukon, Chile/Continental, Chile/EasterIsland, Cuba, EET, EST, EST5EDT, Egypt, Eire, Etc/GMT, Etc/GMT+0, Etc/GMT+1, Etc/GMT+10, Etc/GMT+11, Etc/GMT+12, Etc/GMT+2, Etc/GMT+3, Etc/GMT+4, Etc/GMT+5, Etc/GMT+6, Etc/GMT+7, Etc/GMT+8, Etc/GMT+9, Etc/GMT-0, Etc/GMT-1, Etc/GMT-10, Etc/GMT-11, Etc/GMT-12, Etc/GMT-13, Etc/GMT-14, Etc/GMT-2, Etc/GMT-3, Etc/GMT-4, Etc/GMT-5, Etc/GMT-6, Etc/GMT-7, Etc/GMT-8, Etc/GMT-9, Etc/GMT0, Etc/Greenwich, Etc/UCT, Etc/UTC, Etc/Universal, Etc/Zulu, Europe/Amsterdam, Europe/Andorra, Europe/Astrakhan, Europe/Athens, Europe/Belfast, Europe/Belgrade, Europe/Berlin, Europe/Bratislava, Europe/Brussels, Europe/Bucharest, Europe/Budapest, Europe/Busingen, Europe/Chisinau, Europe/Copenhagen, Europe/Dublin, Europe/Gibraltar, Europe/Guernsey, Europe/Helsinki, Europe/Isle_of_Man, Europe/Istanbul, Europe/Jersey, Europe/Kaliningrad, Europe/Kiev, Europe/Kirov, Europe/Kyiv, Europe/Lisbon, Europe/Ljubljana, Europe/London, Europe/Luxembourg, Europe/Madrid, Europe/Malta, Europe/Mariehamn, Europe/Minsk, Europe/Monaco, Europe/Moscow, Europe/Nicosia, Europe/Oslo, Europe/Paris, Europe/Podgorica, Europe/Prague, Europe/Riga, Europe/Rome, Europe/Samara, Europe/San_Marino, Europe/Sarajevo, Europe/Saratov, Europe/Simferopol, Europe/Skopje, Europe/Sofia, Europe/Stockholm, Europe/Tallinn, Europe/Tirane, Europe/Tiraspol, Europe/Ulyanovsk, Europe/Uzhgorod, Europe/Vaduz, Europe/Vatican, Europe/Vienna, Europe/Vilnius, Europe/Volgograd, Europe/Warsaw, Europe/Zagreb, Europe/Zaporozhye, Europe/Zurich, GB, GB-Eire, GMT, GMT+0, GMT-0, GMT0, Greenwich, HST, Hongkong, Iceland, Indian/Antananarivo, Indian/Chagos, Indian/Christmas, Indian/Cocos, Indian/Comoro, Indian/Kerguelen, Indian/Mahe, Indian/Maldives, Indian/Mauritius, Indian/Mayotte, Indian/Reunion, Iran, Israel, Jamaica, Japan, Kwajalein, Libya, MET, MST, MST7MDT, Mexico/BajaNorte, Mexico/BajaSur, Mexico/General, NZ, NZ-CHAT, Navajo, PRC, PST8PDT, Pacific/Apia, Pacific/Auckland, Pacific/Bougainville, Pacific/Chatham, Pacific/Chuuk, Pacific/Easter, Pacific/Efate, Pacific/Enderbury, Pacific/Fakaofo, Pacific/Fiji, Pacific/Funafuti, Pacific/Galapagos, Pacific/Gambier, Pacific/Guadalcanal, Pacific/Guam, Pacific/Honolulu, Pacific/Johnston, Pacific/Kanton, Pacific/Kiritimati, Pacific/Kosrae, Pacific/Kwajalein, Pacific/Majuro, Pacific/Marquesas, Pacific/Midway, Pacific/Nauru, Pacific/Niue, Pacific/Norfolk, Pacific/Noumea, Pacific/Pago_Pago, Pacific/Palau, Pacific/Pitcairn, Pacific/Pohnpei, Pacific/Ponape, Pacific/Port_Moresby, Pacific/Rarotonga, Pacific/Saipan, Pacific/Samoa, Pacific/Tahiti, Pacific/Tarawa, Pacific/Tongatapu, Pacific/Truk, Pacific/Wake, Pacific/Wallis, Pacific/Yap, Poland, Portugal, ROC, ROK, Singapore, Turkey, UCT, US/Alaska, US/Aleutian, US/Arizona, US/Central, US/East-Indiana, US/Eastern, US/Hawaii, US/Indiana-Starke, US/Michigan, US/Mountain, US/Pacific, US/Samoa, UTC, Universal, W-SU, WET, Zulu This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for mail integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for Syslog integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue or standard_alert format for Slack integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI.Not: the legacy_alert format is not permissible for Slack. The unique identifier of the rule This boolean value signifies whether the legacy mail format is being utilized (applicable only for legacy Xpanse tenant) This string indicates whether the rule will use the issue or standard_alert format for Slack integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. Note: the legacy_alert format is not permissible for Slack. This string indicates the user or api-key responsible for creating the notification rule. This value represents the timestamp when the notification rule was created. This value represents the timestamp when the notification rule was last modified. A flag indicating whether the notification rule is currently active and enabled. Error message describing the issue Additional error details 2.3.2.3 |Retrieve a specific alert notification rule This endpoint retrieves an alert notification rule and returns its attributes. The meaning behind all attributes in this response could be found in the Rule schema. Please note that the field legacy_mail_format is set to False for all rules that were not created in legacy Xpanse environments. Full rule uuid of the Alert Notification Rule Successfully retrieved rule Enumerates the various attributes of an alert notification rule that is returned via numerous flows. Name of the rule The unique identifier of the rule Optional description of the rule A required value from the LogForwardType Enum. An object containing the various attributes of the filter that will be applied to the given alert notification rule. Please refer to the BaseFilterExample and ComplexFilterExample schemas to gather further information on this field. A user can also derive a filter by utilizing the JSON export functionality when defining a rule via the UI. This JSON object provides the user with the ability to specify configurations for Email, Slack, and Syslog outputs. An object containing all the information that configures email output for the given notification rule. List of valid email addresses that will receive notifications forwarded by the given rule. An integer that is between 0 and 1440 (in minutes). This string value allows the user to customize the mail subject of the event forwarded by the given rule. This boolean value signifies whether the legacy mail format is being utilized (applicable only for legacy Xpanse tenant) An object containing all the information that configures Slack output for the given notification rule. List of valid Slack channels that will receive notifications forwarded by the given rule. An object containing all the information that configures Syslog output for the given notification rule. This string value that specifies the Syslog integration that will be associated with the given notification rule. List of valid application IDs (AWS SQS, AWS S3, Splunk, and webhook integrations). These can be found by utilizing the List External Applications API. This string indicates which time zone the rule will be associated with. If the field is not passed in, the default value will be UTC. The following are valid time zone options: Africa/Abidjan, Africa/Accra, Africa/Addis_Ababa, Africa/Algiers, Africa/Asmara, Africa/Asmera, Africa/Bamako, Africa/Bangui, Africa/Banjul, Africa/Bissau, Africa/Blantyre, Africa/Brazzaville, Africa/Bujumbura, Africa/Cairo, Africa/Casablanca, Africa/Ceuta, Africa/Conakry, Africa/Dakar, Africa/Dar_es_Salaam, Africa/Djibouti, Africa/Douala, Africa/El_Aaiun, Africa/Freetown, Africa/Gaborone, Africa/Harare, Africa/Johannesburg, Africa/Juba, Africa/Kampala, Africa/Khartoum, Africa/Kigali, Africa/Kinshasa, Africa/Lagos, Africa/Libreville, Africa/Lome, Africa/Luanda, Africa/Lubumbashi, Africa/Lusaka, Africa/Malabo, Africa/Maputo, Africa/Maseru, Africa/Mbabane, Africa/Mogadishu, Africa/Monrovia, Africa/Nairobi, Africa/Ndjamena, Africa/Niamey, Africa/Nouakchott, Africa/Ouagadougou, Africa/Porto-Novo, Africa/Sao_Tome, Africa/Timbuktu, Africa/Tripoli, Africa/Tunis, Africa/Windhoek, America/Adak, America/Anchorage, America/Anguilla, America/Antigua, America/Araguaina, America/Argentina/Buenos_Aires, America/Argentina/Catamarca, America/Argentina/ComodRivadavia, America/Argentina/Cordoba, America/Argentina/Jujuy, America/Argentina/La_Rioja, America/Argentina/Mendoza, America/Argentina/Rio_Gallegos, America/Argentina/Salta, America/Argentina/San_Juan, America/Argentina/San_Luis, America/Argentina/Tucuman, America/Argentina/Ushuaia, America/Aruba, America/Asuncion, America/Atikokan, America/Atka, America/Bahia, America/Bahia_Banderas, America/Barbados, America/Belem, America/Belize, America/Blanc-Sablon, America/Boa_Vista, America/Bogota, America/Boise, America/Buenos_Aires, America/Cambridge_Bay, America/Campo_Grande, America/Cancun, America/Caracas, America/Catamarca, America/Cayenne, America/Cayman, America/Chicago, America/Chihuahua, America/Ciudad_Juarez, America/Coral_Harbour, America/Cordoba, America/Costa_Rica, America/Coyhaique, America/Creston, America/Cuiaba, America/Curacao, America/Danmarkshavn, America/Dawson, America/Dawson_Creek, America/Denver, America/Detroit, America/Dominica, America/Edmonton, America/Eirunepe, America/El_Salvador, America/Ensenada, America/Fort_Nelson, America/Fort_Wayne, America/Fortaleza, America/Glace_Bay, America/Godthab, America/Goose_Bay, America/Grand_Turk, America/Grenada, America/Guadeloupe, America/Guatemala, America/Guayaquil, America/Guyana, America/Halifax, America/Havana, America/Hermosillo, America/Indiana/Indianapolis, America/Indiana/Knox, America/Indiana/Marengo, America/Indiana/Petersburg, America/Indiana/Tell_City, America/Indiana/Vevay, America/Indiana/Vincennes, America/Indiana/Winamac, America/Indianapolis, America/Inuvik, America/Iqaluit, America/Jamaica, America/Jujuy, America/Juneau, America/Kentucky/Louisville, America/Kentucky/Monticello, America/Knox_IN, America/Kralendijk, America/La_Paz, America/Lima, America/Los_Angeles, America/Louisville, America/Lower_Princes, America/Maceio, America/Managua, America/Manaus, America/Marigot, America/Martinique, America/Matamoros, America/Mazatlan, America/Mendoza, America/Menominee, America/Merida, America/Metlakatla, America/Mexico_City, America/Miquelon, America/Moncton, America/Monterrey, America/Montevideo, America/Montreal, America/Montserrat, America/Nassau, America/New_York, America/Nipigon, America/Nome, America/Noronha, America/North_Dakota/Beulah, America/North_Dakota/Center, America/North_Dakota/New_Salem, America/Nuuk, America/Ojinaga, America/Panama, America/Pangnirtung, America/Paramaribo, America/Phoenix, America/Port-au-Prince, America/Port_of_Spain, America/Porto_Acre, America/Porto_Velho, America/Puerto_Rico, America/Punta_Arenas, America/Rainy_River, America/Rankin_Inlet, America/Recife, America/Regina, America/Resolute, America/Rio_Branco, America/Rosario, America/Santa_Isabel, America/Santarem, America/Santiago, America/Santo_Domingo, America/Sao_Paulo, America/Scoresbysund, America/Shiprock, America/Sitka, America/St_Barthelemy, America/St_Johns, America/St_Kitts, America/St_Lucia, America/St_Thomas, America/St_Vincent, America/Swift_Current, America/Tegucigalpa, America/Thule, America/Thunder_Bay, America/Tijuana, America/Toronto, America/Tortola, America/Vancouver, America/Virgin, America/Whitehorse, America/Winnipeg, America/Yakutat, America/Yellowknife, Antarctica/Casey, Antarctica/Davis, Antarctica/DumontDUrville, Antarctica/Macquarie, Antarctica/Mawson, Antarctica/McMurdo, Antarctica/Palmer, Antarctica/Rothera, Antarctica/South_Pole, Antarctica/Syowa, Antarctica/Troll, Antarctica/Vostok, Arctic/Longyearbyen, Asia/Aden, Asia/Almaty, Asia/Amman, Asia/Anadyr, Asia/Aqtau, Asia/Aqtobe, Asia/Ashgabat, Asia/Ashkhabad, Asia/Atyrau, Asia/Baghdad, Asia/Bahrain, Asia/Baku, Asia/Bangkok, Asia/Barnaul, Asia/Beirut, Asia/Bishkek, Asia/Brunei, Asia/Calcutta, Asia/Chita, Asia/Choibalsan, Asia/Chongqing, Asia/Chungking, Asia/Colombo, Asia/Dacca, Asia/Damascus, Asia/Dhaka, Asia/Dili, Asia/Dubai, Asia/Dushanbe, Asia/Famagusta, Asia/Gaza, Asia/Harbin, Asia/Hebron, Asia/Ho_Chi_Minh, Asia/Hong_Kong, Asia/Hovd, Asia/Irkutsk, Asia/Istanbul, Asia/Jakarta, Asia/Jayapura, Asia/Jerusalem, Asia/Kabul, Asia/Kamchatka, Asia/Karachi, Asia/Kashgar, Asia/Kathmandu, Asia/Katmandu, Asia/Khandyga, Asia/Kolkata, Asia/Krasnoyarsk, Asia/Kuala_Lumpur, Asia/Kuching, Asia/Kuwait, Asia/Macao, Asia/Macau, Asia/Magadan, Asia/Makassar, Asia/Manila, Asia/Muscat, Asia/Nicosia, Asia/Novokuznetsk, Asia/Novosibirsk, Asia/Omsk, Asia/Oral, Asia/Phnom_Penh, Asia/Pontianak, Asia/Pyongyang, Asia/Qatar, Asia/Qostanay, Asia/Qyzylorda, Asia/Rangoon, Asia/Riyadh, Asia/Saigon, Asia/Sakhalin, Asia/Samarkand, Asia/Seoul, Asia/Shanghai, Asia/Singapore, Asia/Srednekolymsk, Asia/Taipei, Asia/Tashkent, Asia/Tbilisi, Asia/Tehran, Asia/Tel_Aviv, Asia/Thimbu, Asia/Thimphu, Asia/Tokyo, Asia/Tomsk, Asia/Ujung_Pandang, Asia/Ulaanbaatar, Asia/Ulan_Bator, Asia/Urumqi, Asia/Ust-Nera, Asia/Vientiane, Asia/Vladivostok, Asia/Yakutsk, Asia/Yangon, Asia/Yekaterinburg, Asia/Yerevan, Atlantic/Azores, Atlantic/Bermuda, Atlantic/Canary, Atlantic/Cape_Verde, Atlantic/Faeroe, Atlantic/Faroe, Atlantic/Jan_Mayen, Atlantic/Madeira, Atlantic/Reykjavik, Atlantic/South_Georgia, Atlantic/St_Helena, Atlantic/Stanley, Australia/ACT, Australia/Adelaide, Australia/Brisbane, Australia/Broken_Hill, Australia/Canberra, Australia/Currie, Australia/Darwin, Australia/Eucla, Australia/Hobart, Australia/LHI, Australia/Lindeman, Australia/Lord_Howe, Australia/Melbourne, Australia/NSW, Australia/North, Australia/Perth, Australia/Queensland, Australia/South, Australia/Sydney, Australia/Tasmania, Australia/Victoria, Australia/West, Australia/Yancowinna, Brazil/Acre, Brazil/DeNoronha, Brazil/East, Brazil/West, CET, CST6CDT, Canada/Atlantic, Canada/Central, Canada/Eastern, Canada/Mountain, Canada/Newfoundland, Canada/Pacific, Canada/Saskatchewan, Canada/Yukon, Chile/Continental, Chile/EasterIsland, Cuba, EET, EST, EST5EDT, Egypt, Eire, Etc/GMT, Etc/GMT+0, Etc/GMT+1, Etc/GMT+10, Etc/GMT+11, Etc/GMT+12, Etc/GMT+2, Etc/GMT+3, Etc/GMT+4, Etc/GMT+5, Etc/GMT+6, Etc/GMT+7, Etc/GMT+8, Etc/GMT+9, Etc/GMT-0, Etc/GMT-1, Etc/GMT-10, Etc/GMT-11, Etc/GMT-12, Etc/GMT-13, Etc/GMT-14, Etc/GMT-2, Etc/GMT-3, Etc/GMT-4, Etc/GMT-5, Etc/GMT-6, Etc/GMT-7, Etc/GMT-8, Etc/GMT-9, Etc/GMT0, Etc/Greenwich, Etc/UCT, Etc/UTC, Etc/Universal, Etc/Zulu, Europe/Amsterdam, Europe/Andorra, Europe/Astrakhan, Europe/Athens, Europe/Belfast, Europe/Belgrade, Europe/Berlin, Europe/Bratislava, Europe/Brussels, Europe/Bucharest, Europe/Budapest, Europe/Busingen, Europe/Chisinau, Europe/Copenhagen, Europe/Dublin, Europe/Gibraltar, Europe/Guernsey, Europe/Helsinki, Europe/Isle_of_Man, Europe/Istanbul, Europe/Jersey, Europe/Kaliningrad, Europe/Kiev, Europe/Kirov, Europe/Kyiv, Europe/Lisbon, Europe/Ljubljana, Europe/London, Europe/Luxembourg, Europe/Madrid, Europe/Malta, Europe/Mariehamn, Europe/Minsk, Europe/Monaco, Europe/Moscow, Europe/Nicosia, Europe/Oslo, Europe/Paris, Europe/Podgorica, Europe/Prague, Europe/Riga, Europe/Rome, Europe/Samara, Europe/San_Marino, Europe/Sarajevo, Europe/Saratov, Europe/Simferopol, Europe/Skopje, Europe/Sofia, Europe/Stockholm, Europe/Tallinn, Europe/Tirane, Europe/Tiraspol, Europe/Ulyanovsk, Europe/Uzhgorod, Europe/Vaduz, Europe/Vatican, Europe/Vienna, Europe/Vilnius, Europe/Volgograd, Europe/Warsaw, Europe/Zagreb, Europe/Zaporozhye, Europe/Zurich, GB, GB-Eire, GMT, GMT+0, GMT-0, GMT0, Greenwich, HST, Hongkong, Iceland, Indian/Antananarivo, Indian/Chagos, Indian/Christmas, Indian/Cocos, Indian/Comoro, Indian/Kerguelen, Indian/Mahe, Indian/Maldives, Indian/Mauritius, Indian/Mayotte, Indian/Reunion, Iran, Israel, Jamaica, Japan, Kwajalein, Libya, MET, MST, MST7MDT, Mexico/BajaNorte, Mexico/BajaSur, Mexico/General, NZ, NZ-CHAT, Navajo, PRC, PST8PDT, Pacific/Apia, Pacific/Auckland, Pacific/Bougainville, Pacific/Chatham, Pacific/Chuuk, Pacific/Easter, Pacific/Efate, Pacific/Enderbury, Pacific/Fakaofo, Pacific/Fiji, Pacific/Funafuti, Pacific/Galapagos, Pacific/Gambier, Pacific/Guadalcanal, Pacific/Guam, Pacific/Honolulu, Pacific/Johnston, Pacific/Kanton, Pacific/Kiritimati, Pacific/Kosrae, Pacific/Kwajalein, Pacific/Majuro, Pacific/Marquesas, Pacific/Midway, Pacific/Nauru, Pacific/Niue, Pacific/Norfolk, Pacific/Noumea, Pacific/Pago_Pago, Pacific/Palau, Pacific/Pitcairn, Pacific/Pohnpei, Pacific/Ponape, Pacific/Port_Moresby, Pacific/Rarotonga, Pacific/Saipan, Pacific/Samoa, Pacific/Tahiti, Pacific/Tarawa, Pacific/Tongatapu, Pacific/Truk, Pacific/Wake, Pacific/Wallis, Pacific/Yap, Poland, Portugal, ROC, ROK, Singapore, Turkey, UCT, US/Alaska, US/Aleutian, US/Arizona, US/Central, US/East-Indiana, US/Eastern, US/Hawaii, US/Indiana-Starke, US/Michigan, US/Mountain, US/Pacific, US/Samoa, UTC, Universal, W-SU, WET, Zulu This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for mail integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for Syslog integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue or standard_alert format for Slack integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. Note: the legacy_alert format is not permissible for Slack. This string indicates the user or api-key responsible for creating the notification rule. This value represents the timestamp when the notification rule was created. This value represents the timestamp when the notification rule was last modified. A flag indicating whether the notification rule is currently active and enabled. Error message describing the issue Additional error details 2.3.2.4 |Delete an existing Alert Notification Rule Allows the user to delete an existing Alert Notification Rule by its unique identifier. Full rule uuid of the Alert Notification Rule Error message describing the issue Additional error details 2.3.2.5 |Edit an existing Alert Notification Rule This endpoint allows the user to edit an alert notification rule and specify its new attributes. To see the possible forward_type values, please check the relevant enum schema named LogForwardType. The forward_source attribute is where a user would define email, Slack, and Syslog configurations; the required formats are specified in the RuleEditRequestschema. The applications attribute is a list of external applications application IDs (webhook, AWS S3, AWS SQS, and Splunk). The mail_format, syslog_format, and slack_format attributes represent whether the user would like the notifications for these integrations to be issues or alerts formats; more information is provided in the RuleEditRequest schema. Please note that you can only edit a rule that is in an Enabled state. Full rule uuid of the Alert Notification Rule Enumerates the various attributes required for editing an existing notification rule Name of the rule Optional description of the rule A required value from the LogForwardType Enum. It must be the same as its current forward_type as this field is not mutable during edits. An object containing the various attributes of the filter that will be applied to the given alert notification rule. Please refer to the BaseFilterExample and ComplexFilterExample schemas to gather further information on this field. A user can also derive a filter by utilizing the JSON export functionality when defining a rule via the UI. This JSON object provides the user with the ability to specify configurations for Email, Slack, and Syslog outputs. An object containing all the information that configures email output for the given notification rule. List of valid email addresses that will receive notifications forwarded by the given rule. An integer that is between 0 and 1440 (in minutes). The default is 10 minutes. This string value allows the user to customize the mail subject of the event forwarded by the given rule. An object containing all the information that configures Slack output for the given notification rule. List of valid Slack channels that will receive notifications forwarded by the given rule. An object containing all the information that configures Syslog output for the given notification rule. This string value that specifies the Syslog integration that will be associated with the given notification rule. List of valid application IDs (AWS SQS, AWS S3, Splunk, and webhook integrations). These can be found by utilizing the List External Applications API. This string indicates which time zone the rule will be associated with. If the field is not passed in, the default value will be UTC. The following are valid time zone options: Africa/Abidjan, Africa/Accra, Africa/Addis_Ababa, Africa/Algiers, Africa/Asmara, Africa/Asmera, Africa/Bamako, Africa/Bangui, Africa/Banjul, Africa/Bissau, Africa/Blantyre, Africa/Brazzaville, Africa/Bujumbura, Africa/Cairo, Africa/Casablanca, Africa/Ceuta, Africa/Conakry, Africa/Dakar, Africa/Dar_es_Salaam, Africa/Djibouti, Africa/Douala, Africa/El_Aaiun, Africa/Freetown, Africa/Gaborone, Africa/Harare, Africa/Johannesburg, Africa/Juba, Africa/Kampala, Africa/Khartoum, Africa/Kigali, Africa/Kinshasa, Africa/Lagos, Africa/Libreville, Africa/Lome, Africa/Luanda, Africa/Lubumbashi, Africa/Lusaka, Africa/Malabo, Africa/Maputo, Africa/Maseru, Africa/Mbabane, Africa/Mogadishu, Africa/Monrovia, Africa/Nairobi, Africa/Ndjamena, Africa/Niamey, Africa/Nouakchott, Africa/Ouagadougou, Africa/Porto-Novo, Africa/Sao_Tome, Africa/Timbuktu, Africa/Tripoli, Africa/Tunis, Africa/Windhoek, America/Adak, America/Anchorage, America/Anguilla, America/Antigua, America/Araguaina, America/Argentina/Buenos_Aires, America/Argentina/Catamarca, America/Argentina/ComodRivadavia, America/Argentina/Cordoba, America/Argentina/Jujuy, America/Argentina/La_Rioja, America/Argentina/Mendoza, America/Argentina/Rio_Gallegos, America/Argentina/Salta, America/Argentina/San_Juan, America/Argentina/San_Luis, America/Argentina/Tucuman, America/Argentina/Ushuaia, America/Aruba, America/Asuncion, America/Atikokan, America/Atka, America/Bahia, America/Bahia_Banderas, America/Barbados, America/Belem, America/Belize, America/Blanc-Sablon, America/Boa_Vista, America/Bogota, America/Boise, America/Buenos_Aires, America/Cambridge_Bay, America/Campo_Grande, America/Cancun, America/Caracas, America/Catamarca, America/Cayenne, America/Cayman, America/Chicago, America/Chihuahua, America/Ciudad_Juarez, America/Coral_Harbour, America/Cordoba, America/Costa_Rica, America/Coyhaique, America/Creston, America/Cuiaba, America/Curacao, America/Danmarkshavn, America/Dawson, America/Dawson_Creek, America/Denver, America/Detroit, America/Dominica, America/Edmonton, America/Eirunepe, America/El_Salvador, America/Ensenada, America/Fort_Nelson, America/Fort_Wayne, America/Fortaleza, America/Glace_Bay, America/Godthab, America/Goose_Bay, America/Grand_Turk, America/Grenada, America/Guadeloupe, America/Guatemala, America/Guayaquil, America/Guyana, America/Halifax, America/Havana, America/Hermosillo, America/Indiana/Indianapolis, America/Indiana/Knox, America/Indiana/Marengo, America/Indiana/Petersburg, America/Indiana/Tell_City, America/Indiana/Vevay, America/Indiana/Vincennes, America/Indiana/Winamac, America/Indianapolis, America/Inuvik, America/Iqaluit, America/Jamaica, America/Jujuy, America/Juneau, America/Kentucky/Louisville, America/Kentucky/Monticello, America/Knox_IN, America/Kralendijk, America/La_Paz, America/Lima, America/Los_Angeles, America/Louisville, America/Lower_Princes, America/Maceio, America/Managua, America/Manaus, America/Marigot, America/Martinique, America/Matamoros, America/Mazatlan, America/Mendoza, America/Menominee, America/Merida, America/Metlakatla, America/Mexico_City, America/Miquelon, America/Moncton, America/Monterrey, America/Montevideo, America/Montreal, America/Montserrat, America/Nassau, America/New_York, America/Nipigon, America/Nome, America/Noronha, America/North_Dakota/Beulah, America/North_Dakota/Center, America/North_Dakota/New_Salem, America/Nuuk, America/Ojinaga, America/Panama, America/Pangnirtung, America/Paramaribo, America/Phoenix, America/Port-au-Prince, America/Port_of_Spain, America/Porto_Acre, America/Porto_Velho, America/Puerto_Rico, America/Punta_Arenas, America/Rainy_River, America/Rankin_Inlet, America/Recife, America/Regina, America/Resolute, America/Rio_Branco, America/Rosario, America/Santa_Isabel, America/Santarem, America/Santiago, America/Santo_Domingo, America/Sao_Paulo, America/Scoresbysund, America/Shiprock, America/Sitka, America/St_Barthelemy, America/St_Johns, America/St_Kitts, America/St_Lucia, America/St_Thomas, America/St_Vincent, America/Swift_Current, America/Tegucigalpa, America/Thule, America/Thunder_Bay, America/Tijuana, America/Toronto, America/Tortola, America/Vancouver, America/Virgin, America/Whitehorse, America/Winnipeg, America/Yakutat, America/Yellowknife, Antarctica/Casey, Antarctica/Davis, Antarctica/DumontDUrville, Antarctica/Macquarie, Antarctica/Mawson, Antarctica/McMurdo, Antarctica/Palmer, Antarctica/Rothera, Antarctica/South_Pole, Antarctica/Syowa, Antarctica/Troll, Antarctica/Vostok, Arctic/Longyearbyen, Asia/Aden, Asia/Almaty, Asia/Amman, Asia/Anadyr, Asia/Aqtau, Asia/Aqtobe, Asia/Ashgabat, Asia/Ashkhabad, Asia/Atyrau, Asia/Baghdad, Asia/Bahrain, Asia/Baku, Asia/Bangkok, Asia/Barnaul, Asia/Beirut, Asia/Bishkek, Asia/Brunei, Asia/Calcutta, Asia/Chita, Asia/Choibalsan, Asia/Chongqing, Asia/Chungking, Asia/Colombo, Asia/Dacca, Asia/Damascus, Asia/Dhaka, Asia/Dili, Asia/Dubai, Asia/Dushanbe, Asia/Famagusta, Asia/Gaza, Asia/Harbin, Asia/Hebron, Asia/Ho_Chi_Minh, Asia/Hong_Kong, Asia/Hovd, Asia/Irkutsk, Asia/Istanbul, Asia/Jakarta, Asia/Jayapura, Asia/Jerusalem, Asia/Kabul, Asia/Kamchatka, Asia/Karachi, Asia/Kashgar, Asia/Kathmandu, Asia/Katmandu, Asia/Khandyga, Asia/Kolkata, Asia/Krasnoyarsk, Asia/Kuala_Lumpur, Asia/Kuching, Asia/Kuwait, Asia/Macao, Asia/Macau, Asia/Magadan, Asia/Makassar, Asia/Manila, Asia/Muscat, Asia/Nicosia, Asia/Novokuznetsk, Asia/Novosibirsk, Asia/Omsk, Asia/Oral, Asia/Phnom_Penh, Asia/Pontianak, Asia/Pyongyang, Asia/Qatar, Asia/Qostanay, Asia/Qyzylorda, Asia/Rangoon, Asia/Riyadh, Asia/Saigon, Asia/Sakhalin, Asia/Samarkand, Asia/Seoul, Asia/Shanghai, Asia/Singapore, Asia/Srednekolymsk, Asia/Taipei, Asia/Tashkent, Asia/Tbilisi, Asia/Tehran, Asia/Tel_Aviv, Asia/Thimbu, Asia/Thimphu, Asia/Tokyo, Asia/Tomsk, Asia/Ujung_Pandang, Asia/Ulaanbaatar, Asia/Ulan_Bator, Asia/Urumqi, Asia/Ust-Nera, Asia/Vientiane, Asia/Vladivostok, Asia/Yakutsk, Asia/Yangon, Asia/Yekaterinburg, Asia/Yerevan, Atlantic/Azores, Atlantic/Bermuda, Atlantic/Canary, Atlantic/Cape_Verde, Atlantic/Faeroe, Atlantic/Faroe, Atlantic/Jan_Mayen, Atlantic/Madeira, Atlantic/Reykjavik, Atlantic/South_Georgia, Atlantic/St_Helena, Atlantic/Stanley, Australia/ACT, Australia/Adelaide, Australia/Brisbane, Australia/Broken_Hill, Australia/Canberra, Australia/Currie, Australia/Darwin, Australia/Eucla, Australia/Hobart, Australia/LHI, Australia/Lindeman, Australia/Lord_Howe, Australia/Melbourne, Australia/NSW, Australia/North, Australia/Perth, Australia/Queensland, Australia/South, Australia/Sydney, Australia/Tasmania, Australia/Victoria, Australia/West, Australia/Yancowinna, Brazil/Acre, Brazil/DeNoronha, Brazil/East, Brazil/West, CET, CST6CDT, Canada/Atlantic, Canada/Central, Canada/Eastern, Canada/Mountain, Canada/Newfoundland, Canada/Pacific, Canada/Saskatchewan, Canada/Yukon, Chile/Continental, Chile/EasterIsland, Cuba, EET, EST, EST5EDT, Egypt, Eire, Etc/GMT, Etc/GMT+0, Etc/GMT+1, Etc/GMT+10, Etc/GMT+11, Etc/GMT+12, Etc/GMT+2, Etc/GMT+3, Etc/GMT+4, Etc/GMT+5, Etc/GMT+6, Etc/GMT+7, Etc/GMT+8, Etc/GMT+9, Etc/GMT-0, Etc/GMT-1, Etc/GMT-10, Etc/GMT-11, Etc/GMT-12, Etc/GMT-13, Etc/GMT-14, Etc/GMT-2, Etc/GMT-3, Etc/GMT-4, Etc/GMT-5, Etc/GMT-6, Etc/GMT-7, Etc/GMT-8, Etc/GMT-9, Etc/GMT0, Etc/Greenwich, Etc/UCT, Etc/UTC, Etc/Universal, Etc/Zulu, Europe/Amsterdam, Europe/Andorra, Europe/Astrakhan, Europe/Athens, Europe/Belfast, Europe/Belgrade, Europe/Berlin, Europe/Bratislava, Europe/Brussels, Europe/Bucharest, Europe/Budapest, Europe/Busingen, Europe/Chisinau, Europe/Copenhagen, Europe/Dublin, Europe/Gibraltar, Europe/Guernsey, Europe/Helsinki, Europe/Isle_of_Man, Europe/Istanbul, Europe/Jersey, Europe/Kaliningrad, Europe/Kiev, Europe/Kirov, Europe/Kyiv, Europe/Lisbon, Europe/Ljubljana, Europe/London, Europe/Luxembourg, Europe/Madrid, Europe/Malta, Europe/Mariehamn, Europe/Minsk, Europe/Monaco, Europe/Moscow, Europe/Nicosia, Europe/Oslo, Europe/Paris, Europe/Podgorica, Europe/Prague, Europe/Riga, Europe/Rome, Europe/Samara, Europe/San_Marino, Europe/Sarajevo, Europe/Saratov, Europe/Simferopol, Europe/Skopje, Europe/Sofia, Europe/Stockholm, Europe/Tallinn, Europe/Tirane, Europe/Tiraspol, Europe/Ulyanovsk, Europe/Uzhgorod, Europe/Vaduz, Europe/Vatican, Europe/Vienna, Europe/Vilnius, Europe/Volgograd, Europe/Warsaw, Europe/Zagreb, Europe/Zaporozhye, Europe/Zurich, GB, GB-Eire, GMT, GMT+0, GMT-0, GMT0, Greenwich, HST, Hongkong, Iceland, Indian/Antananarivo, Indian/Chagos, Indian/Christmas, Indian/Cocos, Indian/Comoro, Indian/Kerguelen, Indian/Mahe, Indian/Maldives, Indian/Mauritius, Indian/Mayotte, Indian/Reunion, Iran, Israel, Jamaica, Japan, Kwajalein, Libya, MET, MST, MST7MDT, Mexico/BajaNorte, Mexico/BajaSur, Mexico/General, NZ, NZ-CHAT, Navajo, PRC, PST8PDT, Pacific/Apia, Pacific/Auckland, Pacific/Bougainville, Pacific/Chatham, Pacific/Chuuk, Pacific/Easter, Pacific/Efate, Pacific/Enderbury, Pacific/Fakaofo, Pacific/Fiji, Pacific/Funafuti, Pacific/Galapagos, Pacific/Gambier, Pacific/Guadalcanal, Pacific/Guam, Pacific/Honolulu, Pacific/Johnston, Pacific/Kanton, Pacific/Kiritimati, Pacific/Kosrae, Pacific/Kwajalein, Pacific/Majuro, Pacific/Marquesas, Pacific/Midway, Pacific/Nauru, Pacific/Niue, Pacific/Norfolk, Pacific/Noumea, Pacific/Pago_Pago, Pacific/Palau, Pacific/Pitcairn, Pacific/Pohnpei, Pacific/Ponape, Pacific/Port_Moresby, Pacific/Rarotonga, Pacific/Saipan, Pacific/Samoa, Pacific/Tahiti, Pacific/Tarawa, Pacific/Tongatapu, Pacific/Truk, Pacific/Wake, Pacific/Wallis, Pacific/Yap, Poland, Portugal, ROC, ROK, Singapore, Turkey, UCT, US/Alaska, US/Aleutian, US/Arizona, US/Central, US/East-Indiana, US/Eastern, US/Hawaii, US/Indiana-Starke, US/Michigan, US/Mountain, US/Pacific, US/Samoa, UTC, Universal, W-SU, WET, Zulu This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for Syslog integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue or standard_alert format for Slack integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI.Not: the legacy_alert format is not permissible for Slack. The unique identifier of the rule A required value from the LogForwardType Enum. An integer that is between 0 and 1440 (in minutes). This boolean value signifies whether the legacy mail format is being utilized (applicable only for legacy Xpanse tenant) This string indicates whether the rule will use the issue, standard_alert, or legacy_alert format for mail integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. This string indicates whether the rule will use the issue or standard_alert format for Slack integration. This string is strictly to be used with the alert log forwarding type. It is not applicable for other log forwarding types. The value fields are analogous to those visible on the UI. Note: the legacy_alert format is not permissible for Slack. This string indicates the user or api-key responsible for creating the notification rule. This value represents the timestamp when the notification rule was created. This value represents the timestamp when the notification rule was last modified. A flag indicating whether the notification rule is currently active and enabled. Error message describing the issue Additional error details 2.3.2.6 |Edit the status of an existing Alert Notification Rule This endpoint allows a user to modify a rule's status without requiring a full update. A user can either enable or disable an Alert Notification Rule. Full rule uuid of the Alert Notification Rule Enumerates the various para meters required for updating the status of a rule Value of updated status {enable|disable} Error message describing the issue Additional error details 2.4 |Cortex Cloud External Application Management API This OpenAPI Specification provides documentation about External Applications Public APIs for Cortex Cloud. With these endpoints, you can create, read, update, and delete external applications including webhook, Splunk, AWS SQS, AWS S3, and Syslog integrations. These APIs are intended to be accessed via API keys. Therefore, the key must have the RBAC permission alert_notifications for list & read operations and permission alert_notifications_action for create, edit, enable/disable, & delete operations. 2.4.1 |Preface This OpenAPI Specification provides documentation about External Applications Public APIs for Cortex Cloud. With these endpoints, you can create, read, update, and delete external applications including webhook, Splunk, AWS SQS, AWS S3, and Syslog integrations. These APIs are intended to be accessed via API keys. Therefore, the key must have the RBAC permission alert_notifications for list & read operations and permission alert_notifications_action for create, edit, enable/disable, & delete operations. 2.4.1.1 |Servers 2.4.1.2 |Authentication methods JWT token for authentication Authorized requests to the API should use a header with the access token "TOKEN": Authorization: Bearer TOKEN, The Bearer token is typically represented in the following format: JWT 2.4.2 |External Applications Operations for managing external applications including creating, editing, deleting, and listing external applications. 2.4.2.1 |Create a new application Allows the user to create a new external application integration and specify its attributes. To see the possible application_type values, please check the relevant enum in the ExternalApplication schema for additional information. The connection_config attribute is where a user would define AWS SQS, AWS S3, Splunk, Syslog, and webhook configurations; the required formats for these fields are documented in the respective schemas that are linked to the base ConnectionConfig schema. Please ensure that you have setup the proper egress configurations on the Cortex Gateway; this API verifies the new connection against the egress configurations specified for the given tenant. If assistance is required, please utilize the cue on the UI menu for creating a new external application configuration. Name of the application. Description of the application. The type of application instance. Connection configuration based on application_type. Custom HTTP headers to include. Splunk HTTP Event Collector (HEC) endpoint. HEC authentication token. The SQS queue destination URL. Amazon S3 bucket URI AWS region where the S3 bucket resides Role ARN associated with the IAM role for S3 access Roll-up interval for metrics or data aggregation (in minutes) Choose one of the syslog standard values. The value maps to how your syslog server uses the facility field to manage messages. For details on the facility field, see RFC 5424. IP address or fully qualified domain name (FQDN) of the syslog server. When using TLS for communication between Cortex and the syslog server, Cortex validates that the syslog receiver has a certificate. Specify the certificate name here. Whether to ignore certificate errors. For security reasons, this is not recommended. If you set this to true, logs will be forwarded even if the certificate contains errors. Binary string of the certificate. Omitted on insert Must be supplied on insert, but not readOnly. Application successfully created. Enumerates the various attributes of an external application response object Unique identifier Current status of the application. Timestamp when the application was created. Identifier of the user who created the app. Description summarizing that last known error for the given external application. Timestamp of the last error. Timestamp of the last modification. Error message describing the issue Additional error details 2.4.2.2 |List all applications Retrieves a list of external applications (AWS SQS, AWS S3, Syslog, Splunk, and webhook) and their attributes. The meaning behind all attributes in this response could be found in the ExternalApplication schema. Please note that the field connection_config is retrieved with masked attributes for security purposes; examples are provided in the sample response shown for this endpoint. Please note that the last_modified_by, last_error, and last_error_at attributes are not populated for Syslog integrations. A list of applications. Unique identifier Name of the application. Description of the application. Current status of the application. Timestamp when the application was created. Identifier of the user who created the app. Description summarizing that last known error for the given external application. Timestamp of the last error. Timestamp of the last modification. The type of application instance. Connection configuration based on application_type. Custom HTTP headers to include. Splunk HTTP Event Collector (HEC) endpoint. HEC authentication token. The SQS queue destination URL. Amazon S3 bucket URI AWS region where the S3 bucket resides Role ARN associated with the IAM role for S3 access Roll-up interval for metrics or data aggregation (in minutes) Choose one of the syslog standard values. The value maps to how your syslog server uses the facility field to manage messages. For details on the facility field, see RFC 5424. IP address or fully qualified domain name (FQDN) of the syslog server. When using TLS for communication between Cortex and the syslog server, Cortex validates that the syslog receiver has a certificate. Specify the certificate name here. Whether to ignore certificate errors. For security reasons, this is not recommended. If you set this to true, logs will be forwarded even if the certificate contains errors. Binary string of the certificate. Metadata for the response 2.4.2.3 |Update an existing application (full replacement) Allows the user to edit an external application and specify its new attributes. To see the possible application_type values, please check the relevant enum in the ExternalApplication schema for additional information. The connection_config attribute is where a user would define AWS SQS, AWS S3, Splunk, Syslog, and webhook configurations; the required formats for these fields are documented in the respective schemas that are linked to the base ConnectionConfig schema. Please ensure that you have setup the proper egress configurations on the Cortex Gateway; this API verifies the new connection against the egress configurations specified for the given tenant. If assistance is required, please utilize the cue on the UI menu for creating a new external application configuration. The unique identifier of the application. Enumerates the parameters for an external application request object Name of the application. Description of the application. The type of application instance. Connection configuration based on application_type. Custom HTTP headers to include. Splunk HTTP Event Collector (HEC) endpoint. HEC authentication token. The SQS queue destination URL. Amazon S3 bucket URI AWS region where the S3 bucket resides Role ARN associated with the IAM role for S3 access Roll-up interval for metrics or data aggregation (in minutes) Choose one of the syslog standard values. The value maps to how your syslog server uses the facility field to manage messages. For details on the facility field, see RFC 5424. IP address or fully qualified domain name (FQDN) of the syslog server. When using TLS for communication between Cortex and the syslog server, Cortex validates that the syslog receiver has a certificate. Specify the certificate name here. Whether to ignore certificate errors. For security reasons, this is not recommended. If you set this to true, logs will be forwarded even if the certificate contains errors. Binary string of the certificate. Application updated successfully. Enumerates the various attributes of an external application response object Unique identifier Current status of the application. Timestamp when the application was created. Identifier of the user who created the app. Description summarizing that last known error for the given external application. Timestamp of the last error. Timestamp of the last modification. Error message describing the issue Additional error details 2.4.2.4 |Delete an application Allows the user to delete an external application. Deletion is not permitted if the application is associated with an active notification rule. The unique identifier of the application. The application type of the specified application Error message describing the issue Additional error details 2.4.2.5 |Get External Application details by ID Retrieves an external application and returns its attributes. The meaning behind all attributes in this response could be found in the ExternalApplication schema. The unique identifier of the application. The application type of the specified application Application details retrieved successfully. Enumerates the various attributes of an external application response object Unique identifier Name of the application. Description of the application. Current status of the application. Timestamp when the application was created. Identifier of the user who created the app. Description summarizing that last known error for the given external application. Timestamp of the last error. Timestamp of the last modification. The type of application instance. Connection configuration based on application_type. Custom HTTP headers to include. Splunk HTTP Event Collector (HEC) endpoint. HEC authentication token. The SQS queue destination URL. Amazon S3 bucket URI AWS region where the S3 bucket resides Role ARN associated with the IAM role for S3 access Roll-up interval for metrics or data aggregation (in minutes) Choose one of the syslog standard values. The value maps to how your syslog server uses the facility field to manage messages. For details on the facility field, see RFC 5424. IP address or fully qualified domain name (FQDN) of the syslog server. When using TLS for communication between Cortex and the syslog server, Cortex validates that the syslog receiver has a certificate. Specify the certificate name here. Whether to ignore certificate errors. For security reasons, this is not recommended. If you set this to true, logs will be forwarded even if the certificate contains errors. Binary string of the certificate. Error message describing the issue Additional error details 2.5 |Cloud Onboarding APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Public APIs for cloud onboarding and instance management. The following API categories are included: Cloud integration instance management: These APIs enable you to create an integration instance in pending state and provide a link to download the authentication template to be executed in your CSP. You can get details on the integration instances currently in Cortex Cloud and you can enable, disable, or delete them. You can also edit the integration instance configuration. Cloud account management: The cloud account APIs allow you to manage accounts within a specific integration instance. You can have multiple cloud accounts within one integration instance. Use these APIs to get the cloud accounts in the specified integration instance and to enable or disable cloud accounts. Outpost management: Use these APIs to create or edit templates for onboarding outposts. General: These APIs are for general management. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. 2.5.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. Public APIs for cloud onboarding and instance management. The following API categories are included: Cloud integration instance management: These APIs enable you to create an integration instance in pending state and provide a link to download the authentication template to be executed in your CSP. You can get details on the integration instances currently in Cortex Cloud and you can enable, disable, or delete them. You can also edit the integration instance configuration. Cloud account management: The cloud account APIs allow you to manage accounts within a specific integration instance. You can have multiple cloud accounts within one integration instance. Use these APIs to get the cloud accounts in the specified integration instance and to enable or disable cloud accounts. Outpost management: Use these APIs to create or edit templates for onboarding outposts. General: These APIs are for general management. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. 2.5.1.1 |Servers 2.5.1.2 |Authentication methods Authorized requests to the API should use: x-api-key inside a header with the access token. Authorized requests to the API should use: x-api-key-id inside a header with the access token. 2.5.2 |Cloud integration instance management APIs for managing cloud integration instances 2.5.2.1 |Create a cloud onboarding integration template Create a template to facilitate the seamless setup of CSP data in Cortex. Define the scope and specify the scan mode. For full control of the setup, you can use the advanced settings. Based on the onboarding settings, Cortex generates an authentication template to establish trust to the CSP and grant permissions to Cortex. Cortex Cloud creates an instance in pending state. The API returns a link to download the template from the Cortex tenant. Note: If the template execution in the CSP fails, there is currently no manual execution of the template by API. You must perform manual execution in the UI. For scope modifications, the parameters are CSP-specific. For AWS, use accounts, for GCP, use projects, and for Azure, use subscriptions. Required license: Cortex Cloud Posture Management Define the scope for this integration instance. Valid values include: ORGANIZATION: Use this to indicate an AWS organization, GCP organization, or Azure tenant. ACCOUNT_GROUP: Use this to indicate an AWS account group, GCP folder, or Azure management group. ACCOUNT: Use this to indicate an AWS account, GCP project, or Azure subscription. Define the scan mode. Valid values include: MANAGED: (Recommended) Security scanning is performed in the Cortex cloud environment. OUTPOST: Security scanning is performed on infrastructure deployed to a cloud account owned by you. **Note: ** Scanning with an outpost may require additional CSP permissions and may incur additional CSP costs. When the scan mode is OUTPOST, you must include the scan_env_id field with the outpost ID as the value. To obtain the outpost ID, call /public_api/v1/cloud_onboarding/get_outposts. The value of outpost_id in the response is the outpost ID. account_details is required for onboarding Azure and is not used for onboarding AWS or GCP. The cloud service provider. Valid values include: The key of the custom resource tag. The value of the custom resource tag. To maximize security coverage, include collection of logs. This may require additional cloud service provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. Whether to enable audit log collection. If this is false, then the other fields in this object should not be used. Indicates whether to use automated or custom log collection. Note: collection_method is only relevant for AWS or OCI. For OCI, the value of collection_method must be CUSTOM and you must include custom_collectors with the details of the existing buckets. In AWS, if collection_method is CUSTOM, you need to update the bucket information when you manually upload the template to AWS CloudFormation. The data_events field is only relevant when cloud_provider is AWS and collection_method is AUTOMATED. Currently supports AWS Lambda and Amazon S3. A list of OCI bucket configurations for collecting logs. Note: This is only relevant for OCI when collection_method is CUSTOM. The geographic region where the collection bucket is located. The name of the storage bucket where the log collection data will be collected and stored. The unique OCID (Oracle Cloud Identifier) of the compartment that owns the specified bucket. Whether to enable (true) or disable (false) this scope modification. Define whether the account IDs/project IDs/subscription IDs specified should be included in the scope or excluded from the scope. Valid values include: The list of account IDs to include or exclude (for AWS). The list of account IDs to include or exclude (for GCP). The list of account IDs to include or exclude (for Azure). Flag to enable or disable region configuration Type of region configuration (e.g., INCLUDE, EXCLUDE) List of regions to include or exclude Define which security capabilities you want to benefit from. Note: Adding security capability typically requires additional cloud provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. Whether to enable XSIAM analytics to analyze your endpoint data to develop a baseline and raise Analytics and Analytics BIOC alerts when anomalies and malicious behaviors are detected. Whether to enable data security posture management, an agentless data security scanner that discovers, classifies, protects, and governs sensitive data. Whether to enable registry scanning, a container registry scanner that scans registry images for vulnerabilities, malware, and secrets. Type of registry scanning. Whether to enable serverless scanning to detect and remediate vulnerabilities within serverless functions during the development lifecycle. Seamless integration into CI/CD pipelines enables automated security scans for a continuously secure pre-production environment. Whether to enable agentless disk scanning to remotely detect and remediate vulnerabilities during the development lifecycle. Whether the CSP environment is COMMERCIAL or GOV: COMMERCIAL: (Default) Standard cloud deployment typically used for private and public sector organizations that do not require isolated government-specific infrastructure. GOV: Government cloud environments for compatibility with FedRAMP-certified tenants. Successful Response The main payload of the response, containing instance information data. It includes a link to download the template file from your tenant. If you use automated upload (only for AWS), the link will take you directly to AWS CloudFormation to create the stack. Otherwise, download the template and upload it in your CSP and follow the instructions to manually upload the template: Invalid Client Request Error Extra information about the error Internal Server Error 2.5.2.2 |Get cloud instance details Get the configuration details of the specified cloud instance. Required license: Cortex Cloud Posture Management The ID of the integration instance of which you want to get the details. Successful Response The main payload of the response, containing integration instance details. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.2.3 |Get all or filtered integration instances Get the configuration details of all or filtered integration instances. This does not include instances in pending state. Required license: Cortex Cloud Posture Management Valid values for the sort field FIELD the filter field SEARCH_FIELD include: AUTHENTICATION_METHOD Sorting criteria for the results The field to sort by. Whether to sort in ascending (ASC) order or descending (DESC) order. The starting index for pagination. The ending index for pagination. Filter criteria for the results. A list of filter criteria to be combined with AND logic Specifies the field to filter by. Comparison operator to use with the filter. The value to filter by. A list of filter criteria to be combined with OR logic Successful Response The main payload of the response, containing integration instance details. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.2.4 |Edit an integration instance Edit the configuration settings of the specified integration instance. After editing, there is a notice in the UI that there are pending changes. The changes are applied after you execute the template in the CSP after editing. Required license: Cortex Cloud Posture Management Integration instance ID. When the scan mode is OUTPOST, you must include the scan_env_id field with the outpost ID as the value. To obtain the outpost ID, call /public_api/v1/cloud_onboarding/get_outposts. The value of outpost_id in the response is the outpost ID. Integration instance name. Define which security capabilities you want to benefit from. Note: Adding security capability typically requires additional cloud provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. Whether to enable XSIAM analytics to analyze your endpoint data to develop a baseline and raise Analytics and Analytics BIOC alerts when anomalies and malicious behaviors are detected. Whether to enable data security posture management, an agentless data security scanner that discovers, classifies, protects, and governs sensitive data. Whether to enable registry scanning, a container registry scanner that scans registry images for vulnerabilities, malware, and secrets. Type of registry scanning. Whether to enable serverless scanning to detect and remediate vulnerabilities within serverless functions during the development lifecycle. Seamless integration into CI/CD pipelines enables automated security scans for a continuously secure pre-production environment. Whether to enable agentless disk scanning to remotely detect and remediate vulnerabilities during the development lifecycle. The cloud service provider. Valid values include: Whether the CSP environment is COMMERCIAL or GOV: COMMERCIAL: (Default) Standard cloud deployment typically used for private and public sector organizations that do not require isolated government-specific infrastructure. GOV: Government cloud environments for compatibility with FedRAMP-certified tenants. Note: You must use the same value that was used when the cloud instance was created. The key of the custom resource tag. The value of the custom resource tag. To maximize security coverage, include collection of logs. This may require additional cloud service provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. Whether to enable audit log collection. If this is false, then the other fields in this object should not be used. Indicates whether to use automated or custom log collection. Note: collection_method is only relevant for AWS or OCI. For OCI, the value of collection_method must be CUSTOM and you must include custom_collectors with the details of the existing buckets. In AWS, if collection_method is CUSTOM, you need to update the bucket information when you manually upload the template to AWS CloudFormation. The data_events field is only relevant when cloud_provider is AWS and collection_method is AUTOMATED. Currently supports AWS Lambda and Amazon S3. A list of OCI bucket configurations for collecting logs. Note: This is only relevant for OCI when collection_method is CUSTOM. The geographic region where the collection bucket is located. The name of the storage bucket where the log collection data will be collected and stored. The unique OCID (Oracle Cloud Identifier) of the compartment that owns the specified bucket. Whether to enable (true) or disable (false) this scope modification. Define whether the account IDs/project IDs/subscription IDs specified should be included in the scope or excluded from the scope. Valid values include: The list of account IDs to include or exclude (for AWS). The list of account IDs to include or exclude (for GCP). The list of account IDs to include or exclude (for Azure). Flag to enable or disable region configuration Type of region configuration (e.g., INCLUDE, EXCLUDE) List of regions to include or exclude Successful Response The main payload of the response, containing instance detail after edit. It includes a link to download the template file from your tenant. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.2.5 |Enable or disable cloud integration instances Enable or disable the cloud integration instances specified by their instance IDs. To obtain the instance IDs, use /public_api/v1/cloud_onboarding/get_instances/. Required license: Cortex Cloud Posture Management List of integration instance IDs to enable/disable/ Whether to enable the integration instances (true) or disable (false). Successful Response The main payload of the response, containing operation-specific data. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.2.6 |Delete the specified integration instances Delete the specified integration instances. Required license: Cortex Cloud Posture Management List of integration instance IDs to delete. Successful Response The main payload of the response, containing operation-specific data. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.2.7 |Get identifier roles for integration instance List all of the identifiers roles for the cloud instance. In the UI, these details are listed under Authorization details of the cloud instance. Required license: In Cortex XSIAM Premium, Cortex XSIAM Enterprise, or Cortex XSIAM NG SIEM, requires the Cortex Cloud Posture Management add-on. In Cortex XSIAM Enterprise Plus, requires the Data Collection add-on. The cloud instance ID for which you want to list the authorization details. The cloud service provider for which you want to list the authorization details. Successful Response The Cortex discovery role identifier The Cortex scan platform role identifier The Cortex log collection role identifier The Cortex outpost role identifier Extra information about the error Internal Server Error 2.5.3 |Cloud account management APIs for managing cloud accounts per instance 2.5.3.1 |Get accounts in the specified integration instances List accounts and their details for the specified integration instance. Required license: Cortex Cloud Posture Management Valid values for the filter field SEARCH_FIELD include: CLOUD_ACCOUNT_ID Sorting criteria for the results The field to sort by. Whether to sort in ascending (ASC) order or descending (DESC) order. The starting index for pagination. The ending index for pagination. Filter criteria for the results. A list of filter criteria to be combined with AND logic Specifies the field to filter by. Comparison operator to use with the filter. The value to filter by. A list of filter criteria to be combined with OR logic Successful Response The main payload of the response, containing a list of account details. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.3.2 |Enable or disable cloud accounts Enable or disable the specified cloud accounts within a specific integration instance. Required license: Cortex Cloud Posture Management List of account IDs to enable or disable. The integration instance ID where the cloud accounts should be disabled. Whether to enable (true) or disable (false) to specified accounts. Successful Response Invalid Client Request Error Extra information about the error Internal Server Error 2.5.4 |Outpost management APIs for managing outposts 2.5.4.1 |Create an outpost template Create a template to onboard an outpost. Define the custom resource tags you want associated with the outpost and Cortex generates an authentication template to establish trust to the CSP and grant permissions to Cortex. Required license: Cortex Cloud Posture Management The cloud service provider. Valid values include: Whether the CSP environment is COMMERCIAL or GOV: COMMERCIAL: (Default) Standard cloud deployment typically used for private and public sector organizations that do not require isolated government-specific infrastructure. GOV: Government cloud environments for compatibility with FedRAMP-certified tenants. The key of the custom resource tag. The value of the custom resource tag. Successful Response The main payload of the response, containing a link to download the outpost template Invalid Client Request Error Extra information about the error Internal Server Error 2.5.4.2 |Edit an outpost Edit the custom resource tags of the specified outpost. The template must be applied in the CSP after editing. Required license: Cortex Cloud Posture Management The main payload of the response, containing a link to download the edited outpost template Successful Response The main payload of the response, containing operation-specific data. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.4.3 |Get all or filtered outposts Get a list of all or filtered outposts. Required license: Cortex Cloud Posture Management 2.5.5 |General APIs for general tasks 2.5.5.1 |Get available regions for a CSP Get a list of all available regions for the specified cloud service provider. Required license: Cortex Cloud Posture Management The cloud service provider for which you want to list the regions. Whether the CSP environment is COMMERCIAL or GOV: COMMERCIAL: (Default) Standard cloud deployment typically used for private and public sector organizations that do not require isolated government-specific infrastructure. GOV: Government cloud environments for compatibility with FedRAMP-certified tenants. Successful Response Name of the CSP region. Invalid Client Request Error Extra information about the error Internal Server Error 2.5.5.2 |Get approved Azure tenants In order to onboard an Azure tenant to Cortex, Cortex must first be added as an enterprise-approved application on the tenant. Get a list of all the Azure tenants that are already enterprise-approved. Required license: Cortex Cloud Posture Management Whether the CSP environment is COMMERCIAL or GOV: COMMERCIAL: (Default) Standard cloud deployment typically used for private and public sector organizations that do not require isolated government-specific infrastructure. GOV: Government cloud environments for compatibility with FedRAMP-certified tenants. Successful Response The main payload of the response, containing the Azure tenant ID and whether the tenant is approved. Internal Server Error Extra information about the error 2.6 |Disable Prevention Rule Public APIs Public APIs to manage Disable Prevention rules in Cortex Cloud. You can only apply a Disable Prevention Rule to endpoints running Cortex XDR agents version 7.9 and later. You can export the OpenAPI specs in the Cortex Stoplight instance. 2.6.1 |Preface Public APIs to manage Disable Prevention rules in Cortex Cloud. You can only apply a Disable Prevention Rule to endpoints running Cortex XDR agents version 7.9 and later. You can export the OpenAPI specs in the Cortex Stoplight instance. 2.6.1.1 |Servers 2.6.2 |Default 2.6.2.1 |Get Disable Prevention Rules Returns a list of Disable Prevention rules based on filters, sorting, and pagination. Zero-based index of the first Disable Prevention rule to return. Used for pagination. Index number of Disable Prevention rules to return starting from search_from. Rule attribute to apply the filter on. For example: rule_id, status, modification_time, platform). Determines the sort order. Comparison operator used for filtering. For example, (eq, neq, gte, lte, contains or not_contains) The value to compare against the specified field. The expected data type and format depend on the field being filtered and the operator used. If the field is status, the value can be enabled or disabled. If the field is modification_time, the value should be a Unix timestamp in milliseconds (for example, 1762870187000). If the field is platform, the value can be a string such as windows, macos, or linux The unique identifier of the Disable Prevention rule. Name of the Disable Prevention rule. Description explaining the purpose and behavior of the rule. Indicates the operating system to which the rule applies. For example, windows, linux, or macos A combination of parameters configured during rule creation. Path to the required files or folders Command line argument Certificate thumbprint A list of module ids associated with the rule. A list of profile ids to which the rule is applied. Specifies the scope of the rule, such as global (All endpoints) or profile (Exception profiles). Current state of the rule (for example, enabled or disabled). Name of the user who created the rule. Email address of the user associated with the creation or last modification of the rule. Timestamp when the rule was last modified. The number of rules returned in the current response after applying filters. The total number of rules available that match the filter criteria, regardless of pagination. 2.6.2.2 |Get Disable Prevention Modules Returns a list of available modules for a specific platform. Indicates the operating system to which the rule applies. For example, windows, linux, or macos. Module ID associated with the rule. Name of the security module. Description of the disable prevention rule. Type of security profile. A combination of parameters configured during rule creation. Path to the required files or folders Command line argument Certificate thumbprint 2.6.2.3 |Add Disable Prevention Rule Creates a new Disable Prevention rule. Name of the disable prevention rule. Description explaining the purpose and behavior of the rule. Indicates the operating system to which the rule applies. For example, windows, linux, or macos A list of module ids associated with the rule. A combination of parameters configured during rule creation. Path to the required files or folders Command line argument Certificate thumbprint A list of profile ids to which the rule is applied. Status of the rule (for example, enabled or disabled). Specifies the scope of the rule, such as global (All endpoints) or profile (Exception profiles). Returns the Disable Prevention Rule ID. 2.6.2.4 |Edit Disable Prevention Rule Updates an existing Disable Prevention rule. Name of the disable prevention rule. Description explaining the purpose and behavior of the rule. Indicates the operating system to which the rule applies. For example, windows, linux, or macos A list of module ids associated with the rule. A combination of parameters configured during rule creation. Path to the required files or folders Command line argument Certificate thumbprint A list of profile ids to which the rule is applied. Status of the rule (for example, enabled or disabled). Specifies the scope of the rule, such as global (All endpoints) or profile (Exception profiles). The unique identifier of the Disable Prevention rule. Returns the Disable Prevention Rule ID. 2.6.2.5 |Delete Disable Prevention Rules Deletes one or more Disable Prevention rules based on the provided rule ID. The unique identifier of the Disable Prevention rule. Describes the result of the API operation. 2.7 |ASPM, CICD and Application Security APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Enhance your security operations and automation capabilities using the ASPM, CICD and Application Security APIs to optimize the management of applications, repositories, data sources, rules, policies, and scans. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. Enhance your security operations and automation capabilities using the ASPM, CICD and Application Security APIs to optimize the management of applications, repositories, data sources, rules, policies, and scans. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.1.1 |Servers 2.7.1.2 |Authentication methods API Key ID for authentication Authorized requests to the API should use: x-xdr-auth-id inside a header with the access token. API Key for authentication Authorized requests to the API should use: Authorization inside a header with the access token. 2.7.1.2.1 |Default authentication XDRAuth=[], XDRAuthToken 2.7.2 |Applications APIs for managing applications 2.7.2.1 |Get an application configuration Retrieves the application configuration settings. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security add-on. Indicates if the system is configured to automatically and periodically refresh the application's metadata and asset data. Indicates if findings from Software Bill of Materials (SBOM) scans are treated as brand-new issues for tracking and compliance purposes. Contains the Service Level Agreement (SLA) configurations, defining the resolution timeframes for various severity levels. Defines the SLA target days for issues classified as CRITICAL severity. The number of calendar days set as the target for resolving issues of this specific severity level. A value of 0 indicates the SLA is waived or not enforced. Defines the SLA target days for issues classified as HIGH severity. Defines the SLA target days for issues classified as MEDIUM severity. Defines the SLA target days for issues classified as LOW severity. Defines the early warning threshold that triggers notifications before an SLA is officially breached. The number of calendar days set as the target for defining the 'approaching' window. 2.7.2.2 |Create an application Creates a new application asset based on the provided details, such as name, criticality, and asset selection. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security add-on. A unique name for the application asset. The operational importance of the asset. Business unit responsible for the asset. Defines how the application asset is created. A brief description of the asset's purpose. The compliance status or requirement category for an asset. A list of stakeholders responsible for the asset from the business side. A list of primary developers or engineering leads responsible for the code. A list of SRE or DevOps engineers managing the infrastructure. A list of product managers responsible for overseeing the application asset. Define the logic for how specific technical assets must be linked to this application. Method to select application assets. Identifies the functional section to which the asset selection applies. Defines filter criteria to dynamically select application assets. This field supports one of the supported application asset selection filter types. If the filterType is REPOSITORY, enter the repository ID as the value. If the filterType is ORGANIZATION, enter the organization URL of the provider. Build system or CI provider used for the asset. Allowed values: CIRCLE_CI JENKINS GITLAB_CI AZURE_PIPELINES GITHUB_ACTIONS Source code management (SCM) or code hosting provider. Allowed values: GITLAB, GITHUB, BITBUCKET, AZURE_REPOS, AWS_CODE_COMMIT Runtime or execution environment provider for the application or asset. Allowed Values: GCP, AWS, AZURE Deployment platform or system used to deploy the application or asset. Allowed values: ACR ECR GAR JFrog Docker The asset attribute used to filter assets from the selected provider. Specifies the available values for the code type filter. Specifies the available values for the run type filter. Container for filter values used to match application assets. Organization URL used to filter assets belonging to a specific organization. Unique identifier of the repository used to filter assets. Project URL used to filter assets belonging to a specific project. Defines unification rules applied at the organization level. Name of the organization used for asset unification. Defines unification rules applied at the project level. Name of the project used for asset unification. Defines unification rules applied at the repository level. Name of the repository used for asset unification. A list of unique identifiers representing the assets to be included. Displays the status of the application. Displays the Asset ID of the application. Displays the error code. Displays the error message. Conflict. Occurs when an application with the specified name already exists. Provide a unique name for the application. Internal Server Error. Occurs when the server encounters an unexpected condition that prevents it from fulfilling the request. This is a server-side issue. No action is required from you. If the problem persists, try again later. 2.7.2.3 |Get applications Retrieves a list of all application assets using pagination. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security add-on. Page number of the results to retrieve for pagination. Number of records returned per page. A unique identifier of the criteria. Name of the criteria. Calculated risk score associated with the criteria or asset. Unique identifier of the resource. Globally unique, immutable identifier for the resource. Name of the application asset. Description providing additional details about the asset. Represents the level of coverage applied to the asset. The operational importance of the asset. Business unit responsible for the asset. Defines how the application asset is created. Business owners responsible for the asset. Development owners responsible for building and maintaining the asset. DevOps owners responsible for deployment and operations. Product managers responsible for the asset. Type of data governance applied to the asset. The compliance status or requirement category for an asset. Environment in which the asset is deployed (for example, development, staging, or production). Total number of assets included in the response. Configuration settings associated with the application. Date and time when the application data was last refreshed. Define the logic for how specific technical assets must be linked to this application. Method to select application assets. Identifies the functional section to which the asset selection applies. Defines filter criteria to dynamically select application assets. This field supports one of the supported application asset selection filter types. If the filterType is REPOSITORY, enter the repository ID as the value. If the filterType is ORGANIZATION, enter the organization URL of the provider. Build system or CI provider used for the asset. Allowed values: CIRCLE_CI JENKINS GITLAB_CI AZURE_PIPELINES GITHUB_ACTIONS Source code management (SCM) or code hosting provider. Allowed values: GITLAB, GITHUB, BITBUCKET, AZURE_REPOS, AWS_CODE_COMMIT Runtime or execution environment provider for the application or asset. Allowed Values: GCP, AWS, AZURE Deployment platform or system used to deploy the application or asset. Allowed values: ACR ECR GAR JFrog Docker The asset attribute used to filter assets from the selected provider. Specifies the available values for the code type filter. Specifies the available values for the run type filter. Container for filter values used to match application assets. Organization URL used to filter assets belonging to a specific organization. Unique identifier of the repository used to filter assets. Project URL used to filter assets belonging to a specific project. Defines unification rules applied at the organization level. Name of the organization used for asset unification. Defines unification rules applied at the project level. Name of the project used for asset unification. Defines unification rules applied at the repository level. Name of the repository used for asset unification. A list of unique identifiers representing the assets to be included. Date and time when the configuration was last updated. Date and time when the configuration was deleted. Indicates whether asset enrichment is currently in progress. If multiple applications share the same name at the chosen group-by level (org, project, or repository), they are merged across providers to form a single unified application. Repositories with the same name at the selected group-by level (org, project, or repository) are consolidated into a single application within the selected provider. Indicates whether additional results are available beyond the current page. 2.7.2.4 |Get an application Retrieves detailed information for a specific application asset using its unique ID. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security Add-on. Exposure attributes associated with the asset. A unique identifier of the criteria. Name of the criteria. Calculated risk score associated with the criteria or asset. Unique identifier of the resource. Globally unique, immutable identifier for the resource. Name of the application asset. Description providing additional details about the asset. Represents the level of coverage applied to the asset. The operational importance of the asset. Business unit responsible for the asset. Defines how the application asset is created. Business owners responsible for the asset. Development owners responsible for building and maintaining the asset. DevOps owners responsible for deployment and operations. Product managers responsible for the asset. Type of data governance applied to the asset. The compliance status or requirement category for an asset. Environment in which the asset is deployed (for example, development, staging, or production). Total number of assets included in the response. Configuration settings associated with the application. Date and time when the application data was last refreshed. Define the logic for how specific technical assets must be linked to this application. Method to select application assets. Identifies the functional section to which the asset selection applies. Defines filter criteria to dynamically select application assets. This field supports one of the supported application asset selection filter types. If the filterType is REPOSITORY, enter the repository ID as the value. If the filterType is ORGANIZATION, enter the organization URL of the provider. Build system or CI provider used for the asset. Allowed values: CIRCLE_CI JENKINS GITLAB_CI AZURE_PIPELINES GITHUB_ACTIONS Source code management (SCM) or code hosting provider. Allowed values: GITLAB, GITHUB, BITBUCKET, AZURE_REPOS, AWS_CODE_COMMIT Runtime or execution environment provider for the application or asset. Allowed Values: GCP, AWS, AZURE Deployment platform or system used to deploy the application or asset. Allowed values: ACR ECR GAR JFrog Docker The asset attribute used to filter assets from the selected provider. Specifies the available values for the code type filter. Specifies the available values for the run type filter. Container for filter values used to match application assets. Organization URL used to filter assets belonging to a specific organization. Unique identifier of the repository used to filter assets. Project URL used to filter assets belonging to a specific project. Defines unification rules applied at the organization level. Name of the organization used for asset unification. Defines unification rules applied at the project level. Name of the project used for asset unification. Defines unification rules applied at the repository level. Name of the repository used for asset unification. A list of unique identifiers representing the assets to be included. Date and time when the configuration was last updated. Date and time when the configuration was deleted. Indicates whether asset enrichment is currently in progress. If multiple applications share the same name at the chosen group-by level (org, project, or repository), they are merged across providers to form a single unified application. Repositories with the same name at the selected group-by level (org, project, or repository) are consolidated into a single application within the selected provider. 2.7.2.5 |Update an application Updates the attributes of an existing application asset identified by its unique ID. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security Add-on. The operational importance of the asset. How the asset was created. Business unit responsible for the asset. Description providing additional details about the asset. The compliance status or requirement category for an asset. Business owners responsible for the asset. Development owners responsible for building and maintaining the asset. DevOps owners responsible for deployment and operations. Product managers responsible for the asset. Displays the status of the application. Displays the Asset ID of the application. 2.7.2.6 |Delete an application Deletes a specific application asset identified by its unique ID. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security Add-on. 2.7.3 |Policies APIs for managing policies 2.7.3.1 |Create an AppSec policy An Application Security policy defines how a system should respond to application security threats. It includes conditions that trigger the policy, the scope of its application, and the actions to be taken when these conditions are met. When a policy detects a threat, it generates an issue for remediation. 2.7.3.1.1 |Create an Application Security policy. 2.7.3.1.1.1 |How to access Application Security policies in the UI: Go to Modules, then select Application Security > AppSec policies under Policy management. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. 2.7.3.1.1.2 |Limitations Be aware of the following limitations when creating policies: 2.7.3.1.1.2.1 |Trigger and Action Constraints by Finding Type 2.7.3.1.1.2.2 |General Policy Constraints 2.7.3.2 |List AppSec policies 2.7.3.2.1 |List all or filtered Application Security policies. 2.7.3.2.1.1 |How to access Application Security policies in the UI: Go to Modules, then select Application Security > Policy Management > AppSec Policies. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. Types of findings the policy applies to Indicates if the policy is a custom policy or a system-provided policy Unique identifier for the policy Name of the AppSec policy Description of the policy Indicates whether the policy is currently enabled or disabled. Defines when the AppSec policy should be evaluated. At least one of the options must be true. If true, the AppSec policy is evaluated periodically (for example, daily or weekly). Enables the periodic trigger for the AppSec policy. Actions to take when the policy detects its target risk and the policy is triggered. Indicates if triggering the policy should create an issue in the connected system. Set the severity of the issue (and override the system severity). If not used, system severity is kept. If true, the AppSec policy is evaluated on Pull Request (PR) events Enables the pr trigger for the AppSec policy. Indicates if triggering the policy should block the pull request. Ensure that the pr trigger is selected. Indicates if triggering the policy should create comments on the pull request. Ensure that the pr trigger is selected. If true, the AppSec policy is evaluated on CI/CD pipeline events. Enables the cicd trigger for the AppSec policy. Indicates if triggering the policy should block the CI/CD pipeline. Ensure that the cicd trigger is selected. Indicates if triggering the policy should soft fail the CI/CD pipeline in the platform. Ensure that the cicd trigger is selected. Indicates if the policy is cloneable Indicates if the policy is editable Indicates if the policy is a Code Scanner policy or a CI/CD Configuration Scanner policy. Defines the specific criteria that trigger the policy and defines the type of assets to be evaluated by the policy (the scope). You can combine multiple conditions to create complex rules for when the policy should be applied. When used in AND, all conditions within this array must be met. When used in OR, at least one condition within this array must be met. Defines the field the condition filter should match. Defines the comparison operator you want to use for this filter. Value that the condition filter must match. The type of this field will differ depending on the SEARCH_FIELD that you specified. List of related detection rules The date and time when the policy was created The user or system that created the policy The date and time when the policy was last modified The user or system that last modified the policy The user or system that deleted the policy The date and time when the policy was deleted The date and time when the policy was last triggered The version of the policy - goes up by one every policy update List of asset groups to which the policy applies. If the array is empty, the policy applies to all asset groups. 2.7.3.3 |Get an AppSec policy A Cortex Cloud Application Security policy defines how a system should respond to application security threats. 2.7.3.3.1 |Get the details of the Application Security policy specified by its policy ID. 2.7.3.3.1.1 |How to access Application Security policies in the UI: Go to Modules, then select Application Security > Policy Management > AppSec Policies. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. Unique identifier for the policy Name of the AppSec policy Description of the policy Indicates whether the policy is currently enabled or disabled. Indicates if the policy is a custom policy or a system-provided policy Defines when the AppSec policy should be evaluated. At least one of the options must be true. If true, the AppSec policy is evaluated periodically (for example, daily or weekly). Enables the periodic trigger for the AppSec policy. Actions to take when the policy detects its target risk and the policy is triggered. Indicates if triggering the policy should create an issue in the connected system. Set the severity of the issue (and override the system severity). If not used, system severity is kept. If true, the AppSec policy is evaluated on Pull Request (PR) events Enables the pr trigger for the AppSec policy. Indicates if triggering the policy should block the pull request. Ensure that the pr trigger is selected. Indicates if triggering the policy should create comments on the pull request. Ensure that the pr trigger is selected. If true, the AppSec policy is evaluated on CI/CD pipeline events. Enables the cicd trigger for the AppSec policy. Indicates if triggering the policy should block the CI/CD pipeline. Ensure that the cicd trigger is selected. Indicates if triggering the policy should soft fail the CI/CD pipeline in the platform. Ensure that the cicd trigger is selected. Indicates if the policy is cloneable Indicates if the policy is editable Indicates if the policy is a Code Scanner policy or a CI/CD Configuration Scanner policy. Defines the specific criteria that trigger the policy and defines the type of assets to be evaluated by the policy (the scope). You can combine multiple conditions to create complex rules for when the policy should be applied. When used in AND, all conditions within this array must be met. When used in OR, at least one condition within this array must be met. Defines the field the condition filter should match. Defines the comparison operator you want to use for this filter. Value that the condition filter must match. The type of this field will differ depending on the SEARCH_FIELD that you specified. List of related detection rules The date and time when the policy was created The user or system that created the policy The date and time when the policy was last modified The user or system that last modified the policy The user or system that deleted the policy The date and time when the policy was deleted The date and time when the policy was last triggered The version of the policy - goes up by one every policy update List of asset groups to which the policy applies. If the array is empty, the policy applies to all asset groups. 2.7.3.4 |Delete an AppSec policy A Cortex Cloud Application Security policy defines how a system should respond to application security threats. 2.7.3.4.1 |Delete an Application Security policy by specifying its policy ID. 2.7.3.4.1.1 |How to access Application Security policies in the UI: Go to Modules > Application Security > Policy Management > AppSec Policies. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. 2.7.3.5 |Update an AppSec policy A Cortex Cloud Application Security policy defines how a system should respond to application security threats. 2.7.3.5.1 |Update the details of the Application Security policy specified by its policy ID. 2.7.3.5.1.1 |How to access Application Security policies in the UI: Go to Modules, then select Application Security > Policy Management > AppSec Policies. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. Make all properties in T optional A unique name for the AppSec policy. A brief description of the AppSec policy's purpose. Defines the specific criteria (conditions) that will trigger the policy. You can combine multiple conditions to create complex rules for when the policy should be applied. If you combine multiple Finding Type values using OR, only the common fields across those types will be valid. When used in AND, all conditions within this array must be met. When used in OR, at least one condition within this array must be met. Selecting Finding Type determines which condition fields you can configure. Each Finding Type supports a specific set of condition fields. To see which fields are allowed for each type, see the Supported Condition Fields table. 2.7.3.6 |Supported Condition Fields This table defines the available fields for building policy conditions when you select Finding Type option. Defines the field the condition filter should match. To see which fields are allowed for each type, see the Supported Condition Fields table. Defines the comparison operator you want to use for this filter. Value that the condition filter must match. The type of this field will differ depending on the SEARCH_FIELD that you specified. Defines the field the condition filter should match. Defines the type of assets to be evaluated by the policy (the scope). You can combine multiple conditions to create complex rules for when the policy should be applied. When used in AND, all conditions within this array must be met. When used in OR, at least one condition within this array must be met. Cannot be used if assetGroupIds are set. 2.7.3.7 |Supported Scope Fields This table defines the available fields for building policy scopes that target specific assets. Defines the field the matching criteria filter should match. To see which fields are allowed for each type, see the Supported Scope Fields table. Defines the comparison operator you want to use for this filter. Value that the condition filter must match. The type of this field will differ depending on the SEARCH_FIELD that you specified. Defines the field the condition filter should match. A list of asset group IDs that the policy should apply to. If the list is empty, the policy applies globally, unless other scope conditions are defined. Note : Cannot be used with the scope parameter. Defines when the AppSec policy should be evaluated. At least one of the options must be true. If true, the AppSec policy is evaluated periodically (for example, daily or weekly). Enables the periodic trigger for the AppSec policy. Actions to take when the policy detects its target risk and the policy is triggered. Indicates if triggering the policy should create an issue in the connected system. Set the severity of the issue (and override the system severity). If not used, system severity is kept. If true, the AppSec policy is evaluated on Pull Request (PR) events Enables the pr trigger for the AppSec policy. Indicates if triggering the policy should block the pull request. Ensure that the pr trigger is selected. Indicates if triggering the policy should create comments on the pull request. Ensure that the pr trigger is selected. If true, the AppSec policy is evaluated on CI/CD pipeline events. Enables the cicd trigger for the AppSec policy. Indicates if triggering the policy should block the CI/CD pipeline. Ensure that the cicd trigger is selected. Indicates if triggering the policy should soft fail the CI/CD pipeline in the platform. Ensure that the cicd trigger is selected. You will receive Bad Request error when the server cannot process the request due to client-side errors in the request body. The error is returned when: Required fields are missing Field values are invalid (for example, incorrect SEARCH_TYPE for the given SEARCH_FIELD) The JSON request body is not structured properly (invalid payload structure) Example response: All required fields are included Field values follow the expected format and constraints The JSON request body is properly structured You will receive Conflict error if a policy with the specified name already exists. Provide a unique name for the new policy. You will receive Internal Server Error when the server encounters an unexpected condition that prevents it from fulfilling the request. This is a server-side issue. No action is required from you. If the problem persists, try again later. 2.7.3.8 |Supported Condition Fields This table defines the available fields for building policy conditions when you select Finding Type option. Defines the field the condition filter should match. To see which fields are allowed for each type, see the Supported Condition Fields table. Defines the comparison operator you want to use for this filter. Value that the condition filter must match. The type of this field will differ depending on the SEARCH_FIELD that you specified. Defines the field the condition filter should match. Defines the type of assets to be evaluated by the policy (the scope). You can combine multiple conditions to create complex rules for when the policy should be applied. When used in AND, all conditions within this array must be met. When used in OR, at least one condition within this array must be met. Cannot be used if assetGroupIds are set. 2.7.3.9 |Supported Scope Fields This table defines the available fields for building policy scopes that target specific assets. Defines the field the matching criteria filter should match. To see which fields are allowed for each type, see the Supported Scope Fields table. Defines the comparison operator you want to use for this filter. Value that the condition filter must match. The type of this field will differ depending on the SEARCH_FIELD that you specified. Defines the field the condition filter should match. List of asset groups to which the policy applies. If the array is empty, the policy applies to all asset groups. Defines when the AppSec policy should be evaluated. At least one of the options must be true. If true, the AppSec policy is evaluated periodically (for example, daily or weekly). Enables the periodic trigger for the AppSec policy. Actions to take when the policy detects its target risk and the policy is triggered. Indicates if triggering the policy should create an issue in the connected system. Set the severity of the issue (and override the system severity). If not used, system severity is kept. If true, the AppSec policy is evaluated on Pull Request (PR) events Enables the pr trigger for the AppSec policy. Indicates if triggering the policy should block the pull request. Ensure that the pr trigger is selected. Indicates if triggering the policy should create comments on the pull request. Ensure that the pr trigger is selected. If true, the AppSec policy is evaluated on CI/CD pipeline events. Enables the cicd trigger for the AppSec policy. Indicates if triggering the policy should block the CI/CD pipeline. Ensure that the cicd trigger is selected. Indicates if triggering the policy should soft fail the CI/CD pipeline in the platform. Ensure that the cicd trigger is selected. 2.7.4 |Rules APIs for managing rules 2.7.4.1 |Get AppSec rules Application Security rules are designed to detect security threats within your application security environment. Application Security rules identify and flag issues based on predefined criteria. Get a list of all the Application Security rules. We recommend you use the parameters to filter the rules since there are many of them. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Whether the rule is enabled Type of security scanner used to detect findings of this rule The priority level assigned to findings identified by the rule The framework or language that the Application Security rule applies to (for example, GitHub, Terraform, JavaScript) Labels assigned to the rule Custom rule IaC category. The timestamp when the AppSec rule was created. The rule description. security scanner used to detect findings of this rule. A link to the Cortex documentation. The domain associated with the rule. The finding type ID. The rule definition. http link to the definition documentation. Name of the configured frameworks. The remediation steps that will appear on the Appsec rule's findings. The IDs of related remediation resources. The resource types associated with the rule. Indicates whether the rule is custom. Indicates whether the rule is enabled. Labels assigned to the rule. Name of the Appsec rule. Owner of the rule. Custom rule subcategory. The timestamp when the AppSec rule was updated. The associated MITRE ATT&CK tactics. The associated MITRE ATT&CK techniques. 2.7.4.2 |Create an AppSec rule Application Security rules are designed to detect security threats within your application security environment. Application Security rules identify and flag issues based on predefined criteria. 2.7.4.2.1 |Create an Application Security Rule Rules can only be created for IaC Security and Secrets Security; creating rules for CI/CD Security is not supported. Required license Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security add-on. Define the Application Security custom rule. The category option should match your selection for scanner. A unique name for the Appsec rule. Description of the rule Labels to be assigned to the rule The type of security scanner used to detect findings of this rule. Choose any one of the scanners. Allowed Values: IAC or SECRETS. Name of the configured frameworks. Custom rule IaC category Custom rule subcategory The rule definition http link to the definition documentation. The remediation steps that will appear on the Appsec rule's findings. Custom rule secret category http link to the documentation. Details of the Application Security rule Custom rule IaC category. The timestamp when the AppSec rule was created. The rule description. security scanner used to detect findings of this rule. A link to the Cortex documentation. The domain associated with the rule. The finding type ID. The rule definition. The IDs of related remediation resources. The resource types associated with the rule. Indicates whether the rule is custom. Indicates whether the rule is enabled. Labels assigned to the rule. Name of the Appsec rule. Owner of the rule. Custom rule subcategory. The timestamp when the AppSec rule was updated. The associated MITRE ATT&CK tactics. The associated MITRE ATT&CK techniques. 2.7.4.3 |Get an AppSec rule Get the details of the specified Application Security rule. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Custom rule IaC category. The timestamp when the AppSec rule was created. The rule description. security scanner used to detect findings of this rule. A link to the Cortex documentation. The domain associated with the rule. The finding type ID. The rule definition. http link to the definition documentation. Name of the configured frameworks. The remediation steps that will appear on the Appsec rule's findings. The IDs of related remediation resources. The resource types associated with the rule. Indicates whether the rule is custom. Indicates whether the rule is enabled. Labels assigned to the rule. Name of the Appsec rule. Owner of the rule. Custom rule subcategory. The timestamp when the AppSec rule was updated. The associated MITRE ATT&CK tactics. The associated MITRE ATT&CK techniques. 2.7.4.4 |Modify an AppSec rule Modify an existing Application Security rule. If it's an out-of-the-box rule, the only modification you can make is to add labels. For custom rules, you can modify all of the fields. Note: To customize an out-of-the-box rule, you can create a custom rule by cloning the existing one. This allows you to make changes to the original rule according to your requirements. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management List of rule labels A unique name for the Appsec rule. Description of the rule Labels to be assigned to the rule The type of security scanner used to detect findings of this rule. Choose any one of the scanners. Allowed Values: IAC or SECRETS. Name of the configured frameworks. Custom rule IaC category Custom rule subcategory The rule definition http link to the definition documentation. The remediation steps that will appear on the Appsec rule's findings. Custom rule secret category http link to the documentation. Updated details of the modified Application Security rule Details of the Application Security rule Custom rule IaC category. The timestamp when the AppSec rule was created. The rule description. security scanner used to detect findings of this rule. A link to the Cortex documentation. The domain associated with the rule. The finding type ID. The rule definition. The IDs of related remediation resources. The resource types associated with the rule. Indicates whether the rule is custom. Indicates whether the rule is enabled. Labels assigned to the rule. Name of the Appsec rule. Owner of the rule. Custom rule subcategory. The timestamp when the AppSec rule was updated. The associated MITRE ATT&CK tactics. The associated MITRE ATT&CK techniques. 2.7.4.5 |Delete an AppSec rule Delete the specified Application Security rule. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.4.6 |Get AppSec rule labels Get a list of all of the Application Security rule labels. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management A list of labels 2.7.4.7 |Create an AppSec rule validation Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Name of the configured frameworks. 2.7.5 |Repositories APIs for managing repository assets 2.7.5.1 |Get repositories Get details on all repositories integrated with Cortex Cloud Application Security, providing detailed information and insights into repository artifacts, configurations, and dependencies. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The name of the repository in the version control system (VCS) Description describing the repository Whether the repository is archived Whether the repository is billable Whether the repository is forked Whether the repository is public Whether the repository is selected The date the repository was last updated Repository owner The configuration of an Application Security code scanner Pull Request (PR) scans are initiated by events triggered by version control systems such as GitHub, GitLab, Bitbucket and Azure Repos, or via webhooks. The scan results are based on default enforcement thresholds. Indicates whether the PR scan is enabled Details on each type of scanner: Branch periodic scans, CI scans, IaC scans, Secrets scans Scanner configuration Indicates whether this scanner is enabled Timestamp of the first scan performed Indicates whether or not the branch is the primary branch Timestamp of the last scan execution URL of the repository 2.7.5.2 |Get a repository Get details on the Application Security repository specified by its asset ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The name of the repository in the version control system (VCS) Description describing the repository Whether the repository is archived Whether the repository is billable Whether the repository is forked Whether the repository is public Whether the repository is selected The date the repository was last updated Repository owner The configuration of an Application Security code scanner Pull Request (PR) scans are initiated by events triggered by version control systems such as GitHub, GitLab, Bitbucket and Azure Repos, or via webhooks. The scan results are based on default enforcement thresholds. Indicates whether the PR scan is enabled Details on each type of scanner: Branch periodic scans, CI scans, IaC scans, Secrets scans Scanner configuration Indicates whether this scanner is enabled Timestamp of the first scan performed Indicates whether or not the branch is the primary branch Timestamp of the last scan execution URL of the repository 2.7.5.3 |Get a repository scan configuration Get the details of an Application Security scan configuration. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The configuration of an Application Security code scanner Pull Request (PR) scans are initiated by events triggered by version control systems such as GitHub, GitLab, Bitbucket and Azure Repos, or via webhooks. The scan results are based on default enforcement thresholds. Indicates whether the PR scan is enabled Details on each type of scanner: Branch periodic scans, CI scans, IaC scans, Secrets scans Scanner configuration Indicates whether this scanner is enabled 2.7.5.4 |Update a repository scan configuration Update the configuration of an Application Security scan. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Pull Request (PR) scans are initiated by events triggered by version control systems such as GitHub, GitLab, Bitbucket and Azure Repos, or via webhooks. The scan results are based on default enforcement thresholds. Indicates whether the PR scan is enabled Make all properties in T optional From T, pick a set of properties whose keys are in the union K The configuration of an Application Security code scanner Details on each type of scanner: Branch periodic scans, CI scans, IaC scans, Secrets scans Scanner configuration Indicates whether this scanner is enabled Timestamp of the first scan performed Indicates whether or not the branch is the primary branch Timestamp of the last scan execution 2.7.5.5 |Get AppSec repository branches Get the details of the Application Security repository branches. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Timestamp of the first scan performed Indicates whether or not the branch is the primary branch Timestamp of the last scan execution 2.7.5.6 |Update an AppSec repository branch Update the Application Security repository branch by indicating the primary branch. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.6 |Data Sources APIs for managing integrations 2.7.6.1 |Get Data Sources Application Security capabilities support a wide range of Cloud DevSecOps systems integrations. Get details on the Application Security integrations in your Cortex environment. You can filter the type and category of integrations you want to list. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Integration type Integration category Date the integration was created Integration hostname and protocol Integration hostname Integration protocol Integration instance version Date the integration was last updated Self-signed certificate Integration state The status of the integration Unique identifier of the integration 2.7.6.2 |Get an AppSec Data Source Get the details of the Application Security integration specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Integration details Date the integration was created Integration hostname and protocol Integration hostname Integration protocol Integration instance version Date the integration was last updated Self-signed certificate Integration state The status of the integration Unique identifier of the integration 2.7.6.3 |Update an AppSec Data Source Update some of the Application Security integration details. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Define the integration details To update the integration for specific repositories, specify them here in the following format: "state":"["org1"/"repo_name1", "org2"/"repo_name2"] Name of the branch Name of the external branch External project ID Integration details Date the integration was created Integration hostname and protocol Integration hostname Integration protocol Integration instance version Date the integration was last updated Self-signed certificate Integration state The status of the integration Unique identifier of the integration 2.7.6.4 |Delete an AppSec Data Source Delete the specified Application Security integration. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.7 |Scan management APIs for managing scans 2.7.7.1 |Get unscanned AppSec scan management repositories Get a list of Application Security repositories that have not been scanned. You can optionally filter by specifying the number of days past during which the repositories were not scanned. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Define the time period in days previous to now Name of the repository ID of the repository 2.7.7.2 |Get AppSec branch periodic scans Branch periodic scans are automated checks that assess the security posture of applications and infrastructure. Get the details of branch periodic scans. How to access branch periodic scans in the UI: Under Modules select Application Security > Branch Periodic Scanning (under Scans). Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management ID of the scanned repository The health of the scan. Valid values include: ERROR: Indicates an error with the scan PARTIALLY_COMPLETED: Indicates that the scan executed partially with some scan modules succeeded and others failing IN_PROGRESS: The scan is in progress COMPLETED: Indicates that the scan is complete Timestamp of the last scan execution The branch analyzed during the scan The organization owning the repository Name of the scanned repository 2.7.7.3 |Get AppSec Pull Request scans Pull Request (PR) scans are initiated by events triggered by version control systems such as GitHub, GitLab, Bitbucket and Azure Repos, or via webhooks. These scans are run on default or non-default branches containing open PRs or Merge Requests (MR) from your integrated repositories. Get the details of PR scans. How to access Pull Request scans in the UI: Under Modules select Application Security Pull Request Scans (under Scans). Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management ID of the scanned repository The health of the scan. Valid values include: ERROR: Indicates an error with the scan PARTIALLY_COMPLETED: Indicates that the scan executed partially with some scan modules succeeded and others failing IN_PROGRESS: The scan is in progress COMPLETED: Indicates that the scan is complete The timestamp of the last scan execution The commit included in the PR Status of the PR scan. Valid values include: PASSED_WITH_ISSUES The ID of the PR Name of the branch analyzed during the scan Specifies the organization owning the repository 2.7.7.4 |Get AppSec CI scans CI scans detect exposed secrets, misconfigurations in your infrastructure-as-code (IaC) files, vulnerabilities in your software composition analysis (SCA) packages, and license non-compliance in your CI pipelines. Get the details of CI scans. How to access CI scans in the UI: Under Modules select Application Security > CI Scans (under Scans). Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management ID of the scanned repository Status of the PR scan. Valid values include: PASSED_WITH_ISSUES The health of the scan. Valid values include: ERROR: Indicates an error with the scan PARTIALLY_COMPLETED: Indicates that the scan executed partially with some scan modules succeeded and others failing IN_PROGRESS: The scan is in progress COMPLETED: Indicates that the scan is complete The timestamp of the last scan execution The name of the branch analyzed during the scan Name of the organization owning the repository Name of the scanned repository 2.7.7.5 |List AppSec scan issues Get a list of the issues discovered in the scan specified by scan ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.7.6 |List AppSec scan findings Get a list of the findings discovered in the scan specified by scan ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.7.7 |Rerun a repository scan Create a repository scan by specifying the branch name. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.7.8 |SBOM management APIs for managing SBOMs 2.7.8.1 |Get an SBOM for the specified repository Get an SBOM (Software Bill of Materials) report for the specified repository. Only the following combinations are supported: format: cyclonedx fileType: json or xml version: 1.4or1.5or1.6` format: spdx fileType: json or txt version: 2.3` Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Branch name for which you want to export the SBOM. Define the file type you want to export. For cyclonedx, either json or xml. For spdx, either json or txt. For cyclonedx, version can be 1.4, 1.5, or 1.6. For spdx, version is 2.3. Define the SBOM format. 2.7.8.2 |Get all SBOMs for the specified organization Get SBOM (Software Bill of Materials) reports for all repositories in the specified organization. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Define the file type you want to export. For cyclonedx, either json or xml. For spdx, either json or txt. For cyclonedx, version can be 1.4, 1.5, or 1.6. For spdx, version is 2.3. Define the SBOM format. 2.7.9 |Remediations APIs for managing Remediation 2.7.9.1 |Get Fix Suggestion Retrieves a comprehensive fix suggestion for a specified application security issue. Use optional query parameters to include data such as the original code block, remediation instructions, or the suggested code fix. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security add-on. The unique identifier for the specific application security issue. Specifies whether to include the original code block in the response. Specifies whether to include manual remediation instructions in the response. Specifies whether to include the automated code fix in the response. Fix Suggestion Response Unique identifier for the issue. Name of the security issue. Original vulnerable code. Manual remediation instructions. Automated fix suggestions. 2.7.9.2 |Trigger Fix Pull Request Create automated pull requests to fix multiple security issues in a single bulk operation. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security add-on. The branch name for the fix pull request. If not specified, a custom branch will be used. The title for the fix pull request. If not specified, a default message will be used. A list of unique identifiers for the issues to be fixed. Maximum 10 IDs per request. Error message if the process fails. Status of each issue. A unique identifier for issue. PR status. Possible values: -triggered: If the PR is in triggered state. -automated_fix_not_available: If the PR is in automated_fix_not_available state. Overall process status. Unique identifier to track the remediation process Error details if the process fails. 2.7.9.3 |Get Fix Status Retrieves the fix status of remediation processes using the remediation ID. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security add-on. Indicates whether all remediation processes are complete. Remediation results grouped by repository. URL of the created pull request. Error details if the process failed. Internal repository identifier. 2.7.10 |Criteria APIs for managing Criteria 2.7.10.1 |Get all criteria Retrieves a paginated list of all criteria. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security Add-on. Current page number in the paginated response. Total number of items in the current page. Unique Id of the criteria. Unique name of the criteria. Criteria description. Creation method for the criteria. Possible values: -manual: For the criteria created manually. -automatic: Criteria that are automatically created. Owner of the criteria. Timestamp when the criteria was created. Timestamp when the criteria was updated. Timestamp when the criteria was deleted. Additional metadata for the criteria. The number of associated applications. The number of associated assets. The current refresh status. Indicates whether the resource has been deleted from UAI. Repositories with the same name at the selected group-by level (org, project, or repository) are consolidated into a single application within the selected provider. If multiple applications share the same name at the chosen group-by level (org, project, or repository), they are merged across providers to form a single unified application. Source code management (SCM) or code hosting provider. Allowed values: GITLAB, GITHUB, BITBUCKET, AZURE_REPOS, AWS_CODE_COMMIT Runtime or execution environment provider for the application or asset. Allowed Values: GCP, AWS, AZURE A human-readable name for the criteria. Tags associated with the criteria name. The metadata of the business owner. The operational importance of the asset. Whether the asset is exposed to the internet. Criteria Type. Allowed values - cloud. Identifies the application name. If multiple values are found, the three most frequent ones are concatenated (for example, infra_bank_pay). If matching tag is not found, the application name is automatically generated by the system. Maps the business criticality level (Critical, High, Medium, or Low). If multiple values are present, the highest severity level is applied. The default value is Medium. Maps the tag key to the Business Unit. If multiple values are available, a comma-separated string containing the top five most frequent values is shown. Total number of pages for the paginated response. Number of entries in each page. Total number of items in the response. 2.7.10.2 |Get a Criteria by ID Retrieves detailed information for a specific criteria using its unique Id. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security Add-on. Unique identifier for the criteria Unique Id of the criteria. Unique name of the criteria. Criteria description. Creation method for the criteria. Possible values: -manual: For the criteria created manually. -automatic: Criteria that are automatically created. Owner of the criteria. Timestamp when the criteria was created. Timestamp when the criteria was updated. Timestamp when the criteria was deleted. Additional metadata for the criteria. The number of associated applications. The number of associated assets. The current refresh status. Indicates whether the resource has been deleted from UAI. Repositories with the same name at the selected group-by level (org, project, or repository) are consolidated into a single application within the selected provider. If multiple applications share the same name at the chosen group-by level (org, project, or repository), they are merged across providers to form a single unified application. Source code management (SCM) or code hosting provider. Allowed values: GITLAB, GITHUB, BITBUCKET, AZURE_REPOS, AWS_CODE_COMMIT Runtime or execution environment provider for the application or asset. Allowed Values: GCP, AWS, AZURE A human-readable name for the criteria. Tags associated with the criteria name. The metadata of the business owner. The operational importance of the asset. Whether the asset is exposed to the internet. Criteria Type. Allowed values - cloud. Identifies the application name. If multiple values are found, the three most frequent ones are concatenated (for example, infra_bank_pay). If matching tag is not found, the application name is automatically generated by the system. Maps the business criticality level (Critical, High, Medium, or Low). If multiple values are present, the highest severity level is applied. The default value is Medium. Maps the tag key to the Business Unit. If multiple values are available, a comma-separated string containing the top five most frequent values is shown. 2.7.10.3 |Delete a Criteria Deletes a specific criteria identified by its unique Id. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security Add-on. Unique identifier for the criteria 2.7.10.4 |Create a Criteria Creates a Criteria based on the provided details. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security with Application Security Add-on. Creates a new criteria object. Unique name for the criteria. Optional description for the criteria. Criteria Type. Allowed values - cloud. Repositories with the same name at the selected group-by level (org, project, or repository) are consolidated into a single application within the selected provider. If multiple applications share the same name at the chosen group-by level (org, project, or repository), they are merged across providers to form a single unified application. Source code management (SCM) or code hosting provider. Allowed values: GITLAB, GITHUB, BITBUCKET, AZURE_REPOS, AWS_CODE_COMMIT Runtime or execution environment provider for the application or asset. Allowed Values: GCP, AWS, AZURE A human-readable name for the criteria. Tags associated with the criteria name. The metadata of the business owner. The operational importance of the asset. Whether the asset is exposed to the internet. Identifies the application name. If multiple values are found, the three most frequent ones are concatenated (for example, infra_bank_pay). If matching tag is not found, the application name is automatically generated by the system. Maps the business criticality level (Critical, High, Medium, or Low). If multiple values are present, the highest severity level is applied. The default value is Medium. Maps the tag key to the Business Unit. If multiple values are available, a comma-separated string containing the top five most frequent values is shown. Unique Id of the criteria. Unique name of the criteria. 2.8 |Vulnerability Intelligence public APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Vulnerability Intelligence is a real-time feed that contains vulnerability data and threat intelligence from a variety of certified upstream sources. This feed continuously pulls data from known vulnerability databases, official vendor feeds and commercial providers to provide the most accurate vulnerability detection results. In addition to the information collected from official feeds, Vulnerability Intelligence is enriched with data curated by a dedicated research team. Our security researchers monitor cloud and open-source projects to identify security issues through automated and manual means. As a result, we can detect new vulnerabilities that were only recently disclosed, and even vulnerabilities that were quietly patched. Use these public APIs to obtain details on vulnerabilities and affected software. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.8.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. Vulnerability Intelligence is a real-time feed that contains vulnerability data and threat intelligence from a variety of certified upstream sources. This feed continuously pulls data from known vulnerability databases, official vendor feeds and commercial providers to provide the most accurate vulnerability detection results. In addition to the information collected from official feeds, Vulnerability Intelligence is enriched with data curated by a dedicated research team. Our security researchers monitor cloud and open-source projects to identify security issues through automated and manual means. As a result, we can detect new vulnerabilities that were only recently disclosed, and even vulnerabilities that were quietly patched. Use these public APIs to obtain details on vulnerabilities and affected software. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.8.1.1 |Servers 2.8.1.2 |Authentication methods Authorized requests to the API should use: x-api-key inside a header with the access token. Authorized requests to the API should use: x-api-key-id inside a header with the access token. 2.8.2 |Vulnerabilities APIs for managing vulnerabilities 2.8.2.1 |Get list of vulnerabilities Get a list of vulnerabilities that match the filter fields. The list includes key information about each vulnerability. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management An array of filter fields Identifies the field the filter is matching. Identifies the comparison operator you want to use for this filter. Allowed values depend on the filter used. contains/not_contains: use with attack_vector, cvss_score_source, cvss_severity_source, cvss_version , distribution_and_releases, package_names, reported_exploited_by, vendors, vulnerability_id eq/neq: use with attack_vector, cisa_kev, cvss_score, cvss_score_source, cvss_severity_source, cvss_version, epss_score, vulnerability_id gte/lte: use with cvss_score, epss score, first_published, last_modified range: use with first_published, last_modified relative_timestamp: use with first_published, last_modified Values for filtering the results. array[string]: use with affected_cpu_archs, distribution_and_releases, package_names, reported_exploited_by boolean: cisa_kev string: use with attack_vector, cvss_score, cvss_severity, cvss_score_source, cvss_severity_source, cvss_version, vulnerability_id integer: use with first_published, last_modified number: use with cvss_score, epss_score Sort on any filter field except fields that take an array as their value. An integer representing the start offset index of results Default value - 0 An integer representing the start offset index of results. Use this field to specify the number of results on a page when using page token pagination. Default value - 500 Use "use_page_token":true in the initial request to paginate the response data. If "use_page_token":true was included in the initial request, the response for that request will include a page token. Use "next_page_token":"string" to pass that page token into the next request to paginate the next set of data. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Internal server error. A unified status for API communication type errors. 2.8.2.2 |Get vulnerability details Get detailed information about a specific vulnerability. For example, the following request retrieves detailed information about CVE-2021-28799: https://api-{{fqdn}}/public_api/uvem/v1/vulnerabilities?vulnerabilityId=CVE-2021-28799 Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Vulnerability ID 2.8.3 |Affected software APIs for managing affected software 2.8.3.1 |Get affected software Get a filtered list of the software affected by one or more vulnerabilities. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The field to use for filtering results. Comparison operator to use with the filter. Allowed values depend on the filters field. contains/not_contains: use with affected_cpu_archs, affected_versions, cvss_severity, distro, package_name, release, vulnerability_id eq/neq: use with distro, cvss_severity, cvss_score, package_name, release, vulnerability_id gte/lte: use with cvss_score, last_modified range: use with last_modified relative_timestamp: use with last_modified Values for filtering the results. array[string]: use with affected_cpu_archs, affected_versions string: use with cvss_score, distro, release, package_name, vulnerability_id integer: use with last_modified number: use with cvss_score An integer representing the start offset index of results Default value - 0 An integer representing the start offset index of results. Use this field to specify the number of results on a page when using page token pagination. Default value - 500 Use "use_page_token":true in the initial request to paginate the response data. If "use_page_token":true was included in the initial request, the response for that request will include a page token. Use "next_page_token":"string" to pass that page token into the next request to paginate the next set of data. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Internal server error. A unified status for API communication type errors. 2.9 |Vulnerability Management APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Managing vulnerabilities effectively is crucial to proactively maintaining the security, integrity, and availability of IT infrastructure. Cortex Cloud provides a comprehensive vulnerability management platform, helping you identify, assess, prioritize, and remediate security vulnerabilities across your entire IT infrastructure including endpoints, code, and cloud. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.9.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. Managing vulnerabilities effectively is crucial to proactively maintaining the security, integrity, and availability of IT infrastructure. Cortex Cloud provides a comprehensive vulnerability management platform, helping you identify, assess, prioritize, and remediate security vulnerabilities across your entire IT infrastructure including endpoints, code, and cloud. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.9.1.1 |Servers 2.9.2 |Vulnerability Management Public APIs for vulnerability policy management 2.9.2.1 |Get Policies List Retrieve a paginated list of vulnerability management policies with optional filtering and sorting capabilities. This endpoint allows you to search through policies based on various criteria such as name, status, priority, and other attributes. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Filter passed in from the application that is not intended to be modified by the user. Be aware that this field is not guaranteed to not be modified by the user. Successful Response Validation Error 2.9.2.2 |Create Policy Public Create a new vulnerability management policy for issue creation, kubernetes runtime protection, or prevention actions. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Successful Response Validation Error 2.9.2.3 |Update Policy Update an existing vulnerability management policy by providing its unique identifier. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Successful Response Validation Error 2.9.2.4 |Get Policy By ID Retrieve a specific vulnerability management policy by its unique identifier. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Successful Response Validation Error 2.9.2.5 |Delete Policy Delete an existing vulnerability management policy using a policy ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Successful Response Validation Error 2.9.2.6 |Trigger Scan for an AssetId Trigger On demand Scan based on AssetId on one of CORTEX_NETWORK_SCANNER, CORTEX_XDR_AGENT, CORTEX_XDR_AGENTLESS scanners. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Request model for triggering a vulnerability scan The unique identifier of the asset to scan The type of scanner to use for the scan Type of vulnerability scanner CVE identifier (e.g., 'CVE-2024-1234'). Required when scanner_type is CORTEX_NETWORK_SCANNER, optional for other scanner types. Scan Target (e.g., 'CONTAINER' or 'HOST' or 'IMAGE'). Required when scanner_type is CORTEX_XDR_AGENT and its Linux endpoint, optional for other scanner types. Successful Response Response model for scan trigger operation Validation Error 2.10 |Cloud Infrastructure Entitlement Management APIs You can export the OpenAPI specs in the Cortex Stoplight instancehttps://cortex-panw.stoplight.io/docs/cortex-cloud/iul4tcqnj800b-cloud-infrastructure-entitlement-management-ap-is). API for searching and retrieving access information within the Cloud Infrastructure Entitlement Management(CIEM) module. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.10.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instancehttps://cortex-panw.stoplight.io/docs/cortex-cloud/iul4tcqnj800b-cloud-infrastructure-entitlement-management-ap-is). API for searching and retrieving access information within the Cloud Infrastructure Entitlement Management(CIEM) module. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.10.1.1 |Servers 2.10.2 |CIEM access Search CIEM access 2.10.2.1 |Search CIEM Access Retrieves a list of access entries based on specified filters, sorting, and pagination. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Specifies the request body format. Optional filters to apply to the search results. A list of filter conditions. Currently only supports AND logic. Identifies the field to filter. Identifies the comparison operator you want to use for this filter. Valid values are: Value that this filter must match. Optional sorting criteria for the search results. The field to sort by. Optional metadata for pagination. A token provided by a previous response to fetch the next page of results. Successful response with CIEM access data. An array of access entries. Access levels granted Transformed account access details Destination account ID Name of the destination cloud account Destination region Destination resource ID Name of the destination resource Type of the destination resource Destination resource UAI Name of the destination cloud service Category of the destination entity. Valid values include: Human: All cloud, identity provider (IdP), and platform users. Non-human: Machine identities that can assume permissions and perform cloud Identity and Access Management (IAM) actions such as VMs and functions. Cloud Service Account: A category unifying AWS roles, Microsoft Azure service accounts and managed identities, and GCP service accounts. IAM Group: IAM group, which is a collection of IAM users. IAM Policy: Permission documents, such as AWS policies, Azure roles, and GCP roles. Labels describing access to data Number of excessive policies Granted by cloud entity ID Name of the cloud entity that granted access Type of the cloud entity that granted access Granted by cloud entity UAI Category of the granter entity Indicates if last access is supported Timestamp of when access was last used Scope of the permission Source account ID Indicates if the source account is a known vendor Name of the source cloud account Source resource ID Name of the source resource Type of the source resource Source resource UAI Name of the source cloud service Category of the source entity. Valid values include: Name of the source vendor Number of unused actions Metadata for pagination. A token to retrieve the next page of results, if available. The number of results after applying filters. The total number of available results, ignoring pagination. Bad Request. Invalid JSON. Unauthorized access. An issue occurred during authentication. This can indicate an incorrect key, id, or other invalid authentication parameters. Unauthorized access. User does not have the required license type to run this API. Forbidden access. The provided API Key does not have the required RBAC permissions to run this API. Internal server error. A unified status for API communication type errors. 2.11 |Compliance Controls API You can export the OpenAPI specs in the Cortex Stoplight instance. API for managing compliance controls, rules and retrieving compliance results. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.11.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. API for managing compliance controls, rules and retrieving compliance results. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.11.1.1 |Servers 2.11.1.2 |Authentication methods API Key ID for authentication Authorized requests to the API should use: x-xdr-auth-id inside a header with the access token. API Key for authentication Authorized requests to the API should use: Authorization inside a header with the access token. 2.11.1.2.1 |Default authentication XDRAuth=[], XDRAuthToken 2.11.2 |Assessment profiles Operations for managing assessment profiles 2.11.2.1 |Get assessment profiles An assessment profile uses a standard to run scans on an asset group to check whether the assets adhere to the standard. Retrieve compliance assessment profiles with optional filtering, sorting and pagination. The response is concatenated using AND condition (OR is not supported) The maximum result set size is >100 Offset is the zero-based number of assessment profiles from the start of the result set Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Identifies the assessment profile field the filter should match. Filters are based on the following keywords: name: Assessment profile name standard_name : Standard name description: Assessment profile description asset_group_name: Asset Group name created_by: Creator of the assessment profile modified_by: Modifier of the assessment profile id: Assessment profile ID report_type: Report type standard_id: Standard ID creation_time: Assessment profile's creation time modification_time: Assessment profile's modification time enabled: Whether the assessment profile is enabled asset_group_id: Asset Group ID Identifies the comparison operator you want to use for this filter. Valid keywords are: eq / neq / contains / not_contains name, standard_name, description, asset_group_name, created_by, modified_by, id, report_type, standard_id: String gte, lte, range, relative_timestamp creation_time, modification_time: Integer in timestamp epoch milliseconds enabled: valid values are yes or no asset_group_id: String Value that this filter must match. The contents of this field will differ depending on the assessment profile field that you specified for this filter When the field value is one of the following, the value is type string: name, standard_name, description, asset_group_name, created_by, modified_by, id, report_type, standard_id, asset_group_id When the field value is one of the following, the value is type integer: creation_time, modification_time Sort according to this field Sort in ascending (asc) or descending (desc) order Integer representing the starting offset within the query result set from which you want assessment profiles returned. Assessment profiles are returned as a zero-based list. Any assessment profile indexed less than this value is not returned in the final result set and defaults to zero. Integer representing the end offset within the result set after which you do not want assessment profiles returned. Assessment profiles in the assessment profile list that are indexed higher than this value are not returned in the final results set. Defaults to >100, which returns all assessment profiles to the end of the list. Successfully retrieved assessment profiles Total number of records Number of records matching the filter + paging Assessment profile ID Assessment profile name Description of the assessment profile Whether the assessment profile is enabled Asset Group name Assessment profile creation time Assessment profile modification time Assessment profile creator Assessment profile modified by Bad request - invalid input parameters Additional error details Authentication required Error message describing what went wrong Access denied - insufficient permissions Internal server error 2.11.2.2 |Get assessment profile by ID An assessment profile uses a standard to run scans on an asset group to check whether the assets adhere to the standard. Get details of the assessment profile specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Assessment profile ID Successfully retrieved assessment profile Assessment profile name Description of the assessment profile Whether the assessment profile is enabled Asset Group name Assessment profile creation time Assessment profile modification time Assessment profile creator Assessment profile modified by Bad request - invalid input parameters Additional error details Authentication required Error message describing what went wrong Access denied - insufficient permissions Resource not found Internal server error 2.11.2.3 |Add assessment profile Create a custom compliance assessment profile that is tailored to your own business needs and organizational policies. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Name of the assessment profile Description of the assessment profile Assessment profile targets Assessment profile report type. Valid values include: Assessment report evaluation frequency Successfully created assessment profile Whether the assessment profile creation succeeded Bad request - invalid input parameters Additional error details Authentication required Error message describing what went wrong Access denied - insufficient permissions Conflict - duplicate resource Internal server error 2.11.2.4 |Edit assessment profile Edit an existing compliance custom assessment profile. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Assessment profile ID Enable or disable the assessment profile Whether the assessment profile is enabled. Valid values are: Whether the assessment profile is enabled Name of the assessment profile Description of the assessment profile List of email addresses for reports Type of reporting. Valid values include: Cron expression for assessment report evaluation frequency Compliance standard ID Successfully updated assessment profile Bad request - invalid input parameters Additional error details Authentication required Error message describing what went wrong Access denied - insufficient permissions Resource not found Conflict - duplicate resource Internal server error 2.11.2.5 |Delete assessment profile Delete an assessment profile specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Assessment profile ID Successfully deleted assessment profile Whether the assessment profile deletion succeeded Bad request - invalid input parameters Additional error details Authentication required Error message describing what went wrong Access denied - insufficient permissions Resource not found Internal server error 2.11.3 |Assessment results Operations for managing assessment results 2.11.3.1 |Get assessment profile results Retrieve assessment profile results with optional filtering based on the last successful evaluation. Filtering Support: Field (labels): contains, not_contains Note: This API does not support sorting or pagination. Sorting will not take effect even if it is specified in the payload. The results will not return the results based on sorting' Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Array of filter objects Field to filter on (only 'labels' is supported) Filter operator to apply. Valid values include: Value to filter by Successfully retrieved assessment profile results Total number of assessment results available Number of assessment results matching the applied filters Count from standard filter processing Total count from standard processing Array of assessment profile results Bad request - invalid input parameters Additional error details Authentication required Error message describing what went wrong Access denied - insufficient permissions Internal server error 2.11.4 |Controls Operations for managing compliance controls 2.11.4.1 |Get compliance controls Compliance controls are measures related to the standard that ensure compliance and mitigate risks. Controls are built from one or more rules, the specific checks that run on an asset. Controls can be grouped into categories, for example RBAC and Pod security. Retrieve compliance control details with optional filtering, sorting and pagination. The response is concatenated using AND condition (OR is not supported) The maximum result set size is >100 Offset is the zero-based number of assessment profiles from the start of the result set Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Identifies the compliance control field the filter should match. Filters are based on the following keywords: name: Compliance control name category : Compliance control category subcategory: Compliance control subcategory description: Compliance control description created_by: Creator of the compliance control modified_by: Modifier of the compliance control id: Compliance control ID creation_time: Compliance control's creation time modification_time: Compliance control's modification time is_custom: Whether the compliance control is custom Identifies the comparison operator you want to use for this filter. Valid keywords are: eq / neq / contains / not_contains: name, category, subcategory, created_by, modified_by, id, description: String gte, lte, range, relative_timestamp: creation_time, modification_time: Integer in timestamp epoch milliseconds is_custom: valid values are yes or no Value that this filter must match. The contents of this field will differ depending on the assessment profile field that you specified for this filter. When the field value is one of the following, the value is type string: name, category, subcategory, created_by, modified_by, id, description When the field value is one of the following, the value is type integer: creation_time, modification_time Sort according to this field Sort in ascending (asc) or descending (desc) order Integer representing the starting offset within the query result set from which you want compliance controls returned. Compliance controls are returned as a zero-based list. Any compliance control indexed less than this value is not returned in the final result set and defaults to zero. Integer representing the end offset within the result set after which you do not want compliance controls returned. Compliance controls in the compliance control list that are indexed higher than this value are not returned in the final results set. Defaults to >100, which returns all compliance controls to the end of the list. Successfully retrieved controls Total number of controls Number of controls matching filters + paging Compliance control ID Compliance control name Description of the compliance control Compliance control category Compliance control subcategory Creation timestamp Last modification timestamp User who created the control User who last modified the control Whether this is a custom control Bad request - invalid input parameters Additional error details Internal server error 2.11.4.2 |Get compliance control by ID Get details of the compliance control specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance control ID Successfully retrieved control Bad request - invalid input parameters Additional error details Resource not found Internal server error 2.11.4.3 |Add new control Create a custom compliance control. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Name of the compliance control Description of the compliance control Compliance control category Compliance control subcategory Control added successfully Whether the compliance control creation was successful Bad request - invalid input parameters Additional error details Internal server error 2.11.4.4 |Edit existing control Edit an existing compliance custom compliance control. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance control ID Name of the compliance control Description of the compliance control Compliance control category Compliance control subcategory Control updated successfully Whether the custom compliance control was edited successfully Bad request - invalid input parameters Additional error details Resource not found Internal server error 2.11.4.5 |Delete control Delete a compliance control specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance control ID Control deleted successfully Whether the compliance control was successfully deleted Bad request - invalid input parameters Additional error details Resource not found Internal server error 2.11.4.6 |Get control by revision Get details of the compliance control specified by its revision ID, including inactive controls. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Control revision ID Successfully retrieved control Compliance control ID Compliance control name Description of the compliance control Compliance control category Compliance control subcategory Creation timestamp Last modification timestamp User who created the control User who last modified the control Whether this is a custom control Bad request - invalid input parameters Additional error details Resource not found Internal server error 2.11.5 |Rules Operations for managing compliance rules 2.11.5.1 |Add compliance rules to a compliance control Add compliance rules to the specific compliance control. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance control ID Description of the rule Logical identifier for the rule Rule severity level List of scannable asset types Steps to remediate violations Whether to generate findings for this rule Whether to generate issues for this rule Whether to generate scan logs for this rule Rules added successfully Whether the rules were added successfully Bad request - invalid input parameters Additional error details Internal server error 2.11.5.2 |Delete rules from control Remove specific rules from the specified compliance control. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance control ID List of rule IDs to delete Rules deleted successfully Whether the rules were successfully deleted from the compliance control Bad request - invalid input parameters Additional error details Internal server error 2.11.6 |Categories Operations for retrieving categories and subcategories 2.11.6.1 |Get categories and subcategories Retrieve available compliance control categories and subcategories. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Successfully retrieved categories and subcategories Available control categories Available control subcategories Internal server error Additional error details 2.11.7 |Results Operations for retrieving compliance results and findings 2.11.7.1 |Get control failed results Get the failed findings and issues for a specific compliance control. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance control revision ID Assessment profile revision ID Last evaluation timestamp (epoch time in milliseconds) Successfully retrieved failed results The number of issues with this level of severity List of issue IDs with this level of severity Bad request - invalid input parameters Additional error details Internal server error 2.11.7.2 |Get rule failed results Get the failed findings and issues for a specific rule. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance control revision ID Assessment profile revision ID Last evaluation timestamp (epoch time in milliseconds) Successfully retrieved rule failed results The number of issues with this level of severity List of issue IDs with this level of severity Bad request - invalid input parameters Additional error details Internal server error 2.11.8 |Reports Operations for managing reports 2.11.8.1 |Get compliance reports Retrieve archived compliance assessment reports with optional filtering, sorting and pagination. The response is concatenated using AND condition (OR is not supported) The maximum result set size is >100 Offset is the zero-based number of assessment profiles from the start of the result set Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Optional filters to apply to the reports Identifies the compliance report field the filter should match. Filters are based on the following keywords: standard_name: Standard name assessment_profile_name: Assessment profile name asset_group_name: Asset Group name score: Compliance score evaluation_time: Evaluation time Identifies the comparison operator you want to use for this filter. Valid keywords are: eq / neq / contains / not_contains: standard_name, assessment_profile_name, asset_group_name: String gte / lte / range / relative_timestamp: `evaluation_time``: Integer in timestamp epoch milliseconds gte / lte / eq / neq: Value that this filter must match. The contents of this field will differ depending on the assessment profile field that you specified for this filter. When the field value is one of the following, the value is type string: standard_name, assessment_profile_name, asset_group_name When the field value is one of the following, the value is type integer: evaluation_time, score Sorting configuration Field to sort by Starting index for pagination Ending index for pagination Successfully retrieved compliance reports Total number of reports in the archive Number of reports returned in this response (filter + paging) Number of reports matching the filter criteria List of compliance reports Bad request - invalid input parameters for reports Additional error details Internal server error 2.11.9 |Standards Operations for managing standards 2.11.9.1 |Get compliance standards Retrieve compliance standards with optional filtering, sorting and pagination. The response is concatenated using AND condition (OR is not supported) The maximum result set size is >100 Offset is the zero-based number of assessment profiles from the start of the result set Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Array of filter conditions Identifies the compliance standard field the filter should match. Filters are based on the following keywords: name: Compliance standard name id: Compliance standard ID publisher: Compliance standard publisher created_by: User who created the compliance standard insertion_time: When the compliance standard was created is_custom: Whether the compliance standard is custom labels: Compliance standard labels Identifies the comparison operator you want to use for this filter. Valid keywords are: eq / neq / contains / not_contains: name, id, publisher, created_by: String gte / lte / range / relative_timestamp: `insertion_time``: Integer in timestamp epoch milliseconds is_custom: Enum with possible values of yes or no contains / not_contains: labels: Array of strings Value that this filter must match. The contents of this field will differ depending on the assessment profile field that you specified for this filter. When the field value is one of the following, the value is type string: name, id, publisher, created_by When the field value is one of the following, the value is type integer: insertion_time Field to sort by Number of records to skip Maximum number of records to return Successfully retrieved standards Total number of standards in the system Number of standards matching the filter criteria + paging Description of the standard Standard publisher/organization List of labels for categorization Creation timestamp (epoch) User who created the standard Whether this is a custom standard Number of associated controls List of associated control IDs Bad request - invalid input parameters Additional error details Internal server error 2.11.9.2 |Get single standard by ID Retrieve details of the compliance standard specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance standard ID Successfully retrieved standard Description of the standard Standard publisher/organization List of labels for categorization Creation timestamp (epoch) User who created the standard Whether this is a custom standard Number of associated controls List of associated control IDs Bad request - invalid input parameters Additional error details Resource not found Internal server error 2.11.9.3 |Add new standard Create a new compliance standard. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Name of the compliance standard Description of the standard List of labels for categorization List of control IDs to associate with this standard. Only custom controls can be included. Standard added successfully Operation success status Bad request - invalid input parameters Additional error details Internal server error 2.11.9.4 |Edit existing standard Edit an existing compliance standard specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance standard ID Name of the standard Description of the standard List of labels for categorization List of control IDs to associate with this standard. Only custom controls can be included. Standard updated successfully Operation success status Bad request - invalid input parameters Additional error details Resource not found Internal server error 2.11.9.5 |Delete standard Delete a the compliance standard specified by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Compliance standard ID Standard deleted successfully Operation success status Bad request - invalid input parameters Additional error details Resource not found Internal server error 2.11.10 |Compliance Assets Operations for retrieving compliance assets 2.11.10.1 |Get compliance assets Retrieve compliance assets with required assessment profile revision and last evaluation time, with optional filtering, sorting and pagination. Filtering Support: String fields (asset_name, rule_name, control): eq, neq, contains, not_contains Status fields (asset_type, status, severity, rule_type): eq, neq Status valid values: [FAILED, PASSED, NOT_ASSESSED] Severity valid values: [low, medium, high, critical] Sorting Support: Available fields: asset_name, asset_type, status, rule_name, control, severity Sort orders: asc, desc Default: asset_name in ascending order Pagination: (max number of elements is 100) Assessment profile revision identifier Last evaluation timestamp in epoch format Array of filter objects for filtering assets Field to filter on Filter operator to apply Value to filter by Field to sort by Starting index for pagination Ending index for pagination Successfully retrieved compliance assets Total number of assets available Number of assets matching the applied filters + paging Number of assets matching the applied filters Array of compliance assets Identifier for the asset Name of the asset Type of the asset Compliance status of the asset Name of the compliance rule Associated compliance control Identifier for the compliance rule Identifier for the associated compliance control Severity level of the compliance issue Type of the compliance rule Geographic region Realm identifier Organization identifier Strong identifier for the asset Bad request - invalid input parameters Additional error details Authentication required Error message describing what went wrong Access denied - insufficient permissions Internal server error 2.12 |Cloud Workload Protection APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Cloud Workload Policies and Rules ensure security compliance, prevent misconfigurations, and mitigate risks across cloud environments. Cloud Workload Policies leverage actionable findings or enforce preventive measures at defined stages of the Software Development Life Cycle (SDLC). Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.12.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. Cloud Workload Policies and Rules ensure security compliance, prevent misconfigurations, and mitigate risks across cloud environments. Cloud Workload Policies leverage actionable findings or enforce preventive measures at defined stages of the Software Development Life Cycle (SDLC). Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.12.1.1 |Servers 2.12.1.2 |Authentication methods Authorized requests to the API should use: x-api-key inside a header with the access token. Authorized requests to the API should use: x-api-key-id inside a header with the access token. 2.12.2 |SBOM APIs for managing SBOMs 2.12.2.1 |Get the SBOM of the specified asset Get an SBOM (Software Bill of Materials) report for the specified asset. You can specify the format and version of the SBOM, as well as which attribute you would like included. Required license: Cortex Cloud Runtime Security. In Cortex Cloud Posture Management, requires the Cortex Cloud Runtime Security add-on. ID of the asset of which you want to export the SBOM The format in which the SBOM is to be exported. The version of the SBOM format to be used. The list of attributes to be included in the SBOM. If not specified, all fields are included except Type and Name, which are always included. OK. The request was successful, and the SBOM data is returned in the specified format. Bad Request. The request was malformed, missing the required parameters, or the Asset ID provided does not support SBOM Export. HTTP response code. Additional information describing the error. The API key provided is invalid or missing. Forbidden. The API key does not have the necessary permissions to access the requested resource. The specified asset was not found. An error occurred on the server while processing the request. 2.12.3 |Policies APIs for managing Cloud Workload Policies 2.12.3.1 |Get CWP policies Cloud Workload Policies help you prevent and manage security violations in your cloud runtime instances. They enable you to apply detection logic to specific asset groups at the desired SDLC stage, and define what action needs to be taken if the conditions are met. Get all CWP policies of the given type. Default behavior is all. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The response you get when calling the get policies path One of the supported policy types One of the supported evaluation stages The UUIDs of the rules that define the condition The rulesIds field is only required for non-compliance policies. The condition field is only required for non-compliance policies. One of the supported policy actions One of the supported policy severities The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Service had unexpected internal error 2.12.3.2 |Add CWP policies Add CWP policy instances. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The schema of a policy One of the supported policy types One of the supported evaluation stages The UUIDs of the rules that define the condition The rulesIds field is only required for non-compliance policies. The condition field is only required for non-compliance policies. One of the supported policy actions One of the supported policy severities The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Service had unexpected internal error 2.12.3.3 |Get a CWP policy by ID Get a CWP policy by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The schema of a policy One of the supported policy types One of the supported evaluation stages The UUIDs of the rules that define the condition The rulesIds field is only required for non-compliance policies. The condition field is only required for non-compliance policies. One of the supported policy actions One of the supported policy severities Policy ID not found The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Service had unexpected internal error 2.12.3.4 |Delete a CWP policy by ID Delete a CWP policy by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The policy ID to delete If set, will trigger issue closing of issues opened by the deleted policy The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Policy ID not found Service had unexpected internal error 2.12.3.5 |Update a CWP policy by ID Update a CWP policy by its ID. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management The policy ID to delete The schema of a policy One of the supported policy types One of the supported evaluation stages The UUIDs of the rules that define the condition The rulesIds field is only required for non-compliance policies. The condition field is only required for non-compliance policies. One of the supported policy actions One of the supported policy severities The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Policy ID not found Service had unexpected internal error 2.13 |CWP Registry Connector APIs Public APIs to onboard third-party registry connectors (such as Docker Hub, GitLab, Harbor, JFrog, and OpenShift) and managing their instances. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. 2.13.1 |Preface Public APIs to onboard third-party registry connectors (such as Docker Hub, GitLab, Harbor, JFrog, and OpenShift) and managing their instances. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. 2.13.1.1 |Servers 2.13.2 |Default 2.13.2.1 |Create a registry connector Creates a new registry connector for based on the provided details. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. The connector ID. Name of the registry vendor. Name of the registry connector. Indicates whether the connector is enabled. The URL of the registry. The username for authentication. The password for authentication. Token to authenticate the request. The scanning mode used by the connector Specifies the cloud provider for the Cortex environment to use for registry scanning. Specifies the region to use for registry scanning. As a best practice, choose the region closest to your registry deployment to achieve the best scanning throughput and potentially reduce cloud costs. When set to true, allows image pulls from insecure registries. Optional. The CA certificate used for authentication. Optional. The repository used for image discovery. Specifies the initial scan configuration mode. ALL — Scans all container images, including every tag, in all discovered repositories. LATEST_TAG — Scans only images tagged as latest in all discovered repositories. TAGS_MODIFIED_DAYS — Scans images in each repository modified within the last X days, where X is set via an argument. You can select a range of up to 90 days for the scan. Number of days for the scan mode lastNDays Optional. Indicates whether static IP addresses are allowed. Optional. The identifier associated with the IP address. Defines the type of assets to be filtered (the scope). You can combine multiple conditions to create complex rules for when the asset filter should be applied. Defines the Field to be searched. Defines the comparison operator to use for this filter. Defines the value to be searched. The type of registry. Indicates the Broker VM type used by the Outpost. Controls whether asset_scope_filters act as an inclusion or exclusion filter. Vendor specific configuration options for scanning. Optional. The group IDs to scan. Optional. The project IDs to scan. Optional. The API domain name to use for the scan. Optional. The Docker Hub repository to scan. The unique identifier of the OpenShift cluster. The name of the OpenShift cluster. The asset ID associated with the cluster. The asset type ID of the cluster. The realm or environment in which the cluster resides. Connector details have been stored successfully. The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Service had unexpected internal error 2.13.2.2 |Get a registry connector Retrieves a registry connector details using its unique ID. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. The unique identifier for the connector. Connector details retrieved successfully. The connector ID. Name of the registry vendor. The name of the registry connector. Indicates whether the connector is enabled. The URL of the registry. The username for authentication. The password for authentication. Authentication token used to authorize requests to the API. The scanning mode used by the connector Specifies the cloud provider for the Cortex environment to use for registry scanning. The region of the connector. When set to true, allows image pulls from insecure registries. Optional. The CA certificate used for authentication. Optional. The repository used for image discovery. Specifies the initial scan configuration mode. ALL — Scans all container images, including every tag, in all discovered repositories. LATEST_TAG — Scans only images tagged as latest in all discovered repositories. TAGS_MODIFIED_DAYS — Scans images in each repository modified within the last X days, where X is set via an argument. You can select a range of up to 90 days for the scan. Number of days for the scan mode lastNDays Optional. Indicates whether static IP addresses are allowed. Optional. The identifier associated with the IP address. Defines the type of assets to be filtered (the scope). You can combine multiple conditions to create complex rules for when the asset filter should be applied. Defines the Field to be searched. Defines the comparison operator to use for this filter. Defines the value to be searched. The type of registry. Indicates the Broker VM type used by the Outpost. Controls whether asset_scope_filters act as an inclusion or exclusion filter. Vendor specific configuration options for scanning. Optional. The group IDs to scan. Optional. The project IDs to scan. Optional. The API domain name to use for the scan. Optional. The Docker Hub repository to scan. The unique identifier of the OpenShift cluster. The name of the OpenShift cluster. The asset ID associated with the cluster. The asset type ID of the cluster. The realm or environment in which the cluster resides. Connector not found. The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Service had unexpected internal error. 2.13.2.3 |Update a registry connector Updates the attributes of an existing registry connector identified by its unique ID. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. The unique identifier for the connector. The connector ID. Name of the registry vendor. Name of the registry connector. Indicates whether the connector is enabled. The URL of the registry. The username for authentication. The password for authentication. Token to authenticate the request. The scanning mode used by the connector Specifies the cloud provider for the Cortex environment to use for registry scanning. Specifies the region to use for registry scanning. As a best practice, choose the region closest to your registry deployment to achieve the best scanning throughput and potentially reduce cloud costs. When set to true, allows image pulls from insecure registries. Optional. The CA certificate used for authentication. Optional. The repository used for image discovery. Specifies the initial scan configuration mode. ALL — Scans all container images, including every tag, in all discovered repositories. LATEST_TAG — Scans only images tagged as latest in all discovered repositories. TAGS_MODIFIED_DAYS — Scans images in each repository modified within the last X days, where X is set via an argument. You can select a range of up to 90 days for the scan. Number of days for the scan mode lastNDays Optional. Indicates whether static IP addresses are allowed. Optional. The identifier associated with the IP address. Defines the type of assets to be filtered (the scope). You can combine multiple conditions to create complex rules for when the asset filter should be applied. Defines the Field to be searched. Defines the comparison operator to use for this filter. Defines the value to be searched. The type of registry. Indicates the Broker VM type used by the Outpost. Controls whether asset_scope_filters act as an inclusion or exclusion filter. Vendor specific configuration options for scanning. Optional. The group IDs to scan. Optional. The project IDs to scan. Optional. The API domain name to use for the scan. Optional. The Docker Hub repository to scan. The unique identifier of the OpenShift cluster. The name of the OpenShift cluster. The asset ID associated with the cluster. The asset type ID of the cluster. The realm or environment in which the cluster resides. Connector details have been updated successfully. The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Connector ID not found Service had unexpected internal error 2.13.2.4 |Delete a registry connector Deletes a specific registry connector identified by its unique ID. Required license: Cortex Cloud Posture Management or Cortex Cloud Runtime Security. The unique identifier for the connector. Connector deleted successfully. Connector not found. The error message Details for the PublicAPIError A short, programmatically safe string indicating the error code reported Service had unexpected internal error. 2.14 |Data Security Posture Management APIs You can export the OpenAPI specs in the Cortex Stoplight instance. The Cortex Cloud Data Security solution is an agentless multi-cloud data security platform that discovers, classifies, protects, and governs sensitive data. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.14.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. The Cortex Cloud Data Security solution is an agentless multi-cloud data security platform that discovers, classifies, protects, and governs sensitive data. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.14.1.1 |Servers 2.14.2 |Inventory Inventory Management 2.14.2.1 |Get data pattern inventory Get all data patterns found in the environment, including high-level aggregations for each of them. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Internal Server Error 2.14.2.2 |Get field inventory details Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Internal Server Error 2.14.2.3 |Get file inventory details Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management Internal Server Error 2.15 |Detection Rules Management API API for managing detection rules including CRUD operations for security policies, compliance metadata, and rule configurations. 2.15.1 |Preface API for managing detection rules including CRUD operations for security policies, compliance metadata, and rule configurations. 2.15.1.1 |Servers 2.15.1.2 |Authentication methods API key authentication using x-xdr-auth-id header Authorized requests to the API should use: x-xdr-auth-id inside a header with the access token. 2.15.2 |Detection Rules Manage detection rules for cloud security posture. Detection rules define XQL queries that identify misconfigurations, compliance violations, and security risks across cloud resources. 2.15.2.1 |Create Detection Rule Creates a new detection rule with the specified configuration including name, severity, query, and compliance metadata. The rule will be validated and persisted if all required fields are provided correctly. api_key_id authentication identifier Request body for creating a detection rule Unique rule name Detailed rule description Rule class - Must be 'config' (CSPM) Rule type - Must be 'DETECTION' (can be inferred if not provided) Array with single asset type identifier (exactly one required) Rule severity (low, medium, high, critical, informational) Query object containing XQL Valid XQL query string Metadata containing issue information Issue information Remediation steps List of compliance metadata with control IDs Compliance control identifier Custom labels (max 50, each max 100 chars) Rule enabled status (default: true) Rule successfully created Response for rule operations Unique rule identifier Rule description Cloud providers (derived from asset_types) Array of asset type identifiers XQL query string Array of compliance metadata objects with full standard and control information Full name of the compliance standard Full name of the compliance control Rule enabled status System default rule indicator Creator identifier Creation timestamp (epoch milliseconds) Last modification timestamp (epoch milliseconds) Deletion timestamp (epoch milliseconds) User who deleted the rule Bad Request - Invalid parameters Conflict - Rule with same name already exists Too Many Requests Internal Server Error Service Unavailable 2.15.2.2 |Get Detection Rules Searches for detection rules based on filter criteria with support for pagination and sorting. Returns a list of rules matching the specified filters. api_key_id authentication identifier Request body for querying detection rules Filter criteria for searching rules Array of filter criteria to be combined with AND logic Array of filter criteria to be combined with OR logic Field name to search on Search operation type (EQ, NEQ, CONTAINS, NCONTAINS) Value to search for Starting index for pagination Ending index for pagination Field name to sort by Sort order (ASC or DESC) Response containing a list of detection rules with metadata List of detection rules matching the filter criteria Array of asset type identifiers Array of compliance metadata objects with full standard and control information Full name of the compliance standard Compliance control identifier Full name of the compliance control List of compliance standards associated with the rule User who created the rule Timestamp when the rule was created (milliseconds since epoch) Detailed description of the rule Whether the rule is enabled Unique identifier of the rule Custom labels associated with the rule User who last modified the rule Timestamp when the rule was last modified (milliseconds since epoch) Module the rule belongs to Name of the rule Severity level of the rule Whether this is a system default rule Type of the rule Metadata about the response including counts Number of rules matching the filter criteria Total number of rules available Too many requests Internal Server Error Service Unavailable 2.15.2.3 |Get Rule By Id Retrieves a specific detection rule by its unique identifier. Returns the complete rule configuration including query, compliance metadata, and labels. Unique identifier of the detection rule to retrieve api_key_id authentication identifier Rule successfully retrieved Response for rule operations Unique rule identifier Rule description Cloud providers (derived from asset_types) Array of asset type identifiers XQL query string Metadata containing issue information Issue information Remediation steps Array of compliance metadata objects with full standard and control information Full name of the compliance standard Compliance control identifier Full name of the compliance control Rule enabled status System default rule indicator Creator identifier Creation timestamp (epoch milliseconds) Last modification timestamp (epoch milliseconds) Deletion timestamp (epoch milliseconds) User who deleted the rule Bad Request - Invalid ID format Not Found - Rule does not exist Too Many Requests Internal Server Error Service Unavailable 2.15.2.4 |Update Detection Rule Updates an existing detection rule with the provided fields. Only the fields included in the request body will be updated. The rule_class field is required for validation. Unique identifier of the detection rule to update api_key_id authentication identifier Request body for updating a detection rule Rule name (must be unique if changed) Rule description Rule class - Must be 'config' (CSPM) Rule type - Must be 'DETECTION' Array with single asset type identifier (exactly one if provided) Rule severity (low, medium, high, critical, informational) Query object containing XQL (only editable for custom config rules with XQL) XQL query string (only editable for custom config rules with XQL) Metadata containing issue information Issue information Remediation steps List of compliance metadata with control IDs Compliance control identifier Custom labels (max 50, each max 100 chars) Rule enabled status Rule successfully updated Response for rule operations Unique rule identifier Cloud providers (derived from asset_types) Array of asset type identifiers XQL query string Array of compliance metadata objects with full standard and control information Full name of the compliance standard Full name of the compliance control System default rule indicator Creator identifier Creation timestamp (epoch milliseconds) Last modification timestamp (epoch milliseconds) Deletion timestamp (epoch milliseconds) User who deleted the rule Bad Request - Invalid parameters Not Found - Rule does not exist Conflict - Name already exists Too Many Requests Internal Server Error Service Unavailable 2.15.2.5 |Delete Detection Rule Permanently deletes a detection rule by its unique identifier. This action cannot be undone. Only custom rules can be deleted; system default rules cannot be removed. Unique identifier of the detection rule to delete api_key_id authentication identifier Rule successfully deleted (no content) Bad Request - Invalid ID format Not Found - Rule does not exist Too Many Requests Internal Server Error Service Unavailable 2.16 |Trusted Images APIs You can export the OpenAPI specs in the Cortex Stoplight instance. Trusted images is a security control that lets you declare, by policy, which registries, repositories, and images you trust. These policies also help you define the actions you wish to take when untrusted images are initiated in your environment.This microservice provides a CRUD model for managing rules in the Cloud Workload Protection module. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.16.1 |Preface You can export the OpenAPI specs in the Cortex Stoplight instance. Trusted images is a security control that lets you declare, by policy, which registries, repositories, and images you trust. These policies also help you define the actions you wish to take when untrusted images are initiated in your environment.This microservice provides a CRUD model for managing rules in the Cloud Workload Protection module. Required license: Cortex Cloud Runtime Security or Cortex Cloud Posture Management 2.16.1.1 |Servers 2.16.2 |Rules Management Service Manages Cortex Cloud security detection rules 2.16.2.1 |Delete Policies Delete policies/rule instances from the rules management service. If set, will trigger issue closing of issues opened by the deleted policies Indicates a forbidden access response Service had unexpected internal error 2.16.2.2 |Get Policies Get all latest policies/rule instances from a list of given policy types. Default behavior is all. Lists policy types to fetch. This flag bypasses calling the platform for asset groups data when fetching policies. Note that this means asset groups will not be updated when fetching policies. The response you get when calling the get policies path One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types Service had unexpected internal error 2.16.2.3 |Add Policies Adds policies and rule instances to the rules management service. One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types Indicates a forbidden access response Service encountered unexpected internal error 2.16.2.4 |Update Policies Updates policies and rule instances in the rules management service. One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types Indicates a forbidden access response Service encountered unexpected internal error 2.16.2.5 |Disable Policies Disable policies/rule instances. Indicates a forbidden access response Service encountered unexpected internal error 2.16.2.6 |Enable Policies Enable policies/rule instances. Indicates a forbidden access response Service encountered unexpected internal error 2.16.2.7 |Get a Policy by ID Get a policy instance by its ID. Flag to bypass calling platform for asset groups data when fetching policy. Note that this means asset groups will not be updated upon fetching policy. The schema of a returned policy One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types Bad request error Policy not found Service had unexpected internal error 2.16.2.8 |Add (custom) Compliance rules Adds a custom compliance rule to the rules management service. A list of the available actions Lists rule standards Lists UAI assets relevant to the rule Supported rule severities Indicates a forbidden access response Service encountered an unexpected internal error 2.16.2.9 |Delete (custom) CWP Rules Delete custom CWP Rules instances from the rules management service. Indicates a forbidden access response Service encountered an unexpected internal error 2.16.2.10 |Get rules by IDs Get rules by a list of IDs. If a rule is not found for a specific ID, an error is returned. Success. Returns a list of rule objects. A list of the available actions Lists rule standards Lists UAI assets relevant to the rule Supported rule severities Bad request error. Service encountered an unexpected internal error. 2.16.2.11 |Get the Compliance Rules Get all Compliance rules (system and custom).This API supports pagination. Fetches rules from offset location, default is 0. The maximum number of rules to fetch in a single page request, if not specified. default is set to fetch all. The policy rule definitions types to fetch. The platform to which the rules should be applied. The scanner source type for the rule. Returns a compliance rules page The maximum rules to fetch in a single page request, if not provided default is to fetch all. The offset from where the rules fetched Lists available actions Lists rule standards Lists UAI assets relevant to the rule Supported rule severities Total filtered count of rules Service encountered an unexpected internal error 2.16.2.12 |Get a rule by ID Get a rule instance by its ID. The schema of a rule definition A list of the available actions Lists rule standards Lists UAI assets relevant to the rule Supported rule severities Bad request error Service encountered an unexpected internal error 2.16.2.13 |rego script linter lint the content of the rego script Invalid script syntax Service encountered an unexpected internal error 2.16.2.14 |Update (custom) Compliance rules Update (custom) Compliance rules in the rules management service. A list of the available actions Lists rule standards Lists UAI assets relevant to the rule Supported rule severities Indicates a forbidden access response Service encountered an unexpected internal error 2.16.2.15 |Get Policies Gets all policy instances from a list of given policy types. Default behavior is all. Policy types to fetch Flag to bypass calling platform for asset groups data when fetching policies. Note that this means asset groups will not be updated when fetching policies. The response you get when calling the get policies V2 path One of the supported policy actions Lists supported evaluation stages Array of policy_rule objects related to the policy One of the supported policy severities Additional remediation guidance that can be added to the rule's predefined guidance. One of the supported policy types Service encountered an unexpected internal error 2.16.2.16 |Add Policies Adds policies and rule instances to the rules management service. One of the supported policy actions Lists supported evaluation stages Array of policy_rule objects related to the policy One of the supported policy severities One of the supported policy types Indicates a forbidden access response Service encountered an unexpected internal error 2.16.2.17 |Update Policies Update policies/rule instances in the rules management service. One of the supported policy actions Lists supported evaluation stages Array of policy_rule objects related to the policy One of the supported policy severities One of the supported policy types Indicates a forbidden access response Service had unexpected internal error 2.16.2.18 |Get a Policy by ID Get a policy instance by its ID. Flag to bypass calling platform for asset groups data when fetching policy. Note that this means asset groups will not be updated when fetching policy. The schema of a returned policy One of the supported policy actions Lists supported evaluation stages Array of policy_rule objects related to the policy One of the supported policy severities Additional remediation guidance that can be added to the rule's predefined guidance. One of the supported policy types Bad request error Policy not found Service encountered an unexpected internal error 2.16.2.19 |Get Policies. Get all policy instances of a given type. Default behavior is all. The policies type The response you get when calling the get policies path One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types The error message Details for the PublicAPIError Reported error code Service encountered an unexpected internal error 2.16.2.20 |Add Policy. Add policy instances. The schema of a returned policy One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types The error message Details for the PublicAPIError Reported error code Service encountered an unexpected internal error 2.16.2.21 |Delete a Policy by ID Delete a policy instance by its ID. Policy ID to delete If set, will trigger closing of issues opened by the deleted policy. The error message Details for the PublicAPIError Reported error code Policy ID not found Service had unexpected internal error 2.16.2.22 |Get a Policy by ID. Get a policy instance by its ID. The schema of a returned policy One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types Policy ID not found The error message Details for the PublicAPIError Reported error code Service had unexpected internal error 2.16.2.23 |Update a Policy by ID. Update a policy instance by its ID Policy ID to delete The schema of a returned policy One of the supported policy actions Lists supported evaluation stages The UUIDs of the rules that define the condition One of the supported policy severities One of the supported policy types The error message Details for the PublicAPIError Reported error code Policy ID not found Service had unexpected internal error
+
+
+## Cortex Gateway Documentation
+
+
+---
+
+## 1. Cortex Gateway
+
+### 1.1. Activate a tenant
+
+#### 1.1.1. Activate Cortex XDR tenant
+
+##### Prerequisite
+
+* Before you begin, make sure you have the following: Cortex XDR activation email. Customer Support Portal Super User role is assigned to your account. Before activating your Cortex XDR tenant, you need to set up your Customer Support Portal account. See How to Create Your Customer Support Portal User Account. When you create a Customer Support Portal...
+
+#### 1.1.2. Activate Cortex XSIAM tenant
+
+##### Prerequisite
+
+* Before you begin, make sure you have the following: Cortex XSIAM activation email. Customer Support Portal Super User role is assigned to your account. Before activating your Cortex XSIAM tenant, you need to set up your Customer Support Portal account. See How to Create Your Customer Support Portal User Account. When you create a Customer Support...
+
+##### Note
+
+* When you activate, a production tenant is first activated. After activation, you can set up a development tenant (subject to your license).
+
+#### 1.1.3. Activate Cortex XSOAR tenant
+
+##### Note
+
+* When you activate, a production tenant is first activated. After activation, you can set up a development tenant (subject to your license).
+
+* Activation can take about an hour and does not require that you remain on the activation page. Cortex XSOAR sends a notification to your email when the process is complete.
+
+* If you want to change your tenant's name, the subdomain, or activate a development tenant (subject to license), on the right-hand side, click the ellipsis.
+
+### 1.2. Users and roles in Cortex
+
+#### Note
+
+* All users must have at least one role or belong to at least one user group to be saved in the Cortex Gateway.
+
+### 1.3. User management
+
+#### Note
+
+* If you have migrated local users from Cortex XSOAR 6 to Cortex XSOAR 8 and these users are in the Customer Support Portal, these users are designated the PANW IDP user type. For more information, see Migrating users and roles.
+
+* If a user does not have a direct role or user group assigned, the user is revoked and is not saved in the Cortex Gateway.
+
+* You must have an Account Admin role to manage users in Cortex Gateway.
+
+* You must have an Account Admin or Instance Administrator role.
+
+* Users without an assigned role or user group are not saved in the Cortex Gateway. However, there is an exception for users who did not have an assigned role or user group and who were hidden before the following product releases: Cortex XSIAM 2.7 (legacy) Cortex XSIAM 3.2 (platform) Cortex XSOAR 8.11 Cortex XDR 3.15 (legacy) Cortex XDR 4.2...
+
+#### 1.3.1. Manage users in Cortex Gateway
+
+##### Note
+
+* To remove users added to your CSP account, you must do so in the CSP, not in Cortex Gateway.
+
+* To update the permissions associated with each role, you need to change them in the tenant or the Roles tab in Cortex Gateway. If users have been created in the CSP, but you want them to access the tenant through SSO only, you should not assign a direct role. If you sign a direct role, users can access the tenant through both the CSP and SSO. If no...
+
+* If you are updating multiple tenants at one time, you can only add predefined roles or roles created in Cortex Gateway (not custom roles created in the tenant).
+
+* You cannot deactivate a user who has an Account Admin role or who is not assigned access to a tenant. If you want to deactivate an Account Admin user role, right-click the user and select Remove User Permissions. You can then deactivate the user.
+
+* Users without an assigned role or user group are not saved in the Cortex Gateway. However, there is an exception for users who did not have an assigned role or user group and who were hidden before the following product releases: Cortex XSIAM 2.7 (legacy) Cortex XSIAM 3.2 (platform) Cortex XSOAR 8.11 Cortex XDR 3.15 (legacy) Cortex XDR 4.2...
+
+### 1.4. Roles management
+
+#### 1.4.1. Predefined roles in Cortex Gateway
+
+##### Note
+
+* The user who activated the Cortex product is assigned the Account Admin role. You can add the role to a user in Cortex Gateway or the tenant. If you need to remove the Account Admin role from a user, this can only be done in Cortex Gateway. Only users with the Account Admin role can add or remove another Account Admin user role.
+
+* By default, users do not have roles assigned. If no direct or user group role has been assigned, users have no permission to view or edit data in the Cortex tenant.
+
+* Some features are license-dependent. Accordingly, users may not see a specific feature if the feature is not supported by the license type or if they do not have access based on their assigned role.
+
+* The user who activated the Cortex product is assigned the Account Admin role. You cannot create additional Account Admin roles in the Cortex XDR/XSIAM tenant. If you do not want the user to have Account Admin permission, you need to remove the Account Admin role in Cortex Gateway.
+
+* The user who activated the Cortex product is assigned the Account Admin role. You cannot create additional Account Admin roles in the Cortex tenant. If you do not want the user to have Account Admin permission, you need to remove the Account Admin role in Cortex Gateway.
+
+#### 1.4.2. Manage roles in Cortex Gateway
+
+##### Note
+
+* You must have an Account Admin role to manage tenants, users, roles, and user groups in Cortex Gateway.
+
+* You must have an Account Admin role to create or edit a role. You cannot define advanced settings such as managing shifts or setting default dashboards in Cortex Gateway, as these are exclusive to the Cortex XSOAR tenant. We recommend copying and modifying out-of-the-box roles.
+
+* In Cortex XDR/XSIAM, the Datasets tab is disabled in the Cortex Gateway as you can only set dataset access permissions in Cortex XDR/XSIAM Access Management. For more information in Cortex XSIAM, see Manage user roles. For more information in Cortex XDR, see Manage use roles.
+
+### 1.5. User group management
+
+#### Note
+
+* You can create user groups in the tenant or Cortex Gateway. User groups created in Cortex Gateway cannot be mapped to SAML groups. Only user groups that are created in the tenant support SAML group mapping. We recommend creating user groups in the Cortex tenant because user groups are available for all tenants and you may want different user groups in...
+
+* If users have been created in the CSP, but you want them to access the tenant through SSO only, skip this field and add only SAML group mapping after SSO is set up, otherwise, users can access the tenant through both the CSP and SSO. If you have not yet created any users, skip this field and add them later. See Set up authentication .
+
+* When using Azure AD for SSO, the SAML group mapping needs to be provided using the group object ID (GUID) and not the group name.
+
+### 1.6. Egress configurations
+
+#### Important
+
+* Only Account Admin and Instance Admin can submit a request on behalf of a user. Only users with these roles can view the Egress Configurations option in the Gateway. The Account Admin can view all the tenants from the account where requests have been submitted, and the Instance Admin can view all the requests that have been submitted for their tenant.
+
+
+## Cortex CLI Documentation
+
+
+---
+
+## 1. Get started with Cortex Cloud
+
+### 1.1. What is Cortex Cloud?
+
+#### 1.1.1. Key features
+
+### 1.2. What is Cortex Cloud Posture Management?
+
+### 1.3. Agentic AI in Cortex Cloud
+
+#### 1.3.1. Cortex Agentic Assistant
+
+##### Note
+
+* By default, you have access to the Cortex Assistant, which includes a natural language interface for entity investigation and provides a list of recommended responses such as running a playbook, performing a scan, or collecting support files. If you enable the Cortex Agentic Assistant, it replaces the Cortex Assistant interface entirely. For more...
+
+##### Tip
+
+* The system Help Center Agent provides fast access to documentation. You can ask natural language questions, such as "How do I create a dashboard?" or "Where can I review my data retention policies?" and the agent retrieves concise, relevant information from the official documentation site.
+
+##### Navigation
+
+  Settings → Configurations → General → Server Settings → Agentic Assistant
+
+##### 1.3.1.1. Agentic Assistant use cases
+
+##### 1.3.1.2. Agentic Assistant security
+
+### 1.4. Use the interface
+
+### 1.5. In-product support case creation
+
+#### Note
+
+* When opening a support case through the Customer Support Portal, you need to manually select Cortex Cloud as the product. While there may be discrepancies between the categories in this wizard and the Customer Support Portal process, that's because this wizard is designed specifically to focus on options relevant to Cortex Cloud.
+
+* Console recordings cannot exceed 10 minutes. The current recording time is displayed at the top of the window.
+
+### 1.6. Understand your user persona
+
+### 1.7. Fair Usage policy for Cortex Cloud
+
+### 1.8. Understand license plans
+
+#### Note
+
+* A Cloud Runtime license includes both Posture Scanning and Runtime Protection on the same asset. Usage, including any overflow, is tracked automatically to ensure accurate reporting across both licenses without duplicate counting.
+
+#### 1.8.1. Data retention
+
+##### Note
+
+* Case data is retained according to the Last Updated date. Issue data is retained according to the Observation Time. Data collected within these dates is kept and displayed for 186 days. To ensure the accuracy of issues, Cortex Cloud provides a grace period of up to 31 days for issues displayed in the Issues View, Issues table, and Cases View.
+
+* Requires the Forensics add-on.
+
+## 2. Onboard and configure Cortex Cloud
+
+### 2.1. Plan and prepare
+
+### 2.2. Deployment steps and checklist
+
+#### 2.2.1. Activate Cortex Cloud
+
+##### Prerequisite
+
+* The Cortex Cloud activation email. A Customer Support Portal (CSP) account. You need to set up your CSP account. For more information, see How to Create Your CSP User Account. When you create a CSP account, you can set up two-factor authentication (2FA) to log into the CSP by using an Email, Okta Verify, or Google Authenticator (non-FedRAMP accounts)....
+
+##### Note
+
+* Activation can take about an hour and does not require you to remain on the activation page. Cortex Cloud sends a notification to your email when the process is complete.
+
+* You can only change the subdomain once, and it cannot be undone. After deleting the subdomain, you can reuse it after 7 days.
+
+##### 2.2.1.1. Cortex Cloud supported regions
+
+##### 2.2.1.2. Enable access to required PANW resources
+
+###### Note
+
+* <tenant-name> refers to the selected subdomain of your Cortex Cloud tenant, and <region> is the region in which your tenant is deployed. For more information, see Cortex Cloud supported regions.
+
+###### Navigation
+
+  SSL decryption: If you use SSL decryption and experience difficulty connecting the Cortex XDR agent to the server, we recommend that you add the FQDNs required for access to your SSL Decryption Exclusion list in Device → Certificate Management → SSL Decryption Exclusion
+
+#### 2.2.2. Upgrade from Prisma Cloud to Cortex Cloud
+
+##### 2.2.2.1. About the Upgrade Helper
+
+###### Note
+
+* Your Prisma Cloud tenant remains available and fully operational during the agreed upgrade period.
+
+##### 2.2.2.2. Link Cortex Cloud to Prisma Cloud
+
+###### Navigation
+
+  Settings → Configurations → Upgrade Helper
+
+##### 2.2.2.3. Copy content
+
+###### Navigation
+
+  Settings → Configurations → Upgrade Helper
+
+###### 2.2.2.3.1. Copy Global configurations
+
+####### Note
+
+* Keep the following caveats in mind: Scope-Based Access Control (SBAC) configurations, such as resources or account lists are not copied. You can manually assign scope-based access to the relevant users or groups. When migrating permission groups and roles, the total count of items successfully copied may be lower than the initial number selected. This...
+
+####### Navigation
+
+  Settings → Configurations → Access Management
+
+###### 2.2.2.3.2. Copy CSPM configurations
+
+####### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Security
+
+  Posture Management → Rules & Policies → Policies → Cloud Security
+
+  Investigation & Response → Automation → Automation Rules
+
+  Posture Management → Compliance → Standards
+
+###### 2.2.2.3.3. Copy CWP configurations
+
+####### Navigation
+
+  Posture Management → Rules & Policies → Cloud Workload
+
+###### 2.2.2.3.4. Copy Cortex Cloud Application Security configurations
+
+####### Important
+
+* If labels are imported into Cortex Cloud less than three hours after they were last added or modified in Prisma Cloud, they may not be included in the import.
+
+##### 2.2.2.4. Migrate Cortex CLI
+
+###### Prerequisite
+
+* Before you begin, ensure you have the following: Cortex Cloud API key: An active API key for your Cortex Cloud tenant with associated CLI role permissions. Refer to Manage API keys for more information Install the Cortex CLI. You can find the installation instructions here
+
+#### 2.2.3. Set up users and roles
+
+##### Note
+
+* Some features are license-dependent. Accordingly, users may not see a specific feature if the feature is not supported by the license type or if they do not have access based on their assigned role or scope.
+
+* The user who activated the Cortex product is assigned the Account Admin role. You cannot create additional Account Admin roles in the Cortex Cloud tenant. If you do not want the user to have Account Admin permission, you must remove the Account Admin role in Cortex Gateway.
+
+##### 2.2.3.1. User group management
+
+###### Note
+
+* You can create user groups in the tenant or Cortex Gateway. User groups created in Cortex Gateway cannot be mapped to SAML groups. Only user groups created in the tenant support SAML group mapping and scoring. We recommend creating user groups in the Cortex tenant because: User groups are available for all tenants, and you may want different user...
+
+* If users have been created in the CSP, but you want them to access the tenant through SSO only, skip this field and add only SAML group mapping after SSO is set up, otherwise, users can access the tenant through both the CSP and SSO. If you have not yet created any users, skip this field and add them later. See Set up authentication .
+
+* When using Azure AD for SSO, the SAML group mapping needs to be provided using the group object ID (GUID) and not the group name.
+
+* Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration.
+
+###### Important
+
+* By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced. Before enabling SBAC, we recommend that an administrator or a user with Access Management permissions first ensures that the users, user groups, and API Keys defined in Cortex Cloud are granted...
+
+##### 2.2.3.2. Assign user roles and groups
+
+###### Note
+
+* If an existing user in the Cortex Gateway no longer has a role or a user group assigned, the user is revoked. Any roles, user groups, or egress configurations created by that user are shown as created by Revoked user instead of the user's email address.
+
+* Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration.
+
+###### Important
+
+* Setting Cortex Query Language (XQL) dataset access permissions for a user role can only be performed from Cortex Cloud Access Management. For more information, see Manage user roles.
+
+* Before configuring, ensure that you review Understand scoping in the Manage user scope section.
+
+* By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced. Before enabling SBAC, we recommend that an administrator or a user with Access Management permissions first ensures that the users, user groups, and API Keys defined in Cortex Cloud are granted...
+
+###### Tip
+
+* To apply the same settings to multiple users, select them, and then right-click and select Edit Users Permissions.
+
+#### 2.2.4. Manage API keys
+
+##### Note
+
+* Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration.
+
+##### Important
+
+* Before configuring, ensure that you review Understand scoping in the Manage user scope section.
+
+* By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced. Before enabling SBAC, we recommend that an administrator or a user with Access Management permissions first ensures that the users, user groups, and API Keys defined in Cortex Cloud are granted...
+
+* You will not be able to view the API key again after you complete this step. Ensure that you copy the API key before closing the notification.
+
+#### 2.2.5. Set up authentication
+
+##### Tip
+
+* You should have at least one user in the Customer Support Portal for backup, in case of any authentication issues with your IdP provider.
+
+##### 2.2.5.1. Authenticate users through the Customer Support Portal
+
+###### Note
+
+* You must be assigned the Super User role in the Customer Support Portal to add users in the Customer Support Portal. The first Super User who logs into Cortex Gateway is automatically assigned the Account Admin role and has access to the tenant. The user who activates the Cortex Cloud tenant will also be assigned the Account Admin role (if there is no...
+
+* After users are added to the Customer Support Portal and they accept the invitation, you can manage them in Cortex Gateway or the Cortex Cloud tenant.
+
+##### 2.2.5.2. Authenticate users using SSO
+
+###### Note
+
+* To set up SSO authentication in the tenant, you must be assigned an Instance Administrator or Account Admin role. SAML 2.0 users must log in to Cortex Cloud using the FQDN (full URL) of the tenant. To allow login directly from the IdP to , you must set the relay state on the IdP to the FQDN of the tenant. If you have multiple tenants, you must set up...
+
+* The first SSO cannot be deleted, it can only be deactivated by toggling SSO Enabled to off. The Domain parameter is predefined for the first SSO. If you add additional SSO providers, you must provide the email Domain in the SSO Integration settings for all providers except the first. Cortex Cloud uses this domain to determine to which identity provider...
+
+* Cortex Cloud requires the IdP to send the group membership as part of the SAML token. Some IdPs send values in a format that include a comma, which is not compatible with Cortex Cloud. In that case, you must configure your IdP to send a single value without a comma for each group membership. For example, if your IdP sends the Group DN (a...
+
+##### 2.2.5.3. Set up Okta as the Identity Provider Using SAML 2.0
+
+###### Note
+
+* When using SAML 2.0, users are required to authenticate by logging in directly at the tenant URL. They cannot log in via Cortex Gateway.
+
+##### 2.2.5.4. Set up Azure AD as the Identity Provider Using SAML 2.0
+
+###### Note
+
+* The default attributes shown on the main single sign-on page in Azure AD are not the values you need. You must click Edit next to Attributes and Claims to view and copy the actual values.
+
+* The attribute claim name must exactly match the value sent by your IdP. In some cases, this may be the full attribute name/namespace, depending on the configuration of our IdP
+
+* When using SAML 2.0, users are required to authenticate by logging in directly at the tenant URL. They cannot log in via Cortex Gateway.
+
+###### Important
+
+* When copying the Single Sign-On URL value, remove idp/saml and leave the trailing /. For example, if the Single Sign-On URL is https://clientname.panproduct.region.paloaltonetworks.com/idp/saml, just copy https://clientname.panproduct.region.paloaltonetworks.com/.
+
+#### 2.2.6. Cloud service provider (CSP) onboarding
+
+##### 2.2.6.1. Ingest cloud assets
+
+###### Note
+
+* The cloud accounts being onboarded must be owned by the customer performing the onboarding process.
+
+##### 2.2.6.2. Onboard Amazon Web Services
+
+###### Prerequisite
+
+* Ensure you have access to AWS Management Console. Ensure you have the Required AWS permissions.
+
+###### Note
+
+* Scanning with an outpost may require additional CSP permissions and may incur additional CSP costs.
+
+* When onboarding an AWS organization or organizational unit (OU), Cortex Cloud creates IAM resources in every account within that organization or OU. This occurs even if you choose to exclude specific accounts from being scanned. While excluded accounts will not be scanned and will not appear in the asset inventory, the IAM resources may still be...
+
+###### 2.2.6.2.1. Manually upload template to AWS
+
+####### Prerequisite
+
+* Before you begin, ensure you have: An AWS account Access to AWS Management Console Permission to create a stack and its resources in AWS CloudFormation
+
+####### Note
+
+* You must ensure that the KMS key region and the SNS topic region are the exact same as the AWS region where you are deploying the CloudFormation stack.
+
+###### 2.2.6.2.2. Configure AWS integration instances and monitor integration instance health
+
+####### Note
+
+* If you have not yet onboarded your cloud integration, see Ingest cloud assets.
+
+* Currently, automation permission errors or missing automation permissions do not affect the Automation health status. You can view any permission errors or missing permissions in the the Permissions health status.
+
+##### 2.2.6.3. Onboard Google Cloud Platform
+
+###### Prerequisite
+
+* Ensure you have cccess to Google Cloud Console. Ensure you have an admin user with the required admin GCP permissions. Ensure you have the following APIs in the GCP project you are onboarding:    Cloud Resource Manager API   Identity and Access Management (IAM) API   Cloud Pub/Sub API (if audit logs are enabled)   If you plan on enabling Automation as...
+
+###### Note
+
+* Scanning with an outpost may require additional CSP permissions and may incur additional CSP costs.
+
+* If you want to connect to your GCP Workspace, you must first complete onboarding with the option disabled. Once the GCP cloud instance is created, perform the steps detailed in Connect Google Workspace with your GCP cloud instance.
+
+###### 2.2.6.3.1. Manually upload template to GCP
+
+####### Prerequisite
+
+* Before you begin, ensure you have: A GCP account. Permission to create the required resources in Google Cloud Deployment Manager. Installed Terraform on your local machine. You can download Terraform from the official Terraform website and follow the installation instructions for your operating system. Installed the GCP gcloud CLI tool. Reviewed the...
+
+####### Note
+
+* The directory you create must be a subdirectory of the home directory.
+
+####### Important
+
+* You must not delete or move the Terraform files from this folder. It will prevent you from being able to edit your cloud instance in the future.
+
+###### 2.2.6.3.2. Connect Google Workspace with your GCP cloud instance
+
+####### Prerequisite
+
+* Ensure you have the Super Admin role in Google Workspace.
+
+* Ensure you have the organization ID of the Google Workspace you want to connect:    Log in to your Google Admin Console. and navigate to Account → Account settings → Profile. Next to Customer ID is your organization ID. Ensure you have the organization ID of the Google Workspace you want to connect: Log in to your Google Admin Console. and navigate...
+
+###### 2.2.6.3.3. Configure GCP integration instances and monitor integration instance health
+
+####### Note
+
+* If you have not yet onboarded your cloud integration, see Ingest cloud assets.
+
+* Currently, automation permission errors or missing automation permissions do not affect the Automation health status. You can view any permission errors or missing permissions in the the Permissions health status.
+
+###### 2.2.6.3.4. Monitor GCP resources inside service perimeters
+
+####### Note
+
+* Each GCP cloud instance is assigned a scope within GCP. If the scope, whether it be organization, folder, or project, includes any projects with a service perimeter, this procedure must be performed for that cloud instance to authorize Cortex Cloud to scan the resources in the perimeter.
+
+##### 2.2.6.4. Onboard Microsoft Azure
+
+###### Prerequisite
+
+* Ensure you have a Microsoft Azure subscription. Ensure you have the admin permissions required to onboard Microsoft Azure or the built-in Security Administrator role. Obtain the tenant ID and subscription ID. You can view these in the Microsoft Azure Portal in Management groups.
+
+###### 2.2.6.4.1. Finalize Microsoft Azure onboarding by executing the authentication template
+
+####### Prerequisite
+
+* Before you begin, ensure you have: An Azure subscription. A user with the required permissions for the relevant scope (subscription, management group, tenant). We recommend you create a dedicated role. Tenant ID and subscription ID. You can view these in Microsoft Azure Portal in Management groups. Installed Terraform on your local machine. You can...
+
+* Before you begin, ensure you have: An Azure subscription. A user with the required permissions for the relevant scope (subscription, management group, tenant). We recommend you create a dedicated role. Tenant ID and subscription ID. You can view these in Microsoft Azure Portal in Management groups. Installed the Azure CLI tool. Authorization to create...
+
+####### Important
+
+* Do not delete or move the Terraform files from this folder. It will prevent you from being able to edit your cloud instance in the future.
+
+###### 2.2.6.4.2. Configure Azure integration instances and monitor integration instance health
+
+####### Note
+
+* If you have not yet onboarded your cloud integration, see Ingest cloud assets.
+
+* Currently, automation permission errors or missing automation permissions do not affect the Automation health status. You can view any permission errors or missing permissions in the the Permissions health status.
+
+##### 2.2.6.5. Onboard Oracle Cloud Infrastructure
+
+###### Prerequisite
+
+* Ensure you have access to the Oracle Cloud Infrastructure console Permissions for all of the following are required:    Creation of identity groups (for more information, refer to Managing Groups)   Policies (for more information, refer to How Policies Work)   Tag namespaces in the root compartment (for more information, refer to Tags and Tag Namespace...
+
+###### Note
+
+* Excluded compartments are not visible in Cortex Cloud. Additional Security Capabilities: Enable additional Cortex Cloud security add-ons, if available. This may require additional cloud provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. The additional security capabilities you can enable include: Data security posture management: An agentless multi-cloud data security solution that discovers, classifies, protects, and governs sensitive data. Serverless functions scanning (Gen 1 only): Implement serverless scanning to detect and remediate vulnerabilities within serverless functions during the development lifecycle. Seamless integration into CI/CD pipelines enables automated security scans for a continuously secure pre-production environment. Registry scanning: Scan container registry images for vulnerabilities. malware, and secrets. You can configure your initial preference for scanning your registry. Any newly discovered registry, repository, or image in the account will be scanned by default. For more details, see Configure registry scanning for cloud accountsConfigure registry scanning for cloud accounts Agentless disk scanning: (Recommended) Implement agentless disk scanning to remotely detect and remediate vulnerabilities during the development lifecycle. Additional Security Capabilities: Enable additional Cortex Cloud security add-ons, if available. This may require additional cloud provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. The additional security capabilities you can enable include: Data security posture management: An agentless multi-cloud data security solution that discovers, classifies, protects, and governs sensitive data. Serverless functions scanning (Gen 1 only): Implement serverless scanning to detect and remediate vulnerabilities within serverless functions during the development lifecycle. Seamless integration into CI/CD pipelines enables automated security scans for a continuously secure pre-production environment. Registry scanning: Scan container registry images for vulnerabilities. malware, and secrets. You can configure your initial preference for scanning your registry. Any newly discovered registry, repository, or image in the account will be scanned by default. For more details, see Configure registry scanning for cloud accountsConfigure registry scanning for cloud accounts Agentless disk scanning: (Recommended) Implement agentless disk scanning to remotely detect and remediate vulnerabilities during the development lifecycle. Cloud Tags: Define tags and tag values to be added to any new resource created by Cortex Cloud in the cloud environment. Note: The managed_by = paloaltonetworks tag is automatically added to all resources. This tag is mandatory. You cannot edit or remove this tag. Log Collection Configuration: To maximize security coverage, enable the collection of audit logs. This may require additional cloud service provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. Enter the following details for each preexisting OCI storage bucket that you intend to use for log collection: Region: The geographic OCI region where the bucket is located. For example, "us-phoenix-1". Bucket Name: The name of the OCI storage bucket. Compartment OCID: The Oracle Cloud Identifier (OCID) of the compartment that contains the bucket. Log Collection Configuration: To maximize security coverage, enable the collection of audit logs. This may require additional cloud service provider permissions. For detailed information on the permissions required, see Cloud service provider permissions. Enter the following details for each preexisting OCI storage bucket that you intend to use for log collection: Region: The geographic OCI region where the bucket is located. For example, "us-phoenix-1". Bucket Name: The name of the OCI storage bucket. Compartment OCID: The Oracle Cloud Identifier (OCID) of the compartment that contains the bucket. Download the OCI authentication template by clicking Download Terraform. The Terraform authentication template is reusable and can be executed as many times as you want to create new instances with the settings you defined in the wizard. The Terraform authentication template is valid for seven days from when it was created. Download the OCI authentication template by clicking Download Terraform. The Terraform authentication template is reusable and can be executed as many times as you want to create new instances with the settings you defined in the wizard. The Terraform authentication template is valid for seven days from when it was created. Cortex Cloud generates a Terraform authentication template based on the settings you configured in the OCI onboarding wizard. Next step: Apply the Terraform authentication template in OCI. 2.2.6.5.1 |Manually upload template to OCI PREREQUISITE: Before you begin, ensure you have: An Oracle Cloud Infrastructure account and the tenancy OCID. Permission to deploy a custom template and create its resources in OCI. Installed Terraform on your local machine. You can download Terraform from the official Terraform website and follow the installation instructions for your operating system. Installed...
+
+###### 2.2.6.5.2. Configure the OCI connector for log collection
+
+##### 2.2.6.6. Manually connect a cloud instance
+
+##### 2.2.6.7. Edit your onboarded CSP configuration
+
+###### Important
+
+* When using Terraform authentication templates, you must execute the updated Terraform template from the same folder where the original Terraform template was executed.
+
+##### 2.2.6.8. Outposts
+
+###### Important
+
+* Outpost scan is an alternative to the recommended standard cloud scan. Cloud scan is recommended because it is fully managed by Palo Alto Networks and incurs no compute costs for your organization. Outpost scan is an advanced deployment model reserved for specific data residency or architectural requirements.
+
+###### 2.2.6.8.1. Outpost fundamentals and planning
+
+####### Note
+
+* Before you create your outpost, verify that your internet connection is active. An active internet connection is necessary for the notification to be sent to Cortex Cloud to create the new outpost.
+
+####### Important
+
+* While outposts provide maximum control over the scanning environment, cloud scan mode is the recommended default for most organizations.
+
+####### Navigation
+
+  Before onboarding your Cortex Cloud with the cloud service provider (CSP) onboarding wizard, create an outpost by navigating to Settings → Data Sources & Integrations → Outposts
+
+  Settings → Data Sources & Integrations → Add New
+
+  View and manage existing outposts by navigating to Settings → Data Sources & Integrations → Outposts
+
+###### 2.2.6.8.2. Create an outpost
+
+####### Prerequisite
+
+* Before you begin, ensure you have: An AWS account Permission to create a stack and its resources in AWS Installed Terraform on your local machine. You can download Terraform from the official Terraform website and follow the installation instructions for your operating system. Installed the AWS CLI tool and configured your profile with the aws...
+
+* Before you begin, ensure you have: A GCP account Permission to create the required resources in Google Cloud Deployment Manager Installed Terraform on your local machine. You can download Terraform from the official Terraform website and follow the installation instructions for your operating system. Installed the GCP gcloud CLI tool
+
+* Before you begin, ensure you have: An active Azure subscription. Installed the Azure CLI tool. Permission to deploy a custom template and create its resources in Microsoft Azure ("Owner" or "Contributor" on the designated outpost subscription scope, and Active Directory "Cloud Application Administrator" or "Application Administrator" privileged...
+
+####### Note
+
+* Verify that your internet connection is active. An active internet connection is necessary for notifications to be sent to Cortex Cloud for creating the new outpost. If you are unable to establish an internet connection, contact customer support for a manual workaround.
+
+* When creating an outpost for a specific Azure subscription, the outpost account must be in the same Azure organization as the monitored subscriptions.
+
+####### Important
+
+* While outposts provide maximum control over the scanning environment, cloud scan mode is the recommended default for most organizations. For details, see When to choose outpost scan.
+
+####### Navigation
+
+  Start the outpost creation wizard by navigating to Settings → Data Sources & Integrations → Outposts and clicking New Outpost
+
+  A new outpost is created in pending status and can be viewed in the Outpost page at Settings → Data Sources & Integrations → Outposts
+
+##### 2.2.6.9. Introduction to Terraform for Cloud service provider (CSP) onboarding
+
+###### Important
+
+* Always run these commands in the same folder where the original .tf files and .terraform folder live—this is where the state is stored.
+
+* This .tfstate state file is critical because it is needed by the terraform destroy command to clean up created resources. It is critical that you never delete this file.
+
+##### 2.2.6.10. Container Registry Scanning
+
+###### 2.2.6.10.1. Overview of container registry scanning
+
+####### 2.2.6.10.1.1. Registry Components
+
+####### 2.2.6.10.1.2. How Container Registry Scanning Works
+
+###### 2.2.6.10.2. Configure registry scanning for cloud accounts
+
+####### Prerequisite
+
+* Ensure that you have performed the all steps till Additional Security Capabilities as listed in the onboarding wizard for the required CSP: Onboard Amazon Web ServicesOnboard Amazon Web Services Onboard Google Cloud PlatformOnboard Google Cloud Platform Onboard Microsoft AzureOnboard Microsoft Azure Onboard Oracle Cloud InfrastructureOnboard Oracle...
+
+###### 2.2.6.10.3. Modify the container registry scanning scope
+
+###### 2.2.6.10.4. Scan re-evaluation process
+
+###### 2.2.6.10.5. Connect Docker Hub registry
+
+####### Prerequisite
+
+* Ensure an Outpost is connected to your tenant.
+
+* Set up and configure Broker VM Configure High Availability Cluster
+
+####### Note
+
+* If you choose Azure as the Cloud Provider, you must also select the Tenant Id. The Tenant Id is required to approve Cortex as an enterprise application in your Azure tenant.
+
+* If you choose Azure as the cloud provider, only Outposts associated with the selected tenant ID are displayed.
+
+* The list of Broker VMs displays only VMs that support registry scanning. The list of high-availability Clusters displays only clusters that contain at least one VM supporting registry scanning. The registry scanning status for each VM appears in brackets if it was previously activated for that specific VM.
+
+####### 2.2.6.10.5.1. Manage a Docker Hub connector
+
+######## Note
+
+* If you selected Scan with Broker VM mode, you can't change to a different scan mode (such as Cloud Discovery or Scan with Outpost) when you edit the instance. When editing an instance configured for Scan with Broker VM, you must re-enter your authentication credentials, including Username, Password, and CA certificate.
+
+###### 2.2.6.10.6. Connect Docker V2 compliant container registry
+
+####### Prerequisite
+
+* Ensure an Outpost is connected to your tenant. Outposts
+
+* Ensure one of the following is configured: Set up and configure Broker VM. Configure High Availability Cluster.
+
+####### Note
+
+* If you choose Azure as the Cloud Provider, you must also select the Tenant Id. The Tenant Id is required to approve Cortex as an enterprise application in your Azure tenant.
+
+* If you choose Azure as the cloud provider, only Outposts associated with the selected tenant ID are displayed.
+
+* The list of Broker VMs displays only VMs that support registry scanning. The list of high-availability Clusters displays only clusters that contain at least one VM supporting registry scanning. The registry scanning status for each VM appears in brackets if it was previously activated for that specific VM.
+
+####### 2.2.6.10.6.1. Manage a Docker V2 connector
+
+######## Note
+
+* If you selected Scan with Broker VM mode, you can't change to a different scan mode (such as Cloud Discovery or Scan with Outpost) when you edit the instance. When editing an instance configured for Scan with Broker VM, you must re-enter your authentication credentials, including Username, Password, and CA certificate.
+
+###### 2.2.6.10.7. Connect GitLab container registry
+
+####### Prerequisite
+
+* Ensure an Outpost is connected to your tenant.
+
+* Set up and configure Broker VM Configure High Availability Cluster
+
+####### Note
+
+* When both the group ID and project ID are provided, the system retrieves container images from all projects within the specified group as well as from the specified project. If neither the group ID nor the project ID is provided, the system retrieves container images from all registries (across all groups and projects) accessible to the authenticated...
+
+* If you choose Azure as the Cloud Provider, you must also select the Tenant Id. The Tenant Id is required to approve Cortex as an enterprise application in your Azure tenant.
+
+* If you choose Azure as the cloud provider, only Outposts associated with the selected tenant ID are displayed.
+
+* The list of Broker VMs displays only VMs that support registry scanning. The list of high-availability Clusters displays only clusters that contain at least one VM supporting registry scanning. The registry scanning status for each VM appears in brackets if it was previously activated for that specific VM.
+
+####### 2.2.6.10.7.1. Manage a Gitlab Container Registry connector
+
+######## Note
+
+* If you selected Scan with Broker VM mode, you can't change to a different scan mode (such as Cloud Discovery or Scan with Outpost) when you edit the instance. When editing an instance configured for Scan with Broker VM, you must re-enter your authentication credentials, including Username, Password, and CA certificate.
+
+###### 2.2.6.10.8. Connect Harbor registry
+
+####### Prerequisite
+
+* Ensure an Outpost is connected to your tenant.
+
+* Ensure one of the following is configured: Set up and configure Broker VM. Configure High Availability Cluster.
+
+####### Note
+
+* If you choose Azure as the Cloud Provider, you must also select the Tenant Id. The Tenant Id is required to approve Cortex as an enterprise application in your Azure tenant.
+
+* If you choose Azure as the cloud provider, only Outposts associated with the selected tenant ID are displayed.
+
+* The list of Broker VMs displays only VMs that support registry scanning. The list of high-availability Clusters displays only clusters that contain at least one VM supporting registry scanning. The registry scanning status for each VM appears in brackets if it was previously activated for that specific VM.
+
+####### 2.2.6.10.8.1. Manage a Harbor connector
+
+######## Note
+
+* If you selected Scan with Broker VM mode, you can't change to a different scan mode (such as Cloud Discovery or Scan with Outpost) when you edit the instance. When editing an instance configured for Scan with Broker VM, you must re-enter your authentication credentials, including Username, Password, and CA certificate.
+
+###### 2.2.6.10.9. Connect JFrog container registry
+
+####### Prerequisite
+
+* Ensure an Outpost is connected to your tenant.
+
+* Set up and configure Broker VM Configure High Availability Cluster
+
+####### Note
+
+* If you choose Azure as the Cloud Provider, you must also select the Tenant Id. The Tenant Id is required to approve Cortex as an enterprise application in your Azure tenant.
+
+* If you choose Azure as the cloud provider, only Outposts associated with the selected tenant ID are displayed.
+
+* The list of Broker VMs displays only VMs that support registry scanning. The list of high-availability Clusters displays only clusters that contain at least one VM supporting registry scanning. The registry scanning status for each VM appears in brackets if it was previously activated for that specific VM.
+
+####### 2.2.6.10.9.1. Manage a JFrog connector
+
+######## Note
+
+* If you selected Scan with Broker VM mode, you can't change to a different scan mode (such as Cloud Discovery or Scan with Outpost) when you edit the instance. When editing an instance configured for Scan with Broker VM, you must re-enter your authentication credentials, including Username, Password, and CA certificate.
+
+###### 2.2.6.10.10. Connect Sonatype Nexus registry
+
+####### Prerequisite
+
+* Ensure an Outpost is connected to your tenant. Outposts
+
+* Ensure one of the following is configured: Set up and configure Broker VM. Configure High Availability Cluster.
+
+####### Note
+
+* If you are using a CA certificate, enter the server IP address instead of the registry url.
+
+* If you choose Azure as the Cloud Provider, you must also select the Tenant Id. The Tenant Id is required to approve Cortex as an enterprise application in your Azure tenant.
+
+* If you choose Azure as the cloud provider, only Outposts associated with the selected tenant ID are displayed.
+
+* If you are using a CA certificate, enter the server IP address instead of the registry URL.
+
+* The list of Broker VMs displays only VMs that support registry scanning. The list of high-availability Clusters displays only clusters that contain at least one VM supporting registry scanning. The registry scanning status for each VM appears in brackets if it was previously activated for that specific VM.
+
+####### 2.2.6.10.10.1. Manage a Sonatype connector
+
+######## Note
+
+* If you had selected Scan with Broker VM mode, you can't change to a different scan mode (such as Cloud Discovery or Scan with Outpost) when you edit the instance. When editing an instance configured for Scan with Broker VM, you must re-enter your authentication credentials, including Username, Password, and CA certificate.
+
+##### 2.2.6.11. Cloud service provider permissions
+
+###### 2.2.6.11.1. Amazon Web Services provider permissions
+
+###### 2.2.6.11.2. Google Cloud Platform provider permissions
+
+###### 2.2.6.11.3. Microsoft Azure provider permissions
+
+###### 2.2.6.11.4. Oracle Cloud Infrastructure provider permissions
+
+#### 2.2.7. Onboard the Kubernetes Connector
+
+##### Note
+
+* This option is not supported for Fargate.
+
+* For Fargate, you must provide the cluster resource identifier. The format of the identifier is arn:aws:eks:<region>:<account-id>:cluster/<cluster-name>.
+
+* Basic authentication is only supported in Posture Management. If deploying Realtime Protection, select None .
+
+##### 2.2.7.1. What's new in Kubernetes Connector?
+
+##### 2.2.7.2. Supported Kubernetes distributions
+
+###### Note
+
+* In Google Container-Optimized OS release 100 and earlier, where the FANOTIFY EXEC flag is not supported, the Kernel configuration may be partial for the user mode agent to properly function. In such cases, the agent will fallback to asynchronous mode. In RHCOS version 4.12 and earlier, the Kernel configuration may be partial for the user mode agent to...
+
+### 2.3. Post-deployment steps
+
+#### 2.3.1. Set up your environment
+
+##### 2.3.1.1. Configure server settings
+
+###### Note
+
+* Keyboard shortcuts, timezone, and timestamp format are not set universally and only apply to the user who sets them.
+
+* The Cortex Agentic Assistant and AI case summarization are currently available for users in limited regions. For more information, see Cortex Agentic Assistant.
+
+* If the Password Protection (for downloaded files) setting under Settings → Configuration → General → Server Settings is enabled, enter the password 'suspicious' to download the file.
+
+###### Navigation
+
+  Settings → Configurations → General → Server Settings
+
+##### 2.3.1.2. Configure security settings
+
+##### 2.3.1.3. Data and log forwarding
+
+###### 2.3.1.3.1. Forward logs and data from Cortex Cloud to external services
+
+####### 2.3.1.3.1.1. Configure external applications for forwarding
+
+######## Note
+
+* No prior configuration is required to send data or logs to an email distribution list. Only cases and issues can be forwarded to Slack, Amazon S3, Amazon SQS, Splunk, and Webhook. To forward data to Amazon SQS, the following permissions are required: sqs:GetQueueAttributes, sqs:ListQueues, sqs:SendMessage, sqs:SendMessageBatch, tag:GetResources, and...
+
+* Only a user with Account Admin or Instance Admin permissions can configure egress. For more information, see Egress configurations.Egress configurations
+
+* For Amazon SQS or Amazon S3, you need to provide the queue/bucket name. For Webhook or Splunk, you need to provide the domain, including any subdomain.
+
+* You can also configure external applications when you create a new forwarding configuration. After defining the configuration and setting the scope, you can Add Application and follow the instructions below for any of these destinations.
+
+* If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that the endpoint does not match any approved routes.
+
+####### 2.3.1.3.1.2. Configure notification forwarding
+
+######## Prerequisite
+
+* Before you can select an external service for notification forwarding, you must integrate the external service with Cortex Cloud. For more information, see Configure external applications for forwarding. No prior configuration is required to send data to an email distribution list.
+
+######## Note
+
+* Forwarding destinations: Only issues and cases can be forwarded to Slack, Splunk, Amazon SQS, Amazon S3, or Webhook. Notification forwarding by domain: To configure notification forwarding for issues by domain, select Issues and filter the Issues table by Issue Domain. Case IDs in notifications: If case matching completes before the notification is...
+
+* Not all data and log types can be sent to all external services. For more information, see Forward logs and data from Cortex Cloud to external services.Forward logs and data from Cortex Cloud to external services
+
+* The Grouping Timeframe defines the time frame, in minutes, of how often Cortex Cloud sends notifications. Every 20 issues or 20 events aggregated within this time frame are sent together in one notification, sorted according to severity. To send a notification when one issue or event is generated, set the time frame to 0.
+
+####### 2.3.1.3.1.3. Monitor administrative activity
+
+###### 2.3.1.3.2. Data and log notification formats
+
+####### Note
+
+* Issues can be forwarded to email, syslog servers, and Slack in the alert format, if you prefer. The alert format can be selected when you configure your forwarding notification.
+
+####### 2.3.1.3.2.1. Management audit log messages
+
+####### 2.3.1.3.2.2. Issue notification format
+
+####### 2.3.1.3.2.3. Management Audit log notification format
+
+####### 2.3.1.3.2.4. Log format for IOC and BIOC issues
+
+####### 2.3.1.3.2.5. Analytics log format
+
+#### 2.3.2. Cortex MCP server
+
+##### 2.3.2.1. Cortex MCP server overview
+
+###### Note
+
+* This feature is in Beta.
+
+* The Cortex MCP Server empowers you to integrate AI into your security workflows using natural language. When using LLM-based suggestions, always review and approve actions suggested by the AI before they're executed. We recommend deploying the Cortex MCP server in a secure environment where access is limited to authorized users.
+
+###### 2.3.2.1.1. Install the Cortex MCP server
+
+####### Prerequisite
+
+* If you are running the Cortex MCP server in a Poetry virtual environment, you must have Python 3.13 or higher. If you plan to run the Cortex MCP server in a Docker container, you must have Docker installed.
+
+####### Note
+
+* The MCP Server uses public APIs to communicate and is limited by the license quotas available in your tenant. This is particularly relevant when running XQL queries. For more information on running XQL query APIs, see Run XQL query APIs.
+
+* It is critical to avoid assigning excessive permissions when creating an API key for the Cortex MCP Server. Since the key has both read and write capabilities, overly broad permissions can lead to unintended actions and potentially compromise your environment. Ensure the key follows the principle of least privilege and is granted only the minimum...
+
+* When using Docker, we recommend using an .env file to set the Cortex API credentials as environment variables. While the credentials can be provided in the MCP client configuration settings, the .env file provides safer handling of API credentials and makes your configuration easily reproducible.
+
+* By default, stdio (standard input/output) is used. You can also configure Streamable HTTP, to send requests directly to the tenant instead of through the MCP client. Streamable HTTP can be useful for testing in the browser without a MCP client and to bypass limits that may be in place for your MCP client. For Docker, you can include the Streamable HTTP...
+
+####### Important
+
+* To configure the Cortex MCP Server, you need the Cortex API URL, Cortex API key, and Cortex API key ID. You will not be able to view the API key again after you complete this step. Ensure that you copy the API key before closing the notification.
+
+###### 2.3.2.1.2. Configure the MCP client
+
+####### Navigation
+
+  Settings → Developer → Edit Config
+
+###### 2.3.2.1.3. Use the Cortex MCP server
+
+####### Note
+
+* The built-in tools retrieve information, but do not write to the tenant. You can create your own tools that include write actions. The examples below include both.
+
+###### 2.3.2.1.4. Create custom Cortex MCP server tools
+
+####### Note
+
+* Any new or updated components provided by Cortex are automatically downloaded into the remote_components folder.  During each update, the folder is fully replaced and all existing contents are recreated. Do not add custom tools to this directory, as it is managed entirely by Cortex and is overwritten at every update.
+
+#### 2.3.3. Manage user roles and access management
+
+##### Prerequisite
+
+* Managing users, roles, scopes, user groups, authentication settings in Cortex Cloud Access Management requires View/Edit RBAC permissions for Access Management (under Configurations). Account Admin and Instance Administrator roles are granted this permission by default. For more information, see Predefined user roles in Set up users and roles.
+
+##### Note
+
+* For more information on assigning user roles when generating an API key, see Manage API keys.
+
+* Some features are license-dependent. Accordingly, users may not see a specific feature if the feature is not supported by the license type or if they do not have access based on their assigned role or scope.
+
+* For features where scoping is not applicable, Role-Based Access Control (RBAC) is used and can be configured when managing user roles. For more information, see Manage user roles.
+
+##### 2.3.3.1. Manage user roles
+
+###### Prerequisite
+
+* Managing user roles in Cortex Cloud Access Management requires View/Edit RBAC permissions for Access Management (under Configurations). Account Admin and Instance Administrator roles are granted this permission by default. For more information, see Predefined user roles in Set up users and roles.
+
+###### Navigation
+
+  Settings → Configurations → Access Management → Roles
+
+##### 2.3.3.2. Manage user access
+
+###### Prerequisite
+
+* Managing users, roles, scopes, user groups, authentication settings in Cortex Cloud Access Management requires View/Edit RBAC permissions for Access Management (under Configurations). Account Admin and Instance Administrator roles are granted this permission by default. For more information, see Predefined user roles in Set up users and roles.
+
+###### Note
+
+* You can only reduce the permissions of an Account Admin user via Cortex Gateway.
+
+* User permissions for components and datasets are based on the access permissions set in the user role. For more information on editing these user role permissions, see Manage user roles.
+
+* Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration.
+
+###### Important
+
+* Before configuring, ensure that you review Understand scoping in the Manage user scope section.
+
+* By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced. Before enabling SBAC, we recommend that an administrator or a user with Access Management permissions first ensures that the users, user groups, and API Keys defined in Cortex Cloud are granted...
+
+###### Tip
+
+* To apply the same settings to multiple users, select them, and then right-click and select Edit User Permissions.
+
+###### Navigation
+
+  Settings → Configurations → Access Management → Users
+
+###### 2.3.3.2.1. User access reference information
+
+##### 2.3.3.3. Manage user scope
+
+###### Prerequisite
+
+* Configuring user scopes in Cortex Cloud Access Management requires View/Edit RBAC permissions for Access Management (under Configurations). Account Admin and Instance Administrator roles are granted this permission by default. For more information, see Predefined user roles in Set up users and roles. By default, Enable Scope Based Access Control is...
+
+###### Note
+
+* This configuration can impact the visibility of the related Security domain in the Cases and Issues scope area, but with not affect asset visibility.
+
+* XQL-based dashboard widgets may require a few hours to initially reflect changes to the list or definitions of asset groups used for scoping. To view the most current data immediately, refresh the dashboard or its XQL widgets.
+
+* For Cases and Issues domains, a workaround is to create a Dataset View for each required combination of domains, and allow the relevant entity access only to this Dataset View, not to the underlying cases and issues datasets.
+
+* Make sure to assign the required default granular scoping for users. This depends on the structure and divisions within your organization and the particular purpose of each organizational unit to which scoped users belong.
+
+* Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration.
+
+###### Important
+
+* Some areas and features in Cortex Cloud do not respect SBAC. In these cases, use RBAC permissions to restrict access.
+
+* Action Required: Recent security enhancements enforce stricter default permissions for cases and issues that lack specific asset or endpoint references. This notice explains how to include access to these items if your users' visibility has been impacted.
+
+* Before configuring, ensure that you review the Understand scoping section.
+
+##### 2.3.3.4. Manage access to objects
+
+###### 2.3.3.4.1. Manage access to custom dashboards
+
+####### Prerequisite
+
+* Configure tenant-level settings: An administrator must first establish the sharing framework under Settings → Configurations → Access Management → Objects. The configuration of these settings defines the authorized sharing workflows for custom dashboards:    Enable "Owners can Share objects they created": Grants owners the ability to share...
+
+####### Note
+
+* If you're designated as an Editor, you can always duplicate the widget and make your changes on the copy.
+
+* Only Account Administrators and Instance Administrators have the authority to change the owner of an object.
+
+###### 2.3.3.4.2. Manage access to saved queries
+
+####### Prerequisite
+
+* Configure tenant-level settings: An administrator must first establish the sharing framework under Settings → Configurations → Access Management → Objects. The configuration of these settings defines the authorized sharing workflows for saved queries in the Query Library, including the options that appear to users when clicking the three dot,...
+
+####### Note
+
+* If the role of a user is set to Edit Public Queries but not Create Queries, they can update existing public queries, but the Save as drop-down menu will be hidden, preventing them from creating new Query Library entries.
+
+* When the tenant-level setting Owners and editors can change the general access is unselected, the drop-down is disabled and only an administrator can configure this option.
+
+#### 2.3.4. Configure the Cortex Agentic Assistant
+
+##### 2.3.4.1. Agentic Assistant components and concepts
+
+###### Note
+
+* Agents are bound by the same rules and robust permissions as a human user. In addition, you can mark actions that make real-world changes in production systems as sensitive, requiring a quick manual review and confirmation, ensuring peace of mind before critical system changes are made.
+
+##### 2.3.4.2. Agents Hub
+
+###### Note
+
+* To manage agents in the Agents Hub, you must have the proper permissions. For more information, see Agentic Assistant role-based access control.
+
+###### 2.3.4.2.1. Manage actions
+
+####### Note
+
+* To manage actions in the Agents Hub, you must have the correct permissions. For more information, see Agentic Assistant role-based access control.
+
+###### 2.3.4.2.2. Register actions
+
+####### Note
+
+* To register actions, ensure you have the correct permissions. For more information, see Agentic Assistant role-based access control.
+
+* Mandatory arguments cannot be deselected.
+
+####### Important
+
+* A single content item can be registered as different actions, with each action using different inputs and outputs from the same script. Only register the same script, command, or AI prompt as a new action if it is required for your use case, as providing an agent with many actions with overlapping abilities can reduce the ability of the agent to choose...
+
+###### 2.3.4.2.3. Manage agents
+
+####### Note
+
+* In some cases, an agent may include actions with content items that are not relevant for all licenses. If that occurs, the grey circle appears, but you are not able to install the related content.
+
+###### 2.3.4.2.4. Build agents
+
+####### Note
+
+* To build agents in the Agents Hub, you must have view/edit permissions. For more information, see Agentic Assistant role-based access control.
+
+* If you clear the checkbox for a role, all actions associated with that role are also cleared. The exception is if another role is also selected, which is associated with the same actions. If you clear the checkbox for an action, all roles associated with that action are cleared. For example, if you select the Investigator role, and Send Mail and Tavily...
+
+###### 2.3.4.2.5. Expand agent capabilities with MCP integrations
+
+####### Note
+
+* If you are using OAuth-based authentication, the Test button returns an error containing the command to run in the playground in order to test the connection.
+
+* If an MCP tool is removed from the MCP server, the action will be unavailable due to missing content. If the tool is restored on the MCP server, the action is automatically reenabled.
+
+####### Navigation
+
+  Settings → Configurations → Data Collection → Integration Permissions
+
+##### 2.3.4.3. Agentic Assistant role-based access control
+
+#### 2.3.5. XQL query management
+
+##### Prerequisite
+
+* Setting query limits requires View/Edit permissions for Configurations → Query Management.
+
+##### Note
+
+* A scheduled query or report is run on behalf of the user that originally created it, even if it is edited and run by another user.
+
+* Queries run by correlation rules are not restricted by the query limit. Very short queries do not count towards concurrent queries.
+
+* To ensure optimal system performance, all queries (user-generated and otherwise) adhere to a default timeout limit of 60 minutes that is defined by Palo Alto that takes priority over the administrator defined value. Therefore, regardless of the value specified in this field, queries will be stopped after 60 minutes. You can override the default timeout...
+
+* Query visibility is subject to Role-Based Access Control (RBAC); users can't see queries for datasets they do not have permission to access.
+
+##### Navigation
+
+  You can find Query Management options under Settings → Configurations → General → Query Management
+
+#### 2.3.6. Customize cases and issues
+
+##### 2.3.6.1. Customize cases and issues
+
+###### 2.3.6.1.1. Set up case scoring
+
+####### Note
+
+* For scoped users, a small lock icon indicates that you don't have permissions to edit a rule.
+
+####### Tip
+
+* Right-click an issue field to add it as match criteria.
+
+###### 2.3.6.1.2. Create a starring configuration
+
+####### Tip
+
+* Right-click an issue field to add it as match criteria.
+
+###### 2.3.6.1.3. Create custom case statuses and resolution reasons
+
+####### Note
+
+* Before you create a custom status, please review the built-in options. For more information, see Resolution reasons for cases and issues. We recommend using the built-in statuses and resolution reasons where possible. Custom statuses and resolution reasons might not be supported by all content, and status syncing can take time. In addition, custom...
+
+* After creation, custom statuses and resolution reasons cannot be deleted or modified.
+
+####### Navigation
+
+  Configurations → Object Setup → Cases → Properties
+
+###### 2.3.6.1.4. Create a sync profile
+
+####### Note
+
+* If an issue is using bi-directional syncing, you need to provide both an Inbound and an outbound sync profile.
+
+* Blank fields are skipped. You must define exact values. Custom status values are not currently supported. Support is currently limited to a specific set of fields.
+
+#### 2.3.7. Dashboards and reports
+
+## 3. Review inventory and explore your cloud environment
+
+### 3.1. Inventory management
+
+#### 3.1.1. Asset management
+
+##### 3.1.1.1. All Assets
+
+###### Note
+
+* When working with the Asset Inventory page, consider the following: To maintain an accurate and clutter-free asset inventory, an automated cleanup process periodically removes outdated assets in the background.
+
+* The options available are dependent on your license.
+
+###### 3.1.1.1.1. Container Images
+
+####### Navigation
+
+  All Assets → Compute → Container Images
+
+###### 3.1.1.1.2. Kubernetes Cluster
+
+####### Note
+
+* The Vulnerabilities tab is only available if the cluster you wish to analyze has a K8s connector.
+
+####### Navigation
+
+  Inventory → All Assets → Compute → Kubernetes Cluster for a Kubernetes Clusters assets overview
+
+###### 3.1.1.1.3. External Surface assets
+
+####### Note
+
+* Cloud ASM data must be enabled before the External Surface asset inventory will populate. See Enable Cloud ASM.
+
+##### 3.1.1.2. Serverless function assets
+
+###### 3.1.1.2.1. Overview
+
+####### Navigation
+
+  To access serverless function assets, under Inventory, select All Assets → Compute → Serverless Functions
+
+###### 3.1.1.2.2. Explore the serverless functions inventory
+
+###### 3.1.1.2.3. Expanded serverless function asset information
+
+####### Note
+
+* For details of all serverless function issues generated by Cortex Cloud from vulnerability findings, refer to Serverless function usage.
+
+##### 3.1.1.3. Network configuration
+
+###### 3.1.1.3.1. Configure your network parameters
+
+####### Note
+
+* You can add a range that is fully contained in an existing range, however, you cannot add a new range that partially intersects with another range.
+
+####### Navigation
+
+  In Cortex Cloud , select Assets → Network Configuration → Internal Domain Suffixes
+
+##### 3.1.1.4. Asset Groups
+
+###### Note
+
+* When you create or edit an Asset Group, the changes are applied immediately to new assets and to existing assets that have been updated. However, it may take a few hours for the changes to appear on existing assets that have not been updated.
+
+###### Navigation
+
+  Inventory → Assets → Groups → Add Group
+
+##### 3.1.1.5. Vulnerability Assessment
+
+###### Prerequisite
+
+* The following are prerequisites for Cortex Cloud to perform a vulnerability assessment of your endpoints. Requirement Description Licenses and Add-ons Host Insights Add-on. Supported Platforms Windows    Cortex Cloud lists only CVEs relating to the operating system, and not CVEs relating to applications provided by other vendors.   Cortex Cloud...
+
+* The following are prerequisites for Cortex Cloud to perform an Enhanced Vulnerability Assessment of your endpoints. Requirement Description Licenses and Add-ons Host Insights Add-on. Supported Platforms Windows    Cortex XDR agent 8.3 or a later release.   Cortex Cloud collects all the information about the operating system and the installed...
+
+###### Note
+
+* The CVE will be removed/reinstated to all views, filters, and widgets after the next vulnerability recalculation.
+
+* Starting with macOS 10.15, Mac built-in system applications are not reported by the Cortex XDR agent and are not part of the Cortex Cloud Application Inventory.
+
+###### Tip
+
+* You can click each individual CVE to view in-depth details about it on a panel that appears on the right.
+
+* You can click each individual endpoint to view in-depth details about it on a panel that appears on the right.
+
+###### Navigation
+
+  You can access the Vulnerability Assessment panel from Inventory+Endpoints → Host Inventory → Vulnerability Assessment
+
+## 4. Review and prioritize posture issues
+
+### 4.1. Cases and issues
+
+#### 4.1.1. Overview of cases
+
+##### 4.1.1.1. What are cases?
+
+##### 4.1.1.2. Resolving cases with AI
+
+##### 4.1.1.3. Case lifecycle
+
+##### 4.1.1.4. Case thresholds
+
+##### 4.1.1.5. Case scope and impact
+
+##### 4.1.1.6. Case and issue domains
+
+#### 4.1.2. Case concepts
+
+##### 4.1.2.1. Issues, findings, and events
+
+###### 4.1.2.1.1. Issues
+
+###### 4.1.2.1.2. Findings and events
+
+##### 4.1.2.2. Case grouping
+
+##### 4.1.2.3. Case scoring
+
+##### 4.1.2.4. Case starring
+
+###### Navigation
+
+  You can manage all starring configurations under Case & Issues → Case Configuration → Starred Issues
+
+##### 4.1.2.5. What is Causality?
+
+###### Note
+
+* There are no CGOs in the Cloud Causality View, when investigating cloud Cortex Cloud alerts and Cloud Audit Logs, or SaaS Causality View, when investigating SaaS-related alerts for 501 audit events, such as Office 365 audit logs and normalized logs.
+
+#### 4.1.3. Analyze and resolve cases
+
+##### 4.1.3.1. Review all cases
+
+###### Note
+
+* The legacy view is also available for users who prefer this format. From the Actions menu select Switch to legacy view.
+
+##### 4.1.3.2. Start case analysis
+
+###### 4.1.3.2.1. Agentic Assistant- Case Investigation agent
+
+##### 4.1.3.3. Establish case context
+
+###### 4.1.3.3.1. AI-generated case summaries
+
+####### Note
+
+* The AI-generated title and description is a calculated value that is regenerated each time you open a case. This value is not a saved static description, therefore it is not reflected in the saved case names in the list of cases in the Split view , or in the Case Name and Case Description columns in the Table view.
+
+####### Navigation
+
+  Configurations → General → Server Settings → AI Configuration and enable the following settings
+
+###### 4.1.3.3.2. Assess case severity and score
+
+###### 4.1.3.3.3. Update case attributes
+
+####### Note
+
+* The defined values are shown in the Case Name and Case Description columns in the Table view, and saved to the cases dataset. The case title is also shown the list of cases in the Split view. These values do not replace the AI-generated case title and summary. If the Summarize with AI toggle is enabled, AI-generated case summaries are automatically...
+
+##### 4.1.3.4. Analyze case details
+
+###### Note
+
+* If you prefer a tabular or legacy layout, switch the case card to the Detailed view. This view preserves the legacy tab based format and custom layouts, ensuring full backward compatibility. You can switch between the new case experience and the legacy view based on personal workflow preferences. For more information, see Detailed View.
+
+###### 4.1.3.4.1. Grouping graph
+
+####### Note
+
+* Similar issues are displayed as individual entities rather than in a parent/child hierarchy.
+
+###### 4.1.3.4.2. Evidence
+
+###### 4.1.3.4.3. Issue feed
+
+###### 4.1.3.4.4. Associated assets and artifacts
+
+####### Note
+
+* If you do not have permissions to access an asset of a case (which is shown as grayed out and locked), check your scoping permissions in Manage Users or Manage User Groups.
+
+###### 4.1.3.4.5. MITRE ATT&CK tactics and techniques
+
+####### Note
+
+* This component is available for cases associated with the Security domain or custom domains.
+
+###### 4.1.3.4.6. Detailed View
+
+####### Note
+
+* When an issue is resolved, it remains linked to a case. Once all of the issues in a case are resolved, the case is automatically closed.
+
+###### 4.1.3.4.7. Issue card
+
+####### Note
+
+* This section is context-specific and shows data according to the issue context.
+
+##### 4.1.3.5. Resolve the case
+
+###### 4.1.3.5.1. Resolution Center
+
+####### Note
+
+* Tasks that are already In Progress but still require your input will appear in both the Pending and In Progress tabs.
+
+###### 4.1.3.5.2. Collaborative notes and comments
+
+###### 4.1.3.5.3. Resolve a case
+
+####### Note
+
+* If a case is resolved with the status Resolved - Auto Resolved, Cortex Cloud can reopen the case for up-to six hours if a new issue is triggered that matches the case. The six-hour period is defined by the timestamp of the last issue that was grouped into the case. After the six-hour period, any new issues are linked to a new case for a new...
+
+###### 4.1.3.5.4. Resolution reasons for cases and issues
+
+####### Note
+
+* Cases and issues resolved as True Positive and False Positive help Cortex Cloud to identify real threats in your environment by comparing future cases and associated issues to the resolved cases. Therefore, the handling and scoring of future cases is affected by these resolutions.
+
+##### 4.1.3.6. Additional case actions
+
+###### 4.1.3.6.1. Create a case
+
+####### Note
+
+* To create a case manually, you must have View/Edit permission for Cases and Issues selected under Settings → Configurations → Access Management → Roles → Components → Cases & Issues.
+
+* This option is only relevant for certain domains.
+
+* You can't attach files to manually created cases.
+
+####### Tip
+
+* The issues that you link to a case can be linked to multiple cases, and the issue domains do not need to match the case domain.
+
+###### 4.1.3.6.2. Merge a case
+
+### 4.2. Investigation and response
+
+#### 4.2.1. Investigate issues
+
+##### 4.2.1.1. Overview of the Issues page
+
+###### Note
+
+* Every 12 hours, the system enforces a cleanup policy to remove the oldest issues once the maximum limit is exceeded. The default issue retention period in Cortex Cloud is 186 days.
+
+##### 4.2.1.2. Link or unlink issues from a case
+
+##### 4.2.1.3. Run an automation on an issue
+
+###### Note
+
+* In addition to automation, some playbooks contain manual tasks that prompt the analyst for input. This enables you to enhance an automation workflow with analyst input.
+
+* You can also manually select a playbook to run from the Issue Work Plan tab.
+
+##### 4.2.1.4. Use the War Room in an investigation
+
+###### Note
+
+* The case War Room is usually used for communication capabilities, but unlike the issue War Room, it does not include playbook specific entries. The case War Room enables you to investigate an entire case, not just an issue.
+
+* Cortex Cloud does not index notes and chats.
+
+###### Tip
+
+* In the Playground, you can clear the context data, if needed, which deletes everything in the Playground context data, but does not affect the actual issue or case. To clear the context, run !DeleteContext all=yes' from the CLI or click Clear Context Data while viewing the context data.
+
+* You can use the up/down arrow buttons in the CLI to do a reverse history search for previous commands with the same prefix.
+
+###### Navigation
+
+  Investigation & Response → Automation → Playground
+
+##### 4.2.1.5. Use the Work Plan in an investigation
+
+###### Important
+
+* A playbook will not continue its execution path if a prior task has failed; you must resolve the failed task before subsequent tasks can run.
+
+##### 4.2.1.6. Issue syncing
+
+###### Prerequisite
+
+* You must set up an integration before you can sync issues. For more information, see Set up an integration for mirroring issues.
+
+###### Note
+
+* Multiple tickets can be linked to an issue with outbound syncing. Issues with inbound syncing can be linked to a single ticket only.
+
+* Using issue fields as variables is not currently supported.
+
+* You can only define a single inbound profile. If you change the inbound sync profile the current profile is overwritten. You can define multiple outbound profiles; one issue can update multiple tickets.
+
+* The inbound syncing flow runs every two minutes, and the outbound syncing flow runs every five minutes. In a bi-directional set-up, if the same field is updated in both tickets, the most recently updated value is used. In the external ticket, the logged history shows updates to the ticket. The user name that is logged with the history reflects the user...
+
+* After an issue is resolved, ticket syncing remains active for up-to seven days. Therefore, you still update, change, or reopen the issue or external ticket and the tickets will continue to sync.
+
+* If you change the selected inbound sync profile, the original sync profile is immediately overwritten.
+
+###### Warning
+
+* If you leave this field blank, all configured instances will be used.
+
+###### Tip
+
+* You can find a sync profile ID under Settings → Configurations → Object Setup → Issues → Sync Profiles. By default the ID field is not displayed in the table. Click the three dot menu and add it to the table layout.
+
+###### Navigation
+
+  Settings → Configurations → Marketplace
+
+##### 4.2.1.7. Issue investigation actions
+
+###### 4.2.1.7.1. Copy issues
+
+###### 4.2.1.7.2. Update issue fields
+
+####### Note
+
+* You must create a custom status before you can select it.
+
+####### Tip
+
+* You can create custom issue statuses and resolution reasons, and use the setIssueStatus command to set these custom statuses for issues. For example, when a user starts investigating an issue, the issue status is automatically changed from New to Under Investigation. In some cases, it is useful to create an interim status, such as Triage. After you...
+
+###### 4.2.1.7.3. Export issue details to a file
+
+###### 4.2.1.7.4. Exclude an issue
+
+###### 4.2.1.7.5. Query case and issue data
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder → XQL → Query Library
+
+#### 4.2.2. Review findings
+
+##### 4.2.2.1. Findings card
+
+###### Note
+
+* The information in this card is context specific, therefore some sections are not available for all findings.
+
+#### 4.2.3. Investigate artifacts and assets
+
+##### 4.2.3.1. Investigate an IP address
+
+###### Note
+
+* Requires a license key. Select Settings → Configurations → Integrations  → Threat Intelligence.
+
+##### 4.2.3.2. Investigate an asset
+
+###### Note
+
+* The Asset view is available for hosts with a Cortex XDR agent installed.
+
+##### 4.2.3.3. Investigate a file and process hash
+
+###### Note
+
+* Requires a license key. Go to Settings → Configurations → Integrations  → Threat Intelligence.
+
+##### 4.2.3.4. Investigate a user
+
+###### Note
+
+* Cortex Cloud normalizes and displays case and issue times in your time zone. If you're in a half-hour time zone, the activity in the Issues & Insights Heatmap is displayed in the whole-hour time slot preceding it. For example, if you're in a UTC +4.5 time zone, the time displayed for the activity will be UTC +4.5, however, the visualization in the...
+
+###### Tip
+
+* You can also see a list of all users under Inventory → Assets → Asset Scores.
+
+#### 4.2.4. Cortex Assistant
+
+##### Note
+
+* If you are in an eligible region and have enabled the Cortex Agentic Assistant, the Cortex Agentic Assistant replaces the Cortex Assistant. The Cortex Assistant is available if you do not have access to the Cortex Agentic Assistant based on the tenant region or you have not enabled it. For more information, see Cortex Agentic Assistant.
+
+##### Navigation
+
+  To increase usability, you can create a personalized keyboard shortcut: Settings → Configurations → Server Settings → Keyboard Shortcuts and choose the shortcut you want to use
+
+##### 4.2.4.1. Cortex Assistant layout
+
+##### 4.2.4.2. Cortex Assistant capabilities
+
+###### Note
+
+* When you choose an option from the Respond column, Cortex Assistant will always prompt you to approve the action before executing.
+
+#### 4.2.5. Automation
+
+##### 4.2.5.1. Automation in Cortex Cloud
+
+###### Note
+
+* You can build end-to-end automation workflows from within the playbook editor, including creating automation rules, configuring integration instances, and creating and editing tasks. For more information, see Playbooks.
+
+##### 4.2.5.2. Quick Actions
+
+###### Note
+
+* Quick Actions appear as War Room entries, but do not appear in the Work Plan.
+
+##### 4.2.5.3. Automation Exclusion Center
+
+###### Note
+
+* By default, all users have read and edit permissions to lists. When creating a list of critical assets, we recommend limiting the read and edit permissions to specific roles.
+
+###### 4.2.5.3.1. Manage automation exclusion policies
+
+####### Note
+
+* For the IAM User Hard Remediation and User Soft Remediation policies, we recommend including username, email, and ID for each user you want to exclude. Example: username1, user@example.com, userID112.
+
+* You can also right click on a policy from the main Automation Exclusion Center page to disable or enable the policy. If you click on a list name in the Exclude column, that list opens in the Lists page.
+
+##### 4.2.5.4. Playbooks
+
+###### Prerequisite
+
+* To provide playbook access, ensure the Playbooks RBAC permission is set to View or View/Edit. To completely restrict playbook access, first set the Cases & Issues RBAC permission to None and then set the Playbooks permission to None. Conversely, to provide access to cases and issues, first set the Playbooks permission to View or View/Edit (and then set...
+
+###### 4.2.5.4.1. Playbooks overview
+
+###### 4.2.5.4.2. Playbook development checklist
+
+###### 4.2.5.4.3. Plan your playbook
+
+###### 4.2.5.4.4. Manage playbooks
+
+####### Note
+
+* The library by default shows only playbooks that are not adopted. Click the Show Adopted checkbox to show the adopted playbooks, indicated by an Adopted mark. The library shows the most updated playbook version. Adopting an older version than shown should be done through Marketplace. Adopting a playbook does not make it run. Some content packs include...
+
+###### 4.2.5.4.5. Build your playbook
+
+####### 4.2.5.4.5.1. Task 1. Choose from existing playbooks or create your own
+
+######## Note
+
+* When a task inside of a sub-playbook is not configured, the alert is propagated to the main playbook. If multiple sub-playbooks are nested, and any of the sub-playbooks have non-configured components, the alert appears in the main playbook as well as in the sub-playbooks. Alerts also appear for the individual non-configured tasks within the...
+
+######## Tip
+
+* If there are additional relevant playbooks in Marketplace that are not in your Org repository, you can click Explore them now to see them in the Playbook Catalog and choose to adopt.
+
+* To open multiple playbooks at the same time, edit the first playbook and then click New next to the playbook name to create a new tab. You can either create a new playbook, or add an existing one. You can view recently modified or deleted playbooks by clicking version history for all playbooks .
+
+######## Navigation
+
+  the Investigation & Response → Automation → Playbooks page to find an existing playbook, customize it, or create a playbook
+
+####### 4.2.5.4.5.2. Task 2. Configure playbook settings
+
+######## Note
+
+* If the playbook has inputs and outputs, the Playbook Starts task will show back and forth arrows. Clicking them opens the Playbook Settings pane Inputs/Outputs tab.
+
+* This rule will trigger the playbook to run if no other Automation Rule triggers the playbook first. You can view and edit the order the rules run in the Automation Rules page.
+
+* If you do not add any fields, the group will be deleted when you click Save.
+
+####### 4.2.5.4.5.3. Task 3. Add objects from the Task Library
+
+####### 4.2.5.4.5.4. Task 4. Add custom playbook features
+
+####### 4.2.5.4.5.5. Task 5. Test and debug the playbook
+
+####### 4.2.5.4.5.6. Task 6. Manage playbook content
+
+###### 4.2.5.4.6. Customize your playbook
+
+####### 4.2.5.4.6.1. Configure a sub-playbook loop
+
+######## Note
+
+* Consider the following when adding a loop: The maximum number of loops (default is 100). A high number of loops or a high wait time combined with a large number of issues may affect performance. Periodically check looping conditions to ensure they are still valid for the data set. If you want a sub playbook task to loop over an array passed into its...
+
+######## Tip
+
+* Balance between the number of iterations and the interval so you do not overload the server.
+
+####### 4.2.5.4.6.2. Filter and transform data
+
+######## Caution
+
+* You can change the context data root to filter, but it is not recommended to select a different root, as it affects the filter results. The drop-down list displays the filter root for backward compatibility.
+
+######## Navigation
+
+  Investigation & Response → Automation → Scripts → New Script
+
+####### 4.2.5.4.6.3. Extend context
+
+####### 4.2.5.4.6.4. Extract indicators
+
+######## Note
+
+* This configuration may delay playbook execution (issue creation). While indicator creation is asynchronous, indicator extraction and enrichment are run synchronously. Data is placed into the issue context and is available via the context for subsequent tasks.
+
+* When using out of band, the extracted indicators do not appear in the context. If you want the extracted indicators to appear select inline.
+
+####### 4.2.5.4.6.5. Update issue fields with playbook tasks
+
+######## Note
+
+* The setIssue script includes all available fields; use the scroll bar to see all the fields. The name field has a limit of 600 characters. If there are more than 600 characters, you can shorten the name field to under 600 characters and then include the full information in a long text field such as the description field.
+
+###### 4.2.5.4.7. Test your playbook
+
+####### Note
+
+* The debugger does not support using parentIncidentFields.
+
+* Using an existing issue in the debugger does not affect the original issue or change the original context data.
+
+####### 4.2.5.4.7.1. Troubleshoot playbook performance
+
+###### 4.2.5.4.8. Manage playbook content
+
+####### Note
+
+* Opening a playbook does not immediately lock it. A playbook is considered to be in edit mode only when a user makes a modification that causes the Save button to become available.
+
+####### Important
+
+* Manually unlocking a playbook may cause version conflicts. This turns off concurrent editing protection, and if the original user is still editing, their changes might be lost or overwritten.
+
+####### Navigation
+
+  Investigation & Response → Automations → Playbooks
+
+###### 4.2.5.4.9. Best practices
+
+####### Note
+
+* If you reattach a detached playbook, any customizations you have made to the playbook will be overwritten when the playbook updates to the current version.
+
+* Retries are not supported for data collection tasks that have errors sending emails (indicated by a server timeout). This is because retries only work on automation execution failures, not on email delivery issues.
+
+##### 4.2.5.5. AI Prompts
+
+###### Navigation
+
+  On the AI Prompts page (Investigation → Response → Automation → AI Prompts), you can view, edit, and manually create prompts
+
+###### 4.2.5.5.1. AI prompts role-based access control
+
+###### 4.2.5.5.2. Use existing prompts
+
+####### Navigation
+
+  Investigation & Response → Automation → AI Prompts and in the Prompts Library search for the prompt you want to use
+
+###### 4.2.5.5.3. Create a prompt
+
+####### Navigation
+
+  Investigation & Response → Automation → AI Prompts and click + New Prompt
+
+##### 4.2.5.6. Create an automation rule
+
+###### Note
+
+* You can also define the conditions that trigger a specific playbook in the playbook editor. For more information, see Task 2. Configure playbook settings
+
+* Quick Actions, by default, run using all available integration instances that contain the command. When selecting a Quick Action for an automation rule, you can instead choose one specific integration instance to use.
+
+###### Important
+
+* Automation rules apply to Medium and higher severity issues. They also apply to Low severity Analytic issues and Low severity ABIOC issues that are tagged with Identity or Cloud. Rules are evaluated in order, and only the first rule that matches the trigger conditions is executed.
+
+##### 4.2.5.7. Scripts
+
+###### 4.2.5.7.1. Use existing scripts
+
+####### Navigation
+
+  Investigation & Response → Automation → Scripts and in the Scripts Library search for the script you want to use
+
+###### 4.2.5.7.2. Create a script
+
+####### Note
+
+* You can enable/disable a script in the Settings without having to duplicate the script. You can view recently modified or deleted scripts by clicking the version history for all scripts .
+
+####### Important
+
+* If you choose Python, from the Agentic Assistant you can use the Automation Engineer agent.
+
+####### Tip
+
+* If there is an error, you can copy the error message from the test result into the Agentic Assistant prompt and ask the Automation Engineer agent to correct the error.
+
+###### 4.2.5.7.3. Use the Automation Engineer agent to accelerate script development and deployment
+
+####### Note
+
+* The Automation Engineer agent is available with the Cortex Agentic Assistant, for users with script editing permissions. For more information, see Cortex Agentic Assistant and Agentic Assistant role-based access control.
+
+* If you make manual edits in the script and don't save the changes and you then modify the script with the Automation Engineer agent, you are prompted to confirm overwriting the manual edits.
+
+####### Tip
+
+* Use detailed prompts, for example, Get failed logins from last 24 hours and return as a table. Clearly define argument names, types, and default values. Mention if you expect the output in a specific format, such as a table, JSON, or plain text.
+
+* If there is an error, you can copy the error message from the test result into the Agentic Assistant prompt and ask the Automation Engineer agent to correct the error.
+
+###### 4.2.5.7.4. Change the Docker image in a script
+
+####### 4.2.5.7.4.1. Connect an engine to an image registry
+
+######## Note
+
+* This procedure uses the --username and --password command line options to pass the username and password directly. For environments where command history or logs are visible to others, consider more secure methods like Docker configuration files for handling authentication in production or CI/CD environments. For more details, see docker login or...
+
+##### 4.2.5.8. Context data
+
+###### 4.2.5.8.1. Issue context data
+
+###### 4.2.5.8.2. Case context data
+
+###### 4.2.5.8.3. Search context data
+
+###### 4.2.5.8.4. Add context data to an issue
+
+###### 4.2.5.8.5. Add context data to a case
+
+####### Note
+
+* If you run the command in the issue War Room, the data is added to the following places: The case context data. The issue context data under the case tab. If you run the command in the Case War Room, the data is added to the case context data only.
+
+###### 4.2.5.8.6. Delete context data from a case
+
+###### 4.2.5.8.7. Use context data in a playbook
+
+####### Caution
+
+* Users with Trigger Playbook permissions on a given issue may still be able to modify the parent case via commands and scripts, even without full access to the case.
+
+##### 4.2.5.9. Lists
+
+###### Note
+
+* The maximum size of a list is 209715 characters.
+
+###### 4.2.5.9.1. Create a list
+
+####### Note
+
+* If you intend to use the list as part of an Automation Exclusion Policy, we recommend choosing specific roles for read and edit access. For more information on using lists in exclusion policies, see Manage automation exclusion policies.Manage automation exclusion policies
+
+* If you want to edit a list from a content pack, you need to duplicate or detach a list. Detached lists do not receive updated content in subsequent Cortex Cloud content releases. To retain an updated list, reattach it.
+
+###### 4.2.5.9.2. List commands
+
+###### 4.2.5.9.3. Use cases: JSON lists
+
+####### Navigation
+
+  Settings → Configurations → Object Setup → Lists → Add a List
+
+  Investigation & Response → Automation → Playbooks → New Playbook
+
+###### 4.2.5.9.4. Transform a list into an array
+
+####### Navigation
+
+  Investigation & Response → Automation → Playbooks and create or edit a playbook
+
+##### 4.2.5.10. Integrations
+
+###### 4.2.5.10.1. Integrations in Cortex Cloud
+
+###### 4.2.5.10.2. Add an integration instance
+
+###### 4.2.5.10.3. Use integration commands in the CLI
+
+####### Tip
+
+* In the Playground, you can clear the context data, if needed, which deletes everything in the Playground context data, but does not affect the actual issue or case. To clear the context, run !DeleteContext all=yes' from the CLI or click Clear Context Data while viewing the context data.
+
+###### 4.2.5.10.4. Troubleshoot Integrations
+
+###### 4.2.5.10.5. Manage credentials
+
+####### Navigation
+
+  Settings → Configurations → Integrations → Credentials → New Credential
+
+##### 4.2.5.11. Engines
+
+###### 4.2.5.11.1. What is an engine?
+
+####### Note
+
+* You cannot share a multiple-engine installation with a single-engine installation.
+
+* When you add an engine to a load-balancing group, you cannot use that engine separately. The engine does not appear in the engines menu when configuring an integration instance, but you can choose the load-balancing group.
+
+###### 4.2.5.11.2. Engine requirements
+
+####### Note
+
+* The Cron package is required to install engines on a Linux machine.
+
+* CentOS 8.x reached End of Life (EOL) on December 31, 2021, and is no longer supported as an operating system. CentOS 7.x reached End of Life (EOL) on June 30, 2024, and is no longer supported as an operating system.
+
+* If you have configured a range of Approved IP Ranges under Allowed Sessions on the Security Settings page, the engine must communicate through one of the approved IPs.
+
+###### 4.2.5.11.3. Install an engine
+
+####### Note
+
+* If you are using DEB, RPM, or Zip installation, install Docker or Podman. Natively running Python or PowerShell integrations/scripts on Windows or Linux is not supported on Cortex Cloud engines.
+
+* When upgrading an engine that was installed using the Shell installation, you can use the Upgrade Engine feature in the Engines page. For Amazon Linux 2 type engines, you need to upgrade these engine types using a zip-type engine and not use the Upgrade Engine feature. If you use the shell installer, Docker/Podman is automatically installed. We...
+
+* Use DEB and RPM installation when the shell installation is not available. You need to manually install Docker or Podman  and any dependencies.
+
+* If you receive a permissions denied error, it is likely that you do not have permission to access the /tmp directory. If the installer fails to start due to a permissions issue, even if running as root, add one of the following two arguments when running the installer: --target <path> - Extracts the installer files into the specified custom...
+
+####### Important
+
+* For DEB/RPM engines, Python (including 3.x) and the containerization platform (Docker/Podman) must be installed and configured. For Docker or Podman to work correctly on an engine, IPv4 forwarding must be enabled.
+
+####### Tip
+
+* For Linux systems, we recommend using the shell installer. If using Amazon Linux 2, use the zip installer (see step 4).
+
+####### 4.2.5.11.3.1. Docker
+
+######## Note
+
+* This section is relevant when installing an engine.
+
+* Docker images can be downloaded together with their relevant content packs for offline installation.
+
+####### 4.2.5.11.3.2. Podman
+
+######## Note
+
+* When upgrading an engine, the engine keeps the previously used container management type (regardless of distribution version).
+
+###### 4.2.5.11.4. Manage engines
+
+###### 4.2.5.11.5. Upgrade an engine
+
+###### 4.2.5.11.6. Remove an engine
+
+###### 4.2.5.11.7. Configure engines
+
+####### Note
+
+* A day is defined as 24 hours and may not exactly correspond to calendar days due to daylight savings, leap seconds, etc.
+
+* In addition, to support engine upgrades from the UI, edit the /usr/local/demisto/upgrade.conf file on the engine to include the SERVER_URLS setting with the new tenant's address. Include only the host, without https:// or any additional path at the end of the host name. For example: SERVER_URLS="api-example.us.paloaltonetworks.com"
+
+* If the engine loses communication for longer than this time, it will disconnect and you need to restart the service.
+
+####### 4.2.5.11.7.1. Configure the engine to use a web proxy
+
+######## Note
+
+* You need to configure Docker to use a proxy. When using a BlueCoat proxy, ensure you encode the values correctly.
+
+* In an environment with a single engine, go to /usr/local/demisto/upgrade.conf. In an environment with multiple engines, go to /usr/local/demisto/<engine-name>/upgrade.conf, replacing <engine-name> with the name of the engine. Note that the key is in the upgrade.conf file and must be https_proxy, even if your proxy address starts with http://.
+
+####### 4.2.5.11.7.2. Configure the engine to call the server without using a proxy
+
+####### 4.2.5.11.7.3. Configure an engine to use custom certificates
+
+###### 4.2.5.11.8. Use an engine in an integration
+
+####### Note
+
+* Long-running integrations should not run on load-balancing groups.
+
+###### 4.2.5.11.9. Run a script using an engine
+
+####### Navigation
+
+  Investigation & Response → Automation → Scripts
+
+###### 4.2.5.11.10. Troubleshoot engines
+
+####### Note
+
+* Ensure that pop-ups are not blocked by your browser.
+
+* If the installer fails to start due to a permissions issue, even if running as root, add one of the following two arguments when running the installer: --target <path> - Extracts the installer files into the specified custom path. --keep - Extracts the installer files into the current working directory (without cleaning at the end). If using installer...
+
+* If the Allow running multiple engines on the same machine option is selected, run the command: sudo systemctl status d1_<Engine _name>
+
+* Any changes made to variables in the upgrade_engine.sh file are reset after each upgrade. We recommend instead using the upgrade.conf file to set variables.
+
+* You can ignore the following error: Cannot create folder '/var/lib/demisto'
+
+###### 4.2.5.11.11. Troubleshoot integrations running on engines
+
+####### Note
+
+* If the Allow running multiple engines on the same machine option is selected, run the command: sudo systemctl restart d1_<Engine _name>
+
+* Docker CE installations typically run Docker, while Docker EE installations typically run dockerroot.
+
+#### 4.2.6. Build XQL queries
+
+##### Note
+
+* If you have the Cortex Agentic Assistant, you can use natural language prompts to create and run XQL queries within the chat interface. For more information, see Create and run XQL queries with Agentic Assistant chat.
+
+##### 4.2.6.1. About the Query Builder
+
+###### Note
+
+* Schema changes to datasets may not be reflected in the autocomplete suggestions and definitions as you type in real time the XQL query, and can appear with a slight delay.
+
+###### Tip
+
+* When creating XQL queries, you can: Use the up and down arrow keys to navigate through the auto-suggestion commands and definitions. Select an auto-suggestion command by pressing either the Enter or Tab key. Press Shift+Enter to add a new line, and easily ignore the auto-suggestion output. Close the auto-suggestion output by pressing the Esc key.
+
+##### 4.2.6.2. How to build XQL queries
+
+###### Note
+
+* Users with different dataset permissions can receive different results for the same XQL query. An administrator or a user with a predefined user role can create and view queries built with an unknown dataset that currently does not exist in Cortex Cloud. All other users can only create and view queries built with an existing dataset. When you have more...
+
+* You can build a query that investigates data in both a cold dataset and a hot dataset in the same query. In addition, as the hot storage dataset format is the default option and represents the fully searchable storage, this format is used throughout this guide for investigation and threat hunting. For more information on hot and cold storage, see...
+
+###### Important
+
+* Forensic datasets are not inlcuded by default in XQL query results, unless the dataset query is explicitly defined to use a forensic dataset.
+
+###### 4.2.6.2.1. Get started with XQL queries
+
+###### 4.2.6.2.2. Useful XQL user interface features
+
+####### Note
+
+* Schema changes to datasets may not be reflected in the autocomplete suggestions and definitions as you type in real time the XQL query and can appear with a slight delay.
+
+####### Tip
+
+* When creating XQL queries, you can: Use the up and down arrow keys to navigate through the auto-suggestion command suggestions and definitions. Select an auto-suggestion command by pressing either the Enter or Tab key. Press Shift+Enter to add a new line, and easily ignore the auto-suggestion output. Close the auto-suggestion output by pressing the Esc...
+
+###### 4.2.6.2.3. XQL Query best practices
+
+###### 4.2.6.2.4. Expected results when querying fields
+
+###### 4.2.6.2.5. Create XQL query
+
+####### Note
+
+* Whenever the time period is changed in the query window, the config timeframe is automatically set to the time period defined for the entire query, including queries that are part of the join stage. Yet, this won't be visible as part of the query. Only if you manually type in the config timeframe will this be seen in the query. These time picker...
+
+####### Tip
+
+* When creating XQL queries, you can: Use the up and down arrow keys to navigate through the auto-suggestion command suggestions and definitions. Select an auto-suggestion command by pressing either the Enter or Tab key. Press Shift+Enter to add a new line, and easily ignore the auto-suggestion output. Close the auto-suggestion output by pressing the Esc...
+
+* While the query is running, you can navigate away from the page. A notification is sent when the query has finished. You can also Cancel the query or run a new query, where you have the option to Run only new query (cancel previous) or Run both queries.
+
+###### 4.2.6.2.6. Review XQL query results
+
+####### Note
+
+* It's also possible to graph the results displayed. For more information, see Graph query results.
+
+* Results are received incrementally for the first 100K records, or up to 100MB worth of records, whichever comes first. After that, the next update is when the query has finished running completely.
+
+* Real time query results are available only in the Query Builder and in free text query. Real time results are displayed only for queries run on hot datasets. The Sort option is available only after all the data is retrieved. When you formulate complex queries, the results will be displayed when the query has finished running completely, and not in real...
+
+* In order for Cortex Cloud to provide a histogram for a field, the field must not contain an array or a JSON object.
+
+###### 4.2.6.2.7. Translate to XQL
+
+####### Important
+
+* This feature is still in a Beta state and you will find that not all Splunk queries can be converted to XQL. This feature will be improved upon in the upcoming releases to support greater Splunk query translations to XQL.
+
+###### 4.2.6.2.8. Graph query results
+
+####### License Type
+
+  Building Cortex Query Language (XQL) queries in the Query Builder requires a Data Collection add-on.
+
+####### Note
+
+* To display the result of as a time duration, choose the graph type Single Value and enable Show as Time. You can then select the Time Unit (millisecond, second, minute, or hour) and the Display format.
+
+##### 4.2.6.3. XQL query entities
+
+###### 4.2.6.3.1. Create authentication query
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+###### 4.2.6.3.2. Create event log query
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+###### 4.2.6.3.3. Create file query
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+###### 4.2.6.3.4. Create image load query
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+###### 4.2.6.3.5. Create network connections query
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+###### 4.2.6.3.6. Create network query
+
+####### Note
+
+* When you run the query, depending on the outcome of the results, the value specified in this field might be displayed in the dst_ip field in the query results. This occurs if an RDP event is recorded whereby a user connected from the source IP to the destination IP.
+
+###### 4.2.6.3.7. Create process query
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+###### 4.2.6.3.8. Create registry query
+
+####### Important
+
+* Ensure the KEY NAME is entered as a real registry key name, and not as a symbolic link. Otherwise, the query will not retrieve results. Instead of HKEY_LOCAL_MACHINE\System\CurrentControlSet, which is a symbolic link, use KEY_LOCAL_MACHINE\System\ControlSet001. Instead of HKEY_CURRENT_USER, use HKEY_USERS\<SID>, where SID is either a SID of the current...
+
+###### 4.2.6.3.9. Query across all entities
+
+####### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+##### 4.2.6.4. Overview of the Query Center
+
+###### Note
+
+* Very short queries might not be listed. You cannot cancel correlation queries. The default retention period for historic queries is aligned with issue retention.
+
+###### 4.2.6.4.1. Edit and run queries in Query Center
+
+####### Note
+
+* If query limits are applied to your tenant, the number of concurrent running queries is limited per user. If query usage is reaching the defined limit, a system message warns you that a high query load is impacting performance. If you exceed the limit, new queries are blocked until query usage drops. You can view all active queries under Query Center...
+
+* You can cancel your own queries. To cancel queries run by other users, you must have View/Edit permissions for Configurations → Query Management. By default, Instance administrators have View/Edit permission.
+
+* Cancelled queries show a Canceled status. You can see details of all canceled queries in the Query History tab. You cannot cancel correlation rule queries. If you cancel a scheduled query, only the current query is cancelled. Future recurrences of the scheduled query are not affected.
+
+####### Navigation
+
+  Investigation & Response → Search → Query Center → Query History
+
+####### 4.2.6.4.1.1. Query Center reference information
+
+######## Note
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default.
+
+##### 4.2.6.5. Manage scheduled queries
+
+###### Navigation
+
+  Investigation & Response → Search → Scheduled Queries
+
+###### 4.2.6.5.1. Scheduled Queries reference information
+
+####### Note
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default.
+
+##### 4.2.6.6. Manage your query library
+
+###### Note
+
+* The Query to Library option is only available if your role has the Create Queries capability. For more information, see Manage access to saved queries.
+
+* When the tenant-level setting Owners and editors can change the general access is unselected, the drop-down is disabled and only an administrator can configure this option.
+
+###### Important
+
+* The ability to create, edit, or share queries is governed by access management. If certain options are unavailable, contact your administrator. For more information, see Manage access to saved queries.
+
+#### 4.2.7. Quick Launcher
+
+##### Note
+
+* For hosts, Cortex Cloud displays results for exact matches but supports the use of wildcard (*) which changes the search to return matches that contain the specified text. For example, a search of compy-7* will return any hosts beginning with compy-7 such as compy-7000, compy-7abc, and so forth.
+
+### 4.3. Customize cases and issues
+
+#### 4.3.1. Customize cases and issues
+
+##### 4.3.1.1. Set up case scoring
+
+###### Note
+
+* For scoped users, a small lock icon indicates that you don't have permissions to edit a rule.
+
+###### Tip
+
+* Right-click an issue field to add it as match criteria.
+
+##### 4.3.1.2. Create a starring configuration
+
+###### Tip
+
+* Right-click an issue field to add it as match criteria.
+
+##### 4.3.1.3. Create custom case statuses and resolution reasons
+
+###### Note
+
+* Before you create a custom status, please review the built-in options. For more information, see Resolution reasons for cases and issues. We recommend using the built-in statuses and resolution reasons where possible. Custom statuses and resolution reasons might not be supported by all content, and status syncing can take time. In addition, custom...
+
+* After creation, custom statuses and resolution reasons cannot be deleted or modified.
+
+###### Navigation
+
+  Configurations → Object Setup → Cases → Properties
+
+##### 4.3.1.4. Create a sync profile
+
+###### Note
+
+* If an issue is using bi-directional syncing, you need to provide both an Inbound and an outbound sync profile.
+
+* Blank fields are skipped. You must define exact values. Custom status values are not currently supported. Support is currently limited to a specific set of fields.
+
+## 5. Agentic Assistant chat
+
+### 5.1. Get started with Agentic Assistant chat
+
+#### Note
+
+* The Cortex Agentic Assistant is currently available in limited regions. For more information see Cortex Agentic Assistant If your tenant is not within one of those regions, you have access to the Cortex Assistant. To enable the Cortex Agentic Assistant, go to Settings → Configurations → General → Server Settings → AI Configuration.
+
+### 5.2. Choose an Agentic Assistant agent
+
+#### Note
+
+* Requires the Exposure Management add-on.
+
+### 5.3. Chat with an Agentic Assistant agent
+
+#### Note
+
+* Case data is only loaded when you send your first message. Opening the chat interface without sending a prompt does not provide the agent with the case context.
+
+* An agent's proposed plans and results may contain inaccuracies or errors. Always review the results carefully to ensure you fully understand the proposed action before proceeding.
+
+#### Tip
+
+* You can quickly jump to different product pages within Cortex Cloud by typing / in the prompt area. This shortcut is a built-in navigation feature that is available even if the Cortex Agentic Assistant is disabled.
+
+### 5.4. Create and run XQL queries with Agentic Assistant chat
+
+#### Note
+
+* The TextToXQL action is a hidden system action and does not appear in the Agents Hub.
+
+* If you are in a non-supported region and ask an agent to create an XQL query, it may attempt to generate the query using general logic. We do not recommend this, as it may result in inaccurate syntax and unreliable results.
+
+* Running XQL queries manually through agent does not consume compute units. This includes scenarios where you prompt the agent to create and execute a multi-step plan.
+
+### 5.5. Manage chat history
+
+## 6. Review and report your security posture and progress
+
+### 6.1. Monitor dashboards and reports
+
+#### 6.1.1. About dashboards
+
+##### Note
+
+* Dashboards that are based on custom infrastructure cannot be exported. When importing a dashboard that already exists in the system, the imported dashboard overwrites the existing dashboard. To avoid overwriting the existing dashboard, duplicate and rename the existing dashboard before importing the new dashboard.
+
+##### Important
+
+* The ability to create, edit, or share custom dashboards is governed by access management. If certain options are unavailable, contact your administrator. For more information, see Manage access to custom dashboards.
+
+##### 6.1.1.1. Command Center dashboards
+
+###### Note
+
+* Access to these dashboards requires RBAC permissions under Dashboards & Reports. The Dashboards component must be Enabled in your role and requires View permissions for Command Center Dashboards. If certain options are unavailable, contact your administrator. For more information, Manage access to custom dashboards. The dashboards are available in dark...
+
+###### 6.1.1.1.1. Cortex Agentic Assistant dashboard
+
+####### Prerequisite
+
+* The Cortex Agentic Assistant is only available after it is enabled, and for tenants in certain regions. For more information, see Cortex Agentic Assistant.
+
+####### Note
+
+* Access to this dashboard requires RBAC permissions under Dashboards & Reports. The Dashboards component must be Enabled in your role and requires View permissions for Command Center Dashboards. If certain options are unavailable, contact your administrator. For more information, see Manage access to custom dashboards.
+
+###### 6.1.1.1.2. Cloud Security Operations
+
+####### 6.1.1.1.2.1. Cloud Security Operations
+
+######## Note
+
+* Command Center data may not match the counts on the Issues page, and you may observe inconsistencies. This is because dashboard data is a snapshot of issues identified, whereas the Issues page provides the most up-to-date view of risks across your cloud assets. In addition, the Issues pages do not support all the currently available filters on the...
+
+###### 6.1.1.1.3. Cortex Cloud Command Center
+
+##### 6.1.1.2. Predefined dashboards
+
+###### Note
+
+* Users can access all information on the dashboard when their user access is scoped to view All assets or assigned to the Instance Administrator role. Otherwise, users with granular scoping set to No assets or Select asset groups will have limited access to the dashboard. For more information on Scope-Based Access Control (SBAC), see Manage user...
+
+##### 6.1.1.3. Reports
+
+###### 6.1.1.3.1. Report templates
+
+#### 6.1.2. Build custom dashboards and reports
+
+##### 6.1.2.1. Build a custom dashboard
+
+###### Note
+
+* For agent-related widgets, you can apply an endpoint scope to refine the displayed data to only show results from specific endpoint groups. Select the menu on the top right corner of the widget, select Groups, and select one or more endpoint groups. For case-related widgets, you can refine the displayed data to only show results from cases that match a...
+
+##### 6.1.2.2. Manage your Widget Library
+
+###### Note
+
+* Unlike dashboards, individual widgets cannot be shared with other users directly from the Widget Library. Yet, if you add a Restricted widget to a dashboard and then share that dashboard, other users who have access to the dashboard will also be able to see that specific widget.
+
+* Any dashboards or reports that include the widget are affected by the changes.
+
+#### 6.1.3. Fine-tune dashboards and reports
+
+##### 6.1.3.1. Create a custom widget using a script
+
+###### Note
+
+* If you have added arguments to the script, these appear when creating a widget.
+
+* Available options are Pie, Column, Line, and Single Value. To display the result of the script as a time duration, choose the graph type Single Value and enable Show as Time. You can then select the Time Unit (millisecond, second, minute, or hour) and the Display format.
+
+###### 6.1.3.1.1. Script-based widget examples
+
+####### Note
+
+* Add the widget tag in the script settings to make the script available for use in script-based widgets. For more information, see Create a script.
+
+* If your script returns a time duration, configure the widget with the graph type Single Value and enable Show as Time..
+
+##### 6.1.3.2. Create custom XQL widgets
+
+###### Note
+
+* Cortex Query Language (XQL) queries generated from the Widget Library do not appear in the Query Center. The results are used only for creating the custom widget.
+
+* Whenever the time period is changed in the query window, the config timeframe is automatically set to the time period defined, but this won't be visible as part of the query. Only if you manually type in the config timeframe will this be seen in the query. These time picker options are available in XQL queries when using the Query Builder, XQL Widgets,...
+
+* To display the result of as a time duration, choose the graph type Single Value and enable Show as Time. You can then select the Time Unit (millisecond, second, minute, or hour) and the Display format.
+
+###### Tip
+
+* You can create a generic dashboard for multiple views of the same dataset by using an asterisk (*) when defining the dataset in the XQL widget as dataset = <dataset_name>*. The placement of the asterisk in the dataset name ensures that any view containing this prefix text is displayed in the results. The dataset in a query is defined as: If there are...
+
+###### 6.1.3.2.1. Configure filters and inputs for custom XQL widgets
+
+####### Prerequisite
+
+* Fixed filters are based on parameters that are defined in custom XQL widgets. Before you can configure fixed filters, take the following steps: Create custom XQL widgets with parameters. For more information, see Create custom XQL widgets. Add the widgets to a custom dashboard. For more information, see Build a custom dashboard.
+
+####### Note
+
+* This option only appears if the dashboard contains custom XQL widgets with defined parameters.
+
+* You can define up to four parameter filters on a single dashboard or report.
+
+* If you specify more than one field, only the first field value is used.
+
+####### Tip
+
+* After the initial setup, when you access your dashboard the filters and inputs might need further refinement. You can make changes to the configured parameters in the XQL widgets, and update the Filters & Inputs on your dashboard until you are satisfied with the results.
+
+###### 6.1.3.2.2. Configure dashboard drilldowns
+
+####### Prerequisite
+
+* To configure drilldowns your dashboard must contain custom XQL widgets. In addition, if you want to configure in-dashboard drilldowns your custom XQL widget must contain one or more parameters. For more information about configuring parameters in custom XQL widgets, see Create custom XQL widgets.
+
+####### Note
+
+* If the selected parameter is configured in other XQL widgets on the dashboard, these widgets are also affected by the drilldown.
+
+####### 6.1.3.2.2.1. Variables in drilldowns
+
+#### 6.1.4. Run or schedule reports
+
+##### Note
+
+* Report templates that are based on custom infrastructure cannot be exported. If you import a report template that already exists in the system, the imported template will overwrite the existing template. If you do not want to overwrite the existing template, duplicate and rename the existing template before importing the new template. You can also...
+
+* The report name and description will be displayed in the report header and are not editable during customization.
+
+* For agent-related widgets, you can apply an endpoint scope to refine the displayed data to only show results from specific endpoint groups. Select the menu on the top right corner of the widget, select Groups, and select one or more endpoint groups. For agent-related widgets, you can apply an endpoint scope to refine the displayed data to only show...
+
+* To send reports to Slack, Slack must be configured as an external application in Cortex Cloud. For more information, see Integrate Slack for outbound notifications
+
+##### Navigation
+
+  Under Settings → Configurations → General → Notifications, click + Add Forwarding Configuration
+
+## 7. Monitor and track compliance adherence
+
+### 7.1. Cortex compliance flow
+
+### 7.2. Choose compliance standards from the compliance catalog
+
+#### Navigation
+
+  Cortex provides lists of available standards and controls in the Standards and Controls catalogs under Posture Management → Compliance → Catalogs
+
+#### 7.2.1. Standards Catalog
+
+##### 7.2.1.1. Use a built-in or custom standard
+
+#### 7.2.2. Controls catalog
+
+##### 7.2.2.1. Use a built-in or custom control
+
+###### 7.2.2.1.1. Add a custom detection rule to a custom control
+
+####### Note
+
+* Only custom detection rules (not built-in) can be assigned to custom controls.
+
+####### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Workload
+
+###### 7.2.2.1.2. Create a new Custom Detection Rule
+
+####### Note
+
+* Only users with the following roles can enable or disable Custom Code Execution: Account Admin Instance Administrator Deployment Admin Privileged Security Admin
+
+* Only Custom Detection Rules (not built-in rules) can be assigned to custom controls.
+
+####### Important
+
+* The custom Python scripts are intended to be executed exclusively for compliance checks and validations. To ensure the scripts are used properly and no security risks or unintended changes occur, the system implements the following restrictions and safeguards: Only a predefined set of Python libraries and functions required for compliance checks are...
+
+### 7.3. Use an assessment profile to run compliance checks on your assets
+
+#### Navigation
+
+  Under Posture Management → Compliance → Assessment Profiles, click Create New Assessment
+
+### 7.4. View and manage compliance assessments and reports
+
+#### Note
+
+* Compliance assessment results may take up to six hours to be generated.
+
+#### 7.4.1. Assessments
+
+##### Note
+
+* If there are no rules associated with the control, the control will be assigned a severity of low.
+
+#### 7.4.2. Reports
+
+##### Navigation
+
+  The Posture Management → Compliance → Results → Reports page shows a table listing compliance assessment report files
+
+### 7.5. View the compliance assessment of an individual asset
+
+## 8. Discovery Engine
+
+### 8.1. What is the Discovery Engine?
+
+## 9. Cortex Cloud AI Security
+
+### 9.1. What is Cortex Cloud AI Security?
+
+### 9.2. Supported services in Cortex Cloud AI Security
+
+### 9.3. Cortex Cloud AI Security concepts
+
+### 9.4. Cortex Cloud AI Security use cases
+
+### 9.5. How to perform advanced AI Security investigations using XQL
+
+#### Note
+
+* For more information, see Build XQL queries.
+
+10. Cortex Cloud Application Security
+
+  10.1. Onboard Data Sources
+
+  10.1.1. Onboard version control systems
+
+#### Note
+
+* Cortex Cloud Application Security (which includes IaC and Secrets scanning), is an add-on to a license (such as Posture Security) that must be purchased separately.
+
+* Disclaimer: When onboarding with third-party data sources, we outline the required steps for setup, but we do not monitor these external resources, and they may change over time. Always refer to the relevant third-party documentation for the most current integration steps.
+
+#### Tip
+
+* Navigate to Settings → Data Sources & Integrations → + Add New →  and enter your VCS data source in the search bar.
+
+  10.1.1.1. AWS CodeCommit
+
+#### Prerequisite
+
+* Before you begin, ensure the following: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) AWS user permissions: To onboard CodeCommit, the user logged into the AWS Console must have permissions to deploy the CloudFormation stack and authorize the...
+
+#### Tip
+
+* The instance ID is identical to the stack ID on the AWS platform.
+
+#### Navigation
+
+  Modules → Application Security → Periodic scans
+
+  10.1.1.2. Azure DevOps
+
+#### Prerequisite
+
+* Before you begin: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) Azure DevOps permissions: Ensure the user performing the integration holds one of the following roles in Azure DevOps:    Project Administrator: This permission is required to subscribe...
+
+#### Note
+
+* This forces Azure to bypass browser cookies and issue a token for the correct directory.
+
+* PATs are static. To onboard a different tenant, you must log in to that specific environment to generate a new token.
+
+#### Important
+
+* When redirected to the Microsoft login screen, do not immediately enter your email.
+
+#### Navigation
+
+  Settings → Data Sources & Integrations → + Add New
+
+  User Settings → Personal access tokens → + New Token
+
+  10.1.1.2.1. Azure DevOps onboarding system architecture
+
+#### Note
+
+* Microsoft has announced the deprecation of legacy OAuth methods by 2026, making Entra ID the required standard for long-term support.
+
+  10.1.1.3. Bitbucket Cloud
+
+#### Prerequisite
+
+* Before you begin: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) In Bitbucket, grant the user performing the Cortex application authorization the following permissions. The level of access required depends on the modules you intend to use:    For code...
+
+#### Note
+
+* Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation.
+
+* To create an additional Bitbucket Cloud instance: Hover over the Bitbucket Cloud card in the catalog and click Connect Another.
+
+  10.1.1.4. Bitbucket Data Center
+
+#### Prerequisite
+
+* Before you begin: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) In Bitbucket, grant the user performing the Cortex application authorization the following permissions:    Administrator permissions for projects   Administrator permissions for...
+
+#### Note
+
+* By default, the permissions of the access token are set according to your current access level. It is essential to define two levels of permissions, Project and Repository permissions. The Repository permissions inherit from Project permissions, requiring Repository permissions to match or exceed Project permissions Providing read and write permissions...
+
+* For additional security, it is recommended to set an expiry automatically. The expiry date of a token cannot be changed after it is created. You can see the expiry dates for all your tokens on Profile picture → Manage account → Personal access tokens.
+
+* For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM.
+
+* Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation.
+
+* To create an additional Bitbucket Data Center instance: Hover over the Bitbucket Data Center card in the catalog and click Connect Another.
+
+#### Important
+
+* Always refer to the Bitbucket documentation for information relating to creating a PAT.
+
+  10.1.1.5. GitHub Cloud
+
+#### Prerequisite
+
+* Before you begin: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) In GitHub, grant the user performing the Cortex application authorization the following permissions:    Organization Owner: Only an Organization Owner can directly authorize and install...
+
+#### Note
+
+* To create an additional GitHub SaaS instance: Hover over the GitHub SaaS card in the catalog and click Connect Another.
+
+#### Navigation
+
+  Settings → Data Sources & Integrations → + Add New
+
+  Verify integration: On Data Sources, select Code Providers → GitHub SaaS → View more and confirm that the status of your integrated GitHub instance is 'Connected
+
+  10.1.1.6. GitHub Enterprise (On-Prem)
+
+#### Prerequisite
+
+* Before you begin: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) In GitHub, you must have Organization Owner permissions to install the Cortex application. Users with only repository-level admin permissions cannot complete the installation unless the...
+
+#### Note
+
+* The domain is the hostname associated with your GitHub Enterprise (On-Prem) instance.
+
+* For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM.
+
+* Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation.
+
+* To create an additional GitHub Enterprise (On-Prem) instance: Hover over the GitHub Enterprise (On-Prem) card in the catalog and click Connect Another.
+
+  10.1.1.7. GitLab SaaS
+
+#### Prerequisite
+
+* Before you begin: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) In Gitlab, the following permissions are required to integrate the application:    Maintainer (Project-level). Grants sufficient permissions to configure external integrations, manage...
+
+#### Note
+
+* A repository can only be integrated with a single instance. The first instance that connects with the repository will be the one that the repository is assigned to. This means that if multiple integrations attempt to connect to the same repository, only the first integration to establish the connection will be associated with that repository.
+
+* To create an additional GitLab SaaS instance: Hover over the GitLab SaaS card and click in the catalog and Connect Another.
+
+  10.1.1.8. GitLab Self Managed (On-Prem)
+
+#### Prerequisite
+
+* Authorize the user integrating Cortex Cloud Application Security with your GitLab Self Managed (On-Prem) instances with the following permissions:    Maintainer permissions. Grants sufficient permissions to configure external integrations, manage repository access, and adjust CI/CD settings   api: Grants full read and write access to the API, including...
+
+#### Note
+
+* The domain is the hostname associated with your GitLab Self Managed (On-Prem) instance.
+
+* For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM.
+
+* Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation.
+
+* To create an additional GitLab Self Managed (On-Prem) instance: Hover over the GitLab Self Managed (On-Prem) card in the catalog and click Connect Another.
+
+  10.1.2. Onboard CI/CD systems
+
+  10.1.2.1. Onboard CircleCI for CI/CD pipeline scans
+
+#### Prerequisite
+
+* Before you begin: Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) CircleCI user requirements:    Permissions: To enable Cortex Cloud visibility for all CircleCI projects, a version control system (VCS) user with integration permissions must be...
+
+#### Note
+
+* This integration utilizes a Personal Access Token (PAT) for authentication CircleCI onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your CircleCi environment, you must create two separate integrations, selecting the appropriate...
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* To add an additional CircleCI instance, navigate to Settings → Data Sources & Integrations → , select the connected CircleCI integration, click  → Add Instance, and repeat the onboarding steps above.
+
+  10.1.2.2. Onboard Jenkins for CI/CD pipeline scans
+
+#### Prerequisite
+
+* Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) In Jenkins:    To install and configure the Cortex plugin in Jenkins, you must be a Jenkins Administrator with Overall/Administer permissions   Ensure the build server allows outbound HTTPS (Port 443...
+
+#### Note
+
+* Jenkins onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your Jenkins servers, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard Jenkins for code scans, refer to Onboard...
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* The integration is added on the console but integration is pending, and will only be completed after completing step 5 below. You can view the pending integration on the Jenkins Instances page: Select Data Sources →  Jenkins → View Details. The type of integration is Pipeline Risks
+
+* Always refer to the official Jenkins documentation when installing plugins on Jenkins servers.
+
+* To add an additional Jenkins instance, navigate to Settings → Data Sources → select the menu for your connected Jenkins instance → + New Instance, and repeat the onboarding steps above.
+
+  10.1.3. Integrate CI tools
+
+#### Navigation
+
+  Settings → Data Sources & Integrations → hover over a CI tool → View Details
+
+  Delete an instance: Right-click on an instance of the CI tool → Delete instance → Delete
+
+  10.1.3.1. AWS CodeBuild
+
+#### Prerequisite
+
+* Before you begin:
+
+#### Note
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality.
+
+* The code is only a reference. Replace the placeholder values with your build-specific values.
+
+* To add an additional AWS CodeBuild instance, navigate to the Settings → Data Sources & Integrations →  page, select the connected AWS CodeBuild integration, click → Add Instance, and repeat the onboarding steps above.
+
+  10.1.3.2. Onboard CircleCI for code scans
+
+#### Prerequisite
+
+* Before you begin:
+
+#### Note
+
+* CircleCI onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your CircleCi environment, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard CircleCI for CI/CD scans, refer to...
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality.
+
+* To add an additional CircleCI instance, navigate to Settings → Data Sources & Integrations → select the menu for your connected CircleCI instance → + New Instance, and repeat the onboarding steps above.
+
+#### Important
+
+* The cortex-secrets naming convention for the context is mandatory to ensure functionality and must not be changed.
+
+  10.1.3.3. Connect Cortex CLI
+
+#### Prerequisite
+
+* System requirements (OS-specific): The following operating system dependencies are required to run the Cortex Cloud CLI binary on specific architectures.    macOS (Intel Core i7, such as Sequoia):    To ensure all functionalities work correctly, you must install the vectorscan dependency via Homebrew. Use this command: brew install vectorscan      RHEL...
+
+#### Note
+
+* Select Add Another Instance if a CLI instance is already onboarded.
+
+* In the command above, {version} refers to the CLI version you wish to install (such as latest or a specific number), and {platform} refers to your operating system (such as, linux, darwin, windows).
+
+#### Warning
+
+* Using With upload results permissions may incur additional costs as per your license agreement.
+
+  10.1.3.4. GitHub Actions
+
+#### Prerequisite
+
+* Before you begin:
+
+#### Note
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality.
+
+* The code is only a reference. Replace the placeholder values with your build-specific values.
+
+* To add an additional GitHub Actions instance, navigate to Settings → Data Sources & Integrations → select the menu for your connected GitHub Actions instance → + New Instance, and repeat the onboarding steps above.
+
+  10.1.3.5. Onboard Jenkins for code scans
+
+#### Prerequisite
+
+* Grant Administrator permissions to the user integrating Cortex Cloud Application Security with Jenkins Create an egress path to establish the designated route for outbound data transmission from Cortex Cloud to third party services. For more information about configuring egress paths, refer to Egress configurationsEgress configurations
+
+* For Cortex Cloud Application Security CI tools, you must store secrets in Jenkins Credentials for use in your Jenkins pipelines using either of these methods:    Plain text storage: Store secrets directly as plain text in Jenkins Credentials. Access them in your pipeline using the credentials function, which retrieves the secret directly as plain...
+
+#### Note
+
+* Jenkins onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your Jenkins servers, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard Jenkins for CI/CD scans, refer to Onboard...
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* This step is only required for new pipelines For private repositories, ensure the necessary credentials are configured in Jenkins Credentials
+
+* This ensures your build runs within a Docker environment. If a node without Docker is used, the build will fail.
+
+* To add an additional Jenkins instance, navigate to Settings → Data Sources & Integrations →  select the Jenkins integration, click  → Add Instance, and repeat the onboarding steps.
+
+  10.1.3.6. Onboard Terraform Cloud (Run Tasks)
+
+#### Prerequisite
+
+* Before you begin: Procure a Terraform cloud license that is either a trial license or a TF Cloud license at the TEAM & GOVERNANCE level Terraform permissions: Grant the user or team the following permissions, depending on integration:    Manage Workspaces permissions at the organization level. These permissions are required to attach and manage the run...
+
+#### Note
+
+* Skip this step if you plan on using an existing token.
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* Cortex Cloud Application Security performs a scan of Terraform templates on selected workspaces based on the Run Stage.
+
+* To add an additional Terraform Cloud (Run Tasks) instance, navigate to Settings → Data Sources → select the menu for your connected your Terraform Cloud (Run Tasks) instance → + New Instance, and repeat the onboarding steps.
+
+  10.1.3.7. Onboard Terraform Enterprise (Run Tasks)
+
+#### Prerequisite
+
+* Before you begin: Ensure access to a Terraform Enterprise console to enable you to provide a user or team token that authorizes Cortex Cloud Application Security to access workspaces and helps regulate run configurations Terraform Enterprise version compatibility: Ensure Run Tasks for workspaces on is compatible with version 1.1.9 and above Terraform...
+
+#### Note
+
+* For container image vulnerabilities, Cortex Cloud Application Security performs 'Image Referencer' scans within Terraform Enterprise (Run Tasks), as full SCA scans are not currently supported.
+
+* Skip this step if you plan on using an existing token.
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* Cortex Cloud Application Security performs a scan of Terraform templates on selected workspaces based on the Run Stage.
+
+* To add an additional Terraform Enterprise (Run Tasks) instance, navigate to Settings → Data Sources & Integrations →  page, select the Terraform Enterprise (Run Tasks) integration, click  → Add Instance, and repeat the onboarding steps above.
+
+  10.1.4. CLI pipeline code snippets
+
+#### Prerequisite
+
+* User permissions: Ensure the user performing the integration has permissions to edit pipeline configurations (such as YAML files).
+
+  10.1.5. Onboard private package registries
+
+  10.1.5.1. JFrog Artifactory
+
+  10.1.5.2. Onboard JFrog Artifactory
+
+#### Prerequisite
+
+* Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) JFrog permissions:    The permissions associated with the user configured during the onboarding process determine the scope of scan results. Only repositories and artifacts the user can access are...
+
+#### Note
+
+* To authorize the scanner to connect through your firewall, select Enable access by IPs, and copy the displayed source IPs to your organization's allowlist.
+
+* For Maven:    Select Mirror Registry if this repository mirrors an external repository   Use the Mirror Of value to define the duplication scope:    * mirrors all requests   Type a request [value]: Mirrors only specific requests (such as central). For Maven: Select Mirror Registry if this repository mirrors an external repository Use the Mirror Of...
+
+  10.1.6. Supported third-party data sources
+
+#### Note
+
+* Only onboarded and scanned repositories can be mapped.
+
+  10.1.6.1. Ingest Semgrep data
+
+#### Prerequisite
+
+* Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator) Ensure that you have a connected version control system (VCS) and repositories Create a Semgrep API token  Note    To create a Semgrep API token, in Semgrep, navigate to Settings → Tokens → API...
+
+#### Note
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* Mapping establishes relationships between Semgrep projects and Cortex Cloud code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant Only mapped projects are ingested
+
+  10.1.6.2. Ingest Snyk data
+
+#### Prerequisite
+
+* Permissions: The following user permissions are required:     Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)    Ensure that you have a connected version control system (VCS) and repositories   Snyk API token:    Recommended. Generate an API token from...
+
+#### Note
+
+* Select Add Another Instance if the data source instance has already been configured.
+
+* Mapping establishes relationships between Snyk applications and Cortex Cloud code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant Only mapped applications are ingested
+
+#### Navigation
+
+  Modules → Application Security → Vulnerabilities (under Issues
+
+  10.1.6.3. Ingest SonarQube SAST data
+
+#### Prerequisite
+
+* Permissions: Ensure you have System Admin, AppSec Admin or GRBAC permissions. For more information on AppSec Admin permissions, refer to Code Security user roles and permissions Ensure that you have a connected version control system (VCS) and repositories Generate and copy a SonarQube API token. Ensure to assign Web API scope to the API token. Refer...
+
+#### Note
+
+* Mapping establishes relationships between SonarQube Applications and Cortex Cloud Application Security code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant Only mapped projects will be ingested
+
+* Verify that the Connector Created Successfully message is displayed on the page.
+
+  10.1.6.4. Ingest Veracode SAST data
+
+#### Prerequisite
+
+* Permissions: The following user permissions are required:    Cortex Cloud: Instance Admin, AppSec Admin or GRBAC permissions. For more information on AppSec Admin permissions, refer to Code Security user roles and permissions   Veracode: At minimum, Reviewer permissions are required Permissions: The following user permissions are required: Cortex...
+
+#### Note
+
+* Only mapped applications will be ingested.
+
+* This is the recommended option to ensure complete coverage and successful operation of all features.
+
+* Mapping establishes relationships between Veracode projects and Cortex Cloud Application Security code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant Only mapped projects will be ingested
+
+* Verify that the Connector Created Successfully message is displayed on the page.
+
+  10.1.6.5. Generic 3rd Party AppSec Collector
+
+#### Important
+
+* File uploads are limited to a maximum size of 10 MB.
+
+  10.1.6.5.1. Onboard the 3rd Party AppSec Collector
+
+#### Prerequisite
+
+* Permissions: The following Cortex Cloud user roles or RBAC permissions are required:    User roles: CortexCortex Cloud Cloud Instance Admin, AppSec Admin   RBAC: View/Edit permissions for Data Sources configurations are required when not using a dedicated user role    For more information about user permissions and groups, refer to Assign user roles...
+
+#### Note
+
+* We recommend using the tool.driver.name from the SARIF file.
+
+* This is the newly created generic collector API URL endpoint.
+
+* Only the validity of the format is tested. No findings will be generated from the test file.
+
+#### Warning
+
+* The API key ID and API secret cannot be retrieved once the wizard is closed.
+
+  10.1.7. Manage data source integrations
+
+#### Tip
+
+* To quickly find your data source integration, use the search bar.
+
+  10.1.8. Transporter over Broker VM
+
+#### Prerequisite
+
+* Ensure you have the necessary permissions and have already set up your Broker VM Confirm that your Broker is v 28 or above Whitelist IP addresses to enable access to Cortex Cloud resources. The IP addresses for the Transporter are in the Broker VM Resources section of the Enable access to required PANW resources document Open port 4052 (inbound), which...
+
+#### Note
+
+* The broker enables multiple connections, allowing a single Transporter applet to connect to various VCS instances Multiple Transporter applets cannot be created on a single Broker VM. Each Broker VM is limited to a single Transporter applet instance
+
+#### Warning
+
+* The Transporter applet is not supported for FedRAMP customers.
+
+  10.1.8.1. Set up a Transporter applet on Broker VM
+
+#### Prerequisite
+
+* Permissions: To configure and manage Transporter applet settings, you must have permissions to manage Broker Service configurations (such as an Instance Administrator)
+
+#### Note
+
+* You cannot add a Transporter applet through Clusters.
+
+#### Navigation
+
+  your AppSec Transporter under the App column → Configure → Add Connection (on the redirected AppSec Transporter setup page
+
+  the Appsec Transporter under the App column → Deactivate → Confirm when prompted All existing connections are deleted but their configurations are saved in the database
+
+  the Appsec Transporter under the App column → Deactivate → Confirm when prompted
+
+  10.1.8.2. Set up a Transporter on your VCS
+
+#### Prerequisite
+
+* Ensure you have user permissions to onboard data sources.  Note The dedicated AppSec Admin role includes the required permissions. Ensure you have user permissions to onboard data sources. Before you begin you must setup a Transporter applet on your Broker VM. Refer to Set up a Transporter applet on Broker VM for more information
+
+#### Note
+
+* GitLab Enterprise webhook internal IP restriction: GitLab Enterprise's security policies prevent webhook subscriptions to internal IP addresses (such as broker addresses). These subscriptions can only be enabled through specific instance configuration. For more information, refer to https://docs.gitlab.com/security/webhooks/.
+
+#### Navigation
+
+  Settings → Data Sources & Integrations → + Add New → , and search for your VCS on-premises data source
+
+  10.2. Cortex Cloud Application Security dashboard
+
+#### Navigation
+
+  Modules → Application Security → AppSec Dashboard
+
+  10.3. Application Security Posture Management (ASPM)
+
+  10.3.1. ASPM use cases
+
+  10.3.2. ASPM key features
+
+  10.3.3. ASPM user roles and permissions
+
+#### Navigation
+
+  You can view AppSec Admin permissions in the tenant by navigating to Settings → Configurations → Roles → AppSec Admin
+
+  10.3.4. Code to Cloud
+
+#### Navigation
+
+  Full Code to Cloud (C2C) coverage is achieved when Cortex Cloud can resolve the following chain: Repository → Pipeline → Image → (optional Registry) → Runtime resources (including VMs, VM images, and IaC-defined infrastructure
+
+  10.3.4.1. Supported integrations
+
+  10.3.4.2. Code to Cloud visibility
+
+#### Navigation
+
+  Topology graph: Located in the Business Applications side card, this tab visualizes the entire path to production (Code → Build → Deploy → Run), allowing you
+
+  10.3.4.3. Code to Cloud troubleshooting
+
+#### Note
+
+* Empty state messages and troubleshooting guidance for missing lineage are only visible to users with an active license.
+
+  10.3.5. ASPM Command Center
+
+  10.3.5.1. ASPM Command Center workflow
+
+#### Note
+
+* Breakdown by type: Issues are further broken down by type (such as IAC or Secrets).
+
+  10.3.6. Coverage
+
+  10.3.6.1. Coverage in the user interface
+
+#### Navigation
+
+  Modules, → Application Security → AppSec Coverage
+
+  10.3.7. Compliance for Cortex Cloud Application Security
+
+  10.3.7.1. Infrastructure-as-Code (IaC) compliance
+
+  10.3.7.2. Manage IaC compliance
+
+#### Prerequisite
+
+* Add these properties to the IaC Rules table through the Table Settings Menu, as they are not exposed by default.
+
+#### Navigation
+
+  Modules → Application Security → AppSec Polices → Add Policy
+
+  10.3.7.3. CI/CD Compliance
+
+#### Navigation
+
+  To access Compliance, select Posture Management → Compliance → Reports or Assessment
+
+  10.3.7.3.1. Create CI/CD compliance reports
+
+#### Note
+
+* The CI/CD module supports GitHub and GitLab provider types.
+
+* For more information about about Asset Groups, refer to Asset Groups.
+
+* CIS GitLab Benchmark, CIS GitHub Benchmark, and the OWASP Top 10 CI/CD Risks standards are supported.
+
+* For more information about assessment profiles, refer to Use an assessment profile to run compliance checks on your assets.
+
+#### Navigation
+
+  Posture Management → Compliance → Reports
+
+  10.3.8. Urgency
+
+  10.3.8.1. Urgency metrics
+
+  10.3.9. Backlog baseline
+
+  10.3.9.1. Backlog use cases
+
+  10.3.9.2. Issue/Finding classification by scanner
+
+#### Note
+
+* In some cases/vendors, this is not accurate as findings are deleted every time new findings are uploaded. In such cases, the feature may not be accurate or supported For SAST, the vendor does not support policy in pull requests
+
+* Scanner updates and new detections: When a security scanner is updated to support new languages, detection rules, or capabilities, any issues discovered by these new features for existing code are classified as part of the backlog.
+
+  10.3.9.3. Using Backlog
+
+  10.3.10. Service Lead Agreements (SLA)
+
+  10.3.10.1. Configure and monitor Cortex Cloud Application Security SLAs
+
+#### Navigation
+
+  Settings → Configurations → Application Configuration (under Application Security
+
+  10.3.11. Applications
+
+  10.3.11.1. Defining Business Applications
+
+  10.3.11.1.1. Defining business applications by Criteria
+
+  10.3.11.1.2. Define applications by VCS criteria
+
+#### Prerequisite
+
+* Data source: Your Version Control System (e.g., GitHub, GitLab) must already be onboarded as a Data Source Permissions: You must have View/Edit permissions for Access Management SBAC: You can only create applications from VCS entities (Organizations, Projects, or Repositories) that are already included in your SBAC Asset Groups
+
+#### Note
+
+* This workflow allows you to unify assets across disparate providers (such as grouping a GitHub repository and a Bitbucket repository into one application) if they share naming conventions
+
+  10.3.11.1.3. Manage application criteria
+
+  10.3.11.1.4. Define applications by cloud tag-based criteria
+
+#### Prerequisite
+
+* Permissions: You must have View/Edit permissions for Access Management, or a role that includes these permissions.
+
+#### Note
+
+* You can only create applications based on the entities from onboarded Cloud accounts listed in the Cloud card.
+
+* Kubernetes (K8S) labels: K8S labels are supported as tags for asset grouping only when they originate from a supported cloud provider; AWS, GCP, Azure, or OCI.
+
+  10.3.11.1.5. How to manually build an application
+
+#### Prerequisite
+
+* Before you begin, ensure you have connected the necessary data sources. Refer to How to onboard data sources for more information.How to onboard data sources
+
+#### Note
+
+* These filters are represented by icons displayed on the Code pane after selecting a VCS.
+
+* To edit application assets, click the Clear All icon before clicking Finish. This clears all application data, allowing you to restart the application building process from the beginning.
+
+  10.3.11.2. Application management and visibility
+
+#### Navigation
+
+  Inventory → All Assets → Business Applications (under Application
+
+  10.3.11.3. Business application assets
+
+  10.3.11.3.1. Business application expanded asset details
+
+#### Note
+
+* The topology graph is available only when all application components (code, pipeline, build and deploy), are configured.
+
+  10.3.11.3.2. Export business application data
+
+#### Navigation
+
+  Inventory → All Assets → Business Applications
+
+  10.3.11.4. Scope user access to applications (Application SBAC)
+
+#### Navigation
+
+  Configure user scopes in Cortex Cloud by navigating to Settings → Configurations → Access Management
+
+  10.3.11.4.1. Enable SBAC in the Cortex Cloud tenant
+
+#### Prerequisite
+
+* RBAC permissions: To configure user scopes you must have Administrator or View/Edit RBAC permissions for Access Management (under Configurations).
+
+#### Note
+
+* Exclusions (roles not governed by SBAC): Certain roles cannot have SBAC applied. For these roles, access and permissions are managed through Role-Based Access Control (RBAC). You must manually ensure that these roles have all necessary base permissions (for example Edit/View permissions to assets), because SBAC is bypassed and does not impose its usual...
+
+#### Navigation
+
+  Settings → Configurations → General → Server Settings → Enable Scope Based Access Control
+
+  10.3.11.4.2. Create an application-based Asset Group
+
+#### Note
+
+* You cannot create SBAC based on static groups.
+
+  10.3.11.4.3. Scope user access to an application
+
+#### Note
+
+* For more information about User Groups, refer to User group management.
+
+#### Navigation
+
+  Settings → Configurations → User Groups (under Access Management
+
+  Right-click on a group in the table → Edit Group → select the Scope tab
+
+  Assets → Select asset groups → select an Asset Group associated with applications
+
+  Settings → Configurations → Users (under Access Management
+
+  the chevron icon (>) in the Assets field → Select Asset groups → select the user group scoped to the application (see above
+
+  10.3.11.4.4. Create application-scoped policies
+
+#### Note
+
+* Application-scoped policies apply to both code and CI/CD configuration policies.
+
+#### Navigation
+
+  Modules → Application Security → AppSec Polices (under Policy Management) → Add Policy
+
+  Add Filter → Business Application Names → enter the required application name
+
+  10.3.12. Repositories as assets
+
+  10.3.12.1. Explore repository assets
+
+  10.3.12.2. In-depth repository asset information
+
+  10.3.12.3. Manage Repository assets
+
+  10.3.12.4. Export Software Bill of Materials (SBOM)
+
+  10.3.12.5. Manage issues detected in repositories
+
+#### Note
+
+* You can also find the repository issues in the general issue inventory table, and in the dedicated inventory of issues for each scanner type (see step 4 above for details).
+
+  10.3.13. Manage 3rd party findings and generated issues
+
+  10.3.14. Manage code weaknesses
+
+#### Note
+
+* You can customize policies to define which findings are categorized as issues.
+
+#### Tip
+
+* In code Asset inventories, navigate to Inventory → All Assets → Code:    On the Code Weaknesses tab under the Repositories asset inventory. Refer to In-depth repository asset information for more information   Under the All Code asset inventory: Select an asset from the table → Code Weaknesses In code Asset inventories, navigate to Inventory →...
+
+#### Navigation
+
+  To access SAST code violation issues, under Modules, select Application Security → Issues → Code Weaknesses
+
+  10.3.14.1. Code weaknesses issue inventory
+
+  10.3.14.2. Detailed code weakness issue information
+
+#### Note
+
+* Different issue types include different properties; therefore, not all properties are available for every issue.
+
+  10.3.14.3. Code weakness findings
+
+#### Note
+
+* Findings on the Cortex platform are not intended for direct action; but rather represent data collected by the platform. They must be promoted to issues to enable mitigation efforts to secure your codebase.
+
+  10.4. CI/CD Security
+
+  10.4.1. CI/CD Security user roles and permissions
+
+  10.4.2. CI/CD Assets
+
+  10.4.2.1. CI/CD Instances as assets
+
+  10.4.2.1.1. Explore CI/CD Instance assets
+
+#### Navigation
+
+  To access CI/CD pipeline instances, under Inventory, select All Assets → Code → Category → CI/CD Instances
+
+  10.4.2.1.2. In-depth CI/CD pipeline instance asset information
+
+  10.4.2.1.3. Manage CI/CD pipeline instances
+
+  10.4.2.2. CI/CD Pipelines as assets
+
+  10.4.2.2.1. Explore CI/CD Pipeline assets
+
+#### Navigation
+
+  To access CI/CD pipelines assets, under Inventory, select All Assets → Code → CI/CD Pipelines
+
+  10.4.2.2.2. In-depth CI/CD pipeline asset information
+
+#### Note
+
+* The Highlights section and other asset properties only display attributes when their corresponding indicators are present. For example, if an asset is not deployed, its deployment-related attributes will not show up; similarly, if there are no detected issues, those highlights or properties will not appear.
+
+  10.4.2.2.3. Manage CI/CD pipeline assets
+
+  10.4.2.3. Version Control System (VCS) Organizations as assets
+
+  10.4.2.3.1. Explore VCS Organization assets
+
+#### Navigation
+
+  To access VCS Organization assets, under Inventory, select All Assets → Code → VCS Organizations
+
+  10.4.2.3.2. In-depth VCS Organization asset information
+
+#### Note
+
+* The Highlights section and other asset properties only display attributes when their corresponding indicators are present. For example, if an asset is not deployed, its deployment-related attributes will not show up; similarly, if there are no detected issues, those highlights or properties will not appear.
+
+  10.4.2.3.3. Manage VCS organization assets
+
+  10.4.2.4. VCS Collaborators-as-assets
+
+  10.4.2.4.1. In-depth Collaborator asset information
+
+  10.4.2.4.2. Manage Collaborator assets
+
+  10.4.3. Supply Chain Inventories
+
+#### Note
+
+* Although attributes are identical across inventories, their values for the same tool can differ, most commonly in Risk Factors and Type. This is because the inventory reflects your live environment, which may include different versions or configurations than the catalog—for example, a package may not have been upgraded or may be deployed differently.
+
+#### Navigation
+
+  In the inventory table, right-click on a tool → Change Status → select a status
+
+  10.4.3.1. Supply Chain Tools
+
+  10.4.3.1.1. Supply Chain Tools
+
+#### Navigation
+
+  To access Supply Chain Tools, select Modules → Application Security → Supply Chain Tools (under 3rd Party Tools
+
+  10.4.3.1.2. Expanded Supply Chain tool information
+
+#### Note
+
+* AppSec Admin user permissions are required to perform these actions.
+
+  10.4.3.2. Supply Chain Catalog
+
+#### Navigation
+
+  To access the Supply Chain Catalog, select Modules → Application Security → Supply Chain Catalog (under 3rd party tools
+
+  10.4.4. CI/CD Risks
+
+#### Note
+
+* Cortex Cloud Application Security CI/CD pipeline scans create a comprehensive inventory of all CI/CD pipelines in your environment. For more information refer to CI/CD Pipelines as assets.
+
+  10.4.4.1. CI/CD pipeline issues
+
+#### Navigation
+
+  To access CI/CD pipeline risks issues, under Modules, select Application Security → Issues → CI/CD Risks
+
+  10.4.4.2. Expanded CI/CD risks issue information
+
+#### Note
+
+* Different issue types include different properties; therefore, not all properties are available for every issue.
+
+  10.4.4.3. VCS and CI/CD pipeline risk findings
+
+  10.4.5. CI/CD Rules
+
+#### Note
+
+* Out-of-the-box rules cannot be modified Custom CI/CD rules are not supported
+
+  10.4.5.1. CI/CD rules roles and permissions
+
+  10.4.5.2. CI/CD rules inventory
+
+  10.4.6. CI/CD Policies
+
+#### Tip
+
+* For Cortex Cloud Code policies, refer to Application Security Policies.
+
+  10.4.6.1. CI/CD policies user roles and permissions
+
+  10.4.6.2. CI/CD policies inventory
+
+#### Note
+
+* To view all out-of-the-box (OOTB) policies, filter by Policy Owner = System.
+
+  10.4.6.3. Create custom CI/CD policies
+
+#### Note
+
+* PR Scan and CI Scan triggers are automatically disabled and unchecked. They can only be enabled if other scan types (that is non-CI/CD risk scans such as Secrets) are also selected, and will only run on non-CI/CD risks types of scans
+
+* You can combine multiple conditions to create complex rules for when the policy should apply. Create conditions that apply to a CI/CD policy which detects high severity CI/CD risks on GitHub: Select Add Filter → Finding Type → CI/CD Risks → AND → Provider → [VCS/CI/CD system] → AND → Severity: → High.
+
+* SBAC scope limitations do not apply to Matching Criteria For CI/CD policies, you can filter Matching Criteria by VCS Organization Name, CI/CD Pipeline [Name/ID], CI/CD Instance [Name/ID] or Collaborator [Name/Email/MFA Enabled/Last Observed]
+
+  10.4.6.4. Manage CI/CD policies
+
+#### Note
+
+* You cannot edit out-of-the-box (OOTB) policies.
+
+* The duplicated policy will include the word "clone" in its name and must be renamed.
+
+  10.5. Code Security
+
+  10.5.1. Code Security user roles and permissions
+
+  10.5.2. Code Security assets
+
+  10.5.3. Software packages as assets
+
+  10.5.3.1. Explore software package assets
+
+  10.5.3.2. In-depth software package asset information
+
+  10.5.4. Infrastructure-as-Code (IaC) resources as assets
+
+  10.5.4.1. Explore IaC assets
+
+#### Navigation
+
+  To access IaC assets, under Inventory, select All Assets → Code → IaC Resources
+
+  10.5.4.2. In-depth IaC resource asset information
+
+  10.5.5. Code Security scanners
+
+  10.5.6. Secrets scanners
+
+  10.5.6.1. Secrets issues
+
+#### Navigation
+
+  Under Modules, select Application Security → Issues → Secrets
+
+  Inventory → All Assets → Code: On the Secrets tab under Repositories
+
+  Inventory → All Assets → Code
+
+  Inventory → All Assets → Application → select an option from the Application menu → select an item from the inventory → Secrets
+
+  10.5.6.2. Secrets issues inventory
+
+  10.5.6.3. Detailed Secrets issue information
+
+#### Note
+
+* Different issue types include different properties; therefore, not all properties are available for every issue.
+
+  10.5.6.4. Secrets findings
+
+#### Note
+
+* Findings are informational and, as such, are not directly mitigable. Remediation is performed on issues derived from findings.
+
+#### Navigation
+
+  The Cortex Cloud Application Security Secrets Findings table is a pre-filtered view of the comprehensive Findings inventory (located at Cases & Issues → Issues → Findings Table tab
+
+  To access Secrets findings, select Application Security → Issues → Secrets → click the Findings tab
+
+  10.5.6.5. Manage Secrets issues
+
+  10.5.7. Infrastructure as Code (IaC) misconfiguration scanner
+
+  10.5.7.1. Supported frameworks and languages
+
+  10.5.7.2. IaC misconfiguration issues
+
+#### Tip
+
+* You can also view IaC misconfiguration issues in dedicated tabs under other sections when available: In code Asset inventories, navigate to Inventory → All Assets → Code:    On the Configuration tab under Repository assets. Refer to In-depth repository asset information for more information   Under the All Code asset inventory: Select an asset from...
+
+#### Navigation
+
+  To access IaC misconfiguration issues, under Modules, select Application Security → Issues → IaC misconfiguration
+
+  10.5.7.3. IaC misconfiguration issues inventory
+
+  10.5.7.4. Detailed IaC misconfiguration issue information
+
+#### Note
+
+* Different issue types include different properties; therefore, not all properties are available for every issue.
+
+  10.5.7.5. IaC misconfiguration findings
+
+#### Note
+
+* Findings are informational and, as such, are not directly mitigable. Remediation is performed on issues derived from findings.
+
+#### Navigation
+
+  To access IaC misconfiguration findings, under Modules, select Application Security → Issues → IaC Misconfigurations → click the Findings tab
+
+  10.5.7.6. Manage IaC misconfiguration issues
+
+  10.5.8. IaC Drift Detection scans
+
+  10.5.8.1. IaC Drift Detection issues
+
+#### Navigation
+
+  Modules → Application Security → IaC Drifts
+
+  10.5.8.2. IaC Drift Detection issue inventory
+
+  10.5.8.3. Detailed IaC drift detection issue information
+
+  10.5.8.4. IaC Drift Detection findings
+
+#### Navigation
+
+  Modules → Application Security → IaC Drifts (under Issues) → click the Findings tab
+
+  10.5.9. Software Composition Analysis (SCA ) scanners
+
+  10.5.9.1. Supported Software Composition Analysis (SCA) frameworks and languages
+
+  10.5.9.2. Software Composition Analysis (SCA) vulnerability issues
+
+#### Tip
+
+* In Asset inventories, navigate to Inventory → All Assets → Code:    On the Vulnerabilities tab under Repositories. Refer to In-depth repository asset information for more information Under the All Code inventory: Select an asset from the table → Vulnerabilities In Asset inventories, navigate to Inventory → All Assets → Code: On the...
+
+#### Navigation
+
+  To access CVE vulnerability issues, under Modules, select Application Security → Issues → Vulnerabilities
+
+  10.5.9.2.1. Vulnerability issues inventory
+
+  10.5.9.2.2. Detailed vulnerability issue information
+
+#### Note
+
+* Different issue types include different properties; therefore, not all properties are available for every issue.
+
+  10.5.9.2.3. CVE vulnerabilities findings
+
+#### Note
+
+* Findings are informational and, as such, are not directly mitigable. Remediation is performed on issues derived from findings.
+
+#### Navigation
+
+  The Cortex Cloud Application Security Vulnerabilities Findings table is a pre-filtered view of the comprehensive Findings inventory (located at Cases & Issues → Issues → Findings Table tab
+
+  To access CVE findings, under Modules, select Application Security → Issues → Vulnerabilities → click the Findings tab
+
+  10.5.9.2.4. Manage SCA CVE vulnerability issues
+
+  10.5.9.3. License miscompliance issues
+
+#### Tip
+
+* You can also view license miscompliance issues in dedicated tabs under other sections when available: In Application asset inventories: navigate to Inventory → All Assets →  Application → select an option from the Application menu → select an item from the inventory → Package Integrity In Asset inventories, navigate to Inventory → All...
+
+#### Navigation
+
+  To access license miscompliance issues, under Modules, select Application Security → Issues → Licenses
+
+  10.5.9.3.1. License miscompliance issues inventory
+
+  10.5.9.3.2. Expanded License miscompliance issues information
+
+  10.5.9.3.3. License miscompliance findings
+
+#### Navigation
+
+  To access license miscompliance findings, under Modules, select Application Security → Issues → Licenses → click the Findings tab
+
+  10.5.9.3.4. Open-source software license categories
+
+  10.5.9.3.5. Manage license miscompliance issues
+
+  10.5.9.4. Package Integrity
+
+  10.5.9.4.1. Package Integrity inventory
+
+#### Note
+
+* You can modify the severity level from the severity field menu.
+
+  10.5.9.4.2. Expanded Package Integrity issues inventory information
+
+#### Note
+
+* Different issue types include different properties; therefore, not all properties are available for every issue.
+
+  10.5.9.4.3. Package Integrity findings
+
+#### Note
+
+* Findings cannot be mitigated. They must be promoted to issues to enable remediation efforts to secure your software packages.
+
+  10.5.9.4.4. Manage Package Integrity issues
+
+  10.5.10. Application Security scans management
+
+  10.5.10.1. Overview
+
+#### Note
+
+* While scans provide a comprehensive inventory of all issues detected during a scan, dedicated inventories are also maintained for specific scan types for more granular management. For more information, refer to Infrastructure as Code (IaC) misconfiguration scanner, Secrets scanners and Software Composition Analysis (SCA ) scanners.
+
+  10.5.10.2. Branch periodic scans
+
+#### Note
+
+* The inventory table displays scan issues for visibility only; remediation is not available here. To resolve issues, navigate to the dedicated issue type inventory, where you can manage and remediate them.
+
+  10.5.10.3. Pull Request scans
+
+#### Note
+
+* The inventory table displays scan issues for visibility only; remediation is not available here. To resolve issues, navigate to the dedicated issue type inventory, where you can manage and remediate them.
+
+  10.5.10.4. CI scans
+
+#### Note
+
+* The inventory table displays scan issues for visibility only; remediation is not available in scan management. To resolve issues, navigate to the dedicated issue type inventory, where you can manage and remediate them.
+
+  10.5.10.5. Manage repository scan configurations
+
+  10.5.10.6. Monitor data source instances health
+
+  10.5.11. Application Security Policies
+
+  10.5.11.1. User roles and permissions
+
+  10.5.11.2. Policies inventory
+
+#### Note
+
+* To view all out-of-the-box (OOTB) policies, filter by Policy Owner = System.
+
+  10.5.11.3. AI-recommended guardrails
+
+  10.5.11.3.1. Manage AI-recommended guardrails
+
+#### Note
+
+* Recommended guardrails are generated based exclusively on findings from the Cortex Cloud Application Security Software Composition Analysis (SCA) scanner. They do not support SCA data ingested from third-party scanners, nor do they currently support other finding categories, such as Secrets or Infrastructure as Code (IaC).
+
+* The total amount of available recommended guardrails is displayed on the AI Recommendations button.
+
+* The AI-Recommended tag is only assigned to recommendations applied as-is, that is, without modifications. Edited recommendations generate policies without this label.
+
+  10.5.11.4. Create Cortex Cloud Application Security policies
+
+#### Note
+
+* When an issue is created, only the first policy ID that triggered the issue is associated with it.
+
+  10.5.11.4.1. Create code security policies
+
+#### Note
+
+* For a detailed list of all available attributes and their values by scanner type, refer to Cortex Cloud Application Security code policy Condition attributes .
+
+* SBAC scope-based limitations do not apply to Asset Types
+
+* When selecting Asset Groups, the code policy is evaluated only on the application and repository assets included in the group.
+
+* For each application that matches the criteria, the policy is evaluated only on the repositories associated with that application.
+
+* If you select only Code Weaknesses as the Finding Type in the condition step (indicating a third-party scanner), the PR and CI triggers are disabled, leaving only Periodic Scan enabled.
+
+  10.5.11.4.1.1. Cortex Cloud Application Security code policy Condition attributes
+
+  10.5.11.4.2. Create IaC Drift Detection policies
+
+#### Navigation
+
+  Modules → Application Security → AppSec Policies → Add Policies
+
+  10.5.11.4.3. Manage Cortex Cloud Application Security policies
+
+#### Note
+
+* You cannot edit out-of-the-box (OOTB) policies.
+
+* The duplicated policy will include the word "clone" in its name and must be renamed.
+
+  10.5.12. Application Security Rules
+
+#### Note
+
+* Out-of-the-box rules cannot be modified directly. However, you can create a custom rule by cloning the existing one. This allows you to make changes to the original rule according to your requirements. Refer to Manage Cortex Cloud Application Security custom rules for more information.
+
+  10.5.12.1. Roles and permissions
+
+  10.5.12.2. Rules inventory
+
+#### Navigation
+
+  To filter rules relating to Secrets, select filter icon → Scanner (from the Select field) → Secrets (from the Value field
+
+  10.5.12.3. Create custom Cortex Cloud Application Security rules
+
+#### Note
+
+* See Configure YAML file properties below for more details.
+
+* Scanning/testing behavior is not supported.
+
+  10.5.12.4. Manage Cortex Cloud Application Security custom rules
+
+  10.5.12.5. Configure YAML file properties
+
+  10.5.13. Application Security CLI
+
+#### Prerequisite
+
+* These requirements apply specifically to the Application Security CLI. For the Cortex CLI binary:    Ensure you have Node.js v22 installed on your host machine before running any scans with the Cortex CLI. This is crucial to prevent runtime errors, as the CLI depends on Node.js for executing JavaScript analysis  Note    To check your version of...
+
+#### Note
+
+* For detailed information about the Cortex Cloud CLI, refer to Cortex CLI.
+
+  10.5.13.1. Connect Cortex CLI
+
+#### Prerequisite
+
+* System requirements:    macOS (Intel Core i7, such as Sequoia): To ensure all functionalities work correctly, you must install the vectorscan dependency via Homebrew, using this command: brew install vectorscan   RHEL 8.10 and Red Hat UBI9. The following prerequisites must be met:    Install patchelf   Install zstd      Ubuntu 20 requires the prefetch...
+
+#### Note
+
+* Using an existing API Key (or verifying existing API Key permissions): If you are using an existing API key, verify it has CLI permissions. CLI View/Edit permissions correspond to selecting With upload results permissions, while CLI Read Only or View permissions corresponds to not selecting the With upload results permissions.
+
+* On macOS arm 64 architecture you must unpack the downloaded file to retrieve the executable.
+
+* To add an additional CLI instance, navigate to Settings → Data Sources & Integrations →  select the menu for your connected CLI instance → + New Instance, and repeat the onboarding steps.
+
+* For more information about CLI usage for CWP, refer to Cortex CLI for Cloud Workload Protection For more information about CLI usage for API Security, refer to Cortex CLI for API Security For more information about CLI usage for Cortex Cloud Application Security, refer to Cortex CLI usage for Cortex Cloud Application Security
+
+#### Tip
+
+* You can also locate your CI tool by typing its name (such as Jenkins) into the search bar on the Add Data Source or Integrations page after selecting + Add New.
+
+* You can enter CLI in the search bar to locate the Cortex CLI tool.
+
+  10.5.13.2. Cortex CLI usage for Cortex Cloud Application Security
+
+  10.5.13.3. CLI pipeline code snippets
+
+#### Prerequisite
+
+* User permissions: Ensure the user performing the integration has permissions to edit pipeline configurations (such as YAML files).
+
+  10.5.13.4. Cortex CLI Cortex Cloud Application Security command line reference
+
+#### Note
+
+* The repo-id flag must not end with .config, .log or .ini. -config is acceptable. --repo-id foo.config will be blocked --repo-id foo-config will pass
+
+#### Important
+
+* The Cortex CLI Cortex Cloud Application Security only supports single occurrences of each flag. If the same flag is passed multiple times, only the last provided value will be used. For example, in the following command, only TF CloudFormation will be the scanned framework. ./cortexcli --api-base-url <YOUR_API_URL> --api-key <YOUR_API_KEY> --auth-id...
+
+  10.5.13.5. Cortex CLI common command line reference guide
+
+#### Note
+
+* For soft fails, a failed check matches the defined severity threshold. If multiple soft fail severities are specified, the highest severity acts as the threshold for determining a soft fail. However, a successful scan will always return an exit code of 0, even if block-level findings (which might trigger soft fails based on severity) are present.
+
+  10.5.13.6. Git Hooks
+
+  10.5.13.6.1. Cortex CLI pre-commit hooks
+
+#### Prerequisite
+
+* These common prerequisites are required for all types of installation (both local and global) of the Cortex CLI pre-commit hook. Ensure you have a license for Cortex Cloud Application Security Install the Cortex Cloud CLI binary locally. Refer to Connect Cortex CLI for information about onboarding the CLIConnect Cortex CLI Obtain Cortex Cloud API...
+
+* For local installation: Install the pre-commit framework version 3.2.0 or greater. Refer to https://pre-commit.com/ for installation instructions.
+
+#### Note
+
+* It is recommended you configure credentials for the Cortex CLI using a configuration file.
+
+* The pre-commit framework is not required for global mode.
+
+  10.5.13.6.1.1. Pre-commit hook usage
+
+  10.5.13.6.2. Cortex CLI pre-receive hooks
+
+#### Prerequisite
+
+* Before you begin, ensure you have: Administrator access to the VCS server and console A valid license for Cortex Cloud Application Security The Cortex Cloud CLI binary or Docker image installed on the server (requires GLIBC (GNU C library) version 2.35 or greater). Refer to Connect Cortex CLI for information about onboarding the CLIConnect Cortex...
+
+#### Note
+
+* Make sure to create the directory under the home directory of the Linux user that runs the Git hooks. This user is typically not the root user.
+
+  10.5.13.6.2.1. Pre-receive hook usage
+
+  10.5.14. IDE
+
+#### Note
+
+* Not all remediation options are available for all findings or all type of scan category.
+
+  10.5.14.1. System requirements
+
+  10.5.14.2. Visual Studio (VS) Code and VS Code compatible IDEs
+
+#### Prerequisite
+
+* Before you begin (These prerequisites apply to both VS Code and VS Code compatibles): Permissions: CLI Read only permissions. Refer to Cortex CLI for more information about permissions Environment setup    macOS and Windows: Install Python 3.9.x to 3.12.x   Install Node.js version 22 and above for SCA scans (such as vulnerabilities scans) Environment...
+
+* You must insert your API key and API ID values into the Settings before providing the tenant URL.
+
+#### Note
+
+* Enforcement rules and CA certificates are not applicable to the open-source project.
+
+#### Tip
+
+* You can access Extensions using the keyboard shortcuts Ctrl+Shift+X (Windows) or Cmd+Shift+X (macOS).
+
+#### Navigation
+
+  Install through VS Code IDE Access the Activity bar → Extensions → Cortex Cloud → Install
+
+  Access the Activity bar → Extensions → Cortex Cloud → Install
+
+  10.5.14.2.1. How to use the Cortex Cloud extension in VS Code
+
+#### Note
+
+* Not all remediation options are available for all issues.
+
+* The suppression is scoped to the file.
+
+  10.5.14.3. JetBrains
+
+#### Prerequisite
+
+* Permissions: CLI Read only permissions. Refer to Cortex CLI for more information about permissions Environment setup    macOS and Windows: Install Python 3.9.x to 3.12.x   Install Node.js version 22 and above for SCA scans (such as vulnerabilities scans) Environment setup macOS and Windows: Install Python 3.9.x to 3.12.x Install Node.js version 22 and...
+
+* You must insert your API key and API ID values into the Settings before providing the tenant URL.
+
+#### Note
+
+* The Cortex AppSec code security plugin supports all JetBrains products.
+
+#### Navigation
+
+  Settings → Plugins → select the Marketplace tab → search for Prisma Cloud → Install → OK
+
+  Settings → Tools → Cortex Cloud
+
+  10.5.14.3.1. How to use the JetBrains Cortex Cloud extension
+
+#### Note
+
+* After selecting Fix Available, the number of issues displayed in the issue categories (such as IaC) reflect the number of fixable issues for that type.
+
+* The corresponding file simultaneously opens in the Code editor, highlighting the issue within its exact code context. See below for more information.
+
+* Not all types of remediation are available for all issue categories. For example, fixes are not available for License issues.
+
+* Secrets and Licenses category issues are typically mitigated by following the guidance in the Documentation.
+
+  10.5.15. Developer Suppressions
+
+#### Note
+
+* The check IDs and rule names are placeholders for illustration purposes and do not correspond to actual checks.
+
+  10.6. API documentation
+
+11. Cortex Cloud Data Classification
+
+  11.1. What is Cortex Cloud Data Classification?
+
+#### Navigation
+
+  To access Data Classification management, click Settings → Configurations → Data Classification
+
+  11.2. How to create and validate a custom data pattern
+
+#### Note
+
+* Once a custom data pattern is saved, it runs on all data in the same way as any out-of-the-box (OOTB) pattern, becoming globally applicable for all modules using Cortex Cloud Data Classification.
+
+* For more information, see How to disable and enable data patterns in Data Classification.How to disable and enable data patterns in Data Classification
+
+  11.3. How to disable and enable data patterns in Data Classification
+
+#### Note
+
+* Disabling data patterns can cause changes in your data profile results and stop detection of these data patterns.
+
+* For more information about data patterns in data classification, see What is Cortex Cloud Data Classification?.
+
+#### Navigation
+
+  In the lower left part of the screen, click Settings → Configurations → Data Classification → Data Patterns
+
+  11.4. How to create and validate a custom data profile
+
+#### Note
+
+* If you choose two data locations, only the filters they have in common will be included in the possible filter options.
+
+* For more information, see How to disable and enable data profiles in Cortex Cloud Data Classification.
+
+#### Important
+
+* Deleting a data profile deletes all past data associated with it in all modules using Cortex Cloud Data Classification after a warning notification is displayed.
+
+* Enabling and disabling a data profile removes or re-adds the data profile results to the data objects; that is, files and tables.
+
+  11.5. How to disable and enable data profiles in Cortex Cloud Data Classification
+
+#### Note
+
+* Existing results on past scans are updated in the Asset and Object inventories within two hours after being disabled or enabled.
+
+* For more information about data profiles in Cortex Cloud Data Classification, see What is Cortex Cloud Data Classification?.What is Cortex Cloud Data Classification?
+
+#### Navigation
+
+  In the lower left part of the screen, click Settings → Configurations → Data Classification → Data Profiles
+
+  11.6. How to report a false positive in Cortex Cloud Data Classification
+
+#### Note
+
+* Alternatively, in Cortex Command Center, click Help → Submit a Support Case.
+
+12. Cortex Cloud Data Security
+
+  12.1. What is Cortex Cloud Data Security?
+
+  12.2. Supported assets in Cortex Cloud Data Security
+
+#### License Type
+
+  This feature is included with a Cortex XSIAM Premium license. It is also included with any other Cortex XSIAM license that has the Cloud Posture Security or Cloud Runtime Security add-on.
+
+#### Note
+
+* CMK (customer-managed key) in SQL Server is only supported in outpost mode.
+
+* The list above refers to only data classification; however, Cortex Cloud Data Security discovers and monitors all cloud assets and services for usage and misconfigurations.
+
+* For information about configuring data classification asset types, see How to configure the scanning settings for supported services.
+
+  12.3. Cortex Cloud Data Security concepts
+
+  12.4. Cortex Cloud Data Security use cases
+
+  12.5. Data Inventory
+
+#### Note
+
+* To clear the filter in the filter panel, click Delete.
+
+#### Navigation
+
+  When you select Inventory → All Assets → Data → All Data Assets, a list of all data assets appears
+
+  12.6. How to review errors in Cortex Cloud Data Security
+
+  12.7. How to configure the scanning settings for supported services
+
+#### Note
+
+* If you do not select a scanning cadence, the default setting is applied. For more information, contact your Customer Support team.
+
+  12.8. How to perform advanced Data Security investigations using XQL
+
+#### Note
+
+* For more information, see Build XQL queries.
+
+  12.9. How to onboard Databricks
+
+#### Note
+
+* If you turn on this feature, both the cloud and region will be used for scanning, possibly incurring cost and requiring adherence to certain compliance policies.
+
+  12.10. How to onboard Microsoft 365
+
+#### Prerequisite
+
+* You have generated a Globally Unique Identifier (GUID), also known as a Universally Unique Identifier (UUID). You will need this ID for the tenant you want to use for the Microsoft 365 instance. In order to use Microsoft 365, you must be registered with Microsoft Azure.
+
+  12.11. How to onboard on-premise file shares to Cortex Cloud Data Security
+
+#### Note
+
+* Your data is scanned on the Broker VM itself, and only the metadata and classification results are transmitted from the on-premise environment to Cortex Cloud.
+
+* For information about activating the DSPM Fileshare applet, see Activate DSPM Fileshare.
+
+  12.12. How to onboard Snowflake
+
+#### Prerequisite
+
+* In order to use Snowflake, you must be registered with one of these cloud providers: Amazon AWS, Microsoft Azure, or Google Cloud Platform (GCP). Ensure you have the necessary account permissions to onboard. It is recommended to use Account Admin as the role for the onboarding.
+
+#### Note
+
+* The account identifier can be found using the user information at the bottom left. Hover over the account you wish to onboard and select the copy option at the top right. The account identifier is usually of the format: (organization).[account]
+
+  12.13. How to use information protection labels in Cortex Cloud Data Security
+
+#### Note
+
+* Only If you have connected a Microsoft 365 instance to Cortex Cloud, the information protection labels appear. See How to onboard Microsoft 365.
+
+13. Cortex Cloud Identity Security
+
+  13.1. What is Cortex Cloud Identity Security?
+
+  13.2. Review and improve your Identity Security posture
+
+#### Tip
+
+* Reducing the number of nonhuman entities that are either dormant or have administrative privileges is the most effective way to improve your security score.
+
+  13.3. How does Effective Permission Calculation work?
+
+  13.4. Cortex Cloud Identity Security functionality
+
+#### Note
+
+* Access to the Weak/Compromised Password widget and column requires the ITDR add-on.
+
+* For more information about Effective Permission Calculation, see How does Effective Permission Calculation work?.
+
+* When a policy is analyzed and categorized as excessive, a relevant finding and highlight is attached to that policy and the various identities being granted excessive permissions.
+
+* Each action must be defined as either being administrative or not. The administrative tag is an additional tag for administrative actions, along with one of the other access level types. For example, the AWS action iam:CreateGroup is categorized as config and has the administrative tag as well.
+
+#### Important
+
+* If you turn off the audit logs, even briefly, this temporarily impacts the accuracy of the Last Access data, potentially showing permissions as unused when actually they were active. Full accuracy is restored 90 days after you re-enable the audit logs.
+
+  13.5. Achieve the principle of least privilege access
+
+#### Note
+
+* In the case of Amazon AWS, Cortex Cloud Identity Security also uses AWS Identity and Access Management (IAM) Access Advisor insights to expand the coverage of supported actions.
+
+#### Important
+
+* If you turn off the audit logs, even briefly, this temporarily impacts the accuracy of the Last Access data, potentially showing permissions as unused when actually they were active. Full accuracy is restored 90 days after you re-enable the audit logs.
+
+  13.6. Explore permissions using the simple and advanced access tables
+
+  13.7. Create a custom detection rule in Cortex Cloud Identity Security
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Security
+
+  13.8. Perform advanced Identity Security investigations using XQL
+
+#### Note
+
+* For more information, see Build XQL queries.
+
+  13.9. Enable inactive human identity logs on Azure in Cortex Cloud Identity Security
+
+#### Note
+
+* For more information, see Ingest logs from Microsoft Azure Event Hub.Ingest logs from Microsoft Azure Event Hub
+
+  13.10. Manage RBAC and SBAC in Cortex Cloud Identity Security
+
+#### Important
+
+* You can use the Cortex Cloud Identity Security RBAC roles to define access to the various sections and functionalities of Cortex Cloud Identity Security, but these roles do not directly control the specific data a user sees within those sections. Data visibility is further refined and limited by scope-based access control (SBAC) capabilities.
+
+14. Cloud ASM
+
+  14.1. What is Cloud ASM?
+
+  14.2. Cloud ASM concepts
+
+  14.2.1. Scanning
+
+  14.2.1.1. Scanning cadences
+
+  14.2.1.2. Scanning ports and protocols
+
+#### Note
+
+* The following lists are not exhaustive. For current and complete lists, contact your customer success team.
+
+  14.2.1.3. Scanning activity
+
+  14.2.2. Network mapping
+
+  14.3. Enable Cloud ASM
+
+#### Note
+
+* Discovered services will increase workload consumption. ASM data will begin to appear in your tenant and be included in your licensing workload meter within 72 hours.
+
+#### Navigation
+
+  Settings → Configurations → Attack Surface → Data Management
+
+  14.4. Attack Surface Management detections
+
+  14.4.1. Attack surface rules
+
+#### Navigation
+
+  Modules → Attack Surface → Policies → Attack Surface Rules
+
+  14.4.2. Externally inferred CVEs
+
+#### Note
+
+* An externally inferred CVE might impact your service or asset, but additional investigation is required to confirm that the CVE is actually present.
+
+  14.5. Attack surface assets
+
+#### Navigation
+
+  The internet-facing assets that were discovered in an attack surface management (ASM) scan and attributed to your organization are available in the inventory on the Inventory → Assets → All Assets → External Surface pages
+
+  14.6. Review your unmanaged cloud services
+
+#### Navigation
+
+  Inventory → Assets → All Assets → External Surface → Services
+
+  14.7. Review unmanaged cloud issues
+
+  14.8. Attack Surface Management FedRAMP support
+
+15. Network exposure detection
+
+  15.1. What is Cloud Network Analyzer?
+
+  15.2. Internet exposure detection
+
+#### Note
+
+* Currently, CNA supports only an isolated architecture with an AWS Gateway Load Balancer (GWLB) within a single VPC. Other more centralized topologies including one security VPC that forwards traffic to other workload VPCs are currently not supported.
+
+  15.3. Outbound exposure detection
+
+  15.4. East-west exposure detection
+
+  15.5. Investigate an internet exposure
+
+#### Note
+
+* The Network tab is currently only available for virtual machines.
+
+* The Network tab is only displayed when you have access to the main asset and associated ones, such as security groups, VPCs and subnets. For more information on Scope-Based Access Control (SBAC) for configuring granular scoping, see Manage user scope.Manage user scope
+
+16. Vulnerability management
+
+  16.1. Vulnerability management in Cortex Cloud
+
+#### License Type
+
+  Requires the Cortex Cloud Posture Security, Cortex Cloud Runtime Security, Exposure Management, or ASM add-on.
+
+#### Note
+
+* Cortex Cloud vulnerability management provides the ability to identify and assess runtime vulnerabilities in every asset across traditional IT and cloud environments. For vulnerabilities detected in your software development lifecycle through application security scans, refer to the Cortex Cloud Application Security documentation.
+
+  16.1.1. Cortex Cloud vulnerability concepts
+
+#### Note
+
+* CVE is an acronym for Common Vulnerabilities and Exposures, which is a list of publicly disclosed security threats. We often use the term "CVE" to refer to a vulnerability that has been a assigned a CVE ID. Cortex Cloud identifies CVEs and non-CVE vulnerabilities.
+
+  16.1.2. Vulnerability Management dashboard
+
+  16.2. Cortex Vulnerability Risk Score
+
+#### Navigation
+
+  Posture Management → Vulnerability Management → Vulnerability Issues
+
+  16.3. Vulnerability policies
+
+  16.3.1. Create a vulnerability policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Vulnerability Management
+
+  16.3.2. Update the Ignored CVEs, Asset Groups, and Assets policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Vulnerability Management
+
+  16.3.3. Modify a vulnerability policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Vulnerability Management
+
+  16.3.4. Configure a block grace period
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Vulnerability Management → Vulnerability Policies - Prevention
+
+  16.3.5. Enable or disable a vulnerability policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Vulnerability Management
+
+  16.4. Investigate and remediate vulnerabilities
+
+  16.4.1. View all Vulnerabilities
+
+#### Navigation
+
+  Posture Management → Vulnerability Management → Vulnerabilities
+
+  16.4.2. View vulnerability issues
+
+#### Navigation
+
+  Posture Management → Vulnerability Management → Vulnerability Issues
+
+  16.4.3. View All Vulnerability Findings
+
+#### Navigation
+
+  Posture Management → Vulnerability Management → Vulnerability Issues and click the All Vulnerability Findings button
+
+  16.4.4. View vulnerable assets
+
+#### Navigation
+
+  Posture Management → Vulnerability Management → Vulnerable Assets
+
+  16.5. Vulnerability Intelligence
+
+#### Navigation
+
+  Posture Management → Vulnerability Management → Vulnerability Intelligence
+
+  16.6. Recast CVSS scores and CVSS severities
+
+#### Navigation
+
+  Posture Management → Vulnerability Management → Vulnerability Intelligence
+
+17. Cloud Security Rules and Policies
+
+  17.1. Overview
+
+  17.2. Cloud Security Rules
+
+  17.3. Cloud Security Policies
+
+#### Note
+
+* If you have the following Scope Based Access Control (SBAC) settings in place, User Settings > Cases and Issues Scope > Select domains > Posture, you may encounter a Case mismatch in Issues/Cases/Findings counts. This is because the Case count on the Rules page captures Cases belonging to the Posture domain. Whereas Platform pages, capture Issues...
+
+* 17.3.1 |Issues Issues are artifacts of the policy and represent actionable items that you need to address. They have several characteristics, such as: Lifecycle '–' Open, Dismiss, In-progress, Close Workflows '–' Assigned to different user personas for remediation Severity '–' Critical, High, Medium, Low, Info NOTE: A key distinction between Findings and Issues is that Findings are not actionable, while you can take an action on Issues. The Cloud Security Policies page allows you to manage policies that define security and compliance actions for cloud posture. You can create, edit, filter, and manage policies through a structured table and widget panel. The Policies page displays all the configured policies with the following fields. 17.4 |Create Rules You can create your own custom rules for Configuration (Config), Data, and Network Exposure. View all the Cloud Posture Security Rules on the Posture Management > Rules & Policies > Rules > Cloud Security page. 17.4.1 |Create a configuration rule Configuration (config) rules monitor your resource configurations for potential policy violations or misconfigurations. Perform this task to create a custom configuration rule that you can use in a cloud security policy. Navigate to Posture Management → Rules & Policies → Rules → Cloud Security. Select Create Rule > Config. Complete the Overview step: Enter a Rule Name and Description. Select a Severity. This will be the severity of any issues created with this rule. Add Labels (optional). These rules can be used find rules when creating custom policies. Enable Remediation using the toggle (optional). In a later step, you'll enter the remediation instructions. (Optional) Associate this rule with a Compliance Control. Click Add, select one or more custom compliance controls from the list, and then click Assign. Custom configuration rules can only be associated with custom compliance controls. Click Next. Complete the Overview step: Enter a Rule Name and Description. Select a Severity. This will be the severity of any issues created with this rule. Add Labels (optional). These rules can be used find rules when creating custom policies. Enable Remediation using the toggle (optional). In a later step, you'll enter the remediation instructions. (Optional) Associate this rule with a Compliance Control. Click Add, select one or more custom compliance controls from the list, and then click Assign. Custom configuration rules can only be associated with custom compliance controls. (Optional) Associate this rule with a Compliance Control. Click Add, select one or more custom compliance controls from the list, and then click Assign. Custom configuration rules can only be associated with custom compliance controls. Complete the Rule Logic step to define what the rule is looking for. Select one of the following modes: Simple Mode: Presents a guided interface in which you can define basic conditions and address most common rule use cases. Advanced Mode: Presents a free-form XQL editor that allows you to build complex and flexible queries across unrestricted datasets. Supports advanced and custom use cases. Complete the Rule Logic step to define what the rule is looking for. Select one of the following modes: Simple Mode: Presents a guided interface in which you can define basic conditions and address most common rule use cases. Advanced Mode: Presents a free-form XQL editor that allows you to build complex and flexible queries across unrestricted datasets. Supports advanced and custom use cases. If you selected Simple Mode, complete the following steps: Select options from the dropdown menus to define the logic for your config rule, such as '''Find EC2 instances where accessKeys are allowed'', and then click Search to view all matching results. Click Next to define Remediation instructions (if you had turned on Enable Remediation in the Overview step) or click Done. If you selected Simple Mode, complete the following steps: Select options from the dropdown menus to define the logic for your config rule, such as '''Find EC2 instances where accessKeys are allowed'', and then click Search to view all matching results. Click Next to define Remediation instructions (if you had turned on Enable Remediation in the Overview step) or click Done. If you selected Advanced Mode, complete the following steps: Define an XQL query for the rule, following the guidelines in Guidelines for creating cloud security rules. For detailed information about how use XQL, see Get started with XQL. Click Test to determine if the query is valid. Select the Affected Asset Type. Generated issues will be linked to assets identified by the selected field. Check the list of query results to verify that the query is working as intended. Click Next to define Remediation instructions (if you had turned on Enable Remediation in the Overview step) or click Done. If you selected Advanced Mode, complete the following steps: Define an XQL query for the rule, following the guidelines in Guidelines for creating cloud security rules. For detailed information about how use XQL, see Get started with XQL. Click Test to determine if the query is valid. Select the Affected Asset Type. Generated issues will be linked to assets identified by the selected field. Select the Affected Asset Type. Generated issues will be linked to assets identified by the selected field. Check the list of query results to verify that the query is working as intended. (Optional) In the text field, define remediation actions or provide other information that will be included on issues created by this rule. Click Done to save your config rule. 17.4.1.1 |Guidelines for creating cloud security rules NOTE: XQL queries are supported for cloud security configuration rules only. XQL queries are not yet supported for other types of cloud security rules.
+
+  17.4.1.2. Cloud security rule status for custom configuration rules
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Security
+
+  17.4.2. Create a Data Rule
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Security
+
+  17.4.3. Create a Network Exposure Rule
+
+  17.4.4. Edit a Rule
+
+  17.5. Create Policies
+
+#### Note
+
+* When creating Policies, note that Rules with the Informational severity level are excluded.
+
+  17.5.1. Edit a Policy
+
+  17.5.2. Use an Existing Policy to Create a New One
+
+18. Cloud Workload Policies and Rules
+
+#### Prerequisite
+
+* Users need View/Edit RBAC permissions (under Policies → Compute Policies) or the Instance Administrator role to view, edit, and modify Cloud Workload Policies policies.
+
+#### Important
+
+* Users with SBAC granular scoping (in addition to the RBAC permissions required for Cloud Workload Policies) can only view Cloud Workload Policies, when their access is scoped to any of the available options: All assets, No assets, or Select asset groups. For more information on granular scoping, see Manage user scope. When no SBAC restriction is...
+
+  18.1. How policies and rules work together
+
+  18.2. Cloud Workload Policies
+
+#### Note
+
+* Issues are automatically resolved when the finding is no longer applicable to the asset or when the affected asset is removed from the inventory. For more details on Prevent and create issues, see Cloud Workload Preventive Action.
+
+  18.2.1. Types of Cloud Workload Policies
+
+  18.2.1.1. Trusted image cloud workload policies
+
+#### Note
+
+* Registry scanning is for finding problems that are objectively issues regardless of context, organization, or scope. Trust, however, is subjective. Depending on the scope and other factors, an issue may or may not be problematic, and can change over time depending on the context.
+
+* Trusted image policies do not override other policies and their rules, such as malware policies, misconfiguration policies, and secrets policies.
+
+#### Caution
+
+* The default behavior for the prevent action when trust criteria are unavailable is Create an Issue. Be aware that changing this default will mean an incomplete deployment file can block a workload.
+
+  18.2.2. Cloud Workload Policies page
+
+#### Note
+
+* Keep the following caveats in my mind when working with Policies: Instance Administrators are able to view all facets of policies without restrictions, even if Scope Based Access Control (SBAC) roles are in effect. Learn more about SBAC.Manage user scope If you've been assigned a custom role with View/Edit permissions limited by SBAC, you may not be...
+
+  18.2.2.1. Widgets panel
+
+  18.2.2.1.1. Show or hide the widget panel
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.2.2. Change the layout of the policies table
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.2.3. Policy Details Panel
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.3. Enable or disable a Cloud Workload Policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.4. Create a Cloud Workload Policy
+
+#### Note
+
+* The Evaluation stage for Misconfiguration policies is supported only in the Runtime SDLC stage and is enforceable through the Kubernetes Admission Controller for clusters on-boarded using the Posture Management (KSPM) Connector.
+
+* Use Create a new Custom Detection Rule to define and add new custom rules as required.
+
+* Each rule may support different actions. While some include both Create an Issue and Prevent and Create an Issue, others provide only the Create an Issue option.
+
+* All non-relevant (non-compute) assets are automatically excluded from the included asset list.
+
+* See Cloud Workload Preventive Action, to learn more about the Prevent action behavior and prerequisites. If the Prevent and create an issue action is selected, the preventive actions in the CI pipeline will trigger a Fail Pipeline by returning an exit code of 2 in the CI tool.
+
+* Choosing this option results in the automatic selection of all other asset scopes in the list.
+
+* See Cloud Workload Preventive Action, to learn more about the Prevent action behavior and prerequisites.
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.5. Use an existing policy to create a new Cloud Workload policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.6. Edit a Cloud Workload Policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.7. Delete a Cloud Workload Policy
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Policies → Cloud Workload
+
+  18.2.8. Cloud Workload Preventive Action
+
+  18.3. Cloud Workload Rules
+
+  18.3.1. Default (pre-defined) Rules
+
+  18.3.2. Custom (user-defined) Rules
+
+  18.3.3. Cloud Workload Rules page
+
+#### Note
+
+* Keep the following caveats in my mind when working with Rules: Instance Administrators are able to view all facets of Rules without restrictions, even if Scope Based Access Control (SBAC) roles are in effect. Learn more about SBAC.Manage user scope If you've been assigned a custom role with View/Edit permissions limited by SBAC, you may not be able...
+
+  18.3.3.1. Filter page results
+
+  18.3.3.2. Change the layout of the rules table
+
+  18.3.3.3. Rule details panel
+
+  18.3.4. Create a new Custom Detection Rule
+
+#### Note
+
+* Only users with the following roles can enable or disable Custom Code Execution: Account Admin Instance Administrator Deployment Admin Privileged Security Admin
+
+* Only Custom Detection Rules (not built-in rules) can be assigned to custom controls.
+
+#### Important
+
+* The custom Python scripts are intended to be executed exclusively for compliance checks and validations. To ensure the scripts are used properly and no security risks or unintended changes occur, the system implements the following restrictions and safeguards: Only a predefined set of Python libraries and functions required for compliance checks are...
+
+  18.3.5. Use an existing rule to create a new Custom Detection Rule
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Workload
+
+  18.3.6. Edit a Custom Detection Rule
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Workload
+
+  18.3.7. Delete a Custom Detection Rule
+
+#### Navigation
+
+  Posture Management → Rules & Policies → Rules → Cloud Workload
+
+19. Serverless function posture security
+
+  19.1. Onboard cloud providers for serverless functions
+
+#### Note
+
+* When scanning serverless functions with layers, those layers need to be from the same cloud account.
+
+* Only functions containing zip files are supported.
+
+#### Important
+
+* Cortex supports Google Cloud Functions: 1st gen and 2nd gen Cloud Functions API.
+
+  19.2. Serverless function posture policies
+
+  19.2.1. Manage serverless function policies
+
+#### Note
+
+* You can select multiple types to view all your serverless function rules across your cloud providers.
+
+* Refer to Create serverless function policies for more information on how to define the steps of a policy in the wizard.
+
+  19.2.2. Create serverless function policies
+
+#### Note
+
+* You can select multiple options.
+
+* For more information about rules, refer to Manage serverless function rules.
+
+  19.3. Serverless function posture rules
+
+  19.3.1. Manage serverless function rules
+
+#### Note
+
+* You can select multiple types to view all your serverless function policies across your cloud providers.
+
+* Refer to Create serverless function rules for more information on how to define the steps of a rule in the wizard.
+
+  19.3.2. Create serverless function rules
+
+  19.3.3. Create an attack path rule for serverless functions
+
+#### Navigation
+
+  Under Posture Management, select Rules & Policies → Cloud Security (under Rules) → click Create Rule
+
+  in as the operator → enter the CVE ID → Search
+
+  > or >= as the operator → Severity level (such as High, Low) → Search
+
+  > or >= as the operator → enter a score → Search
+
+  19.3.4. Create a configuration rule for serverless functions
+
+#### Navigation
+
+  Under Posture Management, select Rules & Policies → Cloud Security (under Rules) → click Create Rule
+
+  19.3.5. Create a network exposure rule for serverless functions
+
+#### Navigation
+
+  Under Posture Management, select Rules & Policies → Cloud Security (under Rules) → click Create Rule
+
+  19.4. Serverless function usage
+
+#### Navigation
+
+  To access serverless function assets, under Inventory, select All Assets → Compute → Serverless Functions
+
+  Posture Management → Vulnerability Management) → Vulnerability Issues
+
+  Add Filters → Asset Category → Serverless Function
+
+  Posture Management → Vulnerability Management) → Vulnerable Assets
+
+  Add Filters → Asset Category → Serverless Functions
+
+20. Data management
+
+  20.1. Broker VM
+
+  20.1.1. What is the Broker VM?
+
+  20.1.2. Set up and configure Broker VM
+
+#### Note
+
+* The Broker VM comes with a 512 GB disk. Therefore, deploy the Broker VM with thin provisioning, meaning the hard disk can grow up to 512 GB but will do so only if needed.
+
+* When DHCP is not enabled in your network and there isn't an IP address for your Broker VM, configure the Broker VM with a static IP using the serial console menu.
+
+* When configuring a Local Agent Settings applet with installer and content caching, you need to configure an SSL certificate for the Broker VM as explained in the task below. For more information on specific requirements for the Local Agent Settings applet, see Activate Local Agent Settings.Activate Local Agent Settings Keep in mind that several Broker...
+
+* When a Broker VM is disconnected for more than 30 days, it will have to go through a re-registration process.
+
+* You can configure another Broker VM as a proxy server for this Broker VM by selecting the HTTP type. When selecting HTTP to route Broker VM communication, you need to add the IP Address and Port number (set when activating the Agent Proxy) for another Broker VM registered in your tenant. This designates the other Broker VM as a proxy for this Broker VM.
+
+* The Palo Alto Networks Broker VM supports only strong cipher SHA256-based certificates. MD5/SHA1-based certificates are not supported.
+
+* If adding a CA certificate to the Broker VM is not possible, ensure that you've added the Broker Service FQDNs to the SSL Decryption Exclusion list on your firewalls. See Enable Access to Cortex XDR.
+
+#### Important
+
+* There can be instances in which the Broker VM requires up to 50% of the incoming bandwidth as outgoing. Such instances can be, network instability between the Broker VM and Cortex Cloud, or data that is being collected, but not well compressed.
+
+* The internal network for the Broker VM must be unique and reserved. Other devices should not use the same IP as the Broker VM internal network as it can lead to communication issues with the Broker VM.
+
+* If you use SSL decryption in your firewalls and proxies, see the Understanding CA certificate functionality in Broker VM deployments section below. In addition, verify that the proxies used support HTTP/2, gRPC-specific headers, and HTTP/2 trailers, and the inspection policies support gRPC traffic. Any devices that you use with this configuration...
+
+* When configuring more than one network interface, ensure that only one Default Gateway is defined. The rest must be set to 0.0.0.0, which configures them as undefined. In addition, we recommend assigning each network interface to a different subnet, as oppose to configuring two interfaces on the same subnet which can potentially cause unexpected...
+
+* Internal IP must be: Formatted as prefix/mask, for example 192.0.2.1/24. Must be within /8 to /24 range. Cannot be configured to end with a zero. For Broker VM version 9.0 and earlier, Cortex Cloud will only accept 172.17.0.0/16.
+
+* We strongly recommend disabling SSH connectivity when it's not being used. Therefore, activate SSH connectivity when it's needed and disable it right afterwards. When generating a new SSH key ensure to avoid embedding the domain-style username, by not using any backslashes (\) in the comment field, to ensure the SSH key passes validation.
+
+  20.1.2.1. Broker VM image installations
+
+  20.1.2.1.1. Set up Broker VM on Microsoft Azure
+
+#### Prerequisite
+
+* Download a Cortex Cloud Broker VM VHD (Azure) image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM.
+
+#### Note
+
+* Extraction can take up to a few hours.
+
+* Upload can take up to a few hours.
+
+* For more information, see the Azure Documentation.
+
+* Creating the VM can take up to 15 minutes. The Broker VM Web UI is not accessible during this time.
+
+* For more information on creating a rule in an Azure VM, see Create a Security Rule in the Azure Documentation.
+
+  20.1.2.1.2. Set up Broker VM on Alibaba Cloud
+
+#### Prerequisite
+
+* Download a Cortex Cloud Broker VM QCOW2 image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM.
+
+#### Note
+
+* For Linux and Windows uploads, you can use Alibaba Cloud's graphical management tool called ossbrowser.
+
+* The Object Storage Service must be created in the same Region as the image of the virtual machine.
+
+#### Navigation
+
+  Hamburger menu → Elastic Compute Service → Instances & Images → Instances
+
+  20.1.2.1.3. Set up Broker VM on Amazon Web Services
+
+#### Prerequisite
+
+* Download a Cortex Cloud Broker VM VMDK image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM. You need to set up an AWS VM Import role (vmimport) before you continue with the steps to convert the image as it is required for the import-image CLI command. You can use a different role, if the...
+
+#### Note
+
+* Creating an AMI image can take up to 60 minutes to complete.
+
+* Assigning security groups can take up to 15 minutes.
+
+#### Important
+
+* A t2.medium (4GB RAM) is the lowest machine type that can be used as an instance type. Usually, the lowest machine type is sufficient with the Local Agent Settings applet. Yet, when enabling more applets, 8 GB is required.
+
+#### Navigation
+
+  Log in to the AWS IAM Console, and in the navigation pane, select Access Management → Users → Add Users
+
+  Obtain a registration token from the Cortex Cloud Web Console by selecting Settings → Configurations → Data Broker → Broker VMs → Add Broker → Generate Token
+
+  20.1.2.1.4. Set up Broker VM on Google Cloud Platform (GCP)
+
+#### Prerequisite
+
+* Download a Cortex Cloud Broker VM VMDK image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM. To complete the set up, you must have G Cloud installed and have an authenticated user account.
+
+* Before importing a GCP image using the gcloud CLI, ensure that you update the Google Cloud components to version 371.0.0 and above using the following command:
+
+#### Note
+
+* The import tool uses Cloud Build API, which must be enabled in your project. For the import to work, Cloud Build service account must have compute.admin and iam.serviceAccountUser roles. When using the Google Cloud console to import the image, you will be prompted to add these permissions automatically.
+
+  20.1.2.1.5. Set up Broker VM on KVM using Ubuntu
+
+#### Prerequisite
+
+* Download a Cortex Cloud Broker VM QCOW2 image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM.
+
+  20.1.2.1.6. Set up Broker VM on Microsoft Azure
+
+#### Prerequisite
+
+* Download a Cortex Cloud Broker VM VHD (Azure) image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM.
+
+#### Note
+
+* Extraction can take up to a few hours.
+
+* Upload can take up to a few hours.
+
+* For more information, see the Azure Documentation.
+
+* Creating the VM can take up to 15 minutes. The Broker VM Web UI is not accessible during this time.
+
+* For more information on creating a rule in an Azure VM, see Create a Security Rule in the Azure Documentation.
+
+  20.1.2.1.7. Set up Broker VM on Nutanix Hypervisor
+
+#### Prerequisite
+
+* Download a Cortex Cloud Broker VM QCOW2 image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM.
+
+#### Note
+
+* Saving the image to Nutanix hypervisor can take time as it's a large file. We recommend verifying periodically that the connection is alive for the upload process to finish successfully.
+
+* Creating the VM can take up to 15 minutes. The Broker VM Web user interface is not accessible during this time.
+
+  20.1.2.1.8. Set up Broker VM on VMware ESXi using vSphere Client
+
+#### Prerequisite
+
+* Ensure you have a virtualization platform installed that is compatible with an OVA image, and have an authenticated user account. Download a Cortex Cloud Broker VM OVA image. For more information, see the virtual machine compatibility requirements in Set up and configure Broker VM.
+
+  20.1.2.2. Broker VM data collector applets
+
+  20.1.2.2.1. Activate DSPM Fileshare
+
+#### Prerequisite
+
+* Set up and configure Broker VM Know the complete path to the files and folders that you want Cortex Cloud to monitor. Necessary user permissions to access the network shares. For the SMB connection type, you need the user name and password.
+
+#### Note
+
+* The applet list displays only the applets for which you have permissions.
+
+* By default, all configured connections are saved.
+
+* For details regarding the connection fields, see the table above under File Share Connection.
+
+* You can add multiple connections under a single instance of the DSPM Fileshare applet by returning to the File Share Connection screen and clicking Add Connection. Each new connection can be of either the NFS or SMB connection type.
+
+  20.1.2.2.2. Activate Registry Scanner
+
+#### Prerequisite
+
+* To initialize registry scanning on your Broker VM, you must first add the necessary data connectors. For details, see:    Connect Docker Hub registry   Connect Docker V2 compliant container registry   Connect GitLab container registry   Connect Harbor registry   Connect JFrog container registry   Connect Sonatype Nexus registry To initialize registry...
+
+#### Note
+
+* You cannot activate the Registry Scanner directly on a new or existing Broker VM. You can only activate or deactivate existing Registry Scanner applets. To activate or deactivate existing applets, see Step 4 under Verify Registry Scanner connection section.
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs
+
+  20.1.2.2.3. Activate Transporter
+
+#### Prerequisite
+
+* Permissions: To configure and manage Transporter applet settings, you must have permissions to manage Broker Service configurations (such as an Instance Administrator) Set up and configure Broker VMSet up and configure Broker VM Confirm that your Broker is v 28 or above Whitelist IP addresses to enable access to Cortex Cloud resources. The IP addresses...
+
+#### Warning
+
+* The Transporter applet is not supported for FedRAMP customers.
+
+#### Navigation
+
+  Settings → Configurations → Broker VMs (under Data Broker
+
+  the Brokers tab → locate your Broker VM → hover and click + Add under the Apps column → AppSec Transporter
+
+  the Appsec Transporter under the App column → Deactivate → Confirm when prompted All existing connections are deleted but their configurations are saved in the database
+
+  the Appsec Transporter under the App column → Deactivate → Confirm when prompted
+
+  20.1.3. Manage Broker VM
+
+#### Note
+
+* For more information on troubleshooting errors and warnings for these broker applets, see Troubleshoot Broker VM applet errors.Troubleshoot Broker VM applet errors
+
+* Certain fields are also exposed in the Clusters tab, when a Broker VM node is added to a High Availability (HA) cluster, and each cluster node is expanded to view the Broker VM nodes table. An asterisk (*) is beside every field that is also included in the Broker VM nodes table for each HA cluster.
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs
+
+  20.1.3.1. Edit Broker VM Configuration
+
+#### Note
+
+* For all Broker VM nodes added to a HA cluster, you can also Configure the Broker VM nodes from the Clusters tab.
+
+* Internal IP must be: Formatted as prefix/mask, for example 192.0.2.1/24. Must be within /8 to /24 range. Cannot be configured to end with a zero. For Broker VM version 9.0 and lower, Cortex Cloud accepts only 172.17.0.0/16.
+
+* Make sure you save the password before closing the window. The only way to re-generate a password is to disable ssh and re-enable.
+
+  20.1.3.2. Increase Broker VM storage allocated for data caching
+
+#### Note
+
+* Follow your hypervisor documentation to understand how to add a persistent disk storage to your VM.
+
+* If your disk is not listed and you didn't shutdown your Broker VM in your hypervisor before manually adding a disk to the VM, you'll need to reboot the Broker VM before the disk details are detected by the Broker VM. This can be performed either in the hypervisor or directly in the Broker VMs page.
+
+#### Warning
+
+* This operation is irreversible, and will make the disk become an integral part of the broker, where disconnecting the disk will result in errors and data loss.
+
+  20.1.3.3. Monitor Broker VM using Prometheus
+
+#### Note
+
+* For all Broker VM nodes added to a HA cluster, you can also Configure the Broker VM nodes from the Clusters tab.
+
+* For more information on Docker, see the Docker website.
+
+  20.1.3.4. Collect Broker VM Logs
+
+#### Note
+
+* The Download Logs (<TIMESTAMP>) is only displayed when you've downloaded your logs previously using Generate New Logs.
+
+  20.1.3.5. Upgrade Broker VM
+
+#### Important
+
+* After a Broker VM upgrade, your broker may require a reboot to finish installing important updates. A notification about this will be sent to your Cortex Cloud console Notification Center.
+
+  20.1.3.6. Import Broker VM Configuration
+
+#### Important
+
+* This option can only be used on Broker VMs with version 20.0 and later, and is only suitable for importing a configuration of brokers in the same version, or from a broker in an older version to a broker in a newer version.
+
+* If your source Broker VM configuration includes a WEC applet, you'll need to ensure that you update the DNS record of this Broker VM's FQDN to point to the target Broker VM IP address.
+
+  20.1.3.7. Open Live Terminal
+
+#### Note
+
+* You can either restart_routes or reboot the Broker VM for the changes in the /etc/network/routes file to take affect.
+
+  20.1.3.8. Add Broker VM to cluster
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs
+
+  20.1.3.9. Switchover Primary Node in Cluster
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs
+
+  20.1.3.10. Remove from Cluster
+
+#### Note
+
+* If you've enabled a Load Balancer Health-Check on the cluster, you need to exclude this Broker VM from your Load Balancer settings.
+
+  20.1.4. Broker VM High Availability Cluster
+
+#### Note
+
+* For Load Balancing, you must install a Load Balancer in your network, which will distribute the incoming data between the nodes.
+
+* The following applets aren't supported when configuring Broker VMs in HA clusters: Cortex Network Scanner and Transporter.
+
+  20.1.4.1. Configure High Availability Cluster
+
+#### Prerequisite
+
+* Be sure you do the following task before creating a cluster from an existing Broker VM: If the Broker VM is explicitly specified in some Agent Settings profile, which means Cortex Cloud agents retrieve release upgrades and content updates from this Broker VM, you must change the Broker VM's current designated role. To do this, you need to modify the...
+
+#### Important
+
+* You can only create a new cluster from an existing Broker VM, when the Broker VM version is 19.0 and later, and the STATUS is Connected. The Create a Cluster from this Broker option is only listed if the Broker VM is not already added to a cluster.
+
+* When the Protocol is set to HTTPS, you may need to perform a few follow-up steps to establish a validated secure SSL connection with the Broker VM. If you're using your own Certificate Authority (CA) to sign the certificates, you'll need to place the CA in the client, such as the Load Balancer, and upload the certificates to the Broker VM. If you're...
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs
+
+  20.1.4.2. Manage Broker VM clusters
+
+#### Navigation
+
+  After you've configured a cluster, you can manage all your Broker VM clusters from the Clusters tab on the Broker VMs page (Settings → Configurations → Data Broker → Broker VMs → Clusters
+
+  20.1.4.2.1. View cluster details
+
+#### Note
+
+* For more information on troubleshooting errors and warnings for these applets, see Troubleshoot Broker VM applet errors.Troubleshoot Broker VM applet errors
+
+#### Navigation
+
+  The Clusters tab of the Broker VMs page (Settings → Configurations → Data Broker → Broker VMs) enables you
+
+  20.1.4.2.2. Edit cluster
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs, and select the Clusters tab
+
+  20.1.4.2.3. Add applet to cluster
+
+#### Note
+
+* With Cortex XDR Prevent, it's only relevant to configure a HA cluster with a Local Agent Settings applet as this is the only applet supported for this product license. The other applets are collector applets, which are only available in Cortex XDR Pro or Cortex XSIAM.
+
+* For more information on troubleshooting errors and warnings for these applets, see Troubleshoot Broker VM applet errors.Troubleshoot Broker VM applet errors
+
+  20.1.4.2.4. Add Broker VM to cluster
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs
+
+  20.1.4.2.5. Remove cluster
+
+#### Navigation
+
+  Settings → Configurations → Data Broker → Broker VMs
+
+  20.1.5. Broker VM notifications
+
+  20.1.6. Monitor Broker VM activity
+
+#### Note
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default.
+
+  20.2. Dataset management
+
+#### License Type
+
+  Managing Roles requires an Account Admin or Instance Administrator role. For more information, see Predefined user roles.
+
+#### Prerequisite
+
+* Dataset Management requires View/Edit RBAC permissions for Data Management (under Configurations → Data Management), which are the same permissions required for Parsing Rules, Data Model Rules, and Event Forwarding.
+
+#### Note
+
+* Cold storage, in addition to a cold storage license, requires compute units (CU) to run cold storage queries. For more information on CU, see Manage compute units.
+
+* Only datasets that are already handled as part of the GB license are supported for this license. In addition, the retention configuration is only available in Cortex Cloud, as opposed to the public APIs.
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default. Datasets include dataset permission enforcements in the Cortex Query Language(XQL), Query Center, and XQL Widgets. For example, to view or access any of the endpoints and host_inventory datasets, you need role-based access control (RBAC)...
+
+* You'll only be able to save the dataset view if the query contains no errors; otherwise, the Save button is disabled.
+
+* For more information on user roles, see Manage user roles.
+
+#### Important
+
+* Cortex Cloud enforces retention on all log-type datasets excluding Host Inventory, Vulnerability Assessment, Metrics, and Users.
+
+* This column is updated once a day. Therefore, if the dataset was created or updated by the target or lookup flows, it's possible that the Last Updated value is a day behind when the queries or reports were run as it was before this column was updated.
+
+  20.2.1. What are datasets?
+
+#### Prerequisite
+
+* Dataset Management requires View/Edit RBAC permissions for Data Management (under Configurations → Data Management), which are the same permissions required for Parsing Rules, Data Model Rules, and Event Forwarding.
+
+#### Note
+
+* For more information on tasks specific to lookup datasets, see Lookup datasets.
+
+* Schema changes to datasets may not be reflected in the autocomplete suggestions and definitions as you type in real time the XQL query and can appear with a slight delay.
+
+#### Important
+
+* By default, forensic datasets are not included in XQL query results, unless the dataset query is explicitly defined to use a forensic dataset.
+
+  20.2.2. Lookup datasets
+
+#### Prerequisite
+
+* Dataset Management requires View/Edit RBAC permissions for Data Management (under Configurations → Data Management), which are the same permissions required for Parsing Rules, Data Model Rules, and Event Forwarding.
+
+#### Note
+
+* A lookup dataset can only be deleted if there are no other dependencies. For example, if a Correlation Rule is based on a lookup dataset, you wouldn't be able to delete the lookup dataset until you removed the dataset from the XQL query of the Correlation Rule.
+
+#### Important
+
+* When you create or add data to a lookup dataset using the target stage, the _time field won't be included by default unless you explicitly add it with the fields stage.
+
+  20.2.2.1. Import a lookup dataset
+
+#### Prerequisite
+
+* Dataset Management requires View/Edit RBAC permissions for Data Management (under Configurations → Data Management), which are the same permissions required for Parsing Rules, Data Model Rules, and Event Forwarding.
+
+* When uploading a CSV, TSV, or JSON file, ensure that the file meets the following requirements: The maximum size for the total data to be imported into a lookup dataset is 30 MB from the Dataset Management page. Otherwise, the limit is 50 MB using Cortex Query Language (XQL) or APIs. Field names can contain characters from different languages, special...
+
+#### Important
+
+* The name of a dataset created from a TSV file must always include the extension. For example, if the original file name is mrkdptusrsnov23.tsv, you can save the dataset with the name marketing_dept_users_Nov_2023.tsv.
+
+  20.2.2.2. Download JSON file of lookup dataset
+
+#### Prerequisite
+
+* Dataset Management requires View/Edit RBAC permissions for Data Management (under Configurations → Data Management), which are the same permissions required for Parsing Rules, Data Model Rules, and Event Forwarding.
+
+#### Navigation
+
+  Open the Settings → Configurations → Data Management → Dataset Management page
+
+  20.2.2.3. Set time to live for lookup datasets
+
+#### Prerequisite
+
+* Dataset Management requires View/Edit RBAC permissions for Data Management (under Configurations → Data Management), which are the same permissions required for Parsing Rules, Data Model Rules, and Event Forwarding.
+
+#### Navigation
+
+  Open the Settings → Configurations → Data Management → Dataset Management page
+
+  20.2.3. Monitor datasets and dataset views activity
+
+#### Prerequisite
+
+* Dataset Management requires View/Edit RBAC permissions for Data Management (under Configurations → Data Management), which are the same permissions required for Parsing Rules, Data Model Rules, and Event Forwarding.
+
+#### Note
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default.
+
+  20.3. Manage compute units
+
+#### Note
+
+* For more information, see Import historical data into cold storage.Import historical data into cold storage
+
+* The CU consumption of cold storage queries is based on the number of days in the query time frame. For example, when querying 1 hour of a specific day, the CU of querying this entire day is consumed. When querying 1 hour that extends past 2 days, such as from 23:50 to 00:50 of the following day, the CU of querying these two days is consumed.
+
+  20.3.1. Compute units usage
+
+#### Note
+
+* To enable the add-on, select Settings  → Configurations → Cortex Cloud License → Addons tile, and select the Compute Unit tile and Enable.
+
+#### Navigation
+
+  Settings → Configurations → Data Management → Compute Unit Usage
+
+  20.4. Manage instances
+
+  20.4.1. Add a new data source or instance
+
+#### Note
+
+* If a data source contains multiple integrations, the integration configured as the default integration will used by the Data Onboarder. The default integration of the content pack is indicated in each content pack's documentation. The other integrations are available for configuration in the Data Sources & Integrations page after installing the content...
+
+* If you are adding a new instance to an existing data source, these options are View only. You can adjust the view-only options on the relevant page in the system, for example Correlations, Playbooks, or Scripts. If you are adding a new instance to an existing data source, these options are View only. You can adjust the view-only options on the relevant...
+
+  20.4.2. Manage cloud instances
+
+#### Note
+
+* Currently, automation permission errors or missing automation permissions do not affect the Automation health status. You can view any permission errors or missing permissions in the the Permissions health status.
+
+  20.4.3. Update cloud permissions after Cortex release updates
+
+#### Prerequisite
+
+* Ensure that the user account used to modify permissions has the necessary privileges within both the Cortex platform and your cloud environment, for example, AWS or Azure. You received a notification regarding a new version available that requires permission updates, or viewed a Needs Update status in the Data Sources & Integrations page.
+
+#### Note
+
+* Instances requiring updates will not change their connection status, for example, Connected, Warning, Error, Disabled, due to the pending permission update.
+
+  20.4.4. Pending cloud instances
+
+  20.4.5. Manage Kubernetes Connector instances
+
+#### Note
+
+* After uninstalling the Kubernetes connector, the connector status updates to Not connected 48 hours after the uninstall process is initiated.
+
+#### Navigation
+
+  You can also manage the Kubernetes Connector instances from Inventory → Assets → Kubernetes Clusters
+
+  20.4.6. Troubleshoot errors on cloud instances
+
+#### Note
+
+* Errors related to collection of audit logs in the cloud instance are recorded in the collection_auditing dataset. For more information, see Audit logs fields and query examples.
+
+  20.4.7. Monitor serverless function scan health and status
+
+  20.5. About health issues
+
+#### Prerequisite
+
+* For Cortex Cloud to monitor data ingestion health and create health issues, you must enable the following settings under Configurations: Cortex - Analytics: Go to Configurations → Cortex - Analytics. For more information, see Enable the Analytics Engine and Identity Analytics.Enable the Analytics Engine and Identity Analytics
+
+#### Note
+
+* The Health Issues page displays issues that were triggered after July 2024. To see health issues that were triggered before this date, click Legacy Health Issues.
+
+* Cortex Cloud enforces the dedup logic to health issues. This logic reduces the likelihood of identical health issues from flooding the issues dataset.
+
+  20.5.1. Investigate and resolve health issues
+
+21. Marketplace
+
+  21.1. Cortex Marketplace
+
+#### Navigation
+
+  Settings → Configurations → Marketplace) or at Cortex Developer Docs Marketplace
+
+  21.2. Content Pack Support Types
+
+#### Note
+
+* Palo Alto Networks is not liable for and does not warrant or support any content pack produced by a third-party publisher. Palo Alto Networks does not support content packs that do not have official available documentation.
+
+  21.3. Cortex Cloud content
+
+  21.4. Manage content packs
+
+#### Note
+
+* Optional content packs that are already installed are treated like they are required content packs to preserve content integrity.
+
+* Cortex Cloud includes a built-in default mail sender. You also have the option of installing a different mail sender content pack, such as Microsoft Exchange Online.
+
+* In addition to content packs that you install from Marketplace, related content packs are automatically downloaded when you adopt playbooks or edit tasks that require content items such as scripts or integrations.
+
+* Third-party product integrations are developed and tested against a specific product version. For products that are on-prem or cloud-based with specific API versions, the version developed and tested against will be included in the integration's documentation. Newer versions of the product are not always immediately tested, and it is expected that...
+
+#### Caution
+
+* If you want to downgrade, any content that depends on the content pack including any customizations may be deleted if it does not exist in the target content pack version.
+
+* If another content pack is dependent on the content pack you want to delete, it may break the other content pack. You can reinstall the content pack, but you cannot restore detached and customized content.
+
+#### Tip
+
+* You can also find content packs that require updates by going to Settings → Data Sources & Integrations and filtering by Pack Version = Update Available. If you click on an integration in the filtered list, there is a link to the content pack in Marketplace for updates.
+
+  21.5. Marketplace FAQs
+
+  21.6. Content changes when upgrading Cortex Cloud versions
+
+22. Cortex CLI
+
+#### Note
+
+* The CLI Read Only Role is not supported for CWP as the system does not support offline mode.
+
+  22.1. Connect Cortex CLI
+
+#### Prerequisite
+
+* System requirements:    macOS (Intel Core i7, such as Sequoia): To ensure all functionalities work correctly, you must install the vectorscan dependency via Homebrew, using this command: brew install vectorscan   RHEL 8.10 and Red Hat UBI9. The following prerequisites must be met:    Install patchelf   Install zstd      Ubuntu 20 requires the prefetch...
+
+#### Note
+
+* Using an existing API Key (or verifying existing API Key permissions): If you are using an existing API key, verify it has CLI permissions. CLI View/Edit permissions correspond to selecting With upload results permissions, while CLI Read Only or View permissions corresponds to not selecting the With upload results permissions.
+
+* On macOS arm 64 architecture you must unpack the downloaded file to retrieve the executable.
+
+* To add an additional CLI instance, navigate to Settings → Data Sources & Integrations →  select the menu for your connected CLI instance → + New Instance, and repeat the onboarding steps.
+
+* For more information about CLI usage for CWP, refer to Cortex CLI for Cloud Workload Protection For more information about CLI usage for API Security, refer to Cortex CLI for API Security For more information about CLI usage for Cortex Cloud Application Security, refer to Cortex CLI usage for Cortex Cloud Application Security
+
+#### Tip
+
+* You can also locate your CI tool by typing its name (such as Jenkins) into the search bar on the Add Data Source or Integrations page after selecting + Add New.
+
+* You can enter CLI in the search bar to locate the Cortex CLI tool.
+
+  22.2. Cortex CLI common command line reference guide
+
+#### Note
+
+* For soft fails, a failed check matches the defined severity threshold. If multiple soft fail severities are specified, the highest severity acts as the threshold for determining a soft fail. However, a successful scan will always return an exit code of 0, even if block-level findings (which might trigger soft fails based on severity) are present.
+
+  22.3. Cortex CLI for API Security
+
+#### Prerequisite
+
+* Ensure you have the required user permissions. Refer to Overview for more informationOverview Onboard and install the Cortex CLI. Refer to Connect Cortex CLI for more informationConnect Cortex CLI Ensure your application exposes APIs and provides a corresponding OpenAPI Specification file Ensure that you have installed Java v 11 and above
+
+  22.3.1. Cortex CLI API Security command line reference guide
+
+  22.4. Cortex CLI for Cloud Workload Protection
+
+#### Prerequisite
+
+* Ensure you have the required user permissions. Refer to Overview for more informationOverview Onboard and install the Cortex CLI. Refer to Connect Cortex CLI for more informationConnect Cortex CLI Verify that Java version 11 and above is installed: Run java -version in your terminal. If not, refer to Java SE Development Kit 11.0.25 for information...
+
+* Before you begin, ensure you have sudo privileges to execute the image scan.
+
+* For direct scanning from your Docker daemon, the image must already exist in your local Docker repository. The CLI will not pull a new image if it does not exist locally. To scan an image that exists in your local Docker daemon, simply provide its name: The image scan accepts the following arguments: --api-base-url: Required - true. The public facing API URL. Refer to Connect Cortex CLI for more informationConnect Cortex CLI --api-key: Required - true. Your Cortex Cloud API key. Refer to Connect Cortex CLI for more informationConnect Cortex CLI --api-key-id: Required - true. Your Cortex Cloud API key ID image scan: Required - true. Refers to CWP as the type of scan By default, Cortex Cloud looks for the Docker socket at unix:///var/run/docker.sock. --docker-host <path> specifies the path to the Docker socket. Use this flag if your Docker socket is located elsewhere, for example unix:///var/snap/docker/common/run/docker.sock. To scan an image from a previously saved archive file (such as a .tar file), use the --archive flag: This example demonstrates how to create an image archive from your Docker or Podman environment, which can then be used for scanning or SBOM generation if you choose not to scan directly from the local daemon. With Docker: docker save -o ubuntu.tar ubuntu With Podman: podman save --format oci-archive -o /tmp/alpine-oci.tar alpine:latest You can generate a Software Bill of Materials (SBOM) for your container images using the Cortex CLI and and save the output to a specified file. This functionality enables you to store the SBOM for further analysis, auditing, and compliance. By default, this will retrieve the SBOM for an image from your local Docker daemon. To get an SBOM for an image from your local Docker daemon: Command: cortexcli image sbom: Exports a Software Bill of Materials (SBOM) document for a container image archive. Usage: cortexcli image sbom [command options] --archive-format value: Specifies the image archive format. Values: docker-archive (default), oci-archive --output-format value: Specifies the SBOM document output format. Values: json (default), xml --output-file value: Specifies the path to the file where the SBOM document will be saved --fields value [--fields value]: Specifies the fields to include in the SBOM document. Multiple fields can be specified including: author, binaries, license, name, purl, sourcePackage, type, version --help, -h: Displays help information for the command To export an SBOM from an image archive file, use the --archive flag: NAME: cortexcli image sbom - Exports an SBOM document for an image from the local Docker daemon or an image archive. USAGE: cortexcli image sbom [command options] [image name or archive file]. Docker socket not reachable: If you encounter errors indicating the Docker socket cannot be reached, ensure the Docker daemon is running and verify the path to your Docker socket. If it's not in the default location (unix:///var/run/docker.sock), use the --docker-host flag to specify the correct path Image not found: If you attempt to scan an image directly from the Docker daemon and receive an error that the image does not exist, confirm that the image is indeed present in your local Docker repository by running docker images. The CLI will not pull images 22.4.1 |Cloud Workload Protection command line reference This reference guide documents the Cloud Workload Protection commands and flags for the Cortex CLI, including the structure of base commands and subcommands. Refer to Cortex CLI common command line reference guide for Cortex CLI commands common to all supported modules. 22.5 |Cortex CLI for Code Security PREREQUISITE: For the Cortex CLI binary:    Ensure you have Node.js v22 installed on your host machine before running any scans with the Cortex CLI. This is crucial to prevent runtime errors, as the CLI depends on Node.js for executing JavaScript analysis  Note    To check your version of Node.js, run node -v   To download Node.js, refer to the official Node.js...
+
+#### Note
+
+* CWP does not support container image secret scanning for systems running on ARM architecture.
+
+* For available CWP commands, refer to Cloud Workload Protection command line reference.
+
+* --archive: When used with image scan, sets the scan source to an archive file. When used with image sbom, indicates the SBOM should be exported from an archive file The --archive flag can also be explicitly set as --archive=true --archive-format <value>: The image archive format (such as docker-archive or oci-archive). Default: docker-archive.
+
+  22.5.1. Cortex CLI usage for Cortex Cloud Application Security
+
+  22.5.2. Cortex CLI Cortex Cloud Application Security command line reference
+
+#### Note
+
+* The repo-id flag must not end with .config, .log or .ini. -config is acceptable. --repo-id foo.config will be blocked --repo-id foo-config will pass
+
+#### Important
+
+* The Cortex CLI Cortex Cloud Application Security only supports single occurrences of each flag. If the same flag is passed multiple times, only the last provided value will be used. For example, in the following command, only TF CloudFormation will be the scanned framework. ./cortexcli --api-base-url <YOUR_API_URL> --api-key <YOUR_API_KEY> --auth-id...
+
+23. Cortex Cloud XQL
+
+  23.1. Get started with XQL
+
+  23.1.1. XQL language features
+
+#### Tip
+
+* When creating XQL queries, you can: Use the up and down arrow keys to navigate through the auto-suggestion commands and definitions. Select an auto-suggestion command by pressing either the Enter or Tab key. Press Shift+Enter to add a new line, and easily ignore the auto-suggestion output. Close the auto-suggestion output by pressing the Esc key.
+
+#### Navigation
+
+  You submit XQL queries to Cortex Cloud using the Investigation & Response → Search → Query Builder user interface
+
+  23.1.2. XQL Language Structure
+
+#### Note
+
+* Specifying a dataset is not required because Cortex Cloud uses xdr_data as the default dataset. If you have more than one dataset or lookup, you can change your default dataset by navigating to Settings → Configurations → Data Management → Dataset Management, right-click on the appropriate dataset, and select Set as default.
+
+* You can also build a query that investigates data in both a cold dataset and hot dataset in the same query. In addition, as the hot storage dataset format is the default option and represents the fully searchable storage, this format is used throughout this guide. For more information on hot and cold storage, see Dataset management.
+
+  23.1.2.1. Adding comments in queries
+
+  23.1.3. Supported operators
+
+#### Note
+
+* In some cases, using an IN or NOT IN operator combined with a dataset and filterfilter stage can be a better alternative to using a join stage.
+
+  23.1.4. Datasets and presets
+
+#### Note
+
+* To set up this Cloud Identity Engine (previously called Directory Sync Service (DSS)) dataset, you need to set up a Cloud Identity Engine. Otherwise, you will not have a pan_dss_raw dataset. For more information, see Set up Cloud Identity Engine.Set up Cloud Identity Engine
+
+* INFO issues are not included in this dataset. The issue fields included in this dataset are limited to certain fields available in the API. For the full list, see Get Alerts Multi-Events v2 API.
+
+* The fields contained in this dataset are a subset of the fields in the xdr_data dataset.
+
+* If the vendor and product are not specified in the Winlogbeat profile's configuration file, Cortex Cloud creates a default dataset called microsoft_windows_raw.
+
+* To ensure GlobalProtect access authentication logs are sent to Cortex Cloud, verify that your PANW firewall's Log Settings for GlobalProtect has the Cortex Data Lake checkbox selected.
+
+* Prisma Access firewalls do not send configuration logs to the Structured Log Storage (SLS).
+
+* You can query in XQL for this data and build widgets based on the xdr_data dataset or using the preset device_control. To view in an XQL query these events, the Device Configuration of the endpoint profile must be set to Block. Otherwise, the USB events are not captured. The events are also captured when a group of device types are blocked on the...
+
+  23.1.5. About examples
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder → XQL → Query Library
+
+  23.1.6. JSON functions
+
+#### Important
+
+* JSON field names are case sensitive, so the key to field pairing must be identical in an XQL query for results to be found. For example, if a field value is "TIMESTAMP" and your query is defined to look for "timestamp", no results will be found.
+
+  23.1.7. How to filter for empty values in the results table
+
+  23.1.8. Understanding string manipulation in XQL
+
+  23.2. Build XQL queries
+
+#### Note
+
+* If you have the Cortex Agentic Assistant, you can use natural language prompts to create and run XQL queries within the chat interface. For more information, see Create and run XQL queries with Agentic Assistant chat.
+
+  23.2.1. About the Query Builder
+
+#### Note
+
+* Schema changes to datasets may not be reflected in the autocomplete suggestions and definitions as you type in real time the XQL query, and can appear with a slight delay.
+
+#### Tip
+
+* When creating XQL queries, you can: Use the up and down arrow keys to navigate through the auto-suggestion commands and definitions. Select an auto-suggestion command by pressing either the Enter or Tab key. Press Shift+Enter to add a new line, and easily ignore the auto-suggestion output. Close the auto-suggestion output by pressing the Esc key.
+
+  23.2.2. How to build XQL queries
+
+#### Note
+
+* Users with different dataset permissions can receive different results for the same XQL query. An administrator or a user with a predefined user role can create and view queries built with an unknown dataset that currently does not exist in Cortex Cloud. All other users can only create and view queries built with an existing dataset. When you have more...
+
+* You can build a query that investigates data in both a cold dataset and a hot dataset in the same query. In addition, as the hot storage dataset format is the default option and represents the fully searchable storage, this format is used throughout this guide for investigation and threat hunting. For more information on hot and cold storage, see...
+
+#### Important
+
+* Forensic datasets are not inlcuded by default in XQL query results, unless the dataset query is explicitly defined to use a forensic dataset.
+
+  23.2.2.1. Get started with XQL queries
+
+  23.2.2.2. Useful XQL user interface features
+
+#### Note
+
+* Schema changes to datasets may not be reflected in the autocomplete suggestions and definitions as you type in real time the XQL query and can appear with a slight delay.
+
+#### Tip
+
+* When creating XQL queries, you can: Use the up and down arrow keys to navigate through the auto-suggestion command suggestions and definitions. Select an auto-suggestion command by pressing either the Enter or Tab key. Press Shift+Enter to add a new line, and easily ignore the auto-suggestion output. Close the auto-suggestion output by pressing the Esc...
+
+  23.2.2.3. XQL Query best practices
+
+  23.2.2.4. Expected results when querying fields
+
+  23.2.2.5. Create XQL query
+
+#### Note
+
+* Whenever the time period is changed in the query window, the config timeframe is automatically set to the time period defined for the entire query, including queries that are part of the join stage. Yet, this won't be visible as part of the query. Only if you manually type in the config timeframe will this be seen in the query. These time picker...
+
+#### Tip
+
+* When creating XQL queries, you can: Use the up and down arrow keys to navigate through the auto-suggestion command suggestions and definitions. Select an auto-suggestion command by pressing either the Enter or Tab key. Press Shift+Enter to add a new line, and easily ignore the auto-suggestion output. Close the auto-suggestion output by pressing the Esc...
+
+* While the query is running, you can navigate away from the page. A notification is sent when the query has finished. You can also Cancel the query or run a new query, where you have the option to Run only new query (cancel previous) or Run both queries.
+
+  23.2.2.6. Review XQL query results
+
+#### Note
+
+* It's also possible to graph the results displayed. For more information, see Graph query results.
+
+* Results are received incrementally for the first 100K records, or up to 100MB worth of records, whichever comes first. After that, the next update is when the query has finished running completely.
+
+* Real time query results are available only in the Query Builder and in free text query. Real time results are displayed only for queries run on hot datasets. The Sort option is available only after all the data is retrieved. When you formulate complex queries, the results will be displayed when the query has finished running completely, and not in real...
+
+* In order for Cortex Cloud to provide a histogram for a field, the field must not contain an array or a JSON object.
+
+  23.2.2.7. Translate to XQL
+
+#### Important
+
+* This feature is still in a Beta state and you will find that not all Splunk queries can be converted to XQL. This feature will be improved upon in the upcoming releases to support greater Splunk query translations to XQL.
+
+  23.2.2.8. Graph query results
+
+#### License Type
+
+  Building Cortex Query Language (XQL) queries in the Query Builder requires a Data Collection add-on.
+
+#### Note
+
+* To display the result of as a time duration, choose the graph type Single Value and enable Show as Time. You can then select the Time Unit (millisecond, second, minute, or hour) and the Display format.
+
+  23.2.3. XQL query entities
+
+  23.2.3.1. Create authentication query
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+  23.2.3.2. Create event log query
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+  23.2.3.3. Create file query
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+  23.2.3.4. Create image load query
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+  23.2.3.5. Create network connections query
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+  23.2.3.6. Create network query
+
+#### Note
+
+* When you run the query, depending on the outcome of the results, the value specified in this field might be displayed in the dst_ip field in the query results. This occurs if an RDP event is recorded whereby a user connected from the source IP to the destination IP.
+
+  23.2.3.7. Create process query
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+  23.2.3.8. Create registry query
+
+#### Important
+
+* Ensure the KEY NAME is entered as a real registry key name, and not as a symbolic link. Otherwise, the query will not retrieve results. Instead of HKEY_LOCAL_MACHINE\System\CurrentControlSet, which is a symbolic link, use KEY_LOCAL_MACHINE\System\ControlSet001. Instead of HKEY_CURRENT_USER, use HKEY_USERS\<SID>, where SID is either a SID of the current...
+
+  23.2.3.9. Query across all entities
+
+#### Navigation
+
+  Investigation & Response → Search → Query Builder
+
+  23.2.4. Overview of the Query Center
+
+#### Note
+
+* Very short queries might not be listed. You cannot cancel correlation queries. The default retention period for historic queries is aligned with issue retention.
+
+  23.2.4.1. Edit and run queries in Query Center
+
+#### Note
+
+* If query limits are applied to your tenant, the number of concurrent running queries is limited per user. If query usage is reaching the defined limit, a system message warns you that a high query load is impacting performance. If you exceed the limit, new queries are blocked until query usage drops. You can view all active queries under Query Center...
+
+* You can cancel your own queries. To cancel queries run by other users, you must have View/Edit permissions for Configurations → Query Management. By default, Instance administrators have View/Edit permission.
+
+* Cancelled queries show a Canceled status. You can see details of all canceled queries in the Query History tab. You cannot cancel correlation rule queries. If you cancel a scheduled query, only the current query is cancelled. Future recurrences of the scheduled query are not affected.
+
+#### Navigation
+
+  Investigation & Response → Search → Query Center → Query History
+
+  23.2.4.1.1. Query Center reference information
+
+#### Note
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default.
+
+  23.2.5. Manage scheduled queries
+
+#### Navigation
+
+  Investigation & Response → Search → Scheduled Queries
+
+  23.2.5.1. Scheduled Queries reference information
+
+#### Note
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default.
+
+  23.2.6. Manage your query library
+
+#### Note
+
+* The Query to Library option is only available if your role has the Create Queries capability. For more information, see Manage access to saved queries.
+
+* When the tenant-level setting Owners and editors can change the general access is unselected, the drop-down is disabled and only an administrator can configure this option.
+
+#### Important
+
+* The ability to create, edit, or share queries is governed by access management. If certain options are unavailable, contact your administrator. For more information, see Manage access to saved queries.
+
+  23.3. Stages
+
+  23.4. Functions
+
+24. Graph Search
+
+  24.1. What is Graph Search?
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+  24.2. Get started with Graph Search queries
+
+#### License Type
+
+  This feature is included with a Cortex XSIAM Premium license. It is also included with any other Cortex XSIAM license that has the Cloud Posture Security or Cloud Runtime Security add-on.
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+#### Navigation
+
+  Understand your assets and findings data: Graph Search queries are based on the current data that has been collected for assets and findings from the data sources configured and then sent to the Unified Asset Inventory (UAI), which is displayed in the All Assets page (Inventory → Assets → All Assets
+
+  24.3. How to build Graph Search queries?
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+#### Navigation
+
+  You submit Graph Search queries using the Investigation & Response → Search → Query Builder → Graph Search built-in query interface
+
+  24.4. Understand Graph Search query results
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+  24.5. Create Graph Search query
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+#### Note
+
+* For more information about the Query Library, see Manage the Graph Search Query Library.
+
+#### Tip
+
+* After running the query, you can view the complete query by hovering over the last THAT... in the Graph Search query interface, and the query is displayed in a tooltip. If your query doesn't find any results or you want to change your query for any reason, you can always click anywhere in the Graph Search query interface, where your existing query is...
+
+  24.6. Graph Search examples
+
+#### License Type
+
+  This feature is included with a Cortex XSIAM Premium license. It is also included with any other Cortex XSIAM license that has the Cloud Posture Security or Cloud Runtime Security add-on.
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+  24.7. Manage the Graph Search Query Library
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+#### Navigation
+
+  From Graph Search in the Query Builder Select Investigation & Response → Search → Query Builder → Graph Search
+
+  Investigation & Response → Search → Query Builder → Graph Search
+
+  Investigation & Response → Search → Query Center
+
+  24.8. Edit and run queries in Query Center
+
+#### Note
+
+* If query limits are applied to your tenant, the number of concurrent running queries is limited per user. If query usage is reaching the defined limit, a system message warns you that a high query load is impacting performance. If you exceed the limit, new queries are blocked until query usage drops. You can view all active queries under Query Center...
+
+* You can cancel your own queries. To cancel queries run by other users, you must have View/Edit permissions for Configurations → Query Management. By default, Instance administrators have View/Edit permission.
+
+* Cancelled queries show a Canceled status. You can see details of all canceled queries in the Query History tab. You cannot cancel correlation rule queries. If you cancel a scheduled query, only the current query is cancelled. Future recurrences of the scheduled query are not affected.
+
+#### Navigation
+
+  Investigation & Response → Search → Query Center → Query History
+
+  24.8.1. Query Center reference information
+
+#### Note
+
+* Certain fields are exposed and hidden by default. An asterisk (*) is beside every field that is exposed by default.
+
+  24.9. Supported assets and findings
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+  24.10. FAQ on Graph Search
+
+#### Prerequisite
+
+* Graph Search requires View or View/Edit RBAC permissions for Graph Search under Investigation & Response → Search.
+
+25. API specification inventory
+
+#### Note
+
+* Even if you have already imported the specification, you can edit the API specification in Cortex Cloud and add or update the server list.
+
+  25.1. Import API specification
+
+#### Note
+
+* Even if you already imported the file, you can edit the API asset and add or update the server list.
