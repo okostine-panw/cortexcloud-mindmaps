@@ -1,0 +1,134 @@
+<opml version="2.0">
+  <head>
+    <title>Cortex Gateway Documentation</title>
+  </head>
+  <body>
+    <outline text="Cortex Gateway Documentation">
+      <outline text="1. Cortex Gateway" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Cortex-Gateway">
+        <outline text="1.1. Activate a tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Activate-a-tenant">
+          <outline text="1.1.1. Activate Cortex XDR tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Activate-Cortex-XDR-tenant">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin, make sure you have the following:&#10;Cortex XDR activation email.&#10;Customer Support Portal Super User role is assigned to your account.&#10;Before activating your Cortex XDR tenant, you need to set up your Customer Support Portal account. See How to Create Your Customer Support Portal User Account. When you create a Customer Support Portal..." type="note" />
+            </outline>
+          </outline>
+          <outline text="1.1.2. Activate Cortex XSIAM tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Activate-Cortex-XSIAM-tenant">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin, make sure you have the following:&#10;Cortex XSIAM activation email.&#10;Customer Support Portal Super User role is assigned to your account.&#10;Before activating your Cortex XSIAM tenant, you need to set up your Customer Support Portal account. See How to Create Your Customer Support Portal User Account. When you create a Customer Support..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="When you activate, a production tenant is first activated. After activation, you can set up a development tenant (subject to your license)." type="note" />
+            </outline>
+          </outline>
+          <outline text="1.1.3. Activate Cortex XSOAR tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Activate-Cortex-XSOAR-tenant">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="When you activate, a production tenant is first activated. After activation, you can set up a development tenant (subject to your license)." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Activation can take about an hour and does not require that you remain on the activation page. Cortex XSOAR sends a notification to your email when the process is complete." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="If you want to change your tenant's name, the subdomain, or activate a development tenant (subject to license), on the right-hand side, click the ellipsis." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="1.2. Users and roles in Cortex" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Users-and-roles-in-Cortex">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="All users must have at least one role or belong to at least one user group to be saved in the Cortex Gateway." type="note" />
+          </outline>
+        </outline>
+        <outline text="1.3. User management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/User-management">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="If you have migrated local users from Cortex XSOAR 6 to Cortex XSOAR 8 and these users are in the Customer Support Portal, these users are designated the PANW IDP user type. For more information, see Migrating users and roles." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="If a user does not have a direct role or user group assigned, the user is revoked and is not saved in the Cortex Gateway." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="If a user does not have a direct role or user group assigned, the user is revoked and is not saved in the Cortex Gateway." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="You must have an Account Admin role to manage users in Cortex Gateway." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="You must have an Account Admin or Instance Administrator role." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Users without an assigned role or user group are not saved in the Cortex Gateway. However, there is an exception for users who did not have an assigned role or user group and who were hidden before the following product releases:&#10;Cortex XSIAM 2.7 (legacy)&#10;Cortex XSIAM 3.2 (platform)&#10;Cortex XSOAR 8.11&#10;Cortex XDR 3.15 (legacy)&#10;Cortex XDR 4.2..." type="note" />
+          </outline>
+          <outline text="1.3.1. Manage users in Cortex Gateway" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Manage-users-in-Cortex-Gateway">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="To remove users added to your CSP account, you must do so in the CSP, not in Cortex Gateway." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="To update the permissions associated with each role, you need to change them in the tenant or the Roles tab in Cortex Gateway.&#10;If users have been created in the CSP, but you want them to access the tenant through SSO only, you should not assign a direct role. If you sign a direct role, users can access the tenant through both the CSP and SSO.&#10;If no..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="If you are updating multiple tenants at one time, you can only add predefined roles or roles created in Cortex Gateway (not custom roles created in the tenant)." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="You cannot deactivate a user who has an Account Admin role or who is not assigned access to a tenant. If you want to deactivate an Account Admin user role, right-click the user and select Remove User Permissions. You can then deactivate the user." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Users without an assigned role or user group are not saved in the Cortex Gateway. However, there is an exception for users who did not have an assigned role or user group and who were hidden before the following product releases:&#10;Cortex XSIAM 2.7 (legacy)&#10;Cortex XSIAM 3.2 (platform)&#10;Cortex XSOAR 8.11&#10;Cortex XDR 3.15 (legacy)&#10;Cortex XDR 4.2..." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="1.4. Roles management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Roles-management">
+          <outline text="1.4.1. Predefined roles in Cortex Gateway" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Predefined-roles-in-Cortex-Gateway">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The user who activated the Cortex product is assigned the Account Admin role.&#10;You can add the role to a user in Cortex Gateway or the tenant. If you need to remove the Account Admin role from a user, this can only be done in Cortex Gateway.&#10;Only users with the Account Admin role can add or remove another Account Admin user role." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="By default, users do not have roles assigned. If no direct or user group role has been assigned, users have no permission to view or edit data in the Cortex tenant." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Some features are license-dependent. Accordingly, users may not see a specific feature if the feature is not supported by the license type or if they do not have access based on their assigned role." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The user who activated the Cortex product is assigned the Account Admin role. You cannot create additional Account Admin roles in the Cortex XDR/XSIAM tenant. If you do not want the user to have Account Admin permission, you need to remove the Account Admin role in Cortex Gateway." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Some features are license-dependent. Accordingly, users may not see a specific feature if the feature is not supported by the license type or if they do not have access based on their assigned role." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The user who activated the Cortex product is assigned the Account Admin role. You cannot create additional Account Admin roles in the Cortex tenant. If you do not want the user to have Account Admin permission, you need to remove the Account Admin role in Cortex Gateway." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Some features are license-dependent. Accordingly, users may not see a specific feature if the feature is not supported by the license type or if they do not have access based on their assigned role." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The user who activated the Cortex product is assigned the Account Admin role. You cannot create additional Account Admin roles in the Cortex tenant. If you do not want the user to have Account Admin permission, you need to remove the Account Admin role in Cortex Gateway." type="note" />
+            </outline>
+          </outline>
+          <outline text="1.4.2. Manage roles in Cortex Gateway" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Manage-roles-in-Cortex-Gateway">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="You must have an Account Admin role to manage tenants, users, roles, and user groups in Cortex Gateway." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="You must have an Account Admin role to create or edit a role.&#10;You cannot define advanced settings such as managing shifts or setting default dashboards in Cortex Gateway, as these are exclusive to the Cortex XSOAR tenant.&#10;We recommend copying and modifying out-of-the-box roles." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="In Cortex XDR/XSIAM, the Datasets tab is disabled in the Cortex Gateway as you can only set dataset access permissions in Cortex XDR/XSIAM Access Management. For more information in Cortex XSIAM, see Manage user roles. For more information in Cortex XDR, see Manage use roles." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="1.5. User group management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/User-group-management">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="You can create user groups in the tenant or Cortex Gateway. User groups created in Cortex Gateway cannot be mapped to SAML groups. Only user groups that are created in the tenant support SAML group mapping. We recommend creating user groups in the Cortex tenant because user groups are available for all tenants and you may want different user groups in..." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="If users have been created in the CSP, but you want them to access the tenant through SSO only, skip this field and add only SAML group mapping after SSO is set up, otherwise, users can access the tenant through both the CSP and SSO.&#10;If you have not yet created any users, skip this field and add them later. See Set up authentication ." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="When using Azure AD for SSO, the SAML group mapping needs to be provided using the group object ID (GUID) and not the group name." type="note" />
+          </outline>
+        </outline>
+        <outline text="1.6. Egress configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex/Cortex-Gateway-Administrator-Guide/Cortex-Gateway/Egress-configurations">
+          <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+            <outline text="Only Account Admin and Instance Admin can submit a request on behalf of a user. Only users with these roles can view the Egress Configurations option in the Gateway.&#10;The Account Admin can view all the tenants from the account where requests have been submitted, and the Instance Admin can view all the requests that have been submitted for their tenant." type="note" />
+          </outline>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,506 @@
+<opml version="2.0">
+  <head>
+    <title>Cortex APIs Documentation</title>
+  </head>
+  <body>
+    <outline text="Cortex APIs Documentation">
+      <outline text="1. Cortex Cloud APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cortex-Cloud-APIs">
+        <outline text="1.1. Create a new API key" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-a-new-API-key" />
+        <outline text="1.2. Get started with Cortex Cloud APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-started-with-Cortex-Cloud-APIs" />
+        <outline text="1.3. Get your Cortex API key ID" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-your-Cortex-API-key-ID" />
+        <outline text="1.4. Get your FQDN" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-your-FQDN" />
+        <outline text="1.5. Make your first API call" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Make-your-first-API-call" />
+        <outline text="1.6. Run XQL query APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Run-XQL-query-APIs" />
+        <outline text="1.7. Understand Cortex Cloud licenses" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Understand-Cortex-Cloud-licenses" />
+        <outline text="1.8. What's new in Cortex Cloud 2.0" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/What-s-new-in-Cortex-Cloud-20" />
+      </outline>
+      <outline text="2. APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/APIs">
+        <outline text="2.1. Cortex Cloud Platform APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cortex-Cloud-Platform-APIs">
+          <outline text="2.1.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.1.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+          </outline>
+          <outline text="2.1.2. API keys" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/API-keys">
+            <outline text="2.1.2.1. Get existing API keys" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-existing-API-keys" />
+            <outline text="2.1.2.2. Generate an API key" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Generate-an-API-key" />
+            <outline text="2.1.2.3. Delete API keys" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-API-keys" />
+          </outline>
+          <outline text="2.1.3. Asset groups" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Asset-groups">
+            <outline text="2.1.3.1. Get all or filtered asset groups" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-or-filtered-asset-groups" />
+            <outline text="2.1.3.2. Create an Asset Group" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-Asset-Group" />
+            <outline text="2.1.3.3. Update an Asset Group" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-an-Asset-Group" />
+            <outline text="2.1.3.4. Delete an Asset Group" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-Asset-Group" />
+          </outline>
+          <outline text="2.1.4. Asset inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Asset-inventory">
+            <outline text="2.1.4.1. Get all or filtered assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-or-filtered-assets" />
+            <outline text="2.1.4.2. Get asset by ID" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-asset-by-ID" />
+            <outline text="2.1.4.3. Get raw fields of asset by ID" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-raw-fields-of-asset-by-ID" />
+            <outline text="2.1.4.4. Get schema of asset inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-schema-of-asset-inventory" />
+            <outline text="2.1.4.5. Get enum values of specified field" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-enum-values-of-specified-field" />
+          </outline>
+          <outline text="2.1.5. Attack surface management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Attack-surface-management">
+            <outline text="2.1.5.1. Get External Service" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-External-Service" />
+            <outline text="2.1.5.2. Get All Services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-All-Services" />
+            <outline text="2.1.5.3. Get vulnerability tests" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-vulnerability-tests" />
+            <outline text="2.1.5.4. Bulk Update Vulnerability Tests" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Bulk-Update-Vulnerability-Tests" />
+          </outline>
+          <outline text="2.1.6. Audit log" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Audit-log">
+            <outline text="2.1.6.1. Get Audit Management Log" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Audit-Management-Log" />
+            <outline text="2.1.6.2. Get Audit Agent Report" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Audit-Agent-Report" />
+          </outline>
+          <outline text="2.1.7. Authentication settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Authentication-settings">
+            <outline text="2.1.7.1. Create authentication settings for IdP SSO or metadata URL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-authentication-settings-for-IdP-SSO-or-metadata-URL" />
+            <outline text="2.1.7.2. Update authentication settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-authentication-settings" />
+            <outline text="2.1.7.3. Delete authentication settings by domain" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-authentication-settings-by-domain" />
+            <outline text="2.1.7.4. Get authentication settings for all configured domains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-authentication-settings-for-all-configured-domains" />
+            <outline text="2.1.7.5. Get IdP metadata" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-IdP-metadata" />
+          </outline>
+          <outline text="2.1.8. BIOCs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/BIOCs">
+            <outline text="2.1.8.1. Get BIOCs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-BIOCs" />
+            <outline text="2.1.8.2. Insert or update BIOCs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-BIOCs" />
+            <outline text="2.1.8.3. Delete BIOCs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-BIOCs" />
+          </outline>
+          <outline text="2.1.9. Cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cases">
+            <outline text="2.1.9.1. Retrieve cases based on filters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-cases-based-on-filters" />
+            <outline text="2.1.9.2. Update existing case" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-existing-case" />
+            <outline text="2.1.9.3. Retrieve Case Artifacts by Case Id" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-Case-Artifacts-by-Case-Id" />
+            <outline text="2.1.9.4. Get War Room entries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-War-Room-entries" />
+            <outline text="2.1.9.5. Add War Room entries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-War-Room-entries" />
+          </outline>
+          <outline text="2.1.10. Correlation Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Correlation-Rules">
+            <outline text="2.1.10.1. Get Correlation Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Correlation-Rules" />
+            <outline text="2.1.10.2. Insert or update Correlation Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-Correlation-Rules" />
+            <outline text="2.1.10.3. Delete Correlation Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-Correlation-Rules" />
+          </outline>
+          <outline text="2.1.11. Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cortex-CLI">
+            <outline text="2.1.11.1. Get the latest version of the Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-the-latest-version-of-the-Cortex-CLI" />
+          </outline>
+          <outline text="2.1.12. Dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Dashboards">
+            <outline text="2.1.12.1. Get dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-dashboards" />
+            <outline text="2.1.12.2. Insert or update dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-dashboards" />
+            <outline text="2.1.12.3. Delete dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-dashboards" />
+          </outline>
+          <outline text="2.1.13. Dataset Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Dataset-Management">
+            <outline text="2.1.13.1. Add Dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-Dataset" />
+            <outline text="2.1.13.2. Delete a dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-a-dataset" />
+            <outline text="2.1.13.3. Get all datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-datasets" />
+          </outline>
+          <outline text="2.1.14. Endpoint Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Endpoint-Management">
+            <outline text="2.1.14.1. Get Distribution version" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Distribution-version" />
+            <outline text="2.1.14.2. Get all Endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-Endpoints" />
+            <outline text="2.1.14.3. Get Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Policy" />
+            <outline text="2.1.14.4. Delete Endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-Endpoints" />
+            <outline text="2.1.14.5. Create distributions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-distributions" />
+            <outline text="2.1.14.6. Get Distributions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Distributions" />
+            <outline text="2.1.14.7. Get Violations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Violations" />
+            <outline text="2.1.14.8. Get Distribution status" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Distribution-status" />
+            <outline text="2.1.14.9. Get Distribution URL" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Distribution-URL" />
+            <outline text="2.1.14.10. Set an Endpoint Alias" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Set-an-Endpoint-Alias" />
+            <outline text="2.1.14.11. Assign Tags" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Assign-Tags" />
+            <outline text="2.1.14.12. Remove Tags" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Remove-Tags" />
+            <outline text="2.1.14.13. Get Endpoint" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Endpoint" />
+            <outline text="2.1.14.14. Initiate Forensics Triage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Initiate-Forensics-Triage" />
+            <outline text="2.1.14.15. Delete Tags Permanently" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-Tags-Permanently" />
+            <outline text="2.1.14.16. Upgrade Agents" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Upgrade-Agents" />
+            <outline text="2.1.14.17. Get endpoint security profiles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-endpoint-security-profiles" />
+            <outline text="2.1.14.18. Get Legacy Exceptions Modules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Legacy-Exceptions-Modules" />
+            <outline text="2.1.14.19. Fetch Legacy Exception Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Fetch-Legacy-Exception-Rules" />
+            <outline text="2.1.14.20. Add Legacy Exception Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-Legacy-Exception-Rule" />
+            <outline text="2.1.14.21. Edit Legacy Exception Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-Legacy-Exception-Rule" />
+            <outline text="2.1.14.22. Delete Legacy Exception Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-Legacy-Exception-Rules" />
+          </outline>
+          <outline text="2.1.15. IOCs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/IOCs">
+            <outline text="2.1.15.1. Get Indicators (IOCs)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Indicators-IOCs" />
+            <outline text="2.1.15.2. Insert or update IOCs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-IOCs" />
+            <outline text="2.1.15.3. Delete Indicators (IOCs)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-Indicators-IOCs" />
+          </outline>
+          <outline text="2.1.16. Issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Issues">
+            <outline text="2.1.16.1. Create a new issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-a-new-issue" />
+            <outline text="2.1.16.2. Retrieve issues based on filters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-issues-based-on-filters" />
+            <outline text="2.1.16.3. Update existing issue" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-existing-issue" />
+          </outline>
+          <outline text="2.1.17. Lookup Datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Lookup-Datasets">
+            <outline text="2.1.17.1. Add or update data in a lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-or-update-data-in-a-lookup-dataset" />
+            <outline text="2.1.17.2. Remove data from a lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Remove-data-from-a-lookup-dataset" />
+            <outline text="2.1.17.3. Get data from a lookup dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-data-from-a-lookup-dataset" />
+          </outline>
+          <outline text="2.1.18. Playbooks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Playbooks">
+            <outline text="2.1.18.1. Get a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-playbook" />
+            <outline text="2.1.18.2. Insert or update playbooks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-playbooks" />
+            <outline text="2.1.18.3. Delete a playbook" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-a-playbook" />
+          </outline>
+          <outline text="2.1.19. Profiles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Profiles">
+            <outline text="2.1.19.1. Get endpoint security profiles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-endpoint-security-profiles" />
+          </outline>
+          <outline text="2.1.20. Query Library" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Query-Library">
+            <outline text="2.1.20.1. Get XQL Queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-XQL-Queries" />
+            <outline text="2.1.20.2. Insert or update XQL queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-XQL-queries" />
+            <outline text="2.1.20.3. Delete XQL Queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-XQL-Queries" />
+          </outline>
+          <outline text="2.1.21. Response Action" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Response-Action">
+            <outline text="2.1.21.1. Restore File" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Restore-File" />
+            <outline text="2.1.21.2. File Retrieval Details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/File-Retrieval-Details" />
+            <outline text="2.1.21.3. Allow List Files" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Allow-List-Files" />
+            <outline text="2.1.21.4. Get Quarantine Status" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Quarantine-Status" />
+            <outline text="2.1.21.5. Quarantine Files" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Quarantine-Files" />
+            <outline text="2.1.21.6. Block List Files" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Block-List-Files" />
+            <outline text="2.1.21.7. Unisolate Endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Unisolate-Endpoints" />
+            <outline text="2.1.21.8. Cancel Scan Endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cancel-Scan-Endpoints" />
+            <outline text="2.1.21.9. Scan Endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Scan-Endpoints" />
+            <outline text="2.1.21.10. Get Action Status" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Action-Status" />
+            <outline text="2.1.21.11. Retrieve File" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-File" />
+            <outline text="2.1.21.12. Isolate Endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Isolate-Endpoints" />
+            <outline text="2.1.21.13. Get triage presets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-triage-presets" />
+          </outline>
+          <outline text="2.1.22. Scheduled Queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Scheduled-Queries">
+            <outline text="2.1.22.1. Get scheduled queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-scheduled-queries" />
+            <outline text="2.1.22.2. Insert or update scheduled queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-scheduled-queries" />
+            <outline text="2.1.22.3. Delete a scheduled query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-a-scheduled-query" />
+          </outline>
+          <outline text="2.1.23. Script execution" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Script-execution">
+            <outline text="2.1.23.1. Run Snippet Code Script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Run-Snippet-Code-Script" />
+            <outline text="2.1.23.2. Run Script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Run-Script" />
+            <outline text="2.1.23.3. Get Script Metadata" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Script-Metadata" />
+            <outline text="2.1.23.4. Get Script Execution Status" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Script-Execution-Status" />
+            <outline text="2.1.23.5. Get Scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Scripts" />
+            <outline text="2.1.23.6. Get Script Execution Results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Script-Execution-Results" />
+            <outline text="2.1.23.7. Get Script Execution Result Files" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Script-Execution-Result-Files" />
+            <outline text="2.1.23.8. Get Script Code" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Script-Code" />
+          </outline>
+          <outline text="2.1.24. Scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Scripts">
+            <outline text="2.1.24.1. Get a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-script" />
+            <outline text="2.1.24.2. Insert or update a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-a-script" />
+            <outline text="2.1.24.3. Delete a script" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-a-script" />
+          </outline>
+          <outline text="2.1.25. Syslog servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Syslog-servers">
+            <outline text="2.1.25.1. Create a syslog integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-a-syslog-integration" />
+            <outline text="2.1.25.2. Get all or filtered syslog servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-or-filtered-syslog-servers" />
+            <outline text="2.1.25.3. Update a syslog integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-a-syslog-integration" />
+            <outline text="2.1.25.4. Delete all or filtered syslog integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-all-or-filtered-syslog-integrations" />
+            <outline text="2.1.25.5. Test syslog integration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Test-syslog-integration" />
+          </outline>
+          <outline text="2.1.26. System management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/System-management">
+            <outline text="2.1.26.1. System Health Check" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/System-Health-Check" />
+            <outline text="2.1.26.2. Get Tenant Info" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Tenant-Info" />
+            <outline text="2.1.26.3. Get Users" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Users" />
+            <outline text="2.1.26.4. Get Roles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Roles" />
+            <outline text="2.1.26.5. Get User Groups" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-User-Groups" />
+            <outline text="2.1.26.6. Set a User Role" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Set-a-User-Role" />
+            <outline text="2.1.26.7. Get Risk Score" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Risk-Score" />
+            <outline text="2.1.26.8. Get Risky Users" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Risky-Users" />
+            <outline text="2.1.26.9. Get Risky Hosts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Risky-Hosts" />
+          </outline>
+          <outline text="2.1.27. Widgets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Widgets">
+            <outline text="2.1.27.1. Get widgets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-widgets" />
+            <outline text="2.1.27.2. Insert or update widgets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Insert-or-update-widgets" />
+            <outline text="2.1.27.3. Delete widgets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-widgets" />
+          </outline>
+          <outline text="2.1.28. XQL query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/XQL-query">
+            <outline text="2.1.28.1. Start an XQL query" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Start-an-XQL-query" />
+            <outline text="2.1.28.2. Get XQL query results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-XQL-query-results" />
+            <outline text="2.1.28.3. Get XQL query Quota" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-XQL-query-Quota" />
+            <outline text="2.1.28.4. Get XQL query results Stream" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-XQL-query-results-Stream" />
+          </outline>
+          <outline text="2.1.29. XQL user datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/XQL-user-datasets">
+            <outline text="2.1.29.1. Define an XQL user dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Define-an-XQL-user-dataset" />
+            <outline text="2.1.29.2. Get created XQL user datasets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-created-XQL-user-datasets" />
+            <outline text="2.1.29.3. Delete an XQL user dataset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-XQL-user-dataset" />
+          </outline>
+        </outline>
+        <outline text="2.2. Agent Configuration Settings API" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Agent-Configuration-Settings-API">
+          <outline text="2.2.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.2.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+            <outline text="2.2.1.2. Authentication methods" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Authentication-methods">
+              <outline text="2.2.1.2.1. Default authentication" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Default-authentication" />
+            </outline>
+          </outline>
+          <outline text="2.2.2. Agent Configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Agent-Configurations">
+            <outline text="2.2.2.1. Retrieve content management settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-content-management-settings" />
+            <outline text="2.2.2.2. Update content management settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-content-management-settings" />
+            <outline text="2.2.2.3. Retrieve agent status timeout settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-agent-status-timeout-settings" />
+            <outline text="2.2.2.4. Update agent status timeout settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-agent-status-timeout-settings" />
+            <outline text="2.2.2.5. Retrieve agent auto-upgrade settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-agent-auto-upgrade-settings" />
+            <outline text="2.2.2.6. Update agent auto-upgrade settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-agent-auto-upgrade-settings" />
+            <outline text="2.2.2.7. Retrieve WildFire analysis settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-WildFire-analysis-settings" />
+            <outline text="2.2.2.8. Update WildFire analysis settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-WildFire-analysis-settings" />
+            <outline text="2.2.2.9. Retrieve informative BTP issues settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-informative-BTP-issues-settings" />
+            <outline text="2.2.2.10. Update informative BTP issues settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-informative-BTP-issues-settings" />
+            <outline text="2.2.2.11. Retrieve log collection settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-log-collection-settings" />
+            <outline text="2.2.2.12. Update log collection settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-log-collection-settings" />
+            <outline text="2.2.2.13. Retrieve action center expiration settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-action-center-expiration-settings" />
+            <outline text="2.2.2.14. Update action center expiration settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-action-center-expiration-settings" />
+            <outline text="2.2.2.15. Retrieve critical environment versions settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-critical-environment-versions-settings" />
+            <outline text="2.2.2.16. Update critical environment versions settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-critical-environment-versions-settings" />
+            <outline text="2.2.2.17. Retrieve advanced analysis settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-advanced-analysis-settings" />
+            <outline text="2.2.2.18. Update advanced analysis settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-advanced-analysis-settings" />
+            <outline text="2.2.2.19. Retrieve endpoint administration cleanup settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-endpoint-administration-cleanup-settings" />
+            <outline text="2.2.2.20. Update endpoint administration cleanup settings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-endpoint-administration-cleanup-settings" />
+          </outline>
+        </outline>
+        <outline text="2.3. Cortex Cloud Alert Notification Rules REST APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cortex-Cloud-Alert-Notification-Rules-REST-APIs">
+          <outline text="2.3.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.3.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+          </outline>
+          <outline text="2.3.2. Alert Notification Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Alert-Notification-Rules">
+            <outline text="2.3.2.1. List all rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/List-all-rules" />
+            <outline text="2.3.2.2. Create a new rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-a-new-rule" />
+            <outline text="2.3.2.3. Retrieve a specific alert notification rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Retrieve-a-specific-alert-notification-rule" />
+            <outline text="2.3.2.4. Delete an existing Alert Notification Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-existing-Alert-Notification-Rule" />
+            <outline text="2.3.2.5. Edit an existing Alert Notification Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-an-existing-Alert-Notification-Rule" />
+            <outline text="2.3.2.6. Edit the status of an existing Alert Notification Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-the-status-of-an-existing-Alert-Notification-Rule" />
+          </outline>
+        </outline>
+        <outline text="2.4. ASPM, CICD and Application Security APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/ASPM-CICD-and-Application-Security-APIs">
+          <outline text="2.4.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.4.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+            <outline text="2.4.1.2. Authentication methods" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Authentication-methods">
+              <outline text="2.4.1.2.1. Default authentication" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Default-authentication" />
+            </outline>
+          </outline>
+          <outline text="2.4.2. Applications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Applications">
+            <outline text="2.4.2.1. Get an application configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-an-application-configuration" />
+            <outline text="2.4.2.2. Create an application" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-application" />
+            <outline text="2.4.2.3. Get applications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-applications" />
+            <outline text="2.4.2.4. Get an application" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-an-application" />
+            <outline text="2.4.2.5. Update an application" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-an-application" />
+            <outline text="2.4.2.6. Delete an application" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-application" />
+          </outline>
+          <outline text="2.4.3. Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Policies">
+            <outline text="2.4.3.1. Create an AppSec policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-AppSec-policy">
+              <outline text="2.4.3.1.1. Create an Application Security policy." type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-Application-Security-policy">
+                <outline text="2.4.3.1.1.1. How to access Application Security policies in the UI:" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/How-to-access-Application-Security-policies-in-the-UI" />
+                <outline text="2.4.3.1.1.2. Limitations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Limitations">
+                  <outline text="2.4.3.1.1.2.1. Trigger and Action Constraints by Finding Type" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Trigger-and-Action-Constraints-by-Finding-Type" />
+                  <outline text="2.4.3.1.1.2.2. General Policy Constraints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/General-Policy-Constraints" />
+                </outline>
+              </outline>
+            </outline>
+            <outline text="2.4.3.2. List AppSec policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/List-AppSec-policies">
+              <outline text="2.4.3.2.1. List all or filtered Application Security policies." type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/List-all-or-filtered-Application-Security-policies">
+                <outline text="2.4.3.2.1.1. How to access Application Security policies in the UI:" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/How-to-access-Application-Security-policies-in-the-UI" />
+              </outline>
+            </outline>
+            <outline text="2.4.3.3. Get an AppSec policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-an-AppSec-policy">
+              <outline text="2.4.3.3.1. Get the details of the Application Security policy specified by its policy ID." type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-the-details-of-the-Application-Security-policy-specified-by-its-policy-ID">
+                <outline text="2.4.3.3.1.1. How to access Application Security policies in the UI:" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/How-to-access-Application-Security-policies-in-the-UI" />
+              </outline>
+            </outline>
+            <outline text="2.4.3.4. Delete an AppSec policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-AppSec-policy">
+              <outline text="2.4.3.4.1. Delete an Application Security policy by specifying its policy ID." type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-Application-Security-policy-by-specifying-its-policy-ID">
+                <outline text="2.4.3.4.1.1. How to access Application Security policies in the UI:" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/How-to-access-Application-Security-policies-in-the-UI" />
+              </outline>
+            </outline>
+            <outline text="2.4.3.5. Update an AppSec policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-an-AppSec-policy">
+              <outline text="2.4.3.5.1. Update the details of the Application Security policy specified by its policy ID." type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-the-details-of-the-Application-Security-policy-specified-by-its-policy-ID">
+                <outline text="2.4.3.5.1.1. How to access Application Security policies in the UI:" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/How-to-access-Application-Security-policies-in-the-UI" />
+              </outline>
+            </outline>
+            <outline text="2.4.3.6. Supported Condition Fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Supported-Condition-Fields" />
+            <outline text="2.4.3.7. Supported Scope Fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Supported-Scope-Fields" />
+            <outline text="2.4.3.8. Supported Condition Fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Supported-Condition-Fields" />
+            <outline text="2.4.3.9. Supported Scope Fields" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Supported-Scope-Fields" />
+          </outline>
+          <outline text="2.4.4. Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Rules">
+            <outline text="2.4.4.1. Get AppSec rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-AppSec-rules" />
+            <outline text="2.4.4.2. Create an AppSec rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-AppSec-rule">
+              <outline text="2.4.4.2.1. Create an Application Security Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-Application-Security-Rule" />
+            </outline>
+            <outline text="2.4.4.3. Get an AppSec rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-an-AppSec-rule" />
+            <outline text="2.4.4.4. Modify an AppSec rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Modify-an-AppSec-rule" />
+            <outline text="2.4.4.5. Delete an AppSec rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-AppSec-rule" />
+            <outline text="2.4.4.6. Get AppSec rule labels" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-AppSec-rule-labels" />
+            <outline text="2.4.4.7. Create an AppSec rule validation" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-AppSec-rule-validation" />
+          </outline>
+          <outline text="2.4.5. Repositories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Repositories">
+            <outline text="2.4.5.1. Get repositories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-repositories" />
+            <outline text="2.4.5.2. Get a repository" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-repository" />
+            <outline text="2.4.5.3. Get a repository scan configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-repository-scan-configuration" />
+            <outline text="2.4.5.4. Update a repository scan configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-a-repository-scan-configuration" />
+            <outline text="2.4.5.5. Get AppSec repository branches" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-AppSec-repository-branches" />
+            <outline text="2.4.5.6. Update an AppSec repository branch" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-an-AppSec-repository-branch" />
+          </outline>
+          <outline text="2.4.6. Data Sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Data-Sources">
+            <outline text="2.4.6.1. Get Data Sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Data-Sources" />
+            <outline text="2.4.6.2. Get an AppSec Data Source" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-an-AppSec-Data-Source" />
+            <outline text="2.4.6.3. Update an AppSec Data Source" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-an-AppSec-Data-Source" />
+            <outline text="2.4.6.4. Delete an AppSec Data Source" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-an-AppSec-Data-Source" />
+          </outline>
+          <outline text="2.4.7. Scan management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Scan-management">
+            <outline text="2.4.7.1. Get unscanned AppSec scan management repositories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-unscanned-AppSec-scan-management-repositories" />
+            <outline text="2.4.7.2. Get AppSec branch periodic scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-AppSec-branch-periodic-scans" />
+            <outline text="2.4.7.3. Get AppSec Pull Request scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-AppSec-Pull-Request-scans" />
+            <outline text="2.4.7.4. Get AppSec CI scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-AppSec-CI-scans" />
+            <outline text="2.4.7.5. List AppSec scan issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/List-AppSec-scan-issues" />
+            <outline text="2.4.7.6. List AppSec scan findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/List-AppSec-scan-findings" />
+            <outline text="2.4.7.7. Rerun a repository scan" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Rerun-a-repository-scan" />
+          </outline>
+          <outline text="2.4.8. SBOM management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/SBOM-management">
+            <outline text="2.4.8.1. Get an SBOM for the specified repository" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-an-SBOM-for-the-specified-repository" />
+            <outline text="2.4.8.2. Get all SBOMs for the specified organization" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-SBOMs-for-the-specified-organization" />
+          </outline>
+          <outline text="2.4.9. Remediations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Remediations">
+            <outline text="2.4.9.1. Get Fix Suggestion" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Fix-Suggestion" />
+            <outline text="2.4.9.2. Trigger Fix Pull Request" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Trigger-Fix-Pull-Request" />
+            <outline text="2.4.9.3. Get Fix Status" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Fix-Status" />
+          </outline>
+          <outline text="2.4.10. Criteria" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Criteria">
+            <outline text="2.4.10.1. Get all criteria" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-criteria" />
+            <outline text="2.4.10.2. Get a Criteria by ID" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-Criteria-by-ID" />
+            <outline text="2.4.10.3. Delete a Criteria" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-a-Criteria" />
+            <outline text="2.4.10.4. Create a Criteria" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-a-Criteria" />
+          </outline>
+        </outline>
+        <outline text="2.5. Get Asset Compliance Results API" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Asset-Compliance-Results-API">
+          <outline text="2.5.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.5.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+            <outline text="2.5.1.2. Authentication methods" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Authentication-methods">
+              <outline text="2.5.1.2.1. Default authentication" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Default-authentication" />
+            </outline>
+          </outline>
+          <outline text="2.5.2. Control Findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Control-Findings">
+            <outline text="2.5.2.1. Get asset compliance results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-asset-compliance-results" />
+          </outline>
+        </outline>
+        <outline text="2.6. Cloud Onboarding APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cloud-Onboarding-APIs">
+          <outline text="2.6.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.6.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+            <outline text="2.6.1.2. Authentication methods" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Authentication-methods" />
+          </outline>
+          <outline text="2.6.2. Cloud integration instance management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cloud-integration-instance-management">
+            <outline text="2.6.2.1. Create a cloud onboarding integration template" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-a-cloud-onboarding-integration-template" />
+            <outline text="2.6.2.2. Get cloud instance details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-cloud-instance-details" />
+            <outline text="2.6.2.3. Get all or filtered integration instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-or-filtered-integration-instances" />
+            <outline text="2.6.2.4. Edit an integration instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-an-integration-instance" />
+            <outline text="2.6.2.5. Enable or disable cloud integration instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Enable-or-disable-cloud-integration-instances" />
+            <outline text="2.6.2.6. Delete the specified integration instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-the-specified-integration-instances" />
+            <outline text="2.6.2.7. Get identifier roles for integration instance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-identifier-roles-for-integration-instance" />
+          </outline>
+          <outline text="2.6.3. Cloud account management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cloud-account-management">
+            <outline text="2.6.3.1. Get accounts in the specified integration instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-accounts-in-the-specified-integration-instances" />
+            <outline text="2.6.3.2. Enable or disable cloud accounts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Enable-or-disable-cloud-accounts" />
+          </outline>
+          <outline text="2.6.4. Outpost management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Outpost-management">
+            <outline text="2.6.4.1. Create an outpost template" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-an-outpost-template" />
+            <outline text="2.6.4.2. Edit an outpost" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-an-outpost" />
+            <outline text="2.6.4.3. Get all or filtered outposts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-all-or-filtered-outposts" />
+          </outline>
+          <outline text="2.6.5. General" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/General">
+            <outline text="2.6.5.1. Get available regions for a CSP" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-available-regions-for-a-CSP" />
+            <outline text="2.6.5.2. Get approved Azure tenants" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-approved-Azure-tenants" />
+          </outline>
+        </outline>
+        <outline text="2.7. Cloud Infrastructure Entitlement Management APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cloud-Infrastructure-Entitlement-Management-APIs">
+          <outline text="2.7.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.7.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+          </outline>
+          <outline text="2.7.2. CIEM access" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/CIEM-access">
+            <outline text="2.7.2.1. Search CIEM Access" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Search-CIEM-Access" />
+          </outline>
+        </outline>
+        <outline text="2.8. Compliance Controls API" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Compliance-Controls-API">
+          <outline text="2.8.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.8.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+            <outline text="2.8.1.2. Authentication methods" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Authentication-methods">
+              <outline text="2.8.1.2.1. Default authentication" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Default-authentication" />
+            </outline>
+          </outline>
+          <outline text="2.8.2. Assessment profiles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Assessment-profiles">
+            <outline text="2.8.2.1. Get assessment profiles" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-assessment-profiles" />
+            <outline text="2.8.2.2. Get assessment profile by ID" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-assessment-profile-by-ID" />
+            <outline text="2.8.2.3. Add assessment profile" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-assessment-profile" />
+            <outline text="2.8.2.4. Edit assessment profile" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-assessment-profile" />
+            <outline text="2.8.2.5. Delete assessment profile" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-assessment-profile" />
+          </outline>
+          <outline text="2.8.3. Assessment results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Assessment-results">
+            <outline text="2.8.3.1. Get assessment profile results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-assessment-profile-results" />
+          </outline>
+          <outline text="2.8.4. Controls" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Controls">
+            <outline text="2.8.4.1. Get compliance controls" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-compliance-controls" />
+            <outline text="2.8.4.2. Get compliance control by ID" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-compliance-control-by-ID" />
+            <outline text="2.8.4.3. Add new control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-new-control" />
+            <outline text="2.8.4.4. Edit existing control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-existing-control" />
+            <outline text="2.8.4.5. Delete control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-control" />
+            <outline text="2.8.4.6. Get control by revision" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-control-by-revision" />
+          </outline>
+          <outline text="2.8.5. Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Rules">
+            <outline text="2.8.5.1. Add compliance rules to a compliance control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-compliance-rules-to-a-compliance-control" />
+            <outline text="2.8.5.2. Delete rules from control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-rules-from-control" />
+          </outline>
+          <outline text="2.8.6. Categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Categories">
+            <outline text="2.8.6.1. Get categories and subcategories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-categories-and-subcategories" />
+          </outline>
+          <outline text="2.8.7. Results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Results">
+            <outline text="2.8.7.1. Get control failed results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-control-failed-results" />
+            <outline text="2.8.7.2. Get rule failed results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-rule-failed-results" />
+          </outline>
+          <outline text="2.8.8. Reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Reports">
+            <outline text="2.8.8.1. Get compliance reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-compliance-reports" />
+          </outline>
+          <outline text="2.8.9. Standards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Standards">
+            <outline text="2.8.9.1. Get compliance standards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-compliance-standards" />
+            <outline text="2.8.9.2. Get single standard by ID" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-single-standard-by-ID" />
+            <outline text="2.8.9.3. Add new standard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-new-standard" />
+            <outline text="2.8.9.4. Edit existing standard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Edit-existing-standard" />
+            <outline text="2.8.9.5. Delete standard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-standard" />
+          </outline>
+          <outline text="2.8.10. Compliance Assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Compliance-Assets">
+            <outline text="2.8.10.1. Get compliance assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-compliance-assets" />
+          </outline>
+        </outline>
+        <outline text="2.9. Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Policies">
+          <outline text="2.9.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface" />
+          <outline text="2.9.2. Policy Service Public APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Policy-Service-Public-APIs">
+            <outline text="2.9.2.1. Create Public Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-Public-Policy" />
+            <outline text="2.9.2.2. List Public Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/List-Public-Policies" />
+            <outline text="2.9.2.3. Get Public Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Public-Policy" />
+            <outline text="2.9.2.4. Update Public Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-Public-Policy" />
+            <outline text="2.9.2.5. Delete Public Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-Public-Policy" />
+          </outline>
+        </outline>
+        <outline text="2.10. Cloud Workload Protection APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Cloud-Workload-Protection-APIs">
+          <outline text="2.10.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.10.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+            <outline text="2.10.1.2. Authentication methods" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Authentication-methods" />
+          </outline>
+          <outline text="2.10.2. Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Policies">
+            <outline text="2.10.2.1. Get CWP Policies (v2)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-CWP-Policies-v2" />
+            <outline text="2.10.2.2. Add CWP Policies (v2)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-CWP-Policies-v2" />
+            <outline text="2.10.2.3. Get a CWP Policy by ID (v2)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-CWP-Policy-by-ID-v2" />
+            <outline text="2.10.2.4. Update a CWP Policy by ID (v2)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-a-CWP-Policy-by-ID-v2" />
+            <outline text="2.10.2.5. Get CWP Policies (v1)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-CWP-Policies-v1" />
+            <outline text="2.10.2.6. Add CWP Policies (v1)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-CWP-Policies-v1" />
+            <outline text="2.10.2.7. Get a CWP Policy by ID (v1)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-CWP-Policy-by-ID-v1" />
+            <outline text="2.10.2.8. Delete a CWP Policy by ID (v1)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-a-CWP-Policy-by-ID-v1" />
+            <outline text="2.10.2.9. Update a CWP Policy by ID (v1)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-a-CWP-Policy-by-ID-v1" />
+          </outline>
+          <outline text="2.10.3. SBOM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/SBOM">
+            <outline text="2.10.3.1. Get the SBOM of the specified asset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-the-SBOM-of-the-specified-asset" />
+          </outline>
+          <outline text="2.10.4. Registry Onboarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Registry-Onboarding">
+            <outline text="2.10.4.1. Create a registry connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Create-a-registry-connector" />
+            <outline text="2.10.4.2. Get a registry connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-a-registry-connector" />
+            <outline text="2.10.4.3. Update a registry connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Update-a-registry-connector" />
+            <outline text="2.10.4.4. Delete a registry connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Delete-a-registry-connector" />
+          </outline>
+        </outline>
+        <outline text="2.11. Disable Injection and Prevention Rules Public API" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Disable-Injection-and-Prevention-Rules-Public-API">
+          <outline text="2.11.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.11.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+          </outline>
+          <outline text="2.11.2. Default" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Default">
+            <outline text="2.11.2.1. Get Disable Injection and Prevention rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Disable-Injection-and-Prevention-rules" />
+            <outline text="2.11.2.2. Add Disable Injection and Prevention rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Add-Disable-Injection-and-Prevention-rule" />
+            <outline text="2.11.2.3. Disable Disable Injection and Prevention Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Disable-Disable-Injection-and-Prevention-Rules" />
+          </outline>
+        </outline>
+        <outline text="2.12. Disable Prevention Rule Public APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Disable-Prevention-Rule-Public-APIs">
+          <outline text="2.12.1. Preface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Preface">
+            <outline text="2.12.1.1. Servers" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Servers" />
+          </outline>
+          <outline text="2.12.2. Default" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Default">
+            <outline text="2.12.2.1. Get Disable Prevention Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Platform-APIs/Cortex-Cloud-APIs/Get-Disable-Prevention-Rules" />
+          </outline>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

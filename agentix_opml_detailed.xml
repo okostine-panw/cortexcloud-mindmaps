@@ -97,7 +97,7 @@
                   <outline text="Only a user with Account Admin or Instance Admin permissions can configure egress. For more information, see Egress configurations.Egress configurations" type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                  <outline text="For Amazon SQS or Amazon S3, you need to provide the queue/bucket name. For Webhook or Splunk, you need to provide the domain, including any subdomain." type="note" />
+                  <outline text="For Amazon SQS or Amazon S3, you need to provide the queue/bucket name. For Webhook or Splunk, you need to provide the domain, including any subdomain. Note that the path does not include HTTP or HTTPS." type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                   <outline text="You can also configure external applications when you create a new forwarding configuration. After defining the configuration and setting the scope, you can Add Application and follow the instructions below for any of these destinations." type="note" />
@@ -106,7 +106,7 @@
                   <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that the endpoint does not match any approved routes." type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                  <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that the endpoint does not match any approved routes." type="note" />
+                  <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that no approved routes were found." type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                   <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that the endpoint does not match any approved routes." type="note" />
@@ -130,7 +130,7 @@
                   <outline text="Before you can select an external service for notification forwarding, you must integrate the external service with Cortex AgentiX. For more information, see Configure external applications for forwarding. No prior configuration is required to send data to an email distribution list." type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                  <outline text="Forwarding destinations: Only issues and cases can be forwarded to Slack, Splunk, Amazon SQS, Amazon S3, or Webhook.&#10;Notification forwarding by domain: To configure notification forwarding for issues by domain, select Issues and filter the Issues table by Issue Domain.&#10;Case IDs in notifications: If case matching completes before the notification is..." type="note" />
+                  <outline text="Forwarding destinations: Only issues and cases can be forwarded to Slack, Splunk, Amazon SQS, Amazon S3, or Webhook.&#10;Notification forwarding by domain: To configure notification forwarding for issues by domain, select Issues and filter the Issues table by Issue Domain.&#10;Alert vs. issue format:By default, new configurations use the issue format, but you..." type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                   <outline text="Not all data and log types can be sent to all external services. For more information, see Forward logs and data from Cortex AgentiX to external services." type="note" />
@@ -151,7 +151,7 @@
           </outline>
         </outline>
       </outline>
-      <outline text="3. Cortex AgentiX Configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-Configuration">
+      <outline text="3. Cortex AgentiX configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-AgentiX-configuration">
         <outline text="3.1. Configure Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-Cortex-AgentiX" />
         <outline text="3.2. Content configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Content-configuration">
           <outline text="3.2.1. Configure content using Data Sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-content-using-Data-Sources">
@@ -222,9 +222,6 @@
               <outline text="If the integration was installed from a content pack, you need to duplicate the integration before editing." type="note" />
             </outline>
             <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-              <outline text="If the integration was installed from a content pack, you need to duplicate the integration before downloading." type="note" />
-            </outline>
-            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
               <outline text="Integration commands are only available when the integration instance is enabled. Some commands depend on a successful connection between Cortex AgentiX and third-party integrations." type="note" />
             </outline>
             <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
@@ -234,11 +231,8 @@
               <outline text="Settings → Configurations → Marketplace" type="note" />
             </outline>
             <outline text="3.2.3.1. Manage API keys" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-API-keys">
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration." type="note" />
-              </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="Before configuring, ensure that you review Understand scoping in the Manage user scope section." type="note" />
+                <outline text="Before configuring, ensure that you review the Manage user scope topic." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
                 <outline text="By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced. Before enabling SBAC, we recommend that an administrator or a user with Access Management permissions first ensures that the users, user groups, and API Keys defined in Cortex AgentiX are..." type="note" />
@@ -326,6 +320,9 @@
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="To manage actions in the Agents Hub, you must have the correct permissions. For more information, see Agentic Assistant role-based access control." type="note" />
               </outline>
+              <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+                <outline text="System actions may rely on content packs that need to be installed and configured." type="note" />
+              </outline>
             </outline>
             <outline text="3.3.2.2. Register actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Register-actions">
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
@@ -342,6 +339,9 @@
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="In some cases, an agent may include actions with content items that are not relevant for all licenses. If that occurs, the grey circle appears, but you are not able to install the related content." type="note" />
               </outline>
+              <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+                <outline text="System agents can include actions that require additional content packs to be installed and configured. To view all actions assigned to a system agent, including actions not available due to missing content, click on the system agent in the Agents Hub. There may be actions assigned to a system agent that are not relevant to your organization. For..." type="note" />
+              </outline>
             </outline>
             <outline text="3.3.2.4. Build agents" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Build-agents">
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
@@ -353,6 +353,9 @@
             </outline>
             <outline text="3.3.2.5. Expand agent capabilities with MCP integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Expand-agent-capabilities-with-MCP-integrations">
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="For agentic actions to be created from tools on an MCP server, the tools must have input and output descriptions on the MCP server. These descriptions are required for Cortex AgentiX to understand the tools' capabilities and the correct use cases." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="If you are using OAuth-based authentication, the Test button returns an error containing the command to run in the playground in order to test the connection." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
@@ -360,7 +363,11 @@
               </outline>
             </outline>
           </outline>
-          <outline text="3.3.3. Agentic Assistant role-based access control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agentic-Assistant-role-based-access-control" />
+          <outline text="3.3.3. Agentic Assistant role-based access control" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Agentic-Assistant-role-based-access-control">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Agents are limited by the individual permissions of the user. For example, if users do not have sufficient permissions to isolate an endpoint, they cannot use an agent to isolate an endpoint." type="note" />
+            </outline>
+          </outline>
         </outline>
         <outline text="3.4. Cortex MCP server" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-MCP-server">
           <outline text="3.4.1. Cortex MCP server overview" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Cortex-MCP-server-overview">
@@ -407,7 +414,7 @@
             </outline>
           </outline>
         </outline>
-        <outline text="3.5. Users and Roles Management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Users-and-Roles-Management">
+        <outline text="3.5. Users and roles management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Users-and-roles-management">
           <outline text="3.5.1. Users and roles in Cortex AgentiX" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Users-and-roles-in-Cortex-AgentiX">
             <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
               <outline text="You can only set dataset access permission for a user role in the tenant. These settings are disabled in Cortex Gateway" type="note" />
@@ -471,9 +478,6 @@
             <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
               <outline text="When using Azure AD for SSO, the SAML group mapping needs to be provided using the group object ID (GUID) and not the group name." type="note" />
             </outline>
-            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-              <outline text="Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration." type="note" />
-            </outline>
             <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
               <outline text="By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced. Before enabling SBAC, we recommend that an administrator or a user with Access Management permissions first ensures that the users, user groups, and API Keys defined in Cortex AgentiX are..." type="note" />
             </outline>
@@ -504,55 +508,14 @@
                 <outline text="Configuring user scopes in Cortex AgentiX Access Management requires View/Edit RBAC permissions for Access Management (under Configurations). Account Admin and Instance Administrator roles are granted this permission by default. For more information, see Predefined user roles in Set up users and roles.Set up users and roles&#10;By default, Enable Scope..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="This configuration can impact the visibility of the related Security domain in the Cases and Issues scope area, but with not affect asset visibility." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="XQL-based dashboard widgets may require a few hours to initially reflect changes to the list or definitions of asset groups used for scoping. To view the most current data immediately, refresh the dashboard or its XQL widgets." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="For Cases and Issues domains, a workaround is to create a Dataset View for each required combination of domains, and allow the relevant entity access only to this Dataset View, not to the underlying cases and issues datasets." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Make sure to assign the required default granular scoping for users. This depends on the structure and divisions within your organization and the particular purpose of each organizational unit to which scoped users belong." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Visibility of Security domain Issues that refer to assets with agents is controlled by the Endpoints scoping configuration." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
                 <outline text="Some areas and features in Cortex AgentiX do not respect SBAC. In these cases, use RBAC permissions to restrict access." type="note" />
               </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="Action Required: Recent security enhancements enforce stricter default permissions for cases and issues that lack specific asset or endpoint references. This notice explains how to include access to these items if your users' visibility has been impacted." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="Before configuring, ensure that you review the Understand scoping section." type="note" />
-              </outline>
             </outline>
           </outline>
-          <outline text="3.5.5. Manage access to objects" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-access-to-objects">
-            <outline text="3.5.5.1. Manage access to custom dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-access-to-custom-dashboards">
-              <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-                <outline text="Configure tenant-level settings: An administrator must first establish the sharing framework under Settings → Configurations → Access Management → Objects.&#10;The configuration of these settings defines the authorized sharing workflows for custom dashboards:&#10;Enable &quot;Owners can Share objects they created&quot;: Grants owners the ability to share..." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="If you're designated as an Editor, you can always duplicate the widget and make your changes on the copy." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Only Account Administrators and Instance Administrators have the authority to change the owner of an object." type="note" />
-              </outline>
-            </outline>
-            <outline text="3.5.5.2. Manage access to saved queries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-access-to-saved-queries">
-              <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-                <outline text="Configure tenant-level settings: An administrator must first establish the sharing framework under Settings → Configurations → Access Management → Objects.&#10;The configuration of these settings defines the authorized sharing workflows for saved queries in the Query Library, including the options that appear to users when clicking the three dot,..." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="If the role of a user is set to Edit Public Queries but not Create Queries, they can update existing public queries, but the Save as drop-down menu will be hidden, preventing them from creating new Query Library entries." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="When the tenant-level setting Owners and editors can change the general access is unselected, the drop-down is disabled and only an administrator can configure this option." type="note" />
-              </outline>
-            </outline>
-          </outline>
+          <outline text="3.5.5. Manage access to objects" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-access-to-objects" />
           <outline text="3.5.6. Set up authentication" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Set-up-authentication">
             <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
               <outline text="You should have at least one user in the Customer Support Portal for backup, in case of any authentication issues with your IdP provider." type="note" />
@@ -1119,16 +1082,16 @@
           </outline>
           <outline text="3.7.7. Manage external dynamic lists" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Manage-external-dynamic-lists">
             <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-              <outline text="To configure an EDL, you must have a role that includes EDL permissions, such as Instance Admin or Account Admin.&#10;Configuring custom certificates or private API Keys in the EDL integration instance is supported only on engines, not on the Cortex AgentiX server.&#10;For EDL integrations on the server, you must set a username and password. For long-running..." type="note" />
-            </outline>
-            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-              <outline text="The legacy external dynamic list PAN-OS integration is deprecated. Configure the EDL integration on the Data Sources &amp; Integrations page (by clicking the Automation &amp; Feed Integration link." type="note" />
-            </outline>
-            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-              <outline text="If the EDL integration runs on the Cortex AgentiX server, you do not need to enter a Listen Port in the instance settings. The system auto-selects an unused port for the EDL integration when the instance is saved. If you enter a value for Listen Port, it will be overwritten by the port auto-selected by the system" type="note" />
+              <outline text="Configuring custom certificates or private API Keys in the EDL integration instance is supported only on engines, not on the Cortex AgentiX tenant.&#10;For EDL integrations on the tenant, you must set a username and password. For long-running integrations running on an engine, we strongly recommend setting a username and password, but it is not required...." type="note" />
             </outline>
             <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
               <outline text="The EDL URL must always be prefixed by ext-." type="note" />
+            </outline>
+            <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+              <outline text="You can also use the IP list and URL lists as part of a URL Filtering policy, or the domain list as part of a custom Anti-Spyware profile." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="If creating a custom role, select View/Edit for EDL (Roles → New Roles → INVESTIGATION &amp; RESPONSE → Response → EDL" type="note" />
             </outline>
           </outline>
         </outline>
@@ -1214,6 +1177,9 @@
                 <outline text="3.8.4.5.3.3. Add AI prompt tasks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-AI-prompt-tasks">
                   <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                     <outline text="Selecting Local AI Prompt creates a local version of the task within your playbook. Any future updates made to the Prompts Library will not sync to this specific task.&#10;Choose Local AI Prompt if you need to customize the logic for a specific workflow and want to ensure its behavior remains unchanged, even if the Prompts Library is updated with..." type="note" />
+                  </outline>
+                  <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+                    <outline text="If an AI prompt task returns a 504 Error with the status DEADLINE_EXCEEDED, it is likely due to the task requiring more time to process than the default setting allows. To resolve this, open the Task Details pane of the AI task and select the Advanced tab, then increase the Execution timeout (seconds) based on how complex your prompt is and how long..." type="note" />
                   </outline>
                 </outline>
                 <outline text="3.8.4.5.3.4. Add manual tasks and blank tasks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Add-manual-tasks-and-blank-tasks">
@@ -1343,7 +1309,7 @@
           </outline>
           <outline text="3.8.7. Scripts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Scripts">
             <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-              <outline text="To provide scripts access, ensure the Scripts RBAC permission is set to View or View/Edit.&#10;To completely restrict scripts access, first set Playbooks and Playground RBAC permissions to None and then set the Scripts permission to None. Conversely, to provide access to playbooks or the Playground, the Scripts permission must first be set to View or..." type="note" />
+              <outline text="To provide scripts access, first set the Playbooks and Playground RBAC permissions to View or View/Edit and then set the Scripts RBAC permission is set to View or View/Edit.&#10;To completely restrict scripts access, first set Playbooks and Playground RBAC permissions to None and then set the Scripts permission to None." type="note" />
             </outline>
             <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
               <outline text="On the Scripts page (Investigation → Response → Automation → Scripts), you can view, edit, and create scripts in JavaScript, Python, or PowerShell" type="note" />
@@ -1661,11 +1627,11 @@
               <outline text="Dashboards that are based on custom infrastructure cannot be exported.&#10;When importing a dashboard that already exists in the system, the imported dashboard overwrites the existing dashboard. To avoid overwriting the existing dashboard, duplicate and rename the existing dashboard before importing the new dashboard." type="note" />
             </outline>
             <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-              <outline text="The ability to create, edit, or share custom dashboards is governed by access management. If certain options are unavailable, contact your administrator. For more information, see Manage access to custom dashboards." type="note" />
+              <outline text="The ability to create, edit, or share custom dashboards is governed by access management. If certain options are unavailable, contact your administrator. For more information, see Manage access to custom dashboards.Manage access to custom dashboards" type="note" />
             </outline>
             <outline text="3.12.1.1. Command Center dashboards" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Command-Center-dashboards">
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Access to these dashboards requires RBAC permissions under Dashboards &amp; Reports. The Dashboards component must be Enabled in your role and requires View permissions for Command Center Dashboards. If certain options are unavailable, contact your administrator. For more information, Manage access to custom dashboards.&#10;The dashboards are available in dark..." type="note" />
+                <outline text="Access to these dashboards requires RBAC permissions under Dashboards &amp; Reports. The Dashboards component must be Enabled in your role and requires View permissions for Command Center Dashboards. If certain options are unavailable, contact your administrator. For more information, Manage access to custom dashboards.Manage access to custom..." type="note" />
               </outline>
               <outline text="3.12.1.1.1. AgentiX Command Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/AgentiX-Command-Center">
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
@@ -1789,10 +1755,7 @@
           <outline text="4.1.6. Case and issue domains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-and-issue-domains" />
         </outline>
         <outline text="4.2. Case concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-concepts">
-          <outline text="4.2.1. Issues, findings, and events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issues-findings-and-events">
-            <outline text="4.2.1.1. Issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issues" />
-            <outline text="4.2.1.2. Findings and events" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Findings-and-events" />
-          </outline>
+          <outline text="4.2.1. Issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Issues" />
           <outline text="4.2.2. Case grouping" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-grouping" />
           <outline text="4.2.3. Case scoring" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-scoring" />
           <outline text="4.2.4. Case starring" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Case-starring">
@@ -2349,10 +2312,10 @@
                 <outline text="It's also possible to graph the results displayed. For more information, see Graph query results." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Results are received incrementally for the first 100K records, or up to 100MB worth of records, whichever comes first. After that, the next update is when the query has finished running completely." type="note" />
+                <outline text="Real time query results are available only in the Query Builder and in free text query.&#10;Real time results are displayed only for queries run on hot datasets.&#10;The Sort option is available only after all the data is retrieved.&#10;When you formulate complex queries, the results will be displayed when the query has finished running completely, and not in real..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Real time query results are available only in the Query Builder and in free text query.&#10;Real time results are displayed only for queries run on hot datasets.&#10;The Sort option is available only after all the data is retrieved.&#10;When you formulate complex queries, the results will be displayed when the query has finished running completely, and not in real..." type="note" />
+                <outline text="Results are received incrementally for the first 100K records, or up to 100MB worth of records, whichever comes first. After that, the next update is when the query has finished running completely." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="In order for Cortex AgentiX to provide a histogram for a field, the field must not contain an array or a JSON object." type="note" />
@@ -2491,7 +2454,7 @@
           <outline text="7.1.3. Investigate and resolve health issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Investigate-and-resolve-health-issues" />
         </outline>
         <outline text="7.2. Log forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Log-forwarding">
-          <outline text="7.2.1. Forward logs from Cortex AgentiX to external services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Forward-logs-from-Cortex-AgentiX-to-external-services">
+          <outline text="7.2.1. Forward logs and data from Cortex AgentiX to external services" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Forward-logs-and-data-from-Cortex-AgentiX-to-external-services">
             <outline text="7.2.1.1. Configure external applications for forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-external-applications-for-forwarding">
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="No prior configuration is required to send data or logs to an email distribution list.&#10;Only cases and issues can be forwarded to Slack, Amazon S3, Amazon SQS, Splunk, and Webhook.&#10;To forward data to Amazon SQS, the following permissions are required: sqs:GetQueueAttributes, sqs:ListQueues, sqs:SendMessage, sqs:SendMessageBatch, tag:GetResources, and..." type="note" />
@@ -2500,7 +2463,7 @@
                 <outline text="Only a user with Account Admin or Instance Admin permissions can configure egress. For more information, see Egress configurations.Egress configurations" type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="For Amazon SQS or Amazon S3, you need to provide the queue/bucket name. For Webhook or Splunk, you need to provide the domain, including any subdomain." type="note" />
+                <outline text="For Amazon SQS or Amazon S3, you need to provide the queue/bucket name. For Webhook or Splunk, you need to provide the domain, including any subdomain. Note that the path does not include HTTP or HTTPS." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="You can also configure external applications when you create a new forwarding configuration. After defining the configuration and setting the scope, you can Add Application and follow the instructions below for any of these destinations." type="note" />
@@ -2509,7 +2472,7 @@
                 <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that the endpoint does not match any approved routes." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that the endpoint does not match any approved routes." type="note" />
+                <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that no approved routes were found." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="If egress has not been configured in the Cortex Gateway, verification will fail and a message will display that the endpoint does not match any approved routes." type="note" />
@@ -2530,13 +2493,16 @@
             </outline>
             <outline text="7.2.1.2. Configure notification forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Configure-notification-forwarding">
               <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-                <outline text="Before you can select a syslog receiver or a Slack channel, you must integrate these external services with Cortex AgentiX.&#10;For more information, see:&#10;Integrate a syslog receiver&#10;Integrate Slack for outbound notifications" type="note" />
+                <outline text="Before you can select an external service for notification forwarding, you must integrate the external service with Cortex AgentiX. For more information, see Configure external applications for forwarding. No prior configuration is required to send data to an email distribution list." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="Notification Forwarding by Domain: To configure notification forwarding for issues by domain, select Log Type = Issues and filter the Issues table by Issue Domain.&#10;Case IDs in Notifications: If case matching completes before the notification is sent, the Case ID is included. If matching takes longer than the notification trigger, the notification is..." type="note" />
+                <outline text="Forwarding destinations: Only issues and cases can be forwarded to Slack, Splunk, Amazon SQS, Amazon S3, or Webhook.&#10;Notification forwarding by domain: To configure notification forwarding for issues by domain, select Issues and filter the Issues table by Issue Domain.&#10;Alert vs. issue format:By default, new configurations use the issue format, but you..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="This option will be deprecated in the next release. Configure issues with the filter Issue Domain = Health instead." type="note" />
+                <outline text="Not all data and log types can be sent to all external services. For more information, see Forward logs and data from Cortex AgentiX to external services." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The Grouping Timeframe defines the time frame, in minutes, of how often Cortex AgentiX sends notifications. Every 20 issues or 20 events aggregated within this time frame are sent together in one notification, sorted according to severity. To send a notification when one issue or event is generated, set the time frame to 0." type="note" />
               </outline>
             </outline>
             <outline text="7.2.1.3. Monitor administrative activity" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-AgentiX/Cortex-AgentiX-Documentation/Learn-about-Cortex-AgentiX/Monitor-administrative-activity" />
