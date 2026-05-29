@@ -1,0 +1,1337 @@
+<opml version="2.0">
+  <head>
+    <title>Cortex AppSec Documentation</title>
+  </head>
+  <body>
+    <outline text="Cortex AppSec Documentation">
+      <outline text="1. Cortex Cloud Application Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Cortex-Cloud-Application-Security">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="While some features are included by default, others require a dedicated add-on purchase." type="note" />
+        </outline>
+      </outline>
+      <outline text="2. Onboard data sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Onboard-data-sources">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Third-party SCA ingestion (such as Snyk, Semgrep) covers CVE vulnerabilities only. License Miscompliance and Package Operational Risk findings are produced exclusively by the native Cortex Cloud SCA scanner. You must enable native SCA scanning to achieve license and operational-risk coverage" type="note" />
+        </outline>
+        <outline text="2.1. Onboard version control systems" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Onboard-version-control-systems">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Cortex Cloud Application Security (which includes IaC and Secrets scanning), is an add-on to a license (such as Posture Security) that must be purchased separately." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Disclaimer: When onboarding with third-party data sources, we outline the required steps for setup, but we do not monitor these external resources, and they may change over time. Always refer to the relevant third-party documentation for the most current integration steps." type="note" />
+          </outline>
+          <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+            <outline text="Navigate to Settings → Data Sources &amp; Integrations → + Add New →  and enter your VCS data source in the search bar." type="note" />
+          </outline>
+          <outline text="2.1.1. AWS CodeCommit" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/AWS-CodeCommit">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin, ensure the following:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;AWS user permissions: To onboard CodeCommit, the user logged into the AWS Console must have permissions to deploy the CloudFormation stack and authorize the..." type="note" />
+            </outline>
+            <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+              <outline text="The instance ID is identical to the stack ID on the AWS platform." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Modules → Application Security → Periodic scans" type="note" />
+            </outline>
+          </outline>
+          <outline text="2.1.2. Azure DevOps" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Azure-DevOps">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Azure DevOps permissions: Ensure the user performing the integration holds one of the following roles in Azure DevOps:&#10;Project Administrator: This permission is required to subscribe..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="This forces Azure to bypass browser cookies and issue a token for the correct directory." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="PATs are static. To onboard a different tenant, you must log in to that specific environment to generate a new token." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="When redirected to the Microsoft login screen, do not immediately enter your email." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Data Sources &amp; Integrations → + Add New" type="note" />
+              <outline text="User Settings → Personal access tokens → + New Token" type="note" />
+            </outline>
+            <outline text="2.1.2.1. Azure DevOps onboarding system architecture" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Azure-DevOps-onboarding-system-architecture">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Microsoft has announced the deprecation of legacy OAuth methods by 2026, making Entra ID the required standard for long-term support." type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="2.1.3. Bitbucket Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Bitbucket-Cloud">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket permissions: In Bitbucket, grant the user performing the Cortex application authorization the following permissions. The level of access required depends on the modules you..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.1.4. Bitbucket Data Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Bitbucket-Data-Center">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket authorization (PAT): You must generate a Personal Access Token (PAT) within your Bitbucket Server account settings to authenticate the connection. For detailed instruction on..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="By default, the permissions of the access token are set according to your current access level. It is essential to define two levels of permissions, Project and Repository permissions. The Repository permissions inherit from Project permissions, requiring Repository permissions to match or exceed Project permissions&#10;Providing read and write permissions..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For additional security, it is recommended to set an expiry automatically. The expiry date of a token cannot be changed after it is created. You can see the expiry dates for all your tokens on Profile picture → Manage account → Personal access tokens." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="Always refer to the Bitbucket documentation for information relating to creating a PAT." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.1.5. GitHub Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/GitHub-Cloud">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;In GitHub, grant the user performing the Cortex application authorization the following permissions:&#10;Organization Owner: Only an Organization Owner can directly authorize and install..." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Verify integration: On Data Sources, select Code Providers → GitHub SaaS → View more and confirm that the status of your integrated GitHub instance is 'Connected" type="note" />
+            </outline>
+          </outline>
+          <outline text="2.1.6. GitHub Enterprise (On-Prem)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/GitHub-Enterprise-On-Prem">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;GitHub permissions: You must have Organization Owner permissions to install the Cortex application. Users with only repository-level admin permissions cannot complete the installation..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The domain is the hostname associated with your GitHub Enterprise (On-Prem) instance." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.1.7. GitLab SaaS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/GitLab-SaaS">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;In Gitlab, the following permissions are required to integrate the application:&#10;Maintainer (Project-level). Grants sufficient permissions to configure external integrations, manage..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="A repository can only be integrated with a single instance. The first instance that connects with the repository will be the one that the repository is assigned to. This means that if multiple integrations attempt to connect to the same repository, only the first integration to establish the connection will be associated with that repository." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.1.8. GitLab Self Managed (On-Prem)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/GitLab-Self-Managed-On-Prem">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Gitlab permissions: Authorize the user integrating Cortex Cloud Application Security with your GitLab Self Managed (On-Prem) instances with the following permissions:&#10;Maintainer permissions. Grants..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The domain is the hostname associated with your GitLab Self Managed (On-Prem) instance." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="2.2. Onboard CI/CD systems" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Onboard-CI/CD-systems">
+          <outline text="2.2.1. CircleCI for CI/CD pipeline scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CircleCI-for-CI/CD-pipeline-scans">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;CircleCI user requirements:&#10;Permissions: To enable Cortex Cloud visibility for all CircleCI projects, a version control system (VCS) user with integration permissions must be..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="This integration utilizes a Personal Access Token (PAT) for authentication&#10;CircleCI onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your CircleCi environment, you must create two separate integrations, selecting the appropriate..." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.2.2. Jenkins for CI/CD pipeline scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Jenkins-for-CI/CD-pipeline-scans">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;In Jenkins:&#10;To install and configure the Cortex plugin in Jenkins, you must be a Jenkins Administrator with Overall/Administer permissions&#10;Ensure the build server allows outbound HTTPS (Port 443..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Jenkins onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your Jenkins servers, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard Jenkins for code scans, refer to Jenkins for..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The integration is added on the console but integration is pending, and will only be completed after completing step 5 below. You can view the pending integration on the Jenkins Instances page: Select Data Sources →  Jenkins → View Details. The type of integration is Pipeline Risks" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Always refer to the official Jenkins documentation when installing plugins on Jenkins servers." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="2.3. Integrate CI tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Integrate-CI-tools">
+          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+            <outline text="Settings → Data Sources &amp; Integrations → hover over a CI tool → View Details" type="note" />
+            <outline text="Delete an instance: Right-click on an instance of the CI tool → Delete instance → Delete" type="note" />
+          </outline>
+          <outline text="2.3.1. AWS CodeBuild" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/AWS-CodeBuild">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;User permissions: Ensure the user performing the integration has permissions to edit pipeline configurations (such as YAML files) and manage secrets/credentials within the CI platform to store the Cortex Cloud API key securely" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The code is only a reference. Replace the placeholder values with your build-specific values." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.3.2. CircleCI for code scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CircleCI-for-code-scans">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;User permissions: Ensure the user performing the integration has permissions to edit pipeline configurations (such as YAML files) and manage secrets/credentials within the CI platform to store the Cortex Cloud API key securely" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="CircleCI onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your CircleCi environment, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard CircleCI for CI/CD scans, refer to..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="The cortex-secrets naming convention for the context is mandatory to ensure functionality and must not be changed." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.3.3. Connect Cortex CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Connect-Cortex-CLI">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="System requirements:&#10;macOS (Intel Core i7, such as Sequoia): To ensure all functionalities work correctly, you must install the vectorscan dependency via Homebrew, using this command: brew install vectorscan&#10;RHEL 8.10 and Red Hat UBI9. The following prerequisites must be met:&#10;Install patchelf&#10;Install zstd&#10;Ubuntu 20 requires the prefetch..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The Cortex CLI requires an API key with the Standard security level." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="On macOS arm 64 architecture you must unpack the downloaded file to retrieve the executable." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="If needed, retrieve your public API URL by navigating to Settings → Configurations → API Keys and clicking Copy API URL, then paste it into the code" type="note" />
+              <outline text="Windows installer → uninstall via Settings → Apps → Installed apps, or delete the" type="note" />
+            </outline>
+          </outline>
+          <outline text="2.3.4. GitHub Actions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/GitHub-Actions">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;User permissions: Ensure the user performing the integration has permissions to edit pipeline configurations (such as YAML files) and manage secrets/credentials within the CI platform to store the Cortex Cloud API key securely" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Do not change the names of the environment variables provided by Cortex Cloud. They are required for proper integration and functionality." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The code is only a reference. Replace the placeholder values with your build-specific values." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.3.5. Jenkins for code scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Jenkins-for-code-scans">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Grant Administrator permissions to the user integrating Cortex Cloud Application Security with Jenkins&#10;Egress path: Create an egress path to establish the designated route for outbound data transmission from Cortex Cloud to third party services. For more information about configuring egress paths, refer to Egress configurationsEgress configurations" type="note" />
+            </outline>
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="For Cortex Cloud Application Security CI tools, you must store secrets in Jenkins Credentials for use in your Jenkins pipelines using either of these methods:&#10;Plain text storage: Store secrets directly as plain text in Jenkins Credentials. Access them in your pipeline using the credentials function, which retrieves the secret directly as plain..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Jenkins onboarding offers both code and CI/CD scanning. A single integrated instance supports either code or CI scanning, but not both. If you require both code and CI scanning for your Jenkins servers, you must create two separate integrations, selecting the appropriate scanning type for each. To onboard Jenkins for CI/CD scans, refer to Jenkins for..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="This step is only required for new pipelines&#10;For private repositories, ensure the necessary credentials are configured in Jenkins Credentials" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="This ensures your build runs within a Docker environment. If a node without Docker is used, the build will fail." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.3.6. Terraform Cloud (Run Tasks)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Terraform-Cloud-Run-Tasks">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;User permissions: Ensure the user performing the integration has permissions to edit pipeline configurations (such as YAML files) and manage secrets/credentials within the CI platform to store the Cortex Cloud API key securely&#10;Procure a Terraform cloud license that is either a trial license or a TF Cloud license at the TEAM &amp;..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Skip this step if you plan on using an existing token." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Cortex Cloud Application Security performs a scan of Terraform templates on selected workspaces based on the Run Stage." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.3.7. Terraform Enterprise (Run Tasks)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Terraform-Enterprise-Run-Tasks">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin:&#10;Ensure access to a Terraform Enterprise console to enable you to provide a user or team token that authorizes Cortex Cloud Application Security to access workspaces and helps regulate run configurations&#10;Terraform Enterprise version compatibility: Ensure Run Tasks for workspaces on is compatible with version 1.1.9 and above&#10;Terraform..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For container image vulnerabilities, Cortex Cloud Application Security performs 'Image Referencer' scans within Terraform Enterprise (Run Tasks), as full SCA scans are not currently supported." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Skip this step if you plan on using an existing token." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Cortex Cloud Application Security performs a scan of Terraform templates on selected workspaces based on the Run Stage." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="2.4. CLI pipeline code snippets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CLI-pipeline-code-snippets">
+          <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+            <outline text="User permissions: Ensure the user performing the integration has permissions to edit pipeline configurations (such as YAML files)." type="note" />
+          </outline>
+        </outline>
+        <outline text="2.5. Onboard private package registries" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Onboard-private-package-registries">
+          <outline text="2.5.1. JFrog Artifactory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/JFrog-Artifactory" />
+          <outline text="2.5.2. Onboard JFrog Artifactory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Onboard-JFrog-Artifactory">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;JFrog permissions:&#10;The permissions associated with the user configured during the onboarding process determine the scope of scan results. Only repositories and artifacts the user can access are..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="To authorize the scanner to connect through your firewall, select Enable access by IPs, and copy the displayed source IPs to your organization's allowlist." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For Maven:&#10;Select Mirror Registry if this repository mirrors an external repository&#10;Use the Mirror Of value to define the duplication scope:&#10;* mirrors all requests&#10;Type a request [value]: Mirrors only specific requests (such as central).&#10;For Maven:&#10;Select Mirror Registry if this repository mirrors an external repository&#10;Use the Mirror Of..." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="2.6. Ingest third-party data sources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Ingest-third-party-data-sources">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Only onboarded and scanned repositories can be mapped." type="note" />
+          </outline>
+          <outline text="2.6.1. Semgrep" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Semgrep">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Ensure that you have a connected version control system (VCS) and repositories&#10;Semgrep: A valid Semgrep API token&#10;Note&#10;To create a Semgrep API token, in Semgrep, navigate to Settings → Tokens →..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Mapping establishes relationships between Semgrep projects and Cortex Cloud code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant&#10;Only mapped projects are ingested" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Requisite RBAC permissions are required for edit and delete operations." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="Deletion is irreversible. To restore Semgrep findings after deletion, reconfigure the integration and wait for the next polling cycle to re-ingest findings from Semgrep." type="note" />
+            </outline>
+            <outline text="2.6.1.1. Semgrep Software Composition Analysis (SCA) data ingestion" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Semgrep-Software-Composition-Analysis-SCA-data-ingestion">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Application Security → Issues → Vulnerabilities" type="note" />
+              </outline>
+            </outline>
+            <outline text="2.6.1.2. Semgrep Static Application Security Testing (SAST) data ingestion" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Semgrep-Static-Application-Security-Testing-SAST-data-ingestion">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Application Security → Issues → Code Weaknesses" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="2.6.2. Snyk" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Snyk">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Permissions: The following user permissions are required:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Ensure that you have a connected version control system (VCS) and repositories&#10;Snyk permissions and requirements:&#10;Permissions: The..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Select Test Connection to verify that Cortex Cloud can connect to your Snyk organization." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="SCA requires Snyk Open Source or Snyk Container projects configured in the organization&#10;SAST requires Snyk Code enabled and projects configured in the organization" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Mapping establishes relationships between Snyk applications and Cortex Cloud code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant&#10;Only mapped applications are ingested" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Requisite RBAC permissions are required for edit and delete operations." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="Snyk Free tier is not supported. A paid Snyk plan (Team, Business, or Enterprise) is required to ingest findings from Snyk." type="note" />
+            </outline>
+            <outline text="2.6.2.1. Snyk Software Composition Analysis (SCA) ingestion" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Snyk-Software-Composition-Analysis-SCA-ingestion">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Modules → Application Security → Vulnerabilities (under Issues" type="note" />
+              </outline>
+            </outline>
+            <outline text="2.6.2.2. Snyk Static Application Security Testing (SAST) data ingestion" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Snyk-Static-Application-Security-Testing-SAST-data-ingestion">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Modules → Application Security → Code Weaknesses" type="note" />
+                <outline text="Modules → Application Security → AppSec Coverage" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="2.6.3. SonarQube" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/SonarQube">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Ensure that you have onboarded a version control system (such as GitHub, GitLab) and have connected repositories&#10;SonarQube and SonarCloud setup:&#10;Token requirements: The API token for both SonarCloud..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Mapping establishes relationships between SonarQube Applications and Cortex Cloud Application Security code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant&#10;Only mapped projects will be ingested" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Verify that the Connector Created Successfully message is displayed on the page." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.6.4. Veracode" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Veracode">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Permissions: The following user permissions are required:&#10;Cortex Cloud: Instance Admin, AppSec Admin or GRBAC permissions. For more information on AppSec Admin permissions, refer to Code Security user roles and permissionsCode Security user roles and permissions&#10;Veracode: At minimum, Reviewer permissions are required&#10;Permissions: The following..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Only mapped applications will be ingested." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="This is the recommended option to ensure complete coverage and successful operation of all features." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Mapping establishes relationships between Veracode projects and Cortex Cloud Application Security code repositories, simplifying access management and enabling risk analysis at the repository level, including displaying findings on the tenant&#10;Only mapped projects will be ingested" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Verify that the Connector Created Successfully message is displayed on the page." type="note" />
+            </outline>
+          </outline>
+          <outline text="2.6.5. Generic 3rd Party AppSec Collector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Generic-3rd-Party-AppSec-Collector">
+            <outline text="2.6.5.1. Tenant (console) workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Tenant-console-workflow">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Editing a collector does not regenerate the API credentials. The existing credentials remain valid after editing the collector name." type="note" />
+              </outline>
+              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+                <outline text="The Token ID and API Token are displayed only once. Copy and store the credentials securely before proceeding. If the credentials are lost, edit the collector to regenerate the credentials." type="note" />
+              </outline>
+              <outline text="⚠️🟡" type="section" _style="font-weight:bold;color:red" _label="caution" _marker="stop,flag-yellow">
+                <outline text="Deleting a collector permanently removes the collector instance and invalidates the associated API credentials. Existing findings that were previously ingested through the deleted collector remain in the platform and are not affected by the deletion." type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Data Sources &amp; Integrations → 3rd Party AppSec Collector" type="note" />
+                <outline text="Settings → Data Sources → 3rd Party AppSec Collector" type="note" />
+              </outline>
+            </outline>
+            <outline text="2.6.5.2. API workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/API-workflow">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The apiUrl returned during collector creation resolves to the public upload endpoint at /public_api/appsec/v1/collectors/{collectorId}. Use the apiUrl value directly in upload requests." type="note" />
+              </outline>
+            </outline>
+            <outline text="2.6.5.3. Upload findings from CI/CD pipelines" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Upload-findings-from-CI/CD-pipelines">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Store all collector credentials (Token ID, API Token, API URL) as encrypted secrets or credentials in the CI/CD platform. Do not hardcode credentials in pipeline configuration files." type="note" />
+              </outline>
+              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+                <outline text="Verify that the upload request returns a 2xx HTTP status code. A non-2xx response indicates that the upload failed and findings were not ingested. Configure the CI/CD pipeline step to fail on non-2xx responses to prevent silent ingestion failures. In the cURL examples, add the --fail flag or check the exit code to detect upload failures." type="note" />
+              </outline>
+            </outline>
+            <outline text="2.6.5.4. Technical requirements and SARIF specifications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Technical-requirements-and-SARIF-specifications" />
+            <outline text="2.6.5.5. Troubleshooting" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Troubleshooting" />
+          </outline>
+        </outline>
+        <outline text="2.7. Manage data source integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-data-source-integrations" />
+        <outline text="2.8. Transporter over Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Transporter-over-Broker-VM">
+          <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+            <outline text="Ensure you have the necessary permissions and have already set up your Broker VM&#10;Confirm that your Broker is v 28 or above&#10;Whitelist IP addresses to enable access to Cortex Cloud resources. The IP addresses for the Transporter are in the Broker VM Resources section of the Enable access to required PANW resources documentEnable access to required PANW..." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="The broker enables multiple connections, allowing a single Transporter applet to connect to various VCS instances&#10;Multiple Transporter applets cannot be created on a single Broker VM. Each Broker VM is limited to a single Transporter applet instance" type="note" />
+          </outline>
+          <outline text="⛔🔴" type="section" _style="font-weight:bold;color:red" _label="warning" _marker="priority-1,flag-red">
+            <outline text="The Transporter applet is not supported for FedRAMP customers." type="note" />
+          </outline>
+          <outline text="2.8.1. Set up a Transporter applet on Broker VM" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Set-up-a-Transporter-applet-on-Broker-VM">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Permissions: To configure and manage Transporter applet settings, you must have permissions to manage Broker Service configurations (such as an Instance Administrator)" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="You cannot add a Transporter applet through Clusters." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="your AppSec Transporter under the App column → Configure → Add Connection (on the redirected AppSec Transporter setup page" type="note" />
+              <outline text="the Appsec Transporter under the App column → Deactivate → Confirm when prompted All existing connections are deleted but their configurations are saved in the database" type="note" />
+              <outline text="the Appsec Transporter under the App column → Deactivate → Confirm when prompted" type="note" />
+            </outline>
+          </outline>
+          <outline text="2.8.2. Set up a Transporter on your VCS" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Set-up-a-Transporter-on-your-VCS">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Ensure you have user permissions to onboard data sources.&#10;Note&#10;The dedicated AppSec Admin role includes the required permissions.&#10;Ensure you have user permissions to onboard data sources.&#10;Before you begin you must setup a Transporter applet on your Broker VM. Refer to Set up a Transporter applet on Broker VM for more information" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="GitLab Enterprise webhook internal IP restriction: GitLab Enterprise's security policies prevent webhook subscriptions to internal IP addresses (such as broker addresses). These subscriptions can only be enabled through specific instance configuration. For more information, refer to https://docs.gitlab.com/security/webhooks/." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Data Sources &amp; Integrations → + Add New → , and search for your VCS on-premises data source" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="2.9. Manage integrations via data source APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-integrations-via-data-source-APIs">
+          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+            <outline text="API key pair: Generate an API key (Key ID + Key Secret) from Settings → Configurations → API Keys in the Cortex Cloud tenant" type="note" />
+          </outline>
+        </outline>
+      </outline>
+      <outline text="3. Cortex Cloud Application Security dashboard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Cortex-Cloud-Application-Security-dashboard">
+        <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+          <outline text="Modules → Application Security → AppSec Dashboard" type="note" />
+        </outline>
+      </outline>
+      <outline text="4. Application Security Posture Management (ASPM)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Application-Security-Posture-Management-ASPM">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="ASPM does not execute scans. Detection and finding generation belong to Code Security (native scanners) and the Supply Chain Security pillar (VCS repository and CI/CD pipeline analysis). ASPM evaluates the findings against unified policies and orchestrates the resulting issues through to remediation." type="note" />
+        </outline>
+        <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+          <outline text="You can view AppSec Admin permissions in the tenant by navigating to Settings → Configurations → Roles → AppSec Admin" type="note" />
+        </outline>
+        <outline text="4.1. Code to Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Code-to-Cloud">
+          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+            <outline text="Full Code to Cloud (C2C) coverage is achieved when Cortex Cloud can resolve the following chain: Repository → Pipeline → Image → (optional Registry) → Runtime resources (including VMs, VM images, and IaC-defined infrastructure" type="note" />
+          </outline>
+          <outline text="4.1.1. Supported integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Supported-integrations" />
+          <outline text="4.1.2. Code to Cloud context and visibility" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Code-to-Cloud-context-and-visibility">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Topology graph: Located in the Business Applications side card, this tab visualizes the entire path to production (Code → Build → Deploy → Run), allowing you" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.1.3. Code to Cloud troubleshooting" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Code-to-Cloud-troubleshooting">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Empty state messages and troubleshooting guidance for missing lineage are only visible to users with an active license." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.2. ASPM Command Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/ASPM-Command-Center">
+          <outline text="4.2.1. Operational workflows" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Operational-workflows" />
+        </outline>
+        <outline text="4.3. Applications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Applications">
+          <outline text="4.3.1. Defining Business Applications" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Defining-Business-Applications">
+            <outline text="4.3.1.1. Defining business applications by Criteria" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Defining-business-applications-by-Criteria" />
+            <outline text="4.3.1.2. Manage Criteria via the tenant UI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-Criteria-via-the-tenant-UI">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Modules → Application Security → Application Management → Criteria" type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.1.3. Define applications by VCS Criteria" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Define-applications-by-VCS-Criteria">
+              <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+                <outline text="Data source: Your Version Control System (such as GitHub, GitLab) must already be onboarded as a Data Source&#10;Permissions: You must have View/Edit permissions for Access Management&#10;SBAC: You can only create applications from VCS entities (Organizations, Projects, or Repositories) that are already included in your SBAC Asset Groups" type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="This workflow allows you to unify assets across disparate providers (such as grouping a GitHub repository and a Bitbucket repository into one application) if they share naming conventions" type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.1.4. Define applications by cloud tag-based Criteria" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Define-applications-by-cloud-tag-based-Criteria">
+              <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+                <outline text="Permissions: You must have View/Edit permissions for Access Management, or a role that includes these permissions." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="You can only create applications based on the entities from onboarded Cloud accounts listed in the Cloud card." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Kubernetes (K8S) labels: K8S labels are supported as tags for asset grouping only when they originate from a supported cloud provider; AWS, GCP, Azure, or OCI." type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.1.5. Manage criteria via the public API" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-criteria-via-the-public-API" />
+            <outline text="4.3.1.6. How to manually build an application" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/How-to-manually-build-an-application">
+              <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+                <outline text="Before you begin, ensure you have connected the necessary data sources. Refer to How to onboard data sources for more information.How to onboard data sources" type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="These filters are represented by icons displayed on the Code pane after selecting a VCS." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="To edit application assets, click the Clear All icon before clicking Finish. This clears all application data, allowing you to restart the application building process from the beginning." type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="4.3.2. Application management and visibility" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Application-management-and-visibility">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Inventory → All Assets → Business Applications (under Application" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.3.3. Manage applications via public APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-applications-via-public-APIs">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The application public API does not execute scans, enforce policies, or create issues. Scanning, policy enforcement, and issue creation are performed by their respective subsystems (Unified Application Security policies, scanner orchestration)." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.3.4. Business application assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Business-application-assets">
+            <outline text="4.3.4.1. Business application expanded asset details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Business-application-expanded-asset-details">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The topology graph is available only when all application components (code, pipeline, build and deploy), are configured." type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.4.2. Export business application data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Export-business-application-data">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Inventory → All Assets → Business Applications" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="4.3.5. Scope user access to applications (Application SBAC)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Scope-user-access-to-applications-Application-SBAC">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Configure user scopes in Cortex Cloud by navigating to Settings → Configurations → Access Management" type="note" />
+            </outline>
+            <outline text="4.3.5.1. Enable SBAC in the Cortex Cloud tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Enable-SBAC-in-the-Cortex-Cloud-tenant">
+              <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+                <outline text="RBAC permissions: To configure user scopes you must have Administrator or View/Edit RBAC permissions for Access Management (under Configurations)." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Exclusions (roles not governed by SBAC): Certain roles cannot have SBAC applied. For these roles, access and permissions are managed through Role-Based Access Control (RBAC). You must manually ensure that these roles have all necessary base permissions (for example Edit/View permissions to assets), because SBAC is bypassed and does not impose its usual..." type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Configurations → General → Server Settings → Enable Scope Based Access Control" type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.5.2. Create an application-based Asset Group" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Create-an-application-based-Asset-Group">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="You cannot create SBAC based on static groups." type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.5.3. Scope user access to an application" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Scope-user-access-to-an-application">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="For more information about User Groups, refer to User group management.User group management" type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Settings → Configurations → User Groups (under Access Management" type="note" />
+                <outline text="Right-click on a group in the table → Edit Group → select the Scope tab" type="note" />
+                <outline text="Assets → Select asset groups → select an Asset Group associated with applications" type="note" />
+                <outline text="Settings → Configurations → Users (under Access Management" type="note" />
+                <outline text="the chevron icon (&gt;) in the Assets field → Select Asset groups → select the user group scoped to the application (see above" type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.5.4. Create application-scoped policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Create-application-scoped-policies">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Application-scoped policies apply to both code and CI/CD configuration policies." type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Modules → Application Security → AppSec Polices (under Policy Management) → Add Policy" type="note" />
+                <outline text="Add Filter → Business Application Names → enter the required application name" type="note" />
+              </outline>
+            </outline>
+            <outline text="4.3.5.5. Terraform workflow for Asset Groups" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Terraform-workflow-for-Asset-Groups" />
+          </outline>
+        </outline>
+        <outline text="4.4. Repository as an asset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Repository-as-an-asset">
+          <outline text="4.4.1. Understanding repository assets via the UI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understanding-repository-assets-via-the-UI">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To access repository assets, under Inventory, select All Assets → Code → Repositories" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.4.2. Investigate repository assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-repository-assets">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="From the Repositories table, right-click a repository → Open in Agentic Assistant → select Application Security from the agents menu, and query repository-specific insights (for example, scan coverage, risk posture, or gaps" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.4.3. Manage repositories via API" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-repositories-via-API">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The public API base path is /public_api/appsec/v1/repositories." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The excludedPaths field replaces the entire excluded paths list; to add a new path, retrieve the current configuration first, append the new path, and send the complete array&#10;SAST: SAST scanner configuration is not available through the public API and must be managed through the console UI" type="note" />
+            </outline>
+            <outline text="⛔🔴" type="section" _style="font-weight:bold;color:red" _label="warning" _marker="priority-1,flag-red">
+              <outline text="Always retrieve the current branch list before updating. The PUT operation replaces the entire branch selection, meaning any omitted branches will be unintentionally removed from scanning." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.5. Coverage" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Coverage">
+          <outline text="4.5.1. Coverage in the user interface" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Coverage-in-the-user-interface">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Modules, → Application Security → AppSec Coverage" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.6. Urgency" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Urgency">
+          <outline text="4.6.1. Urgency and code to cloud traceability" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Urgency-and-code-to-cloud-traceability">
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="Without code to cloud traceability, deployment-related urgency signals cannot be computed. Scanner-specific signals (EPSS Score, KEV Status, Reachability, Secret Validation, CWE Top 25, OWASP Top 10) are always available regardless of code to cloud traceability." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.6.2. Prioritize issues by Urgency levels" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Prioritize-issues-by-Urgency-levels" />
+          <outline text="4.6.3. Urgency metrics" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Urgency-metrics" />
+          <outline text="4.6.4. View Urgency in the tenant" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/View-Urgency-in-the-tenant">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="EPSS Score, CVSS Score, Exploit Maturity, Exploit Availability, Fixable, Is Deployed, Visibility, Validation metrics are displayed even when the value is false or zero. Other metrics are displayed only when the value is present and non-null&#10;For more about Urgency metrics refer to Urgency metrics" type="note" />
+            </outline>
+            <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+              <outline text="Combine Urgency filters with scanner type filters to focus on the highest-risk issues for a specific scanner category (for example, Top Urgent vulnerability issues or Urgent secrets issues)." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.7. Backlog baseline" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Backlog-baseline">
+          <outline text="4.7.1. Backlog use cases" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Backlog-use-cases" />
+          <outline text="4.7.2. Issue/Finding classification by scanner" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Issue/Finding-classification-by-scanner">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="In some cases/vendors, this is not accurate as findings are deleted every time new findings are uploaded. In such cases, the feature may not be accurate or supported&#10;For SAST, the vendor does not support policy in pull requests" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Scanner updates and new detections: When a security scanner is updated to support new languages, detection rules, or capabilities, any issues discovered by these new features for existing code are classified as part of the backlog." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.7.3. Using Backlog" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Using-Backlog">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configuration → Application Security → AppSec Issues Configurations and enable Are SBOM issues considered new Permissions for all other capabilities, such as viewing issues or applying policies, are defined by the existing RBAC/SBAC policies and the user's specific issue management capabilities" type="note" />
+              <outline text="Settings → Configuration → Application Security → AppSec Issues Configurations and enable Are SBOM issues considered new" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.8. Service Lead Agreements (SLA)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Service-Lead-Agreements-SLA">
+          <outline text="4.8.1. Configure and monitor Cortex Cloud Application Security SLAs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Configure-and-monitor-Cortex-Cloud-Application-Security-SLAs">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → Application Configuration (under Application Security" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.9. Compliance for Cortex Cloud Application Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Compliance-for-Cortex-Cloud-Application-Security">
+          <outline text="4.9.1. Infrastructure-as-Code (IaC) compliance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Infrastructure-as-Code-IaC-compliance" />
+          <outline text="4.9.2. Manage IaC compliance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-IaC-compliance">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Add these properties to the IaC Rules table through the Table Settings Menu, as they are not exposed by default." type="note" />
+            </outline>
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Add these properties to the tables table through the Table Settings Menu, as they are not exposed by default." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Modules → Application Security → AppSec Polices → Add Policy" type="note" />
+              <outline text="Modules → Application Security → IaC Misconfigurations (under Issues" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.9.3. CI/CD Compliance" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-Compliance">
+            <outline text="4.9.3.1. Create CI/CD compliance reports" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Create-CI/CD-compliance-reports">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The CI/CD module supports GitHub and GitLab provider types." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="For more information about about Asset Groups, refer to Asset groups.Asset groups" type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="CIS GitLab Benchmark, CIS GitHub Benchmark, and the OWASP Top 10 CI/CD Risks standards are supported." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="For more information about assessment profiles, refer to Use an assessment profile to run compliance checks on your assets.Use an assessment profile to run compliance checks on your assets" type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Posture Management → Compliance → Reports" type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="4.9.4. Terraform workflow for Compliance assessments" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Terraform-workflow-for-Compliance-assessments" />
+        </outline>
+        <outline text="4.10. Unified Application Security policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Unified-Application-Security-policies">
+          <outline text="4.10.1. Core concepts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Core-concepts">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The Policy Type selection determines the available configuration options for conditions, filters, and triggers." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For a full description of each finding type and its applicability (Code vs. Image), refer to Reference A: Finding type details." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For a complete list of all available filters by category, as well as logical groups, refer to Reference B: Condition filters and logic." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="To understand the specific calculation logic and how grace periods align with your organization's SLAs, refer to Reference E: Grace period logic and configuration." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Application scoping is currently not supported for Build Images" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Images do not have a default severity. You must select a severity to continue when any image trigger is selected." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.2. Tenant (UI) workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Tenant-UI-workflow">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="SBAC restricts table visibility. The policy table displays only policies scoped to assets within the user's assigned application boundary. Policies scoped to assets outside the user's SBAC scope are not visible" type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Posture Management → Rules &amp; Policies → Policy → Application Security The policy table displays all policies (out-of-the-box (OOTB) and custom" type="note" />
+              <outline text="Posture Management → Rules &amp; Policies → Policy → Application Security" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.3. Create a policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Create-a-policy">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="To create a new asset group or application, select the corresponding link in the scope step. The link opens the asset group or application configuration in a new tab" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.4. View and manage policy details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/View-and-manage-policy-details">
+            <outline text="⚠️🟡" type="section" _style="font-weight:bold;color:red" _label="caution" _marker="stop,flag-yellow">
+              <outline text="Deleting a policy closes all issues created by that policy during the next periodic scan. This action cannot be undone. Consider disabling the policy instead of deleting the policy to preserve issue history." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Modules → Application Security → Issues → All" type="note" />
+              <outline text="Modules → Application Security → Scans" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.5. API workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/API-workflow">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The public API remains backward compatible with existing API consumers. The API returns additional fields for the unified policy structure, including the new policy type, trigger configuration, and Override Severity settings." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.6. Cortex CLI workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Cortex-CLI-workflow" />
+          <outline text="4.10.7. IDE workflow" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/IDE-workflow" />
+          <outline text="4.10.8. Terraform workflow for policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Terraform-workflow-for-policies" />
+          <outline text="4.10.9. Reference A: Finding type details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-A-Finding-type-details" />
+          <outline text="4.10.10. Reference B: Condition filters and logic" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-B-Condition-filters-and-logic">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="When multiple finding types are selected within a single condition group, only the Common filters (such as Severity or Backlog Status) are available for selection." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.11. Reference C: Scope mapping details" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-C-Scope-mapping-details" />
+          <outline text="4.10.12. Reference D: Trigger and actions mapping" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-D-Trigger-and-actions-mapping" />
+          <outline text="4.10.13. Reference E: Grace period logic and configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-E-Grace-period-logic-and-configuration" />
+          <outline text="4.10.14. Reference F: Engine evaluation and Urgency logic" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-F-Engine-evaluation-and-Urgency-logic">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="If code to cloud traceability is absent (the repository is not linked to a relevant application), the engine cannot compute deployment signals, and Urgency will display as Not Applicable" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.15. Reference G: Finding type to trigger mapping" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-G-Finding-type-to-trigger-mapping">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Malware findings are applicable to image scans only When a CI Scan includes image scanning, Malware findings are evaluated PR Scan and Periodic Scan do not evaluate Malware findings" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="CI/CD Configuration Scanners policies support only the Periodic Scan trigger PR Scan and CI Scan triggers are not available for the CI/CD Configuration Scanners policy type" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Drift Detection Scanner policies support only the Periodic Scan trigger PR Scan and CI Scan triggers are not available for the Drift Detection Scanner policy type" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.10.16. Reference H: Action availability by trigger" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-H-Action-availability-by-trigger" />
+          <outline text="4.10.17. Reference I: Audit logging" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Reference-I-Audit-logging">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → Management → Audit Logs to review policy audit entries" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="4.11. Application Security Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Application-Security-Rules">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="The AppSec rules API manages rule definitions and metadata. It does not execute scans, create issues, or enforce policies." type="note" />
+          </outline>
+          <outline text="4.11.1. Roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Roles-and-permissions">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Custom roles can be configured with either View or View/Edit permissions for AppSec rules&#10;API keys inherit the permissions of the role assigned during key generation. To perform write operations (create, modify, delete) through the AppSec rules API, the API key must have a role that includes View/Edit permissions" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.11.2. Rules inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Rules-inventory">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To filter rules relating to Secrets, select filter icon → Scanner (from the Select field) → Secrets (from the Value field" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.11.3. Create custom Cortex Cloud Application Security rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Create-custom-Cortex-Cloud-Application-Security-rules">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="See Configure YAML file properties below for more details." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.11.4. Configure YAML file properties" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Configure-YAML-file-properties" />
+          <outline text="4.11.5. Terraform workflows for rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Terraform-workflows-for-rules" />
+          <outline text="4.11.6. Manage custom rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-custom-rules" />
+        </outline>
+        <outline text="4.12. Manage code weakness issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-code-weakness-issues">
+          <outline text="4.12.1. Navigate to SAST code weakness issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Navigate-to-SAST-code-weakness-issues">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The default sort order is by Severity (descending). The default filter shows issues with a status of New and In Progress. Resolved issues are hidden by default." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Findings in the Findings tab are raw scanner output and do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific finding, create or update a unified policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To access SAST code violation issues, under Modules, select Application Security → Issues → Code Weaknesses" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.12.2. Understand the Code Weaknesses table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-Code-Weaknesses-table" />
+          <outline text="4.12.3. Investigate and remediate code weakness issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-remediate-code-weakness-issues">
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="Important: Urgency signals are populated only when the SAST asset is traced to deployed cloud resources through the Code-to-Cloud mapping. If no Code-to-Cloud trace exists, urgency signals display as Not Applicable" type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="From the main issues table: Right-click on an issue in the table → Change Status → [Select a status" type="note" />
+              <outline text="From the main issues table: Right-click on an issue in the table → Change Assignee → [Select a user" type="note" />
+              <outline text="From the main issues table: Right-click on an issue in the table → Change Severity → [Select a severity" type="note" />
+            </outline>
+          </outline>
+          <outline text="4.12.4. Code weakness findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Code-weakness-findings">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Findings in the Findings tab are raw scanner output. They do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific finding, create or update a unified policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+            </outline>
+          </outline>
+        </outline>
+      </outline>
+      <outline text="5. Software supply chain security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Software-supply-chain-security">
+        <outline text="5.1. Supply Chain assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Supply-Chain-assets">
+          <outline text="5.1.1. VCS organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/VCS-organization-assets">
+            <outline text="5.1.1.1. Understanding VCS organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understanding-VCS-organization-assets">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="To access VCS organization assets, under Inventory, select All Assets → Code → VCS Organizations" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.1.1.2. Investigate VCS organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-VCS-organization-assets" />
+            <outline text="5.1.1.3. Manage VCS organization assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-VCS-organization-assets" />
+          </outline>
+          <outline text="5.1.2. VCS collaborators as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/VCS-collaborators-as-assets">
+            <outline text="5.1.2.1. In-depth Collaborator asset information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/In-depth-Collaborator-asset-information" />
+            <outline text="5.1.2.2. Manage Collaborator assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-Collaborator-assets" />
+          </outline>
+          <outline text="5.1.3. Repository as an asset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Repository-as-an-asset">
+            <outline text="5.1.3.1. Understanding repository assets via the UI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understanding-repository-assets-via-the-UI">
+              </outline>
+            <outline text="5.1.3.2. Investigate repository assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-repository-assets">
+              </outline>
+            <outline text="5.1.3.3. Manage Repository assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-Repository-assets" />
+            <outline text="5.1.3.4. Export Software Bill of Materials (SBOM)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Export-Software-Bill-of-Materials-SBOM" />
+            <outline text="5.1.3.5. Manage issues detected in repositories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-issues-detected-in-repositories">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="You can also find the repository issues in the general issue inventory table, and in the dedicated inventory of issues for each scanner type (see step 4 above for details)." type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="5.1.4. Technologies as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Technologies-as-assets">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The filter supports wildcard filtering and is case-insensitive." type="note" />
+            </outline>
+            <outline text="5.1.4.1. Manage repository technologies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-repository-technologies">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The filter supports wildcard filtering and is case-insensitive." type="note" />
+              </outline>
+            </outline>
+            <outline text="5.1.4.2. Troubleshooting and FAQs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Troubleshooting-and-FAQs" />
+          </outline>
+          <outline text="5.1.5. Software packages as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Software-packages-as-assets">
+            <outline text="5.1.5.1. Understanding software package assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understanding-software-package-assets">
+              </outline>
+            <outline text="5.1.5.2. Investigate software package assets and security issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-software-package-assets-and-security-issues" />
+          </outline>
+          <outline text="5.1.6. CI/CD instance as an asset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-instance-as-an-asset">
+            <outline text="5.1.6.1. Understanding CI/CD instance assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understanding-CI/CD-instance-assets">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="To access CI/CD instance assets, under Inventory, select All Assets → Code → CI/CD Instances" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.1.6.2. Investigate and manage CI/CD instance assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-manage-CI/CD-instance-assets">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Navigate to the dedicated Application Security → Issues → CI/CD Risks page to manage the CI/CD risks remediation lifecycle at scale through bulk status updates, team assignments, and SLA tracking for compliance monitoring." type="note" />
+              </outline>
+            </outline>
+            <outline text="5.1.6.3. Manage CI/CD pipeline instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-CI/CD-pipeline-instances" />
+          </outline>
+          <outline text="5.1.7. CI/CD pipeline as an asset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-pipeline-as-an-asset">
+            <outline text="5.1.7.1. Understanding CI/CD pipeline assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understanding-CI/CD-pipeline-assets">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="To access CI/CD pipeline assets, under Inventory, select All Assets → Code → CI/CD Pipelines" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.1.7.2. Investigate and manage CI/CD pipeline assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-manage-CI/CD-pipeline-assets">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="This requires active CI/CD integrations and successful build log analysis. Pipelines without successful build log analysis display only the repository and pipeline nodes" type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Navigate to the dedicated Application Security → Issues → CI/CD Risks page to manage the remediation lifecycle at scale through bulk status updates, team assignments, and SLA tracking for compliance monitoring." type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="From the CI/CD Pipelines table, right-click a pipeline row → Open in Agentic Assistant → Application Security from the agents menu" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.1.7.3. Manage CI/CD pipeline assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-CI/CD-pipeline-assets" />
+          </outline>
+          <outline text="5.1.8. Tools as an asset" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Tools-as-an-asset">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Although attributes are identical across inventories, their values for the same tool can differ, most commonly in Risk Factors and Type. This is because the inventory reflects your live environment, which may include different versions or configurations than the catalog—for example, a package may not have been upgraded or may be deployed differently." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="In the inventory table, right-click on a tool → Change Status → select a status" type="note" />
+            </outline>
+            <outline text="5.1.8.1. Active tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Active-tools">
+              <outline text="5.1.8.1.1. Supply Chain Tools" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Supply-Chain-Tools">
+                <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                  <outline text="To access Supply Chain Tools, select Modules → Application Security → Supply Chain Tools (under 3rd Party Tools" type="note" />
+                </outline>
+              </outline>
+              <outline text="5.1.8.1.2. Expanded Supply Chain tool information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Expanded-Supply-Chain-tool-information">
+                <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                  <outline text="AppSec Admin user permissions are required to perform these actions." type="note" />
+                </outline>
+              </outline>
+            </outline>
+            <outline text="5.1.8.2. Supply chain catalog" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Supply-chain-catalog">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="To access the Supply Chain Catalog, select Modules → Application Security → Supply Chain Catalog (under 3rd party tools" type="note" />
+              </outline>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="5.2. Software Composition Analysis (SCA ) scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Software-Composition-Analysis-SCA--scanners">
+          <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+            <outline text="Utilizing native SCA scanner capabilities requires an AppSec add-on license (Posture Management, Runtime, or Premium Cortex)." type="note" />
+          </outline>
+          <outline text="5.2.1. Supported Software Composition Analysis (SCA) frameworks and languages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Supported-Software-Composition-Analysis-SCA-frameworks-and-languages" />
+          <outline text="5.2.2. Software Composition Analysis (SCA) vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Software-Composition-Analysis-SCA-vulnerability-issues">
+            <outline text="5.2.2.1. Understand the Vulnerabilities table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-Vulnerabilities-table" />
+            <outline text="5.2.2.2. Investigate and remediate CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-remediate-CVE-vulnerability-issues">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The Open Fix PR action is available only for CVE vulnerability issues detected through periodic scans where an automated fix exists. The action is not available for issues detected through PR scans. Verify that the Is Fixable indicator is True before attempting to open a fix pull request." type="note" />
+              </outline>
+              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+                <outline text="Important: Urgency signals related to deployment context are populated only when the SCA asset is traced to deployed cloud resources through the Code-to-Cloud mapping. If no Code-to-Cloud trace exists, deployment-related urgency signals display as Not Applicable. SCA-specific signals (EPSS Score, KEV Status, Reachability, Has Fix) are always available..." type="note" />
+              </outline>
+            </outline>
+            <outline text="5.2.2.3. Investigate CVE vulnerabilities findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-CVE-vulnerabilities-findings">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Findings in the Findings tab are raw scanner output and do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific finding, create or update a unified policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="To access CVE findings, under Modules, select Application Security → Issues → Vulnerabilities → click the Findings tab" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.2.2.4. Manage SCA CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-SCA-CVE-vulnerability-issues" />
+          </outline>
+          <outline text="5.2.3. License miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/License-miscompliance-issues">
+            <outline text="5.2.3.1. Understand the Licenses table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-Licenses-table">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Important: License miscompliance issues do not have urgency signals. Unlike CVE vulnerability issues, license issues are legal compliance risks — not security vulnerabilities. Urgency signals such as EPSS score, KEV status, reachability analysis, and Code-to-Cloud deployment context do not apply to license compliance evaluation." type="note" />
+              </outline>
+            </outline>
+            <outline text="5.2.3.2. Take action on license miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Take-action-on-license-miscompliance-issues">
+              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+                <outline text="Automated fix pull requests are not available for license miscompliance issues. Remediation requires human judgment to evaluate license compatibility, negotiate licensing terms, identify alternative packages, or accept the license with documented justification." type="note" />
+              </outline>
+            </outline>
+            <outline text="5.2.3.3. License miscompliance findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/License-miscompliance-findings">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="To access license miscompliance findings, under Modules, select Application Security → Issues → Licenses → click the Findings tab" type="note" />
+              </outline>
+            </outline>
+            <outline text="5.2.3.4. Open-source software license categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Open-source-software-license-categories" />
+            <outline text="5.2.3.5. Manage license miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-license-miscompliance-issues" />
+          </outline>
+          <outline text="5.2.4. Ingest third-party SCA data" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Ingest-third-party-SCA-data">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Modules → Application Security → Issues → Vulnerabilities" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="5.3. CI/CD Risks" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-Risks">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Cortex Cloud Application Security CI/CD pipeline scans create a comprehensive inventory of all CI/CD pipelines in your environment. For more information refer to CI/CD pipeline as an asset." type="note" />
+          </outline>
+          <outline text="5.3.1. CI/CD pipeline issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-pipeline-issues">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To access CI/CD pipeline risks issues, under Modules, select Application Security → Issues → CI/CD Risks" type="note" />
+            </outline>
+          </outline>
+          <outline text="5.3.2. Expanded CI/CD risks issue information" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Expanded-CI/CD-risks-issue-information">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Different issue types include different properties; therefore, not all properties are available for every issue." type="note" />
+            </outline>
+          </outline>
+          <outline text="5.3.3. VCS and CI/CD pipeline risk findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/VCS-and-CI/CD-pipeline-risk-findings" />
+        </outline>
+        <outline text="5.4. CI/CD Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-Policies">
+          <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+            <outline text="For Cortex Cloud Code policies, refer to Unified Application Security policies." type="note" />
+          </outline>
+          <outline text="5.4.1. CI/CD policies user roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-policies-user-roles-and-permissions" />
+          <outline text="5.4.2. CI/CD policies inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-policies-inventory">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="To view all out-of-the-box (OOTB) policies, filter by Policy Owner = System." type="note" />
+            </outline>
+          </outline>
+          <outline text="5.4.3. Create CI/CD configuration policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Create-CI/CD-configuration-policies">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="When you select a category (such as Application), a list of available asset values for that type is displayed. The policy will automatically apply to all assets in the displayed list unless you apply additional filters using specific asset attributes (such as the Business Application Names filter)." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="SBAC scope-based limitations do not apply to Asset Types" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Periodic scan is the only trigger that is supported for CI/CD policies." type="note" />
+            </outline>
+            <outline text="5.4.3.1. Cortex Cloud Application Security CI/CD policy Condition attributes" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Cortex-Cloud-Application-Security-CI/CD-policy-Condition-attributes" />
+          </outline>
+          <outline text="5.4.4. Manage CI/CD policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-CI/CD-policies">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="You cannot edit out-of-the-box (OOTB) policies." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The duplicated policy will include the word &quot;clone&quot; in its name and must be renamed." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="5.5. CI/CD Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-Rules">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Out-of-the-box rules cannot be modified&#10;Custom CI/CD rules are not supported" type="note" />
+          </outline>
+          <outline text="5.5.1. CI/CD rules roles and permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-rules-roles-and-permissions" />
+          <outline text="5.5.2. CI/CD rules inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI/CD-rules-inventory" />
+        </outline>
+      </outline>
+      <outline text="6. Code Security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Code-Security">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Code Security covers detection and analysis engines. For governance and orchestration layer, see Application Security Posture Management (ASPM)." type="note" />
+        </outline>
+        <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+          <outline text="You can view the granular permissions assigned to each role in the tenant by navigating to Settings → Configurations → Roles" type="note" />
+        </outline>
+        <outline text="6.1. Code Security assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Code-Security-assets" />
+        <outline text="6.2. Software packages as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Software-packages-as-assets">
+          <outline text="6.2.1. Supported Software Composition Analysis (SCA) frameworks and languages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Supported-Software-Composition-Analysis-SCA-frameworks-and-languages" />
+          <outline text="6.2.2. Understanding software package assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understanding-software-package-assets">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To access software package assets, under Inventory, select All Assets → Code → Software Packages" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.2.3. Investigate software package assets and security issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-software-package-assets-and-security-issues" />
+        </outline>
+        <outline text="6.3. Infrastructure-as-Code (IaC) resources as assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Infrastructure-as-Code-IaC-resources-as-assets">
+          <outline text="6.3.1. Supported frameworks and languages" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Supported-frameworks-and-languages" />
+          <outline text="6.3.2. Access and filter IaC assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Access-and-filter-IaC-assets">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Inventory, select All Assets → Code → IaC Resources" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.3.3. Investigate IaC assets" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-IaC-assets" />
+        </outline>
+        <outline text="6.4. Code Security scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Code-Security-scanners" />
+        <outline text="6.5. Secrets scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Secrets-scans">
+          <outline text="6.5.1. Navigate to secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Navigate-to-secrets-issues">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The default sort order is by Severity (descending). The default filter shows issues with a status of New and In Progress. Resolved issues are hidden by default." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Under Modules, select Application Security → Issues → Secrets" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.5.2. Understand the secrets issues table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-secrets-issues-table" />
+          <outline text="6.5.3. Investigate and remediate secrets issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-remediate-secrets-issues">
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="Urgency signals related to deployment context are populated only when the secrets asset is traced to deployed cloud resources through the Code-to-Cloud mapping." type="note" />
+            </outline>
+          </outline>
+          <outline text="6.5.4. Secrets findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Secrets-findings">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Review excluded findings: Investigate findings that were excluded by policy filters to confirm that exclusions are intentional and do not suppress critical IaC misconfigurations." type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="6.6. Infrastructure as Code (IaC) misconfiguration scanner" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Infrastructure-as-Code-IaC-misconfiguration-scanner">
+          <outline text="6.6.1. Navigate to IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Navigate-to-IaC-misconfiguration-issues">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The default sort order is by Severity (descending). The default filter shows issues with a status of New and In Progress. Resolved issues are hidden by default." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To access IaC misconfiguration issues, under Modules, select Application Security → Issues → IaC misconfiguration" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.6.2. Understand the IaC misconfigurations table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-IaC-misconfigurations-table" />
+          <outline text="6.6.3. Investigate and remediate IaC misconfiguration issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-remediate-IaC-misconfiguration-issues">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The Open Fix PR action is available only for issues detected through periodic scans where an automated fix exists. The action is not available for issues detected through PR scans." type="note" />
+            </outline>
+          </outline>
+          <outline text="6.6.4. IaC misconfigurationfindings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/IaC-misconfigurationfindings">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Findings in the Findings tab are raw scanner output and do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific finding, create or update a unified policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="To access IaC misconfiguration findings, under Modules, select Application Security → Issues → IaC Misconfigurations → click the Findings tab" type="note" />
+              <outline text="The Cortex Cloud Application Security IaC misconfigurations Findings table is a filtered view of the comprehensive Findings inventory, located at Cases &amp; Issues → Issues → Findings tab" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="6.7. IaC Drift Detection scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/IaC-Drift-Detection-scans">
+          <outline text="6.7.1. Navigate to IaC drift detection issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Navigate-to-IaC-drift-detection-issues">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The default sort order is by Severity (descending). The default filter shows drift findings with a status of New and In Progress. Resolved drift findings are hidden by default." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Modules → Application Security → IaC Drifts" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.7.2. Understand the IaC drift detection table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-IaC-drift-detection-table" />
+          <outline text="6.7.3. Investigate and remediate IaC drift issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-remediate-IaC-drift-issues">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The Revert to IaC State action requires write permissions on the target cloud account. Verify that the Cortex Cloud service account has the necessary IAM permissions before initiating a revert operation." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Updating the IaC template codifies the current cloud state as the new desired state. Verify that the cloud resource configuration complies with security policies before merging the generated pull request." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="From the main drift table:Right-click on a drift issue in the table → Change Status → Change Status" type="note" />
+              <outline text="From the main drift table:Right-click on a drift issue in the table → Change Assignee → Change Status" type="note" />
+            </outline>
+          </outline>
+          <outline text="6.7.4. Investigate IaC drift detection findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-IaC-drift-detection-findings">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Findings in the Findings tab are raw scanner output and do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific drift finding, create or update a unified policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Modules → Application Security → IaC Drifts (under Issues) → click the Findings tab" type="note" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="6.8. Software Composition Analysis (SCA ) scanners" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Software-Composition-Analysis-SCA--scanners">
+          <outline text="6.8.1. Software Composition Analysis (SCA) vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Software-Composition-Analysis-SCA-vulnerability-issues">
+            <outline text="6.8.1.1. Navigate to CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Navigate-to-CVE-vulnerability-issues">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The default sort order is by Severity (descending). The default filter shows issues with a status of New and In Progress. Resolved issues are hidden by default." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Findings in the Findings tab are raw scanner output and do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific finding, create or update a policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+              </outline>
+            </outline>
+            <outline text="6.8.1.2. Understand the Vulnerabilities table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-Vulnerabilities-table" />
+            <outline text="6.8.1.3. Investigate and remediate CVE vulnerability issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-remediate-CVE-vulnerability-issues">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The Open Fix PR action is available only for CVE vulnerability issues detected through periodic scans where an automated fix exists. The action is not available for issues detected through PR scans. Verify that the Is Fixable indicator is True before attempting to open a fix pull request." type="note" />
+              </outline>
+              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+                <outline text="Important: Urgency signals related to deployment context are populated only when the SCA asset is traced to deployed cloud resources through the Code-to-Cloud mapping. If no Code-to-Cloud trace exists, deployment-related urgency signals display as Not Applicable. SCA-specific signals (EPSS Score, KEV Status, Reachability, Has Fix) are always available..." type="note" />
+              </outline>
+            </outline>
+            <outline text="6.8.1.4. Investigate CVE vulnerabilities findings" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-CVE-vulnerabilities-findings">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Findings in the Findings tab are raw scanner output and do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific finding, create or update a unified policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="6.8.2. License miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/License-miscompliance-issues">
+            <outline text="6.8.2.1. Navigate to license miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Navigate-to-license-miscompliance-issues">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The default sort order is by Severity (descending). The default filter shows issues with a status of New and In Progress. Resolved issues are hidden by default." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Findings in the Findings tab are raw scanner output and do not have resolution statuses, SLA tracking, or assignees. To track remediation for a specific finding, create or update a unified policy that matches the finding pattern to generate an actionable issue in the Issues tab." type="note" />
+              </outline>
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Application Security → Issues → Licenses" type="note" />
+              </outline>
+            </outline>
+            <outline text="6.8.2.2. Understand the Licenses table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-Licenses-table">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Important: License miscompliance issues do not have urgency signals. Unlike CVE vulnerability issues, license issues are legal compliance risks — not security vulnerabilities. Urgency signals such as EPSS score, KEV status, reachability analysis, and Code-to-Cloud deployment context do not apply to license compliance evaluation." type="note" />
+              </outline>
+            </outline>
+            <outline text="6.8.2.3. Take action on license miscompliance issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Take-action-on-license-miscompliance-issues">
+              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+                <outline text="Automated fix pull requests are not available for license miscompliance issues. Remediation requires human judgment to evaluate license compatibility, negotiate licensing terms, identify alternative packages, or accept the license with documented justification." type="note" />
+              </outline>
+            </outline>
+            <outline text="6.8.2.4. How license miscompliance issues fit in the Application Security ecosystem" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/How-license-miscompliance-issues-fit-in-the-Application-Security-ecosystem">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Configure unified policies for license compliance at Modules → Application Security → AppSec Policies" type="note" />
+              </outline>
+            </outline>
+            <outline text="6.8.2.5. Open-source software license categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Open-source-software-license-categories" />
+          </outline>
+          <outline text="6.8.3. Package operational risk scanner" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Package-operational-risk-scanner">
+            <outline text="6.8.3.1. Understand the package operational risk table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Understand-the-package-operational-risk-table" />
+            <outline text="6.8.3.2. Investigate and remediate package operational risk issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Investigate-and-remediate-package-operational-risk-issues">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Automated fix pull requests are not available for package operational risk issues. Remediation requires human judgment to evaluate alternative packages, assess API compatibility, and perform the migration." type="note" />
+              </outline>
+              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+                <outline text="Package operational risk issues do not have urgency signals based on exploit intelligence. Unlike CVE vulnerability issues, operational risk issues assess the health and sustainability of a package, not active security vulnerabilities. Urgency signals such as EPSS score, KEV status, and reachability analysis do not apply to operational risk evaluation...." type="note" />
+              </outline>
+            </outline>
+            <outline text="6.8.3.3. How package operational risk issues fit in the Application Security ecosystem" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/How-package-operational-risk-issues-fit-in-the-Application-Security-ecosystem">
+              <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+                <outline text="Configure unified policies for operational risk at Modules → Application Security → AppSec Policies" type="note" />
+              </outline>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="6.9. API workflows for Code Security issues" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/API-workflows-for-Code-Security-issues">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="When blockingPoliciesIds is non-empty, the PR was blocked, preventing vulnerable code from merging into the protected branch." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="The severity query parameter is the only server-side filter available on the issue endpoint. Filtering by detection method, resolution status, or assignee requires client-side processing." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="License compliance (License Security) and package operational risk (Operational Risk Security) are not represented as separate keys in issuesTypesBreakdown. To retrieve these issue types, filter client-side by detection_method from the full issue set." type="note" />
+          </outline>
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Application issue summaries return counts only, not individual issue records. To retrieve individual records, list periodic scans for the application's repositories, then use GET /scans/{scanId}/issues." type="note" />
+          </outline>
+          <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+            <outline text="Use the issuesTypesBreakdown and issuesFound fields in the scan list response to identify scans with Critical or High issues before drilling into individual records, thereby reducing API calls." type="note" />
+          </outline>
+          <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+            <outline text="Generate an API key pair from Settings → Configurations → API Keys in the Cortex Cloud console" type="note" />
+          </outline>
+        </outline>
+        <outline text="6.10. Application Security scans management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Application-Security-scans-management">
+          <outline text="6.10.1. Manage scans through the tenant (UI)" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-scans-through-the-tenant-UI">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="While scans provide a comprehensive inventory of all issues detected during a scan, dedicated inventories are also maintained for specific scan types for more granular management. For more information, refer to Code Security scanners." type="note" />
+            </outline>
+          </outline>
+          <outline text="6.10.2. Branch periodic scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Branch-periodic-scans">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The inventory table displays scan issues for visibility only; remediation is not available here. To resolve issues, navigate to the dedicated issue type inventory, where you can manage and remediate them." type="note" />
+            </outline>
+          </outline>
+          <outline text="6.10.3. Pull Request scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Pull-Request-scans">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The inventory table displays scan issues for visibility only; remediation is not available here. To resolve issues, navigate to the dedicated issue type inventory, where you can manage and remediate them." type="note" />
+            </outline>
+          </outline>
+          <outline text="6.10.4. CI scans" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/CI-scans">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The inventory table displays scan issues for visibility only; remediation is not available in scan management. To resolve issues, navigate to the dedicated issue type inventory, where you can manage and remediate them." type="note" />
+            </outline>
+          </outline>
+          <outline text="6.10.5. Scan health and status reference" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Scan-health-and-status-reference">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Periodic scans do not have a scan status. Periodic scans produce issues and findings but do not evaluate blocking policies. The scan health status is the only health indicator for periodic scans." type="note" />
+            </outline>
+          </outline>
+          <outline text="6.10.6. Manage repository scan configurations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-repository-scan-configurations" />
+          <outline text="6.10.7. Monitor data source instances health" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Monitor-data-source-instances-health" />
+          <outline text="6.10.8. Manage scans through public APIs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-scans-through-public-APIs" />
+        </outline>
+        <outline text="6.11. Application Security CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Application-Security-CLI" />
+        <outline text="6.12. IDE" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/IDE">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Not all remediation options are available for all findings or all type of scan category." type="note" />
+          </outline>
+          <outline text="6.12.1. System requirements" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/System-requirements" />
+          <outline text="6.12.2. Visual Studio (VS) Code and VS Code compatible IDEs" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Visual-Studio-VS-Code-and-VS-Code-compatible-IDEs">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Before you begin (These prerequisites apply to both VS Code and VS Code compatibles):&#10;Permissions: CLI Read only permissions. Refer to Cortex CLI for more information about permissionsCortex CLI&#10;Environment setup&#10;macOS and Windows: Install Python 3.9.x to 3.12.x&#10;Install Node.js version 22 and above for SCA scans (such as vulnerabilities..." type="note" />
+            </outline>
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="You must insert your API key and API ID values into the Settings before providing the tenant URL." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Enforcement rules and CA certificates are not applicable to the open-source project." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="When generating an API key, ensure you select the Standard security level. IDE and CLI scans will fail if the security level of the API key is set to Advanced." type="note" />
+            </outline>
+            <outline text="💡🔵" type="section" _style="font-weight:bold;color:red" _label="tip" _marker="content">
+              <outline text="You can access Extensions using the keyboard shortcuts Ctrl+Shift+X (Windows) or Cmd+Shift+X (macOS)." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configurations → API Keys (under Integration) → click Copy API URL" type="note" />
+              <outline text="Install through VS Code IDE Access the Activity bar → Extensions → Cortex Cloud → Install" type="note" />
+              <outline text="Access the Activity bar → Extensions → Cortex Cloud → Install" type="note" />
+            </outline>
+            <outline text="6.12.2.1. How to use the Cortex Cloud extension in VS Code" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/How-to-use-the-Cortex-Cloud-extension-in-VS-Code">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Not all remediation options are available for all issues." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The suppression is scoped to the file." type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="6.12.3. JetBrains" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/JetBrains">
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="Permissions: CLI Read only permissions. Refer to Cortex CLI for more information about permissionsCortex CLI&#10;Environment setup&#10;macOS and Windows: Install Python 3.9.x to 3.12.x&#10;Install Node.js version 22 and above for SCA scans (such as vulnerabilities scans)&#10;Environment setup&#10;macOS and Windows: Install Python 3.9.x to 3.12.x&#10;Install Node.js..." type="note" />
+            </outline>
+            <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+              <outline text="You must insert your API key and API ID values into the Settings before providing the tenant URL." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The Cortex AppSec code security plugin supports all JetBrains products." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="When generating an API key, ensure you select the Standard security level. IDE and CLI scans will fail if the security level of the API key is set to Advanced." type="note" />
+            </outline>
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Plugins → select the Marketplace tab → search for Prisma Cloud → Install → OK" type="note" />
+              <outline text="Settings → Tools → Cortex Cloud" type="note" />
+            </outline>
+            <outline text="6.12.3.1. How to use the JetBrains Cortex Cloud extension" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/How-to-use-the-JetBrains-Cortex-Cloud-extension">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="After selecting Fix Available, the number of issues displayed in the issue categories (such as IaC) reflect the number of fixable issues for that type." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="The corresponding file simultaneously opens in the Code editor, highlighting the issue within its exact code context. See below for more information." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Not all types of remediation are available for all issue categories. For example, fixes are not available for License issues." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Secrets and Licenses category issues are typically mitigated by following the guidance in the Documentation." type="note" />
+              </outline>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="6.13. Developer Suppressions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Developer-Suppressions">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="The check IDs and rule names are placeholders for illustration purposes and do not correspond to actual checks." type="note" />
+          </outline>
+        </outline>
+      </outline>
+      <outline text="7. API endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/API-endpoints" />
+      <outline text="8. Terraform workflows" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Terraform-workflows">
+        <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+          <outline text="To authenticate, you must generate a dedicated API key in the Cortex Cloud console under Settings → Configurations → API Keys" type="note" />
+        </outline>
+        <outline text="8.1. Manage resources" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-Cloud-Posture-Management/Cortex-Cloud-Application-Security/Manage-resources">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="For a complete list of supported IaC and CI/CD compliance standards, as well as rule mapping logic and available scan types, refer to Compliance for Cortex Cloud Application Security." type="note" />
+          </outline>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

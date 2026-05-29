@@ -1,0 +1,90 @@
+<opml version="2.0">
+  <head>
+    <title>Cortex KSPM Documentation</title>
+  </head>
+  <body>
+    <outline text="Cortex KSPM Documentation">
+      <outline text="1. Kubernetes security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Kubernetes-security" />
+      <outline text="2. KSPM limitations and system components" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/KSPM-limitations-and-system-components">
+        <outline text="2.1. Configure Kubernetes Connector resource limits" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Configure-Kubernetes-Connector-resource-limits" />
+      </outline>
+      <outline text="3. Supported Kubernetes distributions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Supported-Kubernetes-distributions" />
+      <outline text="4. Onboard the Kubernetes Connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Onboard-the-Kubernetes-Connector">
+        <outline text="4.1. OpenShift container registry" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/OpenShift-container-registry" />
+        <outline text="4.2. Deploy the Kubernetes Connector via GitOps" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Deploy-the-Kubernetes-Connector-via-GitOps">
+          <outline text="4.2.1. Repository architecture and tenant management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Repository-architecture-and-tenant-management" />
+          <outline text="4.2.2. Deploy with Flux CD" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Deploy-with-Flux-CD" />
+          <outline text="4.2.3. Deploy with ArgoCD" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Deploy-with-ArgoCD" />
+          <outline text="4.2.4. Private registry support" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Private-registry-support" />
+          <outline text="4.2.5. GitOps lifecycle management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/GitOps-lifecycle-management" />
+          <outline text="4.2.6. Troubleshooting GitOps deployments" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Troubleshooting-GitOps-deployments" />
+        </outline>
+      </outline>
+      <outline text="5. KSPM dashboard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/KSPM-dashboard">
+        <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+          <outline text="To access the KSPM dashboard, select Dashboards &amp; Reports → Dashboard or Modules → Kubernetes Security → KSPM Dashboard" type="note" />
+        </outline>
+      </outline>
+      <outline text="6. KSPM Graph" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/KSPM-Graph">
+        <outline text="6.1. Asset detail card" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Asset-detail-card" />
+        <outline text="6.2. Security finding categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Security-finding-categories" />
+      </outline>
+      <outline text="7. Kubernetes Clusters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Kubernetes-Clusters" />
+      <outline text="8. Kubernetes Resources Inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Kubernetes-Resources-Inventory" />
+      <outline text="9. Manage Kubernetes Connector instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Manage-Kubernetes-Connector-instances" />
+      <outline text="10. Run an on-demand Kubernetes cluster scan" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Run-an-on-demand-Kubernetes-cluster-scan" />
+      <outline text="11. Cloud Workload Policies and Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Policies-and-Rules">
+        <outline text="11.1. How policies and rules work together" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/How-policies-and-rules-work-together" />
+        <outline text="11.2. Cloud Workload Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Policies">
+          <outline text="11.2.1. Types of Cloud Workload Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Types-of-Cloud-Workload-Policies">
+            <outline text="11.2.1.1. Trusted image cloud workload policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Trusted-image-cloud-workload-policies" />
+          </outline>
+          <outline text="11.2.2. Cloud Workload Policies page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Policies-page">
+            <outline text="11.2.2.1. Widgets panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Widgets-panel">
+              <outline text="11.2.2.1.1. Show or hide the widget panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Show-or-hide-the-widget-panel">
+                </outline>
+            </outline>
+            <outline text="11.2.2.2. Change the layout of the policies table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Change-the-layout-of-the-policies-table">
+              </outline>
+            <outline text="11.2.2.3. Policy Details Panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Policy-Details-Panel">
+              </outline>
+          </outline>
+          <outline text="11.2.3. Enable or disable a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Enable-or-disable-a-Cloud-Workload-Policy">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload" type="note" />
+            </outline>
+          </outline>
+          <outline text="11.2.4. Create a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Create-a-Cloud-Workload-Policy">
+            </outline>
+          <outline text="11.2.5. Use an existing policy to create a new Cloud Workload policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Use-an-existing-policy-to-create-a-new-Cloud-Workload-policy">
+            </outline>
+          <outline text="11.2.6. Edit a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Edit-a-Cloud-Workload-Policy">
+            </outline>
+          <outline text="11.2.7. Delete a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Delete-a-Cloud-Workload-Policy">
+            </outline>
+          <outline text="11.2.8. Cloud Workload Preventive Action" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Preventive-Action" />
+        </outline>
+        <outline text="11.3. Cloud Workload Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Rules">
+          <outline text="11.3.1. Default (pre-defined) Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Default-pre-defined-Rules" />
+          <outline text="11.3.2. Custom (user-defined) Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Custom-user-defined-Rules" />
+          <outline text="11.3.3. Cloud Workload Rules page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Rules-page">
+            <outline text="11.3.3.1. Filter page results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Filter-page-results" />
+            <outline text="11.3.3.2. Change the layout of the rules table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Change-the-layout-of-the-rules-table" />
+            <outline text="11.3.3.3. Rule details panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Rule-details-panel" />
+          </outline>
+          <outline text="11.3.4. Create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Create-a-new-Custom-Detection-Rule" />
+          <outline text="11.3.5. Use an existing rule to create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Use-an-existing-rule-to-create-a-new-Custom-Detection-Rule">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Posture Management → Rules &amp; Policies → Rules → Cloud Workload" type="note" />
+            </outline>
+          </outline>
+          <outline text="11.3.6. Edit a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Edit-a-Custom-Detection-Rule">
+            </outline>
+          <outline text="11.3.7. Delete a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Delete-a-Custom-Detection-Rule">
+            </outline>
+        </outline>
+      </outline>
+      <outline text="12. Create prevent policy for Kubernetes clusters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Create-prevent-policy-for-Kubernetes-clusters" />
+    </outline>
+  </body>
+</opml>

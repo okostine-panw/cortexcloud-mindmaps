@@ -1,0 +1,235 @@
+<opml version="2.0">
+  <head>
+    <title>Cortex KSPM Documentation</title>
+  </head>
+  <body>
+    <outline text="Cortex KSPM Documentation">
+      <outline text="1. Kubernetes security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Kubernetes-security" />
+      <outline text="2. KSPM limitations and system components" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/KSPM-limitations-and-system-components">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="The CPU and memory limits can be adjusted to align with your resource needs. For configuration steps, refer to Configure Kubernetes Connector resource limits." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Windows and Unix are not supported." type="note" />
+        </outline>
+        <outline text="2.1. Configure Kubernetes Connector resource limits" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Configure-Kubernetes-Connector-resource-limits" />
+      </outline>
+      <outline text="3. Supported Kubernetes distributions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Supported-Kubernetes-distributions">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Does not include Autopilot." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="In Google Container-Optimized OS release 100 and earlier, where the FANOTIFY EXEC flag is not supported, the Kernel configuration may be partial for the user mode agent to properly function. In such cases, the agent will fallback to asynchronous mode.&#10;In RHCOS version 4.12 and earlier, the Kernel configuration may be partial for the user mode agent to..." type="note" />
+        </outline>
+      </outline>
+      <outline text="4. Onboard the Kubernetes Connector" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Onboard-the-Kubernetes-Connector">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="This option is not supported for Fargate." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Enabling Realtime Protection installs the agent on your Kubernetes clusters as a DaemonSet." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Duplicate keys are not allowed." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="For Fargate, you must provide the cluster resource identifier.&#10;The format of the identifier is arn:aws:eks:&lt;region&gt;:&lt;account-id&gt;:cluster/&lt;cluster-name&gt;." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Basic authentication is only supported in Posture Management. If deploying Realtime Protection, select None ." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="If you install the latest version but select the N-1 strategy, this policy will take effect starting from the next upgrade cycle (it will not immediately downgrade your current installation).&#10;If you choose an older version and keep the latest strategy, the latest version will be installed." type="note" />
+        </outline>
+        <outline text="4.1. OpenShift container registry" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/OpenShift-container-registry" />
+        <outline text="4.2. Deploy the Kubernetes Connector via GitOps" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Deploy-the-Kubernetes-Connector-via-GitOps">
+          <outline text="4.2.1. Repository architecture and tenant management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Repository-architecture-and-tenant-management">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Make sure to disable auto upgrade, so it does not conflict with Flux or ArgoCD state management." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="If the namespace provided in the tenant is different from panw, change the namespace in both the Kustomization and HelmRelease files." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.2.2. Deploy with Flux CD" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Deploy-with-Flux-CD" />
+          <outline text="4.2.3. Deploy with ArgoCD" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Deploy-with-ArgoCD" />
+          <outline text="4.2.4. Private registry support" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Private-registry-support" />
+          <outline text="4.2.5. GitOps lifecycle management" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/GitOps-lifecycle-management">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="For Proof of Concept testing, the repository includes a deploy-gitlab.sh script to deploy a self-hosted GitLab EE server directly on your cluster." type="note" />
+            </outline>
+          </outline>
+          <outline text="4.2.6. Troubleshooting GitOps deployments" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Troubleshooting-GitOps-deployments" />
+        </outline>
+      </outline>
+      <outline text="5. KSPM dashboard" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/KSPM-dashboard">
+        <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+          <outline text="Users can access all information on the dashboard when their user access is scoped to view All assets or assigned to the Instance Administrator role. Otherwise, users with granular scoping set to No assets or Select asset groups will have limited access to the dashboard. For more information on Scope-Based Access Control (SBAC), see Manage user scope..." type="note" />
+        </outline>
+        <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+          <outline text="To access the KSPM dashboard, select Dashboards &amp; Reports → Dashboard or Modules → Kubernetes Security → KSPM Dashboard" type="note" />
+        </outline>
+      </outline>
+      <outline text="6. KSPM Graph" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/KSPM-Graph">
+        <outline text="6.1. Asset detail card" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Asset-detail-card">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Workloads context: The workloads section specifically identifies managed workloads, including Deployments, DaemonSets, StatefulSets, CronJobs, and ReplicaSets not managed by deployments, and jobs not managed by a CronJob." type="note" />
+          </outline>
+        </outline>
+        <outline text="6.2. Security finding categories" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Security-finding-categories" />
+      </outline>
+      <outline text="7. Kubernetes Clusters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Kubernetes-Clusters">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="Data for the Resource Explorer and Vulnerabilities tabs are populated with data once the posture management solution is deployed." type="note" />
+        </outline>
+      </outline>
+      <outline text="8. Kubernetes Resources Inventory" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Kubernetes-Resources-Inventory" />
+      <outline text="9. Manage Kubernetes Connector instances" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Manage-Kubernetes-Connector-instances">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="After uninstalling the Kubernetes connector, the connector status updates to Not connected 48 hours after the uninstall process is initiated." type="note" />
+        </outline>
+      </outline>
+      <outline text="10. Run an on-demand Kubernetes cluster scan" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Run-an-on-demand-Kubernetes-cluster-scan">
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="If the Kubernetes connector for the target cluster sent a heartbeat more than 15 minutes ago, the Kubernetes Cluster Scan Now dialog displays the message: Action temporarily unavailable. The connector connectivity cannot currently be verified." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="If the connector version is earlier than 2.0, the Request scan option appears as Request scan (Update required) and is disabled. Upgrade the Kubernetes connector to version 2.0 or later to enable on-demand scanning." type="note" />
+        </outline>
+        <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+          <outline text="The nodes and containers scan is both CPU and memory-intensive. Run the scan no more than once every six hours to avoid performance degradation on the target cluster." type="note" />
+        </outline>
+      </outline>
+      <outline text="11. Cloud Workload Policies and Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Policies-and-Rules">
+        <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+          <outline text="Users need View/Edit RBAC permissions (under Policies → Compute Policies) or the Instance Administrator role to view, edit, and modify Cloud Workload Policies policies." type="note" />
+        </outline>
+        <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+          <outline text="Users with SBAC granular scoping (in addition to the RBAC permissions required for Cloud Workload Policies) can only view Cloud Workload Policies, when their access is scoped to any of the available options: All assets, No assets, or Select asset groups. For more information on granular scoping, see Manage user scope. When no SBAC restriction is..." type="note" />
+        </outline>
+        <outline text="11.1. How policies and rules work together" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/How-policies-and-rules-work-together" />
+        <outline text="11.2. Cloud Workload Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Policies">
+          <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+            <outline text="Issues are automatically resolved when the finding is no longer applicable to the asset or when the affected asset is removed from the inventory.&#10;For more details on Prevent and create issues, see Cloud Workload Preventive Action." type="note" />
+          </outline>
+          <outline text="11.2.1. Types of Cloud Workload Policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Types-of-Cloud-Workload-Policies">
+            <outline text="11.2.1.1. Trusted image cloud workload policies" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Trusted-image-cloud-workload-policies">
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Registry scanning is for finding problems that are objectively issues regardless of context, organization, or scope. Trust, however, is subjective. Depending on the scope and other factors, an issue may or may not be problematic, and can change over time depending on the context." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="Trusted image policies do not override other policies and their rules, such as malware policies, misconfiguration policies, and secrets policies." type="note" />
+              </outline>
+              <outline text="⚠️🟡" type="section" _style="font-weight:bold;color:red" _label="caution" _marker="stop,flag-yellow">
+                <outline text="The default behavior for the prevent action when trust criteria are unavailable is Create an Issue. Be aware that changing this default will mean an incomplete deployment file can block a workload." type="note" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="11.2.2. Cloud Workload Policies page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Policies-page">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Keep the following caveats in my mind when working with Policies:&#10;Instance Administrators are able to view all facets of policies without restrictions, even if Scope Based Access Control (SBAC) roles are in effect. Learn more about SBAC.Manage user scope&#10;If you've been assigned a custom role with View/Edit permissions limited by SBAC, you may not be..." type="note" />
+            </outline>
+            <outline text="11.2.2.1. Widgets panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Widgets-panel">
+              <outline text="11.2.2.1.1. Show or hide the widget panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Show-or-hide-the-widget-panel">
+                </outline>
+            </outline>
+            <outline text="11.2.2.2. Change the layout of the policies table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Change-the-layout-of-the-policies-table">
+              </outline>
+            <outline text="11.2.2.3. Policy Details Panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Policy-Details-Panel">
+              </outline>
+          </outline>
+          <outline text="11.2.3. Enable or disable a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Enable-or-disable-a-Cloud-Workload-Policy">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Posture Management → Rules &amp; Policies → Policies → Cloud Workload" type="note" />
+            </outline>
+          </outline>
+          <outline text="11.2.4. Create a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Create-a-Cloud-Workload-Policy">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The Evaluation stage for Misconfiguration policies is supported only in the Runtime SDLC stage and is enforceable through the Kubernetes Admission Controller for clusters on-boarded using the Posture Management (KSPM) Connector." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Use Create a new Custom Detection Rule to define and add new custom rules as required." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Each rule may support different actions. While some include both Create an Issue and Prevent and Create an Issue, others provide only the Create an Issue option." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="All non-relevant (non-compute) assets are automatically excluded from the included asset list." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Currently, dynamic asset groups for Kubernetes Prevent Policies support only the following attributes:&#10;Kubernetes Resource Cluster: The cloud identifier for the cluster.&#10;Kubernetes Resource Namespace: The namespace where the resource is located.&#10;Kubernetes Resource Labels: The labels assigned to the resource.&#10;Kubernetes Resource Category: The category..." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="See Cloud Workload Preventive Action, to learn more about the Prevent action behavior and prerequisites.&#10;If the Prevent and create an issue action is selected, the preventive actions in the CI pipeline will trigger a Fail Pipeline by returning an exit code of 2 in the CI tool." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Choosing this option results in the automatic selection of all other asset scopes in the list." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="See Cloud Workload Preventive Action, to learn more about the Prevent action behavior and prerequisites." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="See Cloud Workload Preventive Action, to learn more about the Prevent action behavior and prerequisites." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Choosing this option results in the automatic selection of all other asset scopes in the list." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="See Cloud Workload Preventive Action, to learn more about the Prevent action behavior and prerequisites." type="note" />
+            </outline>
+          </outline>
+          <outline text="11.2.5. Use an existing policy to create a new Cloud Workload policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Use-an-existing-policy-to-create-a-new-Cloud-Workload-policy">
+            </outline>
+          <outline text="11.2.6. Edit a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Edit-a-Cloud-Workload-Policy">
+            </outline>
+          <outline text="11.2.7. Delete a Cloud Workload Policy" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Delete-a-Cloud-Workload-Policy">
+            </outline>
+          <outline text="11.2.8. Cloud Workload Preventive Action" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Preventive-Action" />
+        </outline>
+        <outline text="11.3. Cloud Workload Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Rules">
+          <outline text="11.3.1. Default (pre-defined) Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Default-pre-defined-Rules" />
+          <outline text="11.3.2. Custom (user-defined) Rules" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Custom-user-defined-Rules" />
+          <outline text="11.3.3. Cloud Workload Rules page" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Cloud-Workload-Rules-page">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Keep the following caveats in my mind when working with Rules:&#10;Instance Administrators are able to view all facets of Rules without restrictions, even if Scope Based Access Control (SBAC) roles are in effect. Learn more about SBAC.Manage user scope&#10;If you've been assigned a custom role with View/Edit permissions limited by SBAC, you may not be able..." type="note" />
+            </outline>
+            <outline text="11.3.3.1. Filter page results" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Filter-page-results" />
+            <outline text="11.3.3.2. Change the layout of the rules table" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Change-the-layout-of-the-rules-table" />
+            <outline text="11.3.3.3. Rule details panel" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Rule-details-panel" />
+          </outline>
+          <outline text="11.3.4. Create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Create-a-new-Custom-Detection-Rule">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="The custom rule must use the match term (not deny or others) to function properly." type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Only users with the following roles can enable or disable Custom Code Execution:&#10;Account Admin&#10;Instance Administrator&#10;Deployment Admin&#10;Privileged Security Admin" type="note" />
+            </outline>
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="Only Custom Detection Rules (not built-in rules) can be assigned to custom controls." type="note" />
+            </outline>
+            <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
+              <outline text="The custom Python scripts are intended to be executed exclusively for compliance checks and validations. To ensure the scripts are used properly and no security risks or unintended changes occur, the system implements the following restrictions and safeguards:&#10;Only a predefined set of Python libraries and functions required for compliance checks are..." type="note" />
+            </outline>
+          </outline>
+          <outline text="11.3.5. Use an existing rule to create a new Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Use-an-existing-rule-to-create-a-new-Custom-Detection-Rule">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Posture Management → Rules &amp; Policies → Rules → Cloud Workload" type="note" />
+            </outline>
+          </outline>
+          <outline text="11.3.6. Edit a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Edit-a-Custom-Detection-Rule">
+            </outline>
+          <outline text="11.3.7. Delete a Custom Detection Rule" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Delete-a-Custom-Detection-Rule">
+            </outline>
+        </outline>
+      </outline>
+      <outline text="12. Create prevent policy for Kubernetes clusters" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/KSPM-Documentation/Create-prevent-policy-for-Kubernetes-clusters">
+        <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
+          <outline text="Ensure that the Kubernetes Connector is installed for this Kubernetes cluster and that admission controller enforcement is enabled." type="note" />
+        </outline>
+        <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+          <outline text="If there are no rules listed, check that the cloud workload rule and policy were correctly configured and applied in Cortex Cloud." type="note" />
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

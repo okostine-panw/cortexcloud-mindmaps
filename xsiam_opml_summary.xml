@@ -1188,6 +1188,16 @@
             <outline text="3.11.1.12. Run indicator extraction in the CLI" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Run-indicator-extraction-in-the-CLI" />
           </outline>
         </outline>
+        <outline text="3.12. Managed Services configuration in Cortex" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Managed-Services-configuration-in-Cortex">
+          <outline text="3.12.1. Managed Services configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Managed-Services-configuration" />
+          <outline text="3.12.2. Configure report forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Configure-report-forwarding">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configuration → Managed Services" type="note" />
+            </outline>
+          </outline>
+          <outline text="3.12.3. Configure actions permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Configure-actions-permissions" />
+          <outline text="3.12.4. Manage escalation contacts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Manage-escalation-contacts" />
+        </outline>
       </outline>
       <outline text="4. Protect your endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Protect-your-endpoints">
         <outline text="4.1. Endpoint security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Endpoint-security">

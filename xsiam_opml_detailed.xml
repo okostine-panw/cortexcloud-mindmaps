@@ -252,7 +252,7 @@
                 <outline text="If an imported group is later deleted from your Active Directory, Cortex XSIAM automatically deletes the corresponding user group at the next sync cycle." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="CRITICAL DE-PROVISIONING BOUNDARY: The Cloud Identity Engine (CIE) is used exclusively for directory group management; it is not utilized for individual user account management, provisioning, or authentication workflows. Consequently, disabling, suspending, or removing user objects directly within CIE does not automatically disable, restrict, or delete..." type="note" />
+                <outline text="The Cloud Identity Engine (CIE) is used exclusively for directory group management; it is not utilized for individual user account management, provisioning, or authentication workflows. Consequently, disabling, suspending, or removing user objects directly within CIE does not automatically disable, restrict, or delete those corresponding users inside..." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
                 <outline text="For optimal performance, we recommend using a single field in the filter definition and simple comparison operators." type="note" />
@@ -2453,31 +2453,7 @@
                   <outline text="Unified Cortex platform cloud content packs require a specific set of automation permissions to enable full integration with your cloud environment. Before configuring access for these packs, review the automation permission scope guidelines." type="note" />
                 </outline>
                 <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
+                  <outline text="All conditional capabilities documented below require the mandatory Base and Discovery Engine permissions to be deployed alongside them. Base provides the foundational CortexPlatformRole and AWS-managed read-only baseline. Discovery Engine extends that baseline with the asset-inventory coverage that every other capability assumes." type="note" />
                 </outline>
               </outline>
               <outline text="3.2.4.16.2. Microsoft Azure provider permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Microsoft-Azure-provider-permissions">
@@ -4691,6 +4667,24 @@
             </outline>
           </outline>
         </outline>
+        <outline text="3.12. Managed Services configuration in Cortex" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Managed-Services-configuration-in-Cortex">
+          <outline text="3.12.1. Managed Services configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Managed-Services-configuration" />
+          <outline text="3.12.2. Configure report forwarding" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Configure-report-forwarding">
+            <outline text="🧭➡️" type="section" _style="font-weight:bold;color:red" _label="navigation" _marker="arrow-right,task-ongoing">
+              <outline text="Settings → Configuration → Managed Services" type="note" />
+            </outline>
+          </outline>
+          <outline text="3.12.3. Configure actions permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Configure-actions-permissions">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="When a permission level is set to Inform, configure at least one entry on the Escalation contacts tab so the Unit 42 Managed Services team can request approval before performing the action." type="note" />
+            </outline>
+          </outline>
+          <outline text="3.12.4. Manage escalation contacts" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Manage-escalation-contacts">
+            <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+              <outline text="All fields are mandatory." type="note" />
+            </outline>
+          </outline>
+        </outline>
       </outline>
       <outline text="4. Protect your endpoints" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Protect-your-endpoints">
         <outline text="4.1. Endpoint security" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Endpoint-security">
@@ -5143,7 +5137,7 @@
                     <outline text="Requires the ITDR add-on." type="note" />
                   </outline>
                   <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                    <outline text="The identity profile is available on Cortex XSIAM 3.6, Cortex XDR 5.1, and Cortex Cloud Runtime 2.1 or later, and requires Cortex XDR agent version 9.2 or later. This feature is not available on Cortex XSIAM 2.x or Cortex XDR 3.x tenants.&#10;In environments with mixed agent versions, you can assign policies containing an identity profile; however, any..." type="note" />
+                    <outline text="The identity profile is available on Cortex XSIAM 3.6, Cortex XDR 5.1, and Cortex Cloud Runtime 2.1 or later, and requires Cortex XDR agent version 9.1 or later. This feature is not available on Cortex XSIAM 2.x or Cortex XDR 3.x tenants.&#10;In environments with mixed agent versions, you can assign policies containing an identity profile; however, any..." type="note" />
                   </outline>
                   <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                     <outline text="New profiles based on imported profiles are added, and do not replace existing ones." type="note" />
@@ -7204,7 +7198,7 @@
             <outline text="5.5.3.2. Indicator configuration" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Indicator-configuration">
               <outline text="5.5.3.2.1. Configure Threat Intelligence feed integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Configure-Threat-Intelligence-feed-integrations">
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                  <outline text="Some third-party services (such as Whois and VirusTotal) enforce strict rate limits based on the source IP address. If you encounter quota management issues, we recommend running them on an engine. This routes the traffic through your own private network, ensuring the external service sees a unique, dedicated IP address exclusive to your organization." type="note" />
+                  <outline text="Some third-party services (such as Whois and MITRE ATT&amp;CK) enforce strict rate limits based on the source IP address. If you encounter quota management issues, we recommend running them on an engine. This routes traffic through your private network, ensuring the external service sees a unique, dedicated IP address assigned to your organization." type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                   <outline text="Some feeds only provide information about new indicators and do not specify when indicators are removed. Indicators from these feeds cannot be automatically expired on removal.&#10;If a feed's expiration method is set to When removed from the feed, indicators that are removed from the feed immediately expire. Note that if the feed is disabled, its..." type="note" />
@@ -7275,7 +7269,7 @@
               </outline>
               <outline text="5.5.3.2.5. Configure Threat Intelligence feed integrations" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Configure-Threat-Intelligence-feed-integrations">
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                  <outline text="Some third-party services (such as Whois and VirusTotal) enforce strict rate limits based on the source IP address. If you encounter quota management issues, we recommend running them on an engine. This routes the traffic through your own private network, ensuring the external service sees a unique, dedicated IP address exclusive to your organization." type="note" />
+                  <outline text="Some third-party services (such as Whois and MITRE ATT&amp;CK) enforce strict rate limits based on the source IP address. If you encounter quota management issues, we recommend running them on an engine. This routes traffic through your private network, ensuring the external service sees a unique, dedicated IP address assigned to your organization." type="note" />
                 </outline>
                 <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                   <outline text="Some feeds only provide information about new indicators and do not specify when indicators are removed. Indicators from these feeds cannot be automatically expired on removal.&#10;If a feed's expiration method is set to When removed from the feed, indicators that are removed from the feed immediately expire. Note that if the feed is disabled, its..." type="note" />
@@ -8106,7 +8100,7 @@
                 </outline>
                 <outline text="5.8.9.1.1.3. Bitbucket Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Bitbucket-Cloud">
                   <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-                    <outline text="Before you begin:&#10;Cortex XSIAM user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;In Bitbucket, grant the user performing the Cortex application authorization the following permissions. The level of access required depends on the modules you intend to use:&#10;For code..." type="note" />
+                    <outline text="Before you begin:&#10;Cortex XSIAM user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket permissions: In Bitbucket, grant the user performing the Cortex application authorization the following permissions. The level of access required depends on the modules you..." type="note" />
                   </outline>
                   <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                     <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
@@ -8114,19 +8108,19 @@
                 </outline>
                 <outline text="5.8.9.1.1.4. Bitbucket Data Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Bitbucket-Data-Center">
                   <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-                    <outline text="Before you begin:&#10;Cortex XSIAM user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket permissions: Grant the user performing the Cortex application authorization the following permissions:&#10;Administrator permissions for projects&#10;Administrator permissions for..." type="note" />
-                  </outline>
-                  <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                    <outline text="By default, the permissions of the access token are set according to your current access level. It is essential to define two levels of permissions, Project and Repository permissions. The Repository permissions inherit from Project permissions, requiring Repository permissions to match or exceed Project permissions&#10;Providing read and write permissions..." type="note" />
-                  </outline>
-                  <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                    <outline text="For additional security, it is recommended to set an expiry automatically. The expiry date of a token cannot be changed after it is created. You can see the expiry dates for all your tokens on Profile picture → Manage account → Personal access tokens." type="note" />
+                    <outline text="Before you begin:&#10;Cortex XSIAM user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket authorization (PAT): You must generate a Personal Access Token (PAT) within your Bitbucket Server account settings to authenticate the connection. For detailed instruction on..." type="note" />
                   </outline>
                   <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                     <outline text="For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM." type="note" />
                   </outline>
                   <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                     <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
+                  </outline>
+                  <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                    <outline text="By default, the permissions of the access token are set according to your current access level. It is essential to define two levels of permissions, Project and Repository permissions. The Repository permissions inherit from Project permissions, requiring Repository permissions to match or exceed Project permissions&#10;Providing read and write permissions..." type="note" />
+                  </outline>
+                  <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                    <outline text="For additional security, it is recommended to set an expiry automatically. The expiry date of a token cannot be changed after it is created. You can see the expiry dates for all your tokens on Profile picture → Manage account → Personal access tokens." type="note" />
                   </outline>
                   <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
                     <outline text="Always refer to the Bitbucket documentation for information relating to creating a PAT." type="note" />

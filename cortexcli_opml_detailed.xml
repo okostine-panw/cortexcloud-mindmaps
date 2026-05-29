@@ -171,7 +171,7 @@
                 <outline text="If an imported group is later deleted from your Active Directory, Cortex Cloud automatically deletes the corresponding user group at the next sync cycle." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="CRITICAL DE-PROVISIONING BOUNDARY: The Cloud Identity Engine (CIE) is used exclusively for directory group management; it is not utilized for individual user account management, provisioning, or authentication workflows. Consequently, disabling, suspending, or removing user objects directly within CIE does not automatically disable, restrict, or delete..." type="note" />
+                <outline text="The Cloud Identity Engine (CIE) is used exclusively for directory group management; it is not utilized for individual user account management, provisioning, or authentication workflows. Consequently, disabling, suspending, or removing user objects directly within CIE does not automatically disable, restrict, or delete those corresponding users inside..." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
                 <outline text="By default, Enable Scope Based Access Control is disabled in Settings → Configurations → General → Server Settings, and granular scoping is not enforced. Before enabling SBAC, we recommend that an administrator or a user with Access Management permissions first ensures that the users, user groups, and API Keys defined in Cortex Cloud are granted..." type="note" />
@@ -450,31 +450,7 @@
                   <outline text="Unified Cortex platform cloud content packs require a specific set of automation permissions to enable full integration with your cloud environment. Before configuring access for these packs, review the automation permission scope guidelines." type="note" />
                 </outline>
                 <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-                </outline>
-                <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                  <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
+                  <outline text="All conditional capabilities documented below require the mandatory Base and Discovery Engine permissions to be deployed alongside them. Base provides the foundational CortexPlatformRole and AWS-managed read-only baseline. Discovery Engine extends that baseline with the asset-inventory coverage that every other capability assumes." type="note" />
                 </outline>
               </outline>
               <outline text="2.2.6.15.2. Microsoft Azure provider permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-CLI/Microsoft-Azure-provider-permissions">
@@ -2394,7 +2370,7 @@
             </outline>
             <outline text="9.1.1.3. Bitbucket Cloud" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-CLI/Bitbucket-Cloud">
               <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-                <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;In Bitbucket, grant the user performing the Cortex application authorization the following permissions. The level of access required depends on the modules you intend to use:&#10;For code..." type="note" />
+                <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket permissions: In Bitbucket, grant the user performing the Cortex application authorization the following permissions. The level of access required depends on the modules you..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
@@ -2402,19 +2378,19 @@
             </outline>
             <outline text="9.1.1.4. Bitbucket Data Center" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-CLI/Bitbucket-Data-Center">
               <outline text="☑️🟣" type="section" _style="font-weight:bold;color:red" _label="prerequisite" _marker="content">
-                <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket permissions: Grant the user performing the Cortex application authorization the following permissions:&#10;Administrator permissions for projects&#10;Administrator permissions for..." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="By default, the permissions of the access token are set according to your current access level. It is essential to define two levels of permissions, Project and Repository permissions. The Repository permissions inherit from Project permissions, requiring Repository permissions to match or exceed Project permissions&#10;Providing read and write permissions..." type="note" />
-              </outline>
-              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
-                <outline text="For additional security, it is recommended to set an expiry automatically. The expiry date of a token cannot be changed after it is created. You can see the expiry dates for all your tokens on Profile picture → Manage account → Personal access tokens." type="note" />
+                <outline text="Before you begin:&#10;Cortex Cloud user permissions: Ensure you have View/Edit permissions for Data Sources and Integrations (RBAC: AppSec Admin or Instance Administrator)&#10;Bitbucket authorization (PAT): You must generate a Personal Access Token (PAT) within your Bitbucket Server account settings to authenticate the connection. For detailed instruction on..." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="For more information about the Transporter, including setup instructions, refer to Transporter over Broker VM." type="note" />
               </outline>
               <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
                 <outline text="Ensure that you receive the Instance Successfully Created message on this step, indicating successful instance creation." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="By default, the permissions of the access token are set according to your current access level. It is essential to define two levels of permissions, Project and Repository permissions. The Repository permissions inherit from Project permissions, requiring Repository permissions to match or exceed Project permissions&#10;Providing read and write permissions..." type="note" />
+              </outline>
+              <outline text="📝🟢" type="section" _style="font-weight:bold;color:red" _label="note" _marker="content">
+                <outline text="For additional security, it is recommended to set an expiry automatically. The expiry date of a token cannot be changed after it is created. You can see the expiry dates for all your tokens on Profile picture → Manage account → Personal access tokens." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
                 <outline text="Always refer to the Bitbucket documentation for information relating to creating a PAT." type="note" />
@@ -5025,31 +5001,7 @@
                 <outline text="Unified Cortex platform cloud content packs require a specific set of automation permissions to enable full integration with your cloud environment. Before configuring access for these packs, review the automation permission scope guidelines." type="note" />
               </outline>
               <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
-              </outline>
-              <outline text="👀🟠" type="section" _style="font-weight:bold;color:red" _label="important" _marker="priority-2,star-red">
-                <outline text="In addition to any security modules or scanning capabilities you opt to enable, you must also provision the mandatory Base and Discovery Engine permissions to ensure the foundational environment is successfully onboarded." type="note" />
+                <outline text="All conditional capabilities documented below require the mandatory Base and Discovery Engine permissions to be deployed alongside them. Base provides the foundational CortexPlatformRole and AWS-managed read-only baseline. Discovery Engine extends that baseline with the asset-inventory coverage that every other capability assumes." type="note" />
               </outline>
             </outline>
             <outline text="21.4.16.2. Microsoft Azure provider permissions" type="link" _url="https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Cortex-CLI/Microsoft-Azure-provider-permissions">
